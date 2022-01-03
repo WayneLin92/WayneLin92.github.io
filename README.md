@@ -21,6 +21,7 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 | Spring 2022 | Selected Topics in Algebraic Topology |
 
 ### University of Chicago.
+
 ||||
 |---|---|---|
 | Winter 2021 | MATH 19600 | Linear Algebra |
