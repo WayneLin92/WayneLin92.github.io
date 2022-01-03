@@ -1,0 +1,48 @@
+# Weinan Lin (林伟南)
+## About Me
+I am currently an instructor in [School of Mathematical Science](http://english.math.pku.edu.cn/), Peking University.
+
+My research interests includes stable homotopy theory and computational commutative algebra for algebraic topology.
+
+My PhD advisor is Prof. [J. Peter May](http://www.math.uchicago.edu/~may/).
+
+Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
+
+Here is my [research statement](./assets/pdf/Research_Statement.pdf).
+
+## Publications and preprints
+* [On the May spectral sequence at the prime 2](https://arxiv.org/pdf/2010.14754.pdf), [arXiv:2010.14754](https://arxiv.org/abs/2010.14754)
+  
+## Teaching
+### Peking University.
+
+|||
+|---|---|
+| Spring 2022 | Selected Topics in Algebraic Topology |
+
+### University of Chicago.
+||||
+|---|---|---|
+| Winter 2021 | MATH 19600 | Linear Algebra |
+| Winter 2020| MATH 15300 | Calculus 2 |
+| Fall 2019 | MATH 15200 | Calculus 1 |
+| Spring 2019 | MATH 19600 | Linear Algebra |
+| Winter 2019 | MATH 15300 | Calculus 3 |
+| Fall 2018 | MATH 15200 | Calculus 2 |
+| Spring 2018 | MATH 15300 | Calculus 3 |
+| Winter 2018 | MATH 15200 | Calculus 2 |
+| Fall 2017 | MATH 15100 | Calculus 1 |
+
+
+## Links
+[UChicago Topology Seminar](http://math.uchicago.edu/~algtop/)
+
+## Programming
+[My Github homepage](https://github.com/WayneLin92)
+
+[LaTeX diagram generator](./programs/tex_diagrams/index.html)
+
+# Contact Information
+Email: lwnpku@math.pku.edu.cn
+
+Office: Room 211, Building 23, Peking University
