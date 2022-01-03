@@ -1,14 +1,3 @@
-
-<head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136262938-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-136262938-1');
-	</script>
-</head>
-
 # Weinan Lin (林伟南)
 ## About Me
 I am currently an instructor in [School of Mathematical Science](http://english.math.pku.edu.cn/), Peking University.
