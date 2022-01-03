@@ -16,13 +16,13 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 ## Teaching
 ### Peking University.
 
-|||
+| Semester | Course Name |
 |---|---|
 | Spring 2022 | Selected Topics in Algebraic Topology |
 
 ### University of Chicago.
 
-||||
+| Quarter | Course No. | Course Name |
 |---|---|---|
 | Winter 2021 | MATH 19600 | Linear Algebra |
 | Winter 2020| MATH 15300 | Calculus 2 |
