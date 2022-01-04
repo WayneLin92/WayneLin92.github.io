@@ -1,0 +1,122 @@
+<h1 id="c"><a aria-hidden="true" class="anchor-heading" href="#c"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>C++</h1>
+<p><a href="/notes/4rdTliON7dIzrmMd9hnlP">Wiki</a></p>
+<h1 id="language-features"><a aria-hidden="true" class="anchor-heading" href="#language-features"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Language Features</h1>
+<h2 id="leave-the-constructors-for-the-compiler"><a aria-hidden="true" class="anchor-heading" href="#leave-the-constructors-for-the-compiler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Leave the constructors for the compiler</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-cpp"><code class="language-cpp">lass Date <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Date</span><span class="token punctuation">(</span><span class="token keyword">int</span> dd<span class="token punctuation">,</span> <span class="token keyword">int</span> mm<span class="token punctuation">,</span> <span class="token keyword">int</span> yyyy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">default</span><span class="token punctuation">;</span> <span class="token comment">// [See also](#Rc-default)</span>
+    <span class="token comment">// ...</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> dd <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> mm <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> yyyy <span class="token operator">=</span> <span class="token number">1970</span><span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="delegating-constructors"><a aria-hidden="true" class="anchor-heading" href="#delegating-constructors"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Delegating constructors</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Date2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> d<span class="token punctuation">;</span>
+    Month m<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Date2</span><span class="token punctuation">(</span><span class="token keyword">int</span> dd<span class="token punctuation">,</span> Month mm<span class="token punctuation">,</span> year yy<span class="token punctuation">)</span>
+        <span class="token operator">:</span>d<span class="token punctuation">{</span>dd<span class="token punctuation">}</span><span class="token punctuation">,</span> m<span class="token punctuation">{</span>mm<span class="token punctuation">}</span><span class="token punctuation">,</span> y<span class="token punctuation">{</span>yy<span class="token punctuation">}</span>
+        <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">valid</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> m<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> Bad_date<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token function">Date2</span><span class="token punctuation">(</span><span class="token keyword">int</span> dd<span class="token punctuation">,</span> Month mm<span class="token punctuation">)</span>
+        <span class="token operator">:</span>Date2<span class="token punctuation">{</span>dd<span class="token punctuation">,</span> mm<span class="token punctuation">,</span> <span class="token function">current_year</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="tips"><a aria-hidden="true" class="anchor-heading" href="#tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Tips</h1>
+<ul>
+<li>Use copy by value parameter instead of const ref if copy happens in the function</li>
+<li>Test output with color
+<pre class="language-cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>cerr <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"\033[0;31m"</span>
+          <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"test1"</span>
+          <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"\033[0m\n"</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h1 id="visual-studio"><a aria-hidden="true" class="anchor-heading" href="#visual-studio"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Visual Studio</h1>
+<h2 id="how-to-debug-a-release-build"><a aria-hidden="true" class="anchor-heading" href="#how-to-debug-a-release-build"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>How to debug a release build</h2>
+<ol>
+<li>
+<p>Open the <strong>Property Pages</strong> dialog box for the project. For details, see <a href="https://docs.microsoft.com/en-us/cpp/build/working-with-project-properties?view=msvc-170">Set C++ compiler and build properties in Visual Studio</a>.</p>
+</li>
+<li>
+<p>Click the <strong>C/C++</strong> node. Set <strong>Debug Information Format</strong> to <a href="https://docs.microsoft.com/en-us/cpp/build/reference/z7-zi-zi-debug-information-format?view=msvc-170">C7 compatible (/Z7)</a> or <strong>Program Database (/Zi)</strong>.</p>
+</li>
+<li>
+<p>Expand <strong>Linker</strong> and click the <strong>General</strong> node. Set <strong>Enable Incremental Linking</strong> to <a href="https://docs.microsoft.com/en-us/cpp/build/reference/incremental-link-incrementally?view=msvc-170">No (/INCREMENTAL:NO)</a>.</p>
+</li>
+<li>
+<p>Select the <strong>Debugging</strong> node. Set <strong>Generate Debug Info</strong> to <a href="https://docs.microsoft.com/en-us/cpp/build/reference/debug-generate-debug-info?view=msvc-170">Yes (/DEBUG)</a>.</p>
+</li>
+<li>
+<p>Select the <strong>Optimization</strong> node. Set <strong>References</strong> to <a href="https://docs.microsoft.com/en-us/cpp/build/reference/opt-optimizations?view=msvc-170">/OPT:REF</a> and <strong>Enable COMDAT Folding</strong> to <a href="https://docs.microsoft.com/en-us/cpp/build/reference/opt-optimizations?view=msvc-170">/OPT:ICF</a>.</p>
+</li>
+<li>
+<p>You can now debug your release build application. To find a problem, step through the code (or use Just-In-Time debugging) until you find where the failure occurs, and then determine the incorrect parameters or code.</p>
+<p>If an application works in a debug build, but fails in a release build, one of the compiler optimizations may be exposing a defect in the source code. To isolate the problem, disable selected optimizations for each source code file until you locate the file and the optimization that is causing the problem. (To expedite the process, you can divide the files into two groups, disable optimization on one group, and when you find a problem in a group, continue dividing until you isolate the problem file.)</p>
+<p>You can use <a href="https://docs.microsoft.com/en-us/cpp/build/reference/rtc-run-time-error-checks?view=msvc-170">/RTC</a> to try to expose such bugs in your debug builds.</p>
+<p>For more information, see <a href="https://docs.microsoft.com/en-us/cpp/build/optimizing-your-code?view=msvc-170">Optimizing Your Code</a>.</p>
+</li>
+</ol>
+<h1 id="doxygen"><a aria-hidden="true" class="anchor-heading" href="#doxygen"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Doxygen</h1>
+<h2 id="detailed-description"><a aria-hidden="true" class="anchor-heading" href="#detailed-description"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Detailed Description</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/**
+ * ... text ...
+ */</span>
+
+<span class="token comment">/********************************************/</span><span class="token comment">/**
+ *  ... text
+ ***********************************************/</span>
+
+<span class="token keyword">int</span> var<span class="token punctuation">;</span> <span class="token comment">/**&#x3C; Detailed description after the member */</span>
+<span class="token keyword">int</span> var<span class="token punctuation">;</span> <span class="token comment">///&#x3C; Detailed description after the member</span>
+         <span class="token comment">///&#x3C;</span>
+</code></pre>
+<h2 id="brief-description"><a aria-hidden="true" class="anchor-heading" href="#brief-description"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Brief Description</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/** Brief description which ends at this dot. Details follow
+ *  here.
+ */</span>
+
+<span class="token comment">/** \brief Brief description.
+ *         Brief description continued.
+ *
+ *  Detailed description starts here.
+ */</span>
+
+<span class="token keyword">int</span> var<span class="token punctuation">;</span> <span class="token comment">///&#x3C; Brief description after the member</span>
+</code></pre>
+<h2 id="file"><a aria-hidden="true" class="anchor-heading" href="#file"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>File</h2>
+<p>Let's repeat that, because it is often overlooked: to document global objects (functions, typedefs, enum, macros, etc), you must document the file in which they are defined. In other words, there must at least be a</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/** \file */</span>
+</code></pre>
+<p>For example</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/** \file structcmd.h
+    \brief A Documented file.
+    
+    Details.
+*/</span>
+</code></pre>
+<h2 id="function"><a aria-hidden="true" class="anchor-heading" href="#function"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Function</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/**
+ * a normal member taking two arguments and returning an integer value.
+ * @param a an integer argument.
+ * @param s a constant character pointer.
+ * @see Javadoc_Test()
+ * @see ~Javadoc_Test()
+ * @see testMeToo()
+ * @see publicVar()
+ * @return The test results
+ */</span>
+<span class="token keyword">int</span> <span class="token function">testMe</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
