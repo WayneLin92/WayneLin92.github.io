@@ -18,7 +18,7 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 
 | Semester | Course Name |
 |---|---|
-| Spring 2022 | Selected Topics in Algebraic Topology |
+| Spring 2022 | [Selected Topics in Algebraic Topology](./SelectedTopicsInAlgebraicTopology/index.html) |
 
 ### University of Chicago.
 
@@ -36,11 +36,12 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 
 
 ## Links
-[UChicago Topology Seminar](http://math.uchicago.edu/~algtop/)
+[Summer School on Equivariant Homotopy Theory](https://iwoat.github.io/)<br>
+[eCHT](https://s.wayne.edu/echt/)<br>
+[Ravenel's Archive](https://people.math.rochester.edu/faculty/doug/papers.html)<br>
 
 ## Programming
-[My Github homepage](https://github.com/WayneLin92)
-
+[My Github homepage](https://github.com/WayneLin92)<br>
 [LaTeX diagram generator](./programs/tex_diagrams/index.html)
 
 # Contact Information

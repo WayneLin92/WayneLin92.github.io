@@ -1,0 +1,30 @@
+"""doc"""
+import argparse
+import os
+import subprocess
+
+if __name__ == "__main__":
+    # parser
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--edit', action='store_true', help='open the script in vscode')
+    parser.add_argument('-f', help='the markdown file to convert')
+    parser.add_argument('-o', help='the output file name')
+    args = parser.parse_args()
+    if args.edit:
+        subprocess.Popen(f"code {__file__}", shell=True)
+        os.sys.exit()
+
+    # actions
+    if args.f is None or args.o is None:
+        print("missing argument -o or -f")
+    else:
+        subprocess.run(f"markdown-it {args.f} -o {args.o}", shell=True)
+        with open("template.html", "r", encoding="utf8") as file:
+            template_html = file.read()
+        with open(args.o, "r", encoding="utf8") as file:
+            index_html = file.read()
+        template_html = template_html.replace("{title}", "Weinan Lin | Homepage")
+        template_html = template_html.replace("{body}", index_html)
+        with open(args.o, "w", encoding="utf8") as file:
+            file.write(template_html)
+        
