@@ -2,7 +2,7 @@
 ## About Me
 I am currently an instructor in [School of Mathematical Science](http://english.math.pku.edu.cn/), Peking University.
 
-My research interests includes stable homotopy theory and computational commutative algebra for algebraic topology.
+My research interests includes stable homotopy theory and computational algebra for algebraic topology.
 
 My PhD advisor is Prof. [J. Peter May](http://www.math.uchicago.edu/~may/).
 
