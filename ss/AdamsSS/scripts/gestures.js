@@ -38,10 +38,22 @@ function on_pointermove_move(event) {
 
 		if (prevPtsDiff > 0) {
 			camera.zoom(index === 0 ? sp1 : sp0, curDiff / prevPtsDiff);
+			g_plot.setAttribute("transform", camera.getTransform());
+			plotAxisLabels();
 		}
 
 		// Cache the distance for the next move event
 		prevPtsDiff = curDiff;
+	}
+}
+
+function removeEvent(event) {
+	// Remove this event from the target's cache
+	for (var i = 0; i < pointerCache.length; i++) {
+		if (pointerCache[i].pointerId == event.pointerId) {
+			pointerCache.splice(i, 1);
+			break;
+		}
 	}
 }
 
@@ -54,16 +66,6 @@ function on_pointerup(event) {
 	else if (pointerCache.length == 1) {
 		prevPtsDiff = -1;
 		onMouseDown(pointerCache[0]);
-	}
-}
-
-function removeEvent(ev) {
-	// Remove this event from the target's cache
-	for (var i = 0; i < pointerCache.length; i++) {
-		if (pointerCache[i].pointerId == ev.pointerId) {
-			pointerCache.splice(i, 1);
-			break;
-		}
 	}
 }
 
