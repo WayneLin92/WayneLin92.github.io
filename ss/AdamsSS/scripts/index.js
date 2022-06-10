@@ -206,13 +206,19 @@ function onMouseDown(event) {
     }
 }
 
+function MouseMove(deltaSvg) {
+    camera.translate(deltaSvg);
+    g_plot.setAttribute("transform", camera.getTransform());
+    plotAxisLabels();
+}
+
 function onMouseMove(event) {
     if (config_dynamic.status === "on_svg") {
         let deltaSvg = new Vector(event.movementX, -event.movementY);
         camera.translate(deltaSvg);
         g_plot.setAttribute("transform", camera.getTransform());
+        plotAxisLabels();
     }
-    plotAxisLabels();
 }
 
 function onMouseUp(event) {

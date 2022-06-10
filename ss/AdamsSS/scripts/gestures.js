@@ -1,11 +1,13 @@
 // Global vars to cache event state
 var pointerCache = new Array();
 var prevPtsDiff = -1;
+var prevPt = null;
 
 function on_pointerdown(event) {
 	// This event is cached to support 2-finger gestures
 	if (pointerCache.length == 0) {
 		onMouseDown(event);
+		prevPt = new Vector(event.offsetX, event.offsetY);
 	}
 	else if (pointerCache.length == 1) {
 		onMouseUp(pointerCache[0]);
@@ -26,18 +28,21 @@ function on_pointermove_move(event) {
 	}
 
 	if (pointerCache.length == 1) {
-		onMouseMove(event);
+		curPt = new Vector(event.offsetX, event.offsetY);
+		deltaScreen = curPt.sub(prevPt);
+		MouseMove(new Vector(deltaScreen.x, -deltaScreen.y));
+		prevPt = curPt;
 	}
 
 	// If two pointers are down, check for pinch gestures
 	if (pointerCache.length == 2) {
 		// Calculate the distance between the two pointers
-		let sp0 = new Vector(pointerCache[0].offsetX, windows.innerHeight - pointerCache[0].offsetY);
-		let sp1 = new Vector(pointerCache[1].offsetX, windows.innerHeight - pointerCache[1].offsetY);
-		let curDiff = sp0.dist(sp1);
+		let p1Svg = camera.flip(new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY));
+		let p2Svg = camera.flip(new Vector(pointerCache[1].offsetX, pointerCache[1].offsetY));
+		let curDiff = p1Svg.dist(p2Svg);
 
 		if (prevPtsDiff > 0) {
-			camera.zoom(index === 0 ? sp1 : sp0, curDiff / prevPtsDiff);
+			camera.zoom(index === 0 ? p2Svg : p1Svg, curDiff / prevPtsDiff);
 			g_plot.setAttribute("transform", camera.getTransform());
 			plotAxisLabels();
 		}
@@ -62,6 +67,7 @@ function on_pointerup(event) {
 	removeEvent(event);
 	if (pointerCache.length == 0) {
 		onMouseUp(event);
+		prevPt = null;
 	}
 	else if (pointerCache.length == 1) {
 		prevPtsDiff = -1;
