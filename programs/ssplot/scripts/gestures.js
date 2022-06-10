@@ -42,7 +42,6 @@ function on_pointermove_move(event) {
 
 		// Cache the distance for the next move event
 		prevPtsDiff = curDiff;
-		pen.render();
 	}
 }
 
@@ -70,14 +69,13 @@ function removeEvent(ev) {
 
 function init1() {
 	// Install event handlers for the pointer target
-	let html = document.documentElement;
-	canvas.onpointerdown = on_pointerdown;
-	canvas.onpointermove = on_pointermove_move;
+	svg_ss.onpointerdown = on_pointerdown;
+	svg_ss.onpointermove = on_pointermove_move;
 
 	// Use same handler for pointer{up,cancel,out,leave} events since
 	// the semantics for these events - in this app - are the same.
-	canvas.onpointerup = on_pointerup;
-	canvas.onpointercancel = on_pointerup;
-	canvas.onpointerout = on_pointerup;
-	canvas.onpointerleave = on_pointerup;
+	svg_ss.onpointerup = on_pointerup;
+	svg_ss.onpointercancel = on_pointerup;
+	svg_ss.onpointerout = on_pointerup;
+	svg_ss.onpointerleave = on_pointerup;
 }

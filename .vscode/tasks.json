@@ -6,12 +6,12 @@
         {
             "label": "Compile /index_.md",
             "type": "shell",
-            "command": "python task.py -f index_.md -o index.html"
+            "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\""
         },
         {
             "label": "Compile /SelectedTopicsInAlgebraicTopology/index_.md",
             "type": "shell",
-            "command": "python task.py -f ./SelectedTopicsInAlgebraicTopology/index_.md -o ./SelectedTopicsInAlgebraicTopology/index.html"
+            "command": "python task.py -f ./SelectedTopicsInAlgebraicTopology/index_.md -o ./SelectedTopicsInAlgebraicTopology/index.html -t Teaching"
         }
     ]
 }

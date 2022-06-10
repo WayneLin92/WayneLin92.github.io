@@ -1,4 +1,4 @@
-# 2022年春，代数学拓扑选讲
+# 2022年春，代数拓扑选讲
 * 林伟南
     * 邮件: lwnpku@math.pku.edu.cn
     * 办公室: 23楼211
@@ -10,6 +10,11 @@
 * 参考文献
     * May, A concise course in algebraic topology
     * Weibel, Homological algebra
+    * Goerss-Jardine - Simplicial homotopy theory
 * 课件
     * [Lecture1-CofiberSequences.pdf](./Lecture1-CofiberSequences.pdf)
     * [Lecture2-FiberSequences.pdf](./Lecture2-FiberSequences.pdf)
+    * [Lecture3-SimplicialSets.pdf](./Lecture3-SimplicialSets.pdf)
+    * [Lecture4-SimplicialHomotopy.pdf](./Lecture4-SimplicialHomotopy.pdf)
+    * [Lecture5-HochschildHomology.pdf](./Lecture5-HochschildHomology.pdf)
+    * [Lecture6-CyclicHomology.pdf](./Lecture6-CyclicHomology.pdf)
