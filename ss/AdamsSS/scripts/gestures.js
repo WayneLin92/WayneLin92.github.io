@@ -32,8 +32,8 @@ function on_pointermove_move(event) {
 	// If two pointers are down, check for pinch gestures
 	if (pointerCache.length == 2) {
 		// Calculate the distance between the two pointers
-		let sp0 = getMouseSp(pointerCache[0]);
-		let sp1 = getMouseSp(pointerCache[1]);
+		let sp0 = new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY);
+		let sp1 = new Vector(pointerCache[1].offsetX, pointerCache[1].offsetY);
 		let curDiff = sp0.dist(sp1);
 
 		if (prevPtsDiff > 0) {
