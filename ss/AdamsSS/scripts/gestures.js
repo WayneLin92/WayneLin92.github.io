@@ -72,6 +72,7 @@ function on_pointerup(event) {
 	else if (pointerCache.length == 1) {
 		prevPtsDiff = -1;
 		onMouseDown(pointerCache[0]);
+		prevPt = new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY);
 	}
 }
 
