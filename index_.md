@@ -41,7 +41,7 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 [Ravenel's Archive](https://people.math.rochester.edu/faculty/doug/papers.html)<br>
 
 ## Programming
-[Adams pectral sequence](./ss/AdamsSS/index.html)<br>
+[Adams spectral sequence](./ss/AdamsSS/index.html)<br>
 [My Github homepage](https://github.com/WayneLin92)<br>
 [LaTeX diagram generator](./programs/tex_diagrams/index.html)
 
