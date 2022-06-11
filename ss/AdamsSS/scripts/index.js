@@ -37,12 +37,6 @@ var g_svg = document.getElementById("g_svg");
 var g_plot = document.getElementById("g_plot");
 var g_xaxis = document.getElementById("g_xaxis");
 var g_yaxis = document.getElementById("g_yaxis");
-svg_ss.setAttribute("width", window.innerWidth);
-svg_ss.setAttribute("height", window.innerHeight);
-g_svg.setAttribute(
-    "transform",
-    "translate(0," + window.innerHeight + ") scale(1,-1)"
-);
 function windowResize() {
     svg_ss.setAttribute("width", window.innerWidth);
     svg_ss.setAttribute("height", window.innerHeight);
@@ -198,60 +192,17 @@ function plotAxisLabels() {
 }
 
 /***************************************************
- * Handle events
- ***************************************************/
-function onMouseDown(event) {
-    if (config_dynamic.status === "start") {
-        config_dynamic.status = "on_svg";
-    }
-}
-
-function MouseMove(deltaSvg) {
-    camera.translate(deltaSvg);
-    g_plot.setAttribute("transform", camera.getTransform());
-    plotAxisLabels();
-}
-
-function onMouseMove(event) {
-    if (config_dynamic.status === "on_svg") {
-        let deltaSvg = new Vector(event.movementX, -event.movementY);
-        camera.translate(deltaSvg);
-        g_plot.setAttribute("transform", camera.getTransform());
-        plotAxisLabels();
-    }
-}
-
-function onMouseUp(event) {
-    if (config_dynamic.status === "on_svg") {
-        config_dynamic.status = "start";
-    }
-}
-
-function onMouseWheel(event) {
-    if (event.deltaY < 0) {
-        let pivotScreen = new Vector(event.offsetX, event.offsetY);
-        let pivotSvg = camera.flip(pivotScreen);
-        camera.zoom(pivotSvg, config.camera_zoom_rate);
-        g_plot.setAttribute("transform", camera.getTransform());
-    } else {
-        let pivotScreen = new Vector(event.offsetX, event.offsetY);
-        let pivotSvg = camera.flip(pivotScreen);
-        camera.zoom(pivotSvg, 1 / config.camera_zoom_rate);
-        g_plot.setAttribute("transform", camera.getTransform());
-    }
-    plotAxisLabels();
-}
-
-/***************************************************
  * init
  ***************************************************/
 function init() {
+    svg_ss.setAttribute("width", window.innerWidth);
+    svg_ss.setAttribute("height", window.innerHeight);
+    g_svg.setAttribute(
+        "transform",
+        "translate(0," + window.innerHeight + ") scale(1,-1)"
+    );
     g_plot.setAttribute("transform", camera.getTransform());
     plotGridLines();
     plotAxisLabels();
-    svg_ss.setAttribute('onmousedown', "onMouseDown(event);");
-    svg_ss.setAttribute('onmousemove', "onMouseMove(event);");
-    svg_ss.setAttribute('onmouseup', "onMouseUp(event);");
-    svg_ss.setAttribute('onwheel', "onMouseWheel(event);");
-    init1();
+    initHandlers();
 }
