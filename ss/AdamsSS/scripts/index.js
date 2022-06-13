@@ -1,6 +1,6 @@
 /* created by Weinan Lin */
 
-var config = {
+const config = {
     x_max: 256,
     y_max: 90,
     y_max_grid: 256,
@@ -23,7 +23,7 @@ var config = {
     rainbow_step: 5 / 23,
 };
 
-var config_dynamic = {
+const config_dynamic = {
     status: "start",
     camera_unit_screen_init: (window.innerWidth - config.margin) / (config.x_max_init + 1),
     camera_unit_screen_min:
@@ -32,11 +32,11 @@ var config_dynamic = {
 };
 
 /* The canvas is always as big as the window */
-var svg_ss = document.getElementById("svg_ss");
-var g_svg = document.getElementById("g_svg");
-var g_plot = document.getElementById("g_plot");
-var g_xaxis = document.getElementById("g_xaxis");
-var g_yaxis = document.getElementById("g_yaxis");
+const svg_ss = document.getElementById("svg_ss");
+const g_svg = document.getElementById("g_svg");
+const g_plot = document.getElementById("g_plot");
+const g_xaxis = document.getElementById("g_xaxis");
+const g_yaxis = document.getElementById("g_yaxis");
 function windowResize() {
     svg_ss.setAttribute("width", window.innerWidth);
     svg_ss.setAttribute("height", window.innerHeight);
@@ -89,7 +89,7 @@ function clip(x, min_, max_) {
 }
 
 // camera is responsible for converting the coordinates
-var camera = {
+const camera = {
     /* The svg length of the world unit */
     unit_svg: config_dynamic.camera_unit_screen_init,
     /* The svg position of the world origin */
@@ -116,6 +116,9 @@ var camera = {
             clip(origin_sp1.x, x_min, x_max),
             clip(origin_sp1.y, y_min, y_max)
         );
+
+		g_plot.setAttribute("transform", camera.getTransform());
+		plotAxisLabels();
     },
     translate: function (deltaSvg /* Vector */) {
         origin_sp1 = this.o_svg.add(deltaSvg);
@@ -128,6 +131,9 @@ var camera = {
             clip(origin_sp1.x, x_min, x_max),
             clip(origin_sp1.y, y_min, y_max)
         );
+
+        g_plot.setAttribute("transform", camera.getTransform());
+	    plotAxisLabels();
     },
     world2svg: function (ptWorld /* Vector */) {
         return this.o_svg.add(ptWorld.mul(this.unit_svg));

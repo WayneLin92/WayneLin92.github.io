@@ -1,122 +1,157 @@
-<DOCTYPE html>
-  <html lang="en">
-    <meta
-      name="viewport"
-      id="viewport"
-      content="width=device-width,minimum-scale=0.5,maximum-scale=0.5,initial-scale=0.5"
-    />
+<!DOCTYPE html>
+<!-- created by Weinan Lin -->
+<html lang="en">
+<meta name="viewport" id="viewport"
+  content="width=device-width,minimum-scale=0.5,maximum-scale=0.5,initial-scale=0.5" />
 
-    <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-136262938-1"
-      ></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function g_tag() {
-          dataLayer.push(arguments);
-        }
-        g_tag("js", new Date());
-        g_tag("config", "UA-136262938-1");
-      </script>
-      <meta charset="UTF-8" />
-      <title>title:13dd3d15</title>
-      <style>
-        body {
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          overflow: hidden;
-          touch-action: none;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136262938-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function g_tag() {
+      dataLayer.push(arguments);
+    }
+    g_tag("js", new Date());
+    g_tag("config", "UA-136262938-1");
+  </script>
+  <title>title:13dd3d15</title>
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      touch-action: none;
+    }
 
-        svg {
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      </style>
-      <!-- created by Weinan Lin -->
-    </head>
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-    <body id="body" onload="init()">
-      <svg id="svg_ss">
-        <g id="g_svg">
-          <g id="g_plot">
-            <g id="g_grid" stroke-width="0.009" stroke="grey"></g>
-            <g id="g_h0_lines" stroke="black">
-              h0_lines:839e707e
-            </g>
-            <g id="g_h1_lines" stroke="black">
-              h1_lines:2b707f82
-            </g>
-            <g id="g_h2_lines" stroke="black">
-              h2_lines:e766a4f6
-            </g>
-            <g id="g_bullets" fill="black">
-              bullets:b8999a4e
-            </g>
-          </g>
-          <rect x="0" y="0" width="30" height="100%" fill="white" />
-          <rect
-            id="bottomBlock"
-            x="0"
-            y="0"
-            width="100%"
-            height="30"
-            fill="white"
-          />
-          <line
-            x1="30"
-            y1="30"
-            x2="100%"
-            y2="30"
-            stroke-width="2"
-            stroke="black"
-          ></line>
-          <line
-            x1="30"
-            y1="30"
-            x2="30"
-            y2="100%"
-            stroke-width="2"
-            stroke="black"
-          ></line>
-          <g
-            id="g_xaxis"
-            text-anchor="middle"
-            style="
-              -moz-user-select: none;
-              -webkit-user-select: none;
-              -ms-user-select: none;
-              user-select: none;
-              -o-user-select: none;
-            "
-            unselectable="on"
-            onselectstart="return false;"
-            onmousedown="return false;"
-            transform="scale(1,-1)"
-          ></g>
-          <g
-            id="g_yaxis"
-            text-anchor="end"
-            dominant-baseline="middle"
-            style="
-              -moz-user-select: none;
-              -webkit-user-select: none;
-              -ms-user-select: none;
-              user-select: none;
-              -o-user-select: none;
-            "
-            unselectable="on"
-            onselectstart="return false;"
-            onmousedown="return false;"
-            transform="scale(1,-1)"
-          ></g>
+    #div_menu {
+      visibility: hidden;
+      opacity: 0;
+      position: fixed;
+      background: #fff;
+      color: #555;
+      font-family: sans-serif;
+      font-size: 11px;
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      -ms-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
+      -webkit-box-shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+      -moz-box-shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+      box-shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+      padding: 0px;
+      border: 1px solid #c6c6c6;
+    }
+
+    #div_menu a {
+      display: block;
+      color: #555;
+      text-decoration: none;
+      padding: 6px 8px 6px 30px;
+      width: 250px;
+      position: relative;
+    }
+
+    #div_menu a img {
+      height: 20px;
+      font-size: 17px;
+      width: 20px;
+      position: absolute;
+      left: 5px;
+      top: 2px;
+    }
+
+    #div_menu a span {
+      color: #bcb1b3;
+      float: right;
+    }
+
+    #div_menu a:hover {
+      color: #fff;
+      background: #3879d9;
+    }
+
+    #div_menu hr {
+      border: 1px solid #ebebeb;
+      border-bottom: 0;
+    }
+  </style>
+</head>
+
+<body onload="init()">
+  <svg id="svg_ss">
+    <g id="g_svg">
+      <g id="g_plot">
+        <rect id="rect_fixed_factor" x="-1000" y="-1000" width="1" height="1" fill="orange" opacity="0.2" />
+        <rect id="rect_selected" x="-1000" y="-1000" width="1" height="1" fill="red" opacity="0.2" />
+        <g id="g_grid" stroke-width="0.009" stroke="grey"></g>
+        <g id="g_h0_lines" stroke="black">
+          h0_lines:839e707e
         </g>
-      </svg>
-      <script src="scripts/index.js"></script>
-      <script src="scripts/events.js"></script>
-    </body></html
-></DOCTYPE>
+        <g id="g_h1_lines" stroke="black">
+          h1_lines:2b707f82
+        </g>
+        <g id="g_h2_lines" stroke="black">
+          h2_lines:e766a4f6
+        </g>
+        <g id="g_bullets" fill="black">
+          <circle id="circle_fixed_factor" data-id="" cx="-1000" cy="-1000" r="0" fill="orange"></circle>
+          <circle id="circle_mouseon" data-id="" cx="-1000" cy="-1000" r="0" fill="grey"></circle>
+          bullets:b8999a4e
+          <circle id="circle_selected" data-id="" cx="-1000" cy="-1000" r="0" fill="red" opacity="0.7"></circle>
+        </g>
+      </g>
+      <rect x="0" y="0" width="30" height="100%" fill="white" />
+      <rect id="bottomBlock" x="0" y="0" width="100%" height="30" fill="white" />
+      <line x1="30" y1="30" x2="100%" y2="30" stroke-width="2" stroke="black"></line>
+      <line x1="30" y1="30" x2="30" y2="100%" stroke-width="2" stroke="black"></line>
+      <g id="g_xaxis" text-anchor="middle" style="
+              -moz-user-select: none;
+              -webkit-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              -o-user-select: none;
+            " unselectable="on" onselectstart="return false;" onmousedown="return false;" transform="scale(1,-1)"></g>
+      <g id="g_yaxis" text-anchor="end" dominant-baseline="middle" style="
+              -moz-user-select: none;
+              -webkit-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              -o-user-select: none;
+            " unselectable="on" onselectstart="return false;" onmousedown="return false;" transform="scale(1,-1)"></g>
+    </g>
+  </svg>
+  <div id="div_menu">
+    <a id="a_menu_bullet" href="#" onclick="on_click_fixed_factor()" style="display:none">
+      Set as the fixed factor
+      <span></span>
+    </a>
+    <a href="#">
+      Save as an SVG image
+      <span></span>
+    </a>
+    <hr>
+    <a href="#">
+      Instructions...
+      <span></span>
+    </a>
+    <a href="#">
+      About...
+      <span></span>
+    </a>
+  </div>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/events.js"></script>
+</body>
+
+</html>
+</DOCTYPE>
