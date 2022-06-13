@@ -80,6 +80,7 @@ function on_pointerup(event) {
 }
 
 function on_wheel(event) {
+	// TODO: make the zoom rate smaller for the Macbook trackpad
 	if (event.deltaY < 0) {
 		let pivotScreen = new Vector(event.offsetX, event.offsetY);
 		let pivotSvg = camera.flip(pivotScreen);
@@ -94,6 +95,22 @@ function on_wheel(event) {
 	plotAxisLabels();
 }
 
+function on_click(event) {
+	hideMenu();
+
+	let tgt = event.target;
+	if (tgt.getAttribute("class") === "b") {
+		circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
+		circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
+		circle_selected.setAttribute("r", tgt.getAttribute("r"));
+		circle_selected.innerHTML = tgt.innerHTML;
+		circle_selected.dataset.id = tgt.id;
+
+		rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
+		rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
+	}
+}
+
 const circle_mouseon = document.getElementById("circle_mouseon");
 const circle_selected = document.getElementById("circle_selected");
 const circle_fixed_factor = document.getElementById("circle_fixed_factor");
@@ -104,7 +121,6 @@ function on_pointerenter_bullet(event) {
 	circle_mouseon.setAttribute("cx", tgt.getAttribute("cx"));
 	circle_mouseon.setAttribute("cy", tgt.getAttribute("cy"));
 	circle_mouseon.setAttribute("r", Number(tgt.getAttribute("r")) * 1.3);
-	circle_mouseon.dataset.id = tgt.id;
 }
 function on_pointerleave_bullet(event) {
 	let tgt = event.target;
@@ -128,10 +144,16 @@ function on_click_bullet(event) {
  ************************************/
 const div_menu_style = document.getElementById("div_menu").style;
 const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
+var id_right_click = null;
 
-function showMenu(event) {
-	if (event.target.getAttribute("class") == "b") {
+function on_contextmenu(event) {
+	if (event.target.getAttribute("class") === "b") {
 		a_menu_bullet_style.display = "block";
+		id_right_click = event.target.id;
+	}
+	else if (event.target.getAttribute("id") === "circle_selected") {
+		a_menu_bullet_style.display = "block";
+		id_right_click = event.target.dataset.id;
 	}
 	else {
 		a_menu_bullet_style.display = "none"
@@ -148,35 +170,36 @@ function showMenu(event) {
 	event.preventDefault();
 }
 
-function hideMenu(event) {
+function hideMenu() {
 	div_menu_style.visibility = "hidden";
 	div_menu_style.opacity = "0";
 }
 
 function on_click_fixed_factor() {
-	let tgt = document.getElementById(circle_mouseon.dataset.id);
-	console.log("tgt =", tgt);
+	let tgt = document.getElementById(id_right_click);
 	circle_fixed_factor.setAttribute("cx", tgt.getAttribute("cx"));
 	circle_fixed_factor.setAttribute("cy", tgt.getAttribute("cy"));
 	circle_fixed_factor.setAttribute("r", Number(tgt.getAttribute("r")) * 1.5);
-	
+
 	rect_fixed_factor.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
 	rect_fixed_factor.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
 }
 
 function initHandlers() {
-	svg_ss.onwheel = on_wheel;
-	svg_ss.onpointerdown = on_pointerdown;
-	svg_ss.onpointermove = on_pointermove;
-	svg_ss.onpointerup = on_pointerup;
-	svg_ss.onpointerleave = on_pointerup;
+	document.addEventListener("wheel", on_wheel);
+	document.addEventListener("pointerdown", on_pointerdown);
+	document.addEventListener("pointermove", on_pointermove);
+	document.addEventListener("pointerup", on_pointerup);
+	svg_ss.addEventListener("pointerleave", on_pointerup);
 
-	document.addEventListener("contextmenu", showMenu);
-	document.addEventListener("click", hideMenu);
+	document.addEventListener("contextmenu", on_contextmenu);
+	document.addEventListener("click", on_click);
 	let bullets = document.getElementsByClassName("b");
 	for (const b of bullets) {
 		b.onpointerenter = on_pointerenter_bullet;
 		b.onpointerleave = on_pointerleave_bullet;
-		b.onclick = on_click_bullet;
+		//b.onclick = on_click_bullet;
 	}
+	circle_selected.onpointerenter = on_pointerenter_bullet;
+	circle_selected.onpointerleave = on_pointerleave_bullet;
 }
