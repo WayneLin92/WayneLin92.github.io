@@ -196,7 +196,7 @@ function on_click_fixed_factor() {
 }
 
 function on_click_about() {
-	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}`);
+	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
 }
 
 function initHandlers() {
