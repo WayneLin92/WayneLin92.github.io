@@ -19,6 +19,9 @@ function on_pointerdown(event) {
 	else if (pointerCache.length == 2) {
 		prevPtsDist = getDistPts();
 	}
+	else if (pointerCache.length >= 5) {
+		pointerCache.length = 0;
+	}
 }
 
 // This function implements a 2-pointer horizontal pinch/zoom gesture.
@@ -65,7 +68,7 @@ function removeEvent(event) {
 }
 
 function on_pointerup(event) {
-	// Remove this pointer from the cache
+	/* Remove this pointer from the cache */
 	if (removeEvent(event)) {
 		if (pointerCache.length == 0) {
 			prevPt = null;
@@ -93,16 +96,6 @@ function on_wheel(event) {
 		g_plot.setAttribute("transform", camera.getTransform());
 	}
 	plotAxisLabels();
-}
-
-var pressTimer;
-function on_touchstart(event) {
-	pressTimer = window.setTimeout(function () { on_contextmenu(event); }, 1000);
-	event.preventDefault();
-}
-
-function on_touchend(event) {
-	clearTimeout(pressTimer);
 }
 
 function on_click(event) {
@@ -208,11 +201,7 @@ function initHandlers() {
 
 	document.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("click", on_click);
-
-	if ('ontouchstart' in document) {
-		document.addEventListener("ontouchstart", on_touchstart);
-		document.addEventListener("ontouchend", on_touchend);
-	}
+	document.addEventListener("dblclick", on_contextmenu);
 
 	// let bullets = document.getElementsByClassName("b");
 	// for (const b of bullets) {
