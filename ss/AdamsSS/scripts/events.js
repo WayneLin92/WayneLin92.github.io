@@ -185,6 +185,10 @@ function on_click_fixed_factor() {
 	rect_fixed_factor.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
 }
 
+function on_click_about() {
+	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}`);
+}
+
 function initHandlers() {
 	document.addEventListener("wheel", on_wheel);
 	document.addEventListener("pointerdown", on_pointerdown);
@@ -194,12 +198,12 @@ function initHandlers() {
 
 	document.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("click", on_click);
-	let bullets = document.getElementsByClassName("b");
-	for (const b of bullets) {
-		b.onpointerenter = on_pointerenter_bullet;
-		b.onpointerleave = on_pointerleave_bullet;
-		//b.onclick = on_click_bullet;
-	}
-	circle_selected.onpointerenter = on_pointerenter_bullet;
-	circle_selected.onpointerleave = on_pointerleave_bullet;
+
+	// let bullets = document.getElementsByClassName("b");
+	// for (const b of bullets) {
+	// 	b.onpointerenter = on_pointerenter_bullet;
+	// 	b.onpointerleave = on_pointerleave_bullet;
+	// }
+	// circle_selected.onpointerenter = on_pointerenter_bullet;
+	// circle_selected.onpointerleave = on_pointerleave_bullet;
 }
