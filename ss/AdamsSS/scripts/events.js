@@ -95,6 +95,16 @@ function on_wheel(event) {
 	plotAxisLabels();
 }
 
+var pressTimer;
+function on_touchstart(event) {
+	pressTimer = window.setTimeout(function () { on_contextmenu(event); }, 1000);
+	event.preventDefault();
+}
+
+function on_touchend(event) {
+	clearTimeout(pressTimer);
+}
+
 function on_click(event) {
 	hideMenu();
 
@@ -198,6 +208,11 @@ function initHandlers() {
 
 	document.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("click", on_click);
+
+	if ('ontouchstart' in document) {
+		document.addEventListener("ontouchstart", on_touchstart);
+		document.addEventListener("ontouchend", on_touchend);
+	}
 
 	// let bullets = document.getElementsByClassName("b");
 	// for (const b of bullets) {
