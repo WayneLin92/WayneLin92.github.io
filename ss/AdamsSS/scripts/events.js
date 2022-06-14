@@ -17,6 +17,8 @@ function restartTimer() {
 }
 
 function on_pointerdown(event) {
+	div_menu_style.visibility = "hidden";
+	div_binfo_style.visibility = "hidden";
 	// This event is cached to support 2-finger gestures
 	pointerCache.push(event);
 
@@ -104,9 +106,8 @@ function on_wheel(event) {
 	plotAxisLabels();
 }
 
+const div_binfo_style = document.getElementById("div_binfo").style;
 function on_click(event) {
-	hideMenu();
-
 	let tgt = event.target;
 	if (tgt.getAttribute("class") === "b") {
 		circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
@@ -117,6 +118,23 @@ function on_click(event) {
 
 		rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
 		rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
+
+		/* info pane */
+		const posX = window.innerWidth - event.clientX;
+		const posY = window.innerHeight - event.clientY;
+
+		div_binfo_style.right = posX + "px";
+		div_binfo_style.bottom = posY + "px";
+		div_binfo_style.visibility = "visible";
+	}
+	else if (tgt.getAttribute("id") === "circle_selected") {
+		/* info pane */
+		const posX = window.innerWidth - event.clientX;
+		const posY = window.innerHeight - event.clientY;
+
+		div_binfo_style.right = posX + "px";
+		div_binfo_style.bottom = posY + "px";
+		div_binfo_style.visibility = "visible";
 	}
 }
 
@@ -134,18 +152,6 @@ function on_pointerenter_bullet(event) {
 function on_pointerleave_bullet(event) {
 	let tgt = event.target;
 	circle_mouseon.setAttribute("cx", "-1000");
-}
-
-function on_click_bullet(event) {
-	let tgt = event.target;
-	circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
-	circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
-	circle_selected.setAttribute("r", tgt.getAttribute("r"));
-	circle_selected.innerHTML = tgt.innerHTML;
-	circle_selected.dataset.id = tgt.id;
-
-	rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
-	rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
 }
 
 /************************************
@@ -174,14 +180,8 @@ function on_contextmenu(event) {
 	div_menu_style.left = posX + "px";
 	div_menu_style.top = posY + "px";
 	div_menu_style.visibility = "visible";
-	div_menu_style.opacity = "1";
 
 	event.preventDefault();
-}
-
-function hideMenu() {
-	div_menu_style.visibility = "hidden";
-	div_menu_style.opacity = "0";
 }
 
 function on_click_fixed_factor() {
@@ -198,15 +198,19 @@ function on_click_about() {
 	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
 }
 
+
+/***********************************
+ * Initialization of event handlers
+ ***********************************/
 function initHandlers() {
-	document.addEventListener("wheel", on_wheel);
-	document.addEventListener("pointerdown", on_pointerdown);
-	document.addEventListener("pointermove", on_pointermove);
-	document.addEventListener("pointerup", on_pointerup);
+	svg_ss.addEventListener("wheel", on_wheel);
+	svg_ss.addEventListener("pointerdown", on_pointerdown);
+	svg_ss.addEventListener("pointermove", on_pointermove);
+	svg_ss.addEventListener("pointerup", on_pointerup);
 	svg_ss.addEventListener("pointerleave", on_pointerup);
 
-	document.addEventListener("contextmenu", on_contextmenu);
-	document.addEventListener("click", on_click);
+	svg_ss.addEventListener("contextmenu", on_contextmenu);
+	svg_ss.addEventListener("click", on_click);
 
 	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
 		let bullets = document.getElementsByClassName("b");
@@ -218,7 +222,7 @@ function initHandlers() {
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
 
-	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:3cc55d9</text>`;
+	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:41bb25ec</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
 	const text_date = document.getElementById('text8733d2c');
 	window.setTimeout(function () { text_date.remove(); }, 5000);
