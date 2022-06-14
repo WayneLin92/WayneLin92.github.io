@@ -13,7 +13,7 @@ function getDistPts() {
 var timerClearCache = null;
 function restartTimer() {
 	clearTimeout(timerClearCache);
-	timerClearCache = window.setTimeout(function() { pointerCache.length = 0; }, 3000);
+	timerClearCache = window.setTimeout(function () { pointerCache.length = 0; }, 3000);
 }
 
 function on_pointerdown(event) {
@@ -208,7 +208,7 @@ function initHandlers() {
 	document.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("click", on_click);
 
-	if(navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")){
+	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
 		let bullets = document.getElementsByClassName("b");
 		for (const b of bullets) {
 			b.onpointerenter = on_pointerenter_bullet;
@@ -217,4 +217,7 @@ function initHandlers() {
 		circle_selected.onpointerenter = on_pointerenter_bullet;
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
+
+	let ele_date = `<text x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js: 2022-06-14 09:37:55</text>`;
+	g_yaxis.insertAdjacentHTML("afterend", ele_date);
 }
