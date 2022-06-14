@@ -9,6 +9,13 @@ function getDistPts() {
 	return p1Screen.dist(p2Screen);
 }
 
+
+var timerClearCache = null;
+function restartTimer() {
+	clearTimeout(timerClearCache);
+	timerClearCache = window.setTimeout(function() { pointerCache.length = 0; }, 3000);
+}
+
 function on_pointerdown(event) {
 	// This event is cached to support 2-finger gestures
 	pointerCache.push(event);
@@ -19,9 +26,7 @@ function on_pointerdown(event) {
 	else if (pointerCache.length == 2) {
 		prevPtsDist = getDistPts();
 	}
-	else if (pointerCache.length >= 5) {
-		pointerCache.length = 0;
-	}
+	restartTimer();
 }
 
 // This function implements a 2-pointer horizontal pinch/zoom gesture.
@@ -56,10 +61,10 @@ function on_pointermove(event) {
 /**
  * Return if at least one event is removed
  */
-function removeEvent(event) {
+function removeEvent(event_id) {
 	// Remove this event from the target's cache
 	for (let i = 0; i < pointerCache.length; i++) {
-		if (pointerCache[i].pointerId == event.pointerId) {
+		if (pointerCache[i].pointerId == event_id) {
 			pointerCache.splice(i, 1);
 			return true;
 		}
@@ -69,7 +74,7 @@ function removeEvent(event) {
 
 function on_pointerup(event) {
 	/* Remove this pointer from the cache */
-	if (removeEvent(event)) {
+	if (removeEvent(event.pointerId)) {
 		if (pointerCache.length == 0) {
 			prevPt = null;
 		}
@@ -80,6 +85,7 @@ function on_pointerup(event) {
 			prevPtsDist = getDistPts();
 		}
 	}
+	restartTimer();
 }
 
 function on_wheel(event) {
@@ -201,13 +207,14 @@ function initHandlers() {
 
 	document.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("click", on_click);
-	document.addEventListener("dblclick", on_contextmenu);
 
-	// let bullets = document.getElementsByClassName("b");
-	// for (const b of bullets) {
-	// 	b.onpointerenter = on_pointerenter_bullet;
-	// 	b.onpointerleave = on_pointerleave_bullet;
-	// }
-	// circle_selected.onpointerenter = on_pointerenter_bullet;
-	// circle_selected.onpointerleave = on_pointerleave_bullet;
+	if(navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")){
+		let bullets = document.getElementsByClassName("b");
+		for (const b of bullets) {
+			b.onpointerenter = on_pointerenter_bullet;
+			b.onpointerleave = on_pointerleave_bullet;
+		}
+		circle_selected.onpointerenter = on_pointerenter_bullet;
+		circle_selected.onpointerleave = on_pointerleave_bullet;
+	}
 }
