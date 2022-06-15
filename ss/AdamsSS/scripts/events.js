@@ -214,7 +214,7 @@ function initHandlers() {
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
 
-	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:41bb25ec</text>`;
+	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:56a917d5</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
 	const text_date = document.getElementById('text8733d2c');
 	window.setTimeout(function () { text_date.remove(); }, 5000);
