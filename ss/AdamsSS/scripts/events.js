@@ -118,14 +118,6 @@ function on_click(event) {
 
 		rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
 		rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
-
-		/* info pane */
-		const posX = window.innerWidth - event.clientX;
-		const posY = window.innerHeight - event.clientY;
-
-		div_binfo_style.right = posX + "px";
-		div_binfo_style.bottom = posY + "px";
-		div_binfo_style.visibility = "visible";
 	}
 	else if (tgt.getAttribute("id") === "circle_selected") {
 		/* info pane */
