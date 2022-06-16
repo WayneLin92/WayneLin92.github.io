@@ -266,6 +266,23 @@ function on_click_fixed_factor_lc() {
 	fixed_factor(circle_selected.dataset.id);
 }
 
+function on_rename() {
+	let mon = basis[parseInt(circle_selected.dataset.id.slice(1))];
+	let gen_id = mon[0];
+	let name = prompt("New name for the generator", "name");
+	gen_names_alias.set(gen_id.toString(), name);
+	let str_mon = strMon(mon);
+	p_name.innerHTML = `Name: ${str_mon}`;
+	var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
+	p_latex.innerHTML = `LaTeX: ${tex_mon}`;
+}
+
+function on_copy_aliases() {
+	let text = gen_names_alias.toString();
+	navigator.clipboard.writeText(text);
+	alert("Copied!");
+}
+
 function on_click_about() {
 	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
 }
