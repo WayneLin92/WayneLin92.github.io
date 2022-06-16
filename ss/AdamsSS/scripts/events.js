@@ -278,9 +278,10 @@ function on_rename() {
 }
 
 function on_copy_aliases() {
-	let text = gen_names_alias.toString();
+	let text = "";
+	gen_names_alias.forEach((k, v) => {text += `${k}: ${v}\n`});
 	navigator.clipboard.writeText(text);
-	alert("Copied!");
+	alert("Copied and you can send it to me");
 }
 
 function on_click_about() {
