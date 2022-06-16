@@ -10,10 +10,12 @@ const circle_selected = document.getElementById("circle_selected");
 const circle_fixed_factor = document.getElementById("circle_fixed_factor");
 const rect_selected = document.getElementById("rect_selected");
 const rect_fixed_factor = document.getElementById("rect_fixed_factor");
+const rect_prod = document.getElementById("rect_prod");
 const div_menu_style = document.getElementById("div_menu").style;
 const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
 const p_name = document.getElementById("p_name");
 const p_latex = document.getElementById("p_latex");
+const g_prod = document.getElementById("g_prod");
 
 /* other globals */
 var id_right_click = null;
@@ -131,6 +133,25 @@ function on_click(event) {
 
 		rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
 		rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
+		if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
+			/* Highlight the product */
+
+			rect_prod.setAttribute("x", Math.round(tgt.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
+			rect_prod.setAttribute("y", Math.round(tgt.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
+
+			let id1 = circle_selected.dataset.id.slice(1);
+			let id2 = circle_fixed_factor.dataset.id.slice(1);
+			if (Number(id1) > Number(id2)) {
+				[id1, id2] = [id2, id1];
+			}
+			g_prod.innerHTML = "";
+			for (const index of basis_prod[id1 + "," + id2]) {
+				const id = "b" + index;
+				const bullet = document.getElementById(id);
+				circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
+				g_prod.insertAdjacentHTML("beforeend", circle_prod);
+			}
+		}
 	}
 	else if (tgt.getAttribute("id") === "circle_selected") {
 		/* info pane */
@@ -145,6 +166,11 @@ function on_click(event) {
 		var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
 		p_latex.innerHTML = `LaTeX: ${tex_mon}`;
 	}
+}
+
+
+function on_click_document(event) {
+	div_menu_style.visibility = "hidden";
 }
 
 function on_pointerenter_bullet(event) {
@@ -190,6 +216,7 @@ function fixed_factor(id) {
 	circle_fixed_factor.setAttribute("cx", tgt.getAttribute("cx"));
 	circle_fixed_factor.setAttribute("cy", tgt.getAttribute("cy"));
 	circle_fixed_factor.setAttribute("r", Number(tgt.getAttribute("r")) * 1.5);
+	circle_fixed_factor.dataset.id = id;
 
 	rect_fixed_factor.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
 	rect_fixed_factor.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
@@ -220,6 +247,7 @@ function initHandlers() {
 
 	svg_ss.addEventListener("contextmenu", on_contextmenu);
 	svg_ss.addEventListener("click", on_click);
+	document.addEventListener("click", on_click_document);
 
 	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
 		let bullets = document.getElementsByClassName("b");
@@ -231,7 +259,7 @@ function initHandlers() {
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
 
-	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:8d5cf606</text>`;
+	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:fed1fe4e</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
 	const text_date = document.getElementById('text8733d2c');
 	window.setTimeout(function () { text_date.remove(); }, 5000);
