@@ -168,9 +168,84 @@ function on_click(event) {
 	}
 }
 
-
 function on_click_document(event) {
 	div_menu_style.visibility = "hidden";
+}
+
+function on_key_down(event) {
+	if (event.which === 39) {
+		if (Number(rect_selected.getAttribute("x")) > -1) {
+			const next_id = Number(circle_selected.dataset.id.slice(1)) + 1;
+			let tgt = document.getElementById("b" + next_id);
+			if (tgt) {
+				circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
+				circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
+				circle_selected.setAttribute("r", tgt.getAttribute("r"));
+				circle_selected.innerHTML = tgt.innerHTML;
+				circle_selected.dataset.id = tgt.id;
+	
+				rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
+				rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
+				if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
+					/* Highlight the product */
+		
+					rect_prod.setAttribute("x", Math.round(tgt.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
+					rect_prod.setAttribute("y", Math.round(tgt.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
+		
+					let id1 = circle_selected.dataset.id.slice(1);
+					let id2 = circle_fixed_factor.dataset.id.slice(1);
+					if (Number(id1) > Number(id2)) {
+						[id1, id2] = [id2, id1];
+					}
+					if (basis_prod[id1 + "," + id2]) {
+						g_prod.innerHTML = "";
+						for (const index of basis_prod[id1 + "," + id2]) {
+							const id = "b" + index;
+							const bullet = document.getElementById(id);
+							circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
+							g_prod.insertAdjacentHTML("beforeend", circle_prod);
+						}
+					}
+				}
+			}
+		}
+	}
+	else if (event.which === 37) {
+		if (Number(rect_selected.getAttribute("x")) > -1) {
+			const prev_id = Number(circle_selected.dataset.id.slice(1)) - 1;
+			if (prev_id < 0) {
+				prev_id = 0;
+			}
+			let tgt = document.getElementById("b" + prev_id);
+			circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
+			circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
+			circle_selected.setAttribute("r", tgt.getAttribute("r"));
+			circle_selected.innerHTML = tgt.innerHTML;
+			circle_selected.dataset.id = tgt.id;
+
+			rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
+			rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
+			if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
+				/* Highlight the product */
+	
+				rect_prod.setAttribute("x", Math.round(tgt.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
+				rect_prod.setAttribute("y", Math.round(tgt.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
+	
+				let id1 = circle_selected.dataset.id.slice(1);
+				let id2 = circle_fixed_factor.dataset.id.slice(1);
+				if (Number(id1) > Number(id2)) {
+					[id1, id2] = [id2, id1];
+				}
+				g_prod.innerHTML = "";
+				for (const index of basis_prod[id1 + "," + id2]) {
+					const id = "b" + index;
+					const bullet = document.getElementById(id);
+					circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
+					g_prod.insertAdjacentHTML("beforeend", circle_prod);
+				}
+			}
+		}
+	}
 }
 
 function on_pointerenter_bullet(event) {
@@ -248,6 +323,7 @@ function initHandlers() {
 	svg_ss.addEventListener("contextmenu", on_contextmenu);
 	svg_ss.addEventListener("click", on_click);
 	document.addEventListener("click", on_click_document);
+	document.addEventListener("keydown", on_key_down);
 
 	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
 		let bullets = document.getElementsByClassName("b");
