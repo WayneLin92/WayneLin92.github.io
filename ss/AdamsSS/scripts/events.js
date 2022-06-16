@@ -155,10 +155,10 @@ function on_click(event) {
 	}
 	else if (tgt.getAttribute("id") === "circle_selected") {
 		/* info pane */
-		const posX = window.innerWidth - event.clientX;
+		const posX = event.clientX;
 		const posY = window.innerHeight - event.clientY;
 
-		div_binfo_style.right = posX + "px";
+		div_binfo_style.left = posX + "px";
 		div_binfo_style.bottom = posY + "px";
 		div_binfo_style.visibility = "visible";
 		let str_mon = strMon(basis[parseInt(tgt.dataset.id.slice(1))]);
@@ -335,7 +335,7 @@ function initHandlers() {
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
 
-	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:fed1fe4e</text>`;
+	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:63cce9c9</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
 	const text_date = document.getElementById('text8733d2c');
 	window.setTimeout(function () { text_date.remove(); }, 5000);
