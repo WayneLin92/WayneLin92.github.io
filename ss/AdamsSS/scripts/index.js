@@ -117,8 +117,8 @@ const camera = {
             clip(origin_sp1.y, y_min, y_max)
         );
 
-		g_plot.setAttribute("transform", camera.getTransform());
-		plotAxisLabels();
+        g_plot.setAttribute("transform", camera.getTransform());
+        plotAxisLabels();
     },
     translate: function (deltaSvg /* Vector */) {
         origin_sp1 = this.o_svg.add(deltaSvg);
@@ -133,7 +133,7 @@ const camera = {
         );
 
         g_plot.setAttribute("transform", camera.getTransform());
-	    plotAxisLabels();
+        plotAxisLabels();
     },
     world2svg: function (ptWorld /* Vector */) {
         return this.o_svg.add(ptWorld.mul(this.unit_svg));
@@ -194,6 +194,27 @@ function plotAxisLabels() {
         let yText = camera.world2svg(new Vector(0, i)).y;
         let label = `<text x="26" y="${-yText}">${i}</text>\n`;
         g_yaxis.insertAdjacentHTML("beforeend", label);
+    }
+}
+
+function strMon(m) {
+    if (m.length === 0) {
+        return "1";
+    }
+    else {
+        result = "";
+        for (let i = 0; i < m.length; i += 2) {
+            if (m[i + 1] == 1) {
+                result += `${gen_names[m[i]]}`;
+            }
+            else if (m[i + 1] < 10) {
+                result += `${gen_names[m[i]]}^${m[i + 1]}`;
+            }
+            else {
+                result += `${gen_names[m[i]]}^{${m[i + 1]}}`;
+            }
+        }
+        return result;
     }
 }
 

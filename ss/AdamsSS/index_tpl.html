@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- created by Weinan Lin -->
 <html lang="en">
-<meta name="viewport" user-scalable="no" content="width=device-width,minimum-scale=0.7,maximum-scale=0.7,initial-scale=0.7" />
+<meta name="viewport" user-scalable="no" content="width=device-width,minimum-scale=0.75,maximum-scale=0.75,initial-scale=0.75" />
 
 <head>
   <meta charset="UTF-8" />
@@ -15,6 +15,9 @@
     g_tag("js", new Date());
     g_tag("config", "UA-136262938-1");
   </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+  <!-- The loading of KaTeX is deferred to speed up page rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
   <title>title:13dd3d15</title>
   <link rel="stylesheet" href="./styles/index.css">
   <style>
@@ -85,9 +88,10 @@
     </a>
   </div>
   <div id="div_binfo">
-    <p>name: x_1</p>
-    <p>latex:</p>
-    <p><button>Rename</button></p>
+    <p id="p_name">Name: x_1</p>
+    <p id="p_latex">LaTeX:</p>
+    <p id="p_button_rename"><button>Rename</button></p>
+    <p><button onclick="on_click_fixed_factor_lc()">Set as the fixed factor</button></p>
   </div>
   <script src="scripts/data.js"></script>
   <script src="scripts/index.js"></script>

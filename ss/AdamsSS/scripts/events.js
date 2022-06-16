@@ -1,7 +1,23 @@
-// Global vars to cache event state
+/* pointers */
 const pointerCache = new Array();
 var prevPtsDist = null;
 var prevPt = null;
+
+/* elements */
+const div_binfo_style = document.getElementById("div_binfo").style;
+const circle_mouseon = document.getElementById("circle_mouseon");
+const circle_selected = document.getElementById("circle_selected");
+const circle_fixed_factor = document.getElementById("circle_fixed_factor");
+const rect_selected = document.getElementById("rect_selected");
+const rect_fixed_factor = document.getElementById("rect_fixed_factor");
+const div_menu_style = document.getElementById("div_menu").style;
+const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
+const p_name = document.getElementById("p_name");
+const p_latex = document.getElementById("p_latex");
+
+/* other globals */
+var id_right_click = null;
+var timerClearCache = null;
 
 function getDistPts() {
 	let p1Screen = new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY);
@@ -9,8 +25,6 @@ function getDistPts() {
 	return p1Screen.dist(p2Screen);
 }
 
-
-var timerClearCache = null;
 function restartTimer() {
 	clearTimeout(timerClearCache);
 	timerClearCache = window.setTimeout(function () { pointerCache.length = 0; }, 3000);
@@ -106,7 +120,6 @@ function on_wheel(event) {
 	plotAxisLabels();
 }
 
-const div_binfo_style = document.getElementById("div_binfo").style;
 function on_click(event) {
 	let tgt = event.target;
 	if (tgt.getAttribute("class") === "b") {
@@ -127,14 +140,13 @@ function on_click(event) {
 		div_binfo_style.right = posX + "px";
 		div_binfo_style.bottom = posY + "px";
 		div_binfo_style.visibility = "visible";
+		let str_mon = strMon(basis[parseInt(tgt.dataset.id.slice(1))]);
+		p_name.innerHTML = `Name: ${str_mon}`;
+		var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
+		p_latex.innerHTML = `LaTeX: ${tex_mon}`;
 	}
 }
 
-const circle_mouseon = document.getElementById("circle_mouseon");
-const circle_selected = document.getElementById("circle_selected");
-const circle_fixed_factor = document.getElementById("circle_fixed_factor");
-const rect_selected = document.getElementById("rect_selected");
-const rect_fixed_factor = document.getElementById("rect_fixed_factor");
 function on_pointerenter_bullet(event) {
 	let tgt = event.target;
 	circle_mouseon.setAttribute("cx", tgt.getAttribute("cx"));
@@ -149,9 +161,6 @@ function on_pointerleave_bullet(event) {
 /************************************
  * Context menu events handlers 
  ************************************/
-const div_menu_style = document.getElementById("div_menu").style;
-const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
-var id_right_click = null;
 
 function on_contextmenu(event) {
 	if (event.target.getAttribute("class") === "b") {
@@ -176,14 +185,22 @@ function on_contextmenu(event) {
 	event.preventDefault();
 }
 
-function on_click_fixed_factor() {
-	let tgt = document.getElementById(id_right_click);
+function fixed_factor(id) {
+	let tgt = document.getElementById(id);
 	circle_fixed_factor.setAttribute("cx", tgt.getAttribute("cx"));
 	circle_fixed_factor.setAttribute("cy", tgt.getAttribute("cy"));
 	circle_fixed_factor.setAttribute("r", Number(tgt.getAttribute("r")) * 1.5);
 
 	rect_fixed_factor.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
 	rect_fixed_factor.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
+}
+
+function on_click_fixed_factor() {
+	fixed_factor(id_right_click);
+}
+
+function on_click_fixed_factor_lc() {
+	fixed_factor(circle_selected.dataset.id);
 }
 
 function on_click_about() {
