@@ -11,11 +11,12 @@ const circle_fixed_factor = document.getElementById("circle_fixed_factor");
 const rect_selected = document.getElementById("rect_selected");
 const rect_fixed_factor = document.getElementById("rect_fixed_factor");
 const rect_prod = document.getElementById("rect_prod");
-const div_menu_style = document.getElementById("div_menu").style;
-const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
 const p_name = document.getElementById("p_name");
 const p_latex = document.getElementById("p_latex");
 const g_prod = document.getElementById("g_prod");
+const div_menu_style = document.getElementById("div_menu").style;
+const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
+const p_button_rename_style = document.getElementById("p_button_rename").style;
 
 /* other globals */
 var id_right_click = null;
@@ -167,10 +168,18 @@ function on_click(event) {
 		div_binfo_style.left = posX + "px";
 		div_binfo_style.bottom = posY + "px";
 		div_binfo_style.visibility = "visible";
-		let str_mon = strMon(basis[parseInt(tgt.dataset.id.slice(1))]);
+		let mon = basis[parseInt(tgt.dataset.id.slice(1))];
+		let str_mon = strMon(mon);
 		p_name.innerHTML = `Name: ${str_mon}`;
 		var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
 		p_latex.innerHTML = `LaTeX: ${tex_mon}`;
+
+		if (mon.length === 2 && mon[1] === 1) {
+			p_button_rename_style.display = "block";
+		}
+		else {
+			p_button_rename_style.display = "none";
+		}
 	}
 }
 

@@ -209,21 +209,21 @@ function getGenNames(i) {
     }
 }
 
-function strMon(m) {
-    if (m.length === 0) {
+function strMon(mon) {
+    if (mon.length === 0) {
         return "1";
     }
     else {
         result = "";
-        for (let i = 0; i < m.length; i += 2) {
-            if (m[i + 1] == 1) {
-                result += `${getGenNames(m[i])}`;
+        for (let i = 0; i < mon.length; i += 2) {
+            if (mon[i + 1] == 1) {
+                result += `${getGenNames(mon[i])}`;
             }
-            else if (m[i + 1] < 10) {
-                result += `${getGenNames(m[i])}^${m[i + 1]}`;
+            else if (mon[i + 1] < 10) {
+                result += `${getGenNames(mon[i])}^${mon[i + 1]}`;
             }
             else {
-                result += `${getGenNames(m[i])}^{${m[i + 1]}}`;
+                result += `${getGenNames(mon[i])}^{${mon[i + 1]}}`;
             }
         }
         return result;
