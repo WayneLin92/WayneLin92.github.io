@@ -197,6 +197,18 @@ function plotAxisLabels() {
     }
 }
 
+var gen_names_alias = new Map();
+
+function getGenNames(i) {
+    k = i.toString();
+    if (gen_names_alias.has(k)) {
+        return gen_names_alias.get(k);
+    }
+    else {
+        return gen_names[i];
+    }
+}
+
 function strMon(m) {
     if (m.length === 0) {
         return "1";
@@ -205,13 +217,13 @@ function strMon(m) {
         result = "";
         for (let i = 0; i < m.length; i += 2) {
             if (m[i + 1] == 1) {
-                result += `${gen_names[m[i]]}`;
+                result += `${getGenNames(m[i])}`;
             }
             else if (m[i + 1] < 10) {
-                result += `${gen_names[m[i]]}^${m[i + 1]}`;
+                result += `${getGenNames(m[i])}^${m[i + 1]}`;
             }
             else {
-                result += `${gen_names[m[i]]}^{${m[i + 1]}}`;
+                result += `${getGenNames(m[i])}^{${m[i + 1]}}`;
             }
         }
         return result;

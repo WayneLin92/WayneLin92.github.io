@@ -122,28 +122,27 @@ function on_wheel(event) {
 	plotAxisLabels();
 }
 
-function on_click(event) {
-	let tgt = event.target;
-	if (tgt.getAttribute("class") === "b") {
-		circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
-		circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
-		circle_selected.setAttribute("r", tgt.getAttribute("r"));
-		circle_selected.innerHTML = tgt.innerHTML;
-		circle_selected.dataset.id = tgt.id;
+function select_bullet(bullet) {
+	circle_selected.setAttribute("cx", bullet.getAttribute("cx"));
+	circle_selected.setAttribute("cy", bullet.getAttribute("cy"));
+	circle_selected.setAttribute("r", bullet.getAttribute("r"));
+	circle_selected.innerHTML = bullet.innerHTML;
+	circle_selected.dataset.id = bullet.id;
 
-		rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
-		rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
-		if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
-			/* Highlight the product */
+	rect_selected.setAttribute("x", Math.round(bullet.getAttribute("cx")) - 0.5);
+	rect_selected.setAttribute("y", Math.round(bullet.getAttribute("cy")) - 0.5);
+	if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
+		/* Highlight the product */
 
-			rect_prod.setAttribute("x", Math.round(tgt.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
-			rect_prod.setAttribute("y", Math.round(tgt.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
+		rect_prod.setAttribute("x", Math.round(bullet.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
+		rect_prod.setAttribute("y", Math.round(bullet.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
 
-			let id1 = circle_selected.dataset.id.slice(1);
-			let id2 = circle_fixed_factor.dataset.id.slice(1);
-			if (Number(id1) > Number(id2)) {
-				[id1, id2] = [id2, id1];
-			}
+		let id1 = circle_selected.dataset.id.slice(1);
+		let id2 = circle_fixed_factor.dataset.id.slice(1);
+		if (Number(id1) > Number(id2)) {
+			[id1, id2] = [id2, id1];
+		}
+		if (basis_prod[id1 + "," + id2]) {
 			g_prod.innerHTML = "";
 			for (const index of basis_prod[id1 + "," + id2]) {
 				const id = "b" + index;
@@ -152,6 +151,13 @@ function on_click(event) {
 				g_prod.insertAdjacentHTML("beforeend", circle_prod);
 			}
 		}
+	}
+}
+
+function on_click(event) {
+	let tgt = event.target;
+	if (tgt.getAttribute("class") === "b") {
+		select_bullet(tgt);
 	}
 	else if (tgt.getAttribute("id") === "circle_selected") {
 		/* info pane */
@@ -176,37 +182,9 @@ function on_key_down(event) {
 	if (event.which === 39) {
 		if (Number(rect_selected.getAttribute("x")) > -1) {
 			const next_id = Number(circle_selected.dataset.id.slice(1)) + 1;
-			let tgt = document.getElementById("b" + next_id);
-			if (tgt) {
-				circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
-				circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
-				circle_selected.setAttribute("r", tgt.getAttribute("r"));
-				circle_selected.innerHTML = tgt.innerHTML;
-				circle_selected.dataset.id = tgt.id;
-	
-				rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
-				rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
-				if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
-					/* Highlight the product */
-		
-					rect_prod.setAttribute("x", Math.round(tgt.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
-					rect_prod.setAttribute("y", Math.round(tgt.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
-		
-					let id1 = circle_selected.dataset.id.slice(1);
-					let id2 = circle_fixed_factor.dataset.id.slice(1);
-					if (Number(id1) > Number(id2)) {
-						[id1, id2] = [id2, id1];
-					}
-					if (basis_prod[id1 + "," + id2]) {
-						g_prod.innerHTML = "";
-						for (const index of basis_prod[id1 + "," + id2]) {
-							const id = "b" + index;
-							const bullet = document.getElementById(id);
-							circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
-							g_prod.insertAdjacentHTML("beforeend", circle_prod);
-						}
-					}
-				}
+			let selected = document.getElementById("b" + next_id);
+			if (selected) {
+				select_bullet(selected);
 			}
 		}
 	}
@@ -216,34 +194,8 @@ function on_key_down(event) {
 			if (prev_id < 0) {
 				prev_id = 0;
 			}
-			let tgt = document.getElementById("b" + prev_id);
-			circle_selected.setAttribute("cx", tgt.getAttribute("cx"));
-			circle_selected.setAttribute("cy", tgt.getAttribute("cy"));
-			circle_selected.setAttribute("r", tgt.getAttribute("r"));
-			circle_selected.innerHTML = tgt.innerHTML;
-			circle_selected.dataset.id = tgt.id;
-
-			rect_selected.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
-			rect_selected.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
-			if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
-				/* Highlight the product */
-	
-				rect_prod.setAttribute("x", Math.round(tgt.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
-				rect_prod.setAttribute("y", Math.round(tgt.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
-	
-				let id1 = circle_selected.dataset.id.slice(1);
-				let id2 = circle_fixed_factor.dataset.id.slice(1);
-				if (Number(id1) > Number(id2)) {
-					[id1, id2] = [id2, id1];
-				}
-				g_prod.innerHTML = "";
-				for (const index of basis_prod[id1 + "," + id2]) {
-					const id = "b" + index;
-					const bullet = document.getElementById(id);
-					circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
-					g_prod.insertAdjacentHTML("beforeend", circle_prod);
-				}
-			}
+			let selected = document.getElementById("b" + prev_id);
+			select_bullet(selected);
 		}
 	}
 }
