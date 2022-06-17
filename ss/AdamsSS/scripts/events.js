@@ -143,8 +143,8 @@ function select_bullet(bullet) {
 		if (Number(id1) > Number(id2)) {
 			[id1, id2] = [id2, id1];
 		}
+		g_prod.innerHTML = "";
 		if (basis_prod[id1 + "," + id2]) {
-			g_prod.innerHTML = "";
 			for (const index of basis_prod[id1 + "," + id2]) {
 				const id = "b" + index;
 				const bullet = document.getElementById(id);
