@@ -1,7 +1,7 @@
 /* created by Weinan Lin */
 
 const config = {
-    x_max: 256,
+    x_max: 270,
     y_max: 90,
     y_max_grid: 256,
     x_max_init: 80,
