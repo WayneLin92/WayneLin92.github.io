@@ -9,6 +9,11 @@
             "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\""
         },
         {
+            "label": "Compile /ss/index_.md",
+            "type": "shell",
+            "command": "python task.py -f ./ss/index_.md -o ./ss/index.html -t \"Spectral sequences\""
+        },
+        {
             "label": "Compile /SelectedTopicsInAlgebraicTopology/index_.md",
             "type": "shell",
             "command": "python task.py -f ./SelectedTopicsInAlgebraicTopology/index_.md -o ./SelectedTopicsInAlgebraicTopology/index.html -t Teaching"
