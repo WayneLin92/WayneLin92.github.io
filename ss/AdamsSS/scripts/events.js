@@ -11,8 +11,9 @@ const circle_fixed_factor = document.getElementById("circle_fixed_factor");
 const rect_selected = document.getElementById("rect_selected");
 const rect_fixed_factor = document.getElementById("rect_fixed_factor");
 const rect_prod = document.getElementById("rect_prod");
-const p_name = document.getElementById("p_name");
+const p_base = document.getElementById("p_base");
 const p_latex = document.getElementById("p_latex");
+const p_diff = document.getElementById("p_diff");
 const g_prod = document.getElementById("g_prod");
 const div_menu_style = document.getElementById("div_menu").style;
 const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
@@ -168,13 +169,22 @@ function on_click(event) {
 		div_binfo_style.left = posX + "px";
 		div_binfo_style.bottom = posY + "px";
 		div_binfo_style.visibility = "visible";
-		let mon = basis[parseInt(tgt.dataset.id.slice(1))];
-		let str_mon = strMon(mon);
-		p_name.innerHTML = `Name: ${str_mon}`;
-		var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
-		p_latex.innerHTML = `LaTeX: ${tex_mon}`;
 
-		if (mon.length === 2 && mon[1] === 1) {
+		let bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
+		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
+
+		const arr_base = bullet.dataset.b.split(",");
+		let str_base = "";
+		const offset_X = parseInt(bullet.dataset.i);
+		for(let i = 0; i < arr_base.length; ++i) {
+			if (i > 0)
+			str_base += "+";
+			str_base += strMon(basis[offset_X + parseInt(arr_base[i])]);
+		}
+		let tex_base = katex.renderToString(str_base, { throwOnError: false });
+		p_latex.innerHTML = `LaTeX: ${tex_base}`;
+
+		if (bullet.dataset.g === "1") {
 			p_button_rename_style.display = "block";
 		}
 		else {
@@ -267,12 +277,13 @@ function on_click_fixed_factor_lc() {
 }
 
 function on_rename() {
-	let mon = basis[parseInt(circle_selected.dataset.id.slice(1))];
+	let bullet = document.getElementById(circle_selected.dataset.id);
+	const arr_base = bullet.dataset.b.split(",");
+	let mon = basis[parseInt(bullet.dataset.i) + parseInt(arr_base[0])];
 	let gen_id = mon[0];
 	let name = prompt("New name for the generator", "name");
 	gen_names_alias.set(gen_id.toString(), name);
 	let str_mon = strMon(mon);
-	p_name.innerHTML = `Name: ${str_mon}`;
 	var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
 	p_latex.innerHTML = `LaTeX: ${tex_mon}`;
 }
