@@ -35,8 +35,10 @@ const config_dynamic = {
 const svg_ss = document.getElementById("svg_ss");
 const g_svg = document.getElementById("g_svg");
 const g_plot = document.getElementById("g_plot");
+const g_bullets = document.getElementById("g_bullets");
 const g_xaxis = document.getElementById("g_xaxis");
 const g_yaxis = document.getElementById("g_yaxis");
+const g_labels = document.getElementById("g_labels");
 function windowResize() {
     svg_ss.setAttribute("width", window.innerWidth);
     svg_ss.setAttribute("height", window.innerHeight);
@@ -230,6 +232,37 @@ function strMon(mon) {
     }
 }
 
+function strLable(id) {
+    let bullet = document.getElementById(id);
+    const arr_base = bullet.dataset.b.split(",");
+    let str_base = "";
+    const offset_X = parseInt(bullet.dataset.i);
+    for (let i = 0; i < arr_base.length; ++i) {
+        if (i > 0)
+            str_base += "+";
+        str_base += strMon(basis[offset_X + parseInt(arr_base[i])]);
+    }
+    return str_base;
+}
+
+function plotBulletLabels() {
+    g_labels.innerHTML = "";
+    for (bullet of g_bullets.childNodes) {
+        if (bullet.tagName === "circle" && bullet.id.slice(0, 1) === "b") {
+            let str_mon = strLable(bullet.id);
+            str_mon = str_mon.replace("\\Delta ", "Δ");
+            str_mon = str_mon.replace("^\\prime", "'");
+
+            const re = /(?<!(P|P\^\d|P\^\d\d|Δ|M))h_(0|1|2)/;
+            if (str_mon.length < 10 && parseFloat(bullet.getAttribute("cx")) < 111 && !(str_mon.match(re) && str_mon.length > 3)) {
+                let label = `<text x=${parseFloat(bullet.getAttribute("cx")) - 0.06} y=${-parseFloat(bullet.getAttribute("cy")) + 0.06}>${str_mon}</text>\n`;
+                g_labels.insertAdjacentHTML("beforeend", label);
+            }
+        }
+    }
+    
+}
+
 /***************************************************
  * init
  ***************************************************/
@@ -243,5 +276,6 @@ function init() {
     g_plot.setAttribute("transform", camera.getTransform());
     plotGridLines();
     plotAxisLabels();
+    plotBulletLabels();
     initHandlers();
 }

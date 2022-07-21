@@ -172,15 +172,7 @@ function on_click(event) {
 
 		let bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
 		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
-
-		const arr_base = bullet.dataset.b.split(",");
-		let str_base = "";
-		const offset_X = parseInt(bullet.dataset.i);
-		for(let i = 0; i < arr_base.length; ++i) {
-			if (i > 0)
-			str_base += "+";
-			str_base += strMon(basis[offset_X + parseInt(arr_base[i])]);
-		}
+		let str_base = strLable(tgt.dataset.id);
 		let tex_base = katex.renderToString(str_base, { throwOnError: false });
 		p_latex.innerHTML = `LaTeX: ${tex_base}`;
 
@@ -281,16 +273,19 @@ function on_rename() {
 	const arr_base = bullet.dataset.b.split(",");
 	let mon = basis[parseInt(bullet.dataset.i) + parseInt(arr_base[0])];
 	let gen_id = mon[0];
-	let name = prompt("New name for the generator", "name");
-	gen_names_alias.set(gen_id.toString(), name);
+	let name = prompt("New name for the generator", strMon(mon));
+	if (name !== null) { 
+		gen_names_alias.set(gen_id.toString(), name); 
+	}
 	let str_mon = strMon(mon);
 	var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
 	p_latex.innerHTML = `LaTeX: ${tex_mon}`;
+	plotBulletLabels();
 }
 
 function on_copy_aliases() {
 	let text = "";
-	gen_names_alias.forEach((k, v) => {text += `${k}: ${v}\n`});
+	gen_names_alias.forEach((k, v) => { text += `${v}: "${k}",\n` });
 	navigator.clipboard.writeText(text);
 	alert("Copied and you can send it to me");
 }
