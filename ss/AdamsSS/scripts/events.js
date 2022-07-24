@@ -11,6 +11,7 @@ const circle_fixed_factor = document.getElementById("circle_fixed_factor");
 const rect_selected = document.getElementById("rect_selected");
 const rect_fixed_factor = document.getElementById("rect_fixed_factor");
 const rect_prod = document.getElementById("rect_prod");
+const p_deg = document.getElementById("p_deg");
 const p_base = document.getElementById("p_base");
 const p_latex = document.getElementById("p_latex");
 const p_diff = document.getElementById("p_diff");
@@ -170,11 +171,29 @@ function on_click(event) {
 		div_binfo_style.bottom = posY + "px";
 		div_binfo_style.visibility = "visible";
 
-		let bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
+		const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
+		p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
 		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
-		let str_base = strLable(tgt.dataset.id);
-		let tex_base = katex.renderToString(str_base, { throwOnError: false });
+		const str_base = strLable(tgt.dataset.id);
+		const tex_base = katex.renderToString(str_base, { throwOnError: false });
 		p_latex.innerHTML = `LaTeX: ${tex_base}`;
+
+		const level = parseInt(bullet.dataset.l);
+		if (level === 5000) { p_diff.innerHTML = `PC`; }
+		else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
+		else if (level > 9800) {
+			const r = 10000 - level;
+			let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
+			str_diff = str_diff.replace('None', '?');
+			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+		}
+		else {
+			const r = level;
+			let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
+			str_diff = str_diff.replace('None', '?');
+			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+		}
+
 
 		if (bullet.dataset.g === "1") {
 			p_button_rename_style.display = "block";
@@ -274,8 +293,8 @@ function on_rename() {
 	let mon = basis[parseInt(bullet.dataset.i) + parseInt(arr_base[0])];
 	let gen_id = mon[0];
 	let name = prompt("New name for the generator", strMon(mon));
-	if (name !== null) { 
-		gen_names_alias.set(gen_id.toString(), name); 
+	if (name !== null) {
+		gen_names_alias.set(gen_id.toString(), name);
 	}
 	let str_mon = strMon(mon);
 	var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
@@ -293,7 +312,6 @@ function on_copy_aliases() {
 function on_click_about() {
 	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
 }
-
 
 /***********************************
  * Initialization of event handlers
