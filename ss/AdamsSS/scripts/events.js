@@ -328,6 +328,7 @@ function initHandlers() {
 	document.addEventListener("click", on_click_document);
 	document.addEventListener("keydown", on_key_down);
 
+	/* Desktop browser will support pointer enter and leave events */
 	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
 		let bullets = document.getElementsByClassName("b");
 		for (const b of bullets) {
@@ -337,8 +338,12 @@ function initHandlers() {
 		circle_selected.onpointerenter = on_pointerenter_bullet;
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
+	if (navigator.userAgent.match("Macintosh")) {
+		config.camera_zoom_rate = 1.06;
+	}
 
-	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:63cce9c9</text>`;
+
+	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:07/29</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
 	const text_date = document.getElementById('text8733d2c');
 	window.setTimeout(function () { text_date.remove(); }, 5000);

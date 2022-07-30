@@ -16,7 +16,7 @@ const config = {
     bullets_radius_world: 3.0 / 60,
     bullets_sep_world: 9.0 / 60 /* distance between the centers */,
     bullets_group_length_world: 1.1,
-    camera_zoom_rate: 1.3,
+    camera_zoom_rate: 1.2,
     color_grid_line: "#909090",
     color_arrow: "#a0a0a0",
     color_normal: "#000000",
