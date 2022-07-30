@@ -34,21 +34,43 @@
         <rect id="rect_prod" x="-1000" y="-1000" width="1" height="1" fill="green" opacity="0.1" />
         <g id="g_grid" stroke-width="0.009" stroke="grey"></g>
         <g id="g_h0_lines" stroke="black">
-          h0_lines:839e707e
+h0_lines:839e707e
         </g>
         <g id="g_h1_lines" stroke="black">
-          h1_lines:2b707f82
+h1_lines:2b707f82
         </g>
-        <g id="g_h2_lines" stroke="black">
-          h2_lines:e766a4f6
+        <g id="g_h2_lines" stroke="DarkSlateGray">
+h2_lines:e766a4f6
+        </g>
+        <g id="g_d2_lines" stroke="DeepSkyBlue">
+d2_lines:d9dec788
+        </g>
+        <g id="g_d3_lines" stroke="red">
+d3_lines:1a07bf89
+        </g>
+        <g id="g_d4_lines" stroke="green">
+d4_lines:7d935e97
+        </g>
+        <g id="g_d5_lines" stroke="blue">
+d5_lines:f6d7f992
+        </g>
+        <g id="g_d6_lines" stroke="orange">
+d6_lines:05c49c4a
         </g>
         <g id="g_bullets" fill="black">
           <g id="g_prod" fill="green"></g>
           <circle id="circle_fixed_factor" data-id="" cx="-1000" cy="-1000" r="0" fill="orange"></circle>
           <circle id="circle_mouseon" cx="-1000" cy="-1000" r="0" fill="grey"></circle>
-          bullets:b8999a4e
+bullets:b8999a4e
           <circle id="circle_selected" data-id="" cx="-1000" cy="-1000" r="0" fill="red" opacity="0.7"></circle>
         </g>
+        <g id="g_labels" text-anchor="end" font-size="0.1px" style="
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -o-user-select: none;
+              " unselectable="on" onselectstart="return false;" onmousedown="return false;" transform="scale(1,-1)"></g>
       </g>
       <rect x="0" y="0" width="30" height="100%" fill="white" />
       <rect id="bottomBlock" x="0" y="0" width="100%" height="30" fill="white" />
@@ -61,7 +83,7 @@
               user-select: none;
               -o-user-select: none;
             " unselectable="on" onselectstart="return false;" onmousedown="return false;" transform="scale(1,-1)"></g>
-      <g id="g_yaxis" text-anchor="end" dominant-baseline="middle" style="
+      <g id="g_yaxis" text-anchor="end" style="
               -moz-user-select: none;
               -webkit-user-select: none;
               -ms-user-select: none;
@@ -75,6 +97,7 @@
       Set as the fixed factor
       <span></span>
     </a>
+    <hr>
     <a id="a_copy_aliases" href="#" onclick="on_copy_aliases()">
       Copy generator aliases
       <span></span>
@@ -83,7 +106,6 @@
       Save as an SVG image
       <span></span>
     </a>
-    <hr>
     <a href="#">
       <u>I</u>nstructions
       <span></span>
@@ -94,11 +116,29 @@
     </a>
   </div>
   <div id="div_binfo">
-    <p id="p_name">Name: x_1</p>
+    <p id="p_deg">Deg:</p>
     <p id="p_latex">LaTeX:</p>
+    <p id="p_base">Base:</p>
+    <p id="p_diff"></p>
     <p id="p_button_rename" style="display:none"><button onclick="on_rename()">Rename</button></p>
     <p><button onclick="on_click_fixed_factor_lc()">Set as the fixed factor</button></p>
   </div>
+  
+  <!-- <div id=div_menubar>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <select id="page">
+      <option>E2</option>
+      <option>E3</option>
+      <option>E4</option>
+      <option>E5</option>
+      <option>E6</option>
+      <option>Einf</option>
+    </select>
+    <button id="div_cm">︙</button>
+  </div> -->
   <script src="scripts/data.js"></script>
   <script src="scripts/index.js"></script>
   <script src="scripts/events.js"></script>

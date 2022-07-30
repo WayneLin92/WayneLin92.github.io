@@ -11,8 +11,10 @@ const circle_fixed_factor = document.getElementById("circle_fixed_factor");
 const rect_selected = document.getElementById("rect_selected");
 const rect_fixed_factor = document.getElementById("rect_fixed_factor");
 const rect_prod = document.getElementById("rect_prod");
-const p_name = document.getElementById("p_name");
+const p_deg = document.getElementById("p_deg");
+const p_base = document.getElementById("p_base");
 const p_latex = document.getElementById("p_latex");
+const p_diff = document.getElementById("p_diff");
 const g_prod = document.getElementById("g_prod");
 const div_menu_style = document.getElementById("div_menu").style;
 const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
@@ -168,13 +170,32 @@ function on_click(event) {
 		div_binfo_style.left = posX + "px";
 		div_binfo_style.bottom = posY + "px";
 		div_binfo_style.visibility = "visible";
-		let mon = basis[parseInt(tgt.dataset.id.slice(1))];
-		let str_mon = strMon(mon);
-		p_name.innerHTML = `Name: ${str_mon}`;
-		var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
-		p_latex.innerHTML = `LaTeX: ${tex_mon}`;
 
-		if (mon.length === 2 && mon[1] === 1) {
+		const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
+		p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
+		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
+		const str_base = strLable(tgt.dataset.id);
+		const tex_base = katex.renderToString(str_base, { throwOnError: false });
+		p_latex.innerHTML = `LaTeX: ${tex_base}`;
+
+		const level = parseInt(bullet.dataset.l);
+		if (level === 5000) { p_diff.innerHTML = `PC`; }
+		else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
+		else if (level > 9800) {
+			const r = 10000 - level;
+			let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
+			str_diff = str_diff.replace('None', '?');
+			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+		}
+		else {
+			const r = level;
+			let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
+			str_diff = str_diff.replace('None', '?');
+			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+		}
+
+
+		if (bullet.dataset.g === "1") {
 			p_button_rename_style.display = "block";
 		}
 		else {
@@ -267,19 +288,23 @@ function on_click_fixed_factor_lc() {
 }
 
 function on_rename() {
-	let mon = basis[parseInt(circle_selected.dataset.id.slice(1))];
+	let bullet = document.getElementById(circle_selected.dataset.id);
+	const arr_base = bullet.dataset.b.split(",");
+	let mon = basis[parseInt(bullet.dataset.i) + parseInt(arr_base[0])];
 	let gen_id = mon[0];
-	let name = prompt("New name for the generator", "name");
-	gen_names_alias.set(gen_id.toString(), name);
+	let name = prompt("New name for the generator", strMon(mon));
+	if (name !== null) {
+		gen_names_alias.set(gen_id.toString(), name);
+	}
 	let str_mon = strMon(mon);
-	p_name.innerHTML = `Name: ${str_mon}`;
 	var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
 	p_latex.innerHTML = `LaTeX: ${tex_mon}`;
+	plotBulletLabels();
 }
 
 function on_copy_aliases() {
 	let text = "";
-	gen_names_alias.forEach((k, v) => {text += `${k}: ${v}\n`});
+	gen_names_alias.forEach((k, v) => { text += `${v}: "${k}",\n` });
 	navigator.clipboard.writeText(text);
 	alert("Copied and you can send it to me");
 }
@@ -287,7 +312,6 @@ function on_copy_aliases() {
 function on_click_about() {
 	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
 }
-
 
 /***********************************
  * Initialization of event handlers
@@ -304,6 +328,7 @@ function initHandlers() {
 	document.addEventListener("click", on_click_document);
 	document.addEventListener("keydown", on_key_down);
 
+	/* Desktop browser will support pointer enter and leave events */
 	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
 		let bullets = document.getElementsByClassName("b");
 		for (const b of bullets) {
@@ -313,8 +338,12 @@ function initHandlers() {
 		circle_selected.onpointerenter = on_pointerenter_bullet;
 		circle_selected.onpointerleave = on_pointerleave_bullet;
 	}
+	if (navigator.userAgent.match("Macintosh")) {
+		config.camera_zoom_rate = 1.06;
+	}
 
-	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:63cce9c9</text>`;
+
+	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:07/29</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
 	const text_date = document.getElementById('text8733d2c');
 	window.setTimeout(function () { text_date.remove(); }, 5000);

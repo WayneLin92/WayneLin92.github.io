@@ -16,7 +16,7 @@ const config = {
     bullets_radius_world: 3.0 / 60,
     bullets_sep_world: 9.0 / 60 /* distance between the centers */,
     bullets_group_length_world: 1.1,
-    camera_zoom_rate: 1.3,
+    camera_zoom_rate: 1.2,
     color_grid_line: "#909090",
     color_arrow: "#a0a0a0",
     color_normal: "#000000",
@@ -35,8 +35,10 @@ const config_dynamic = {
 const svg_ss = document.getElementById("svg_ss");
 const g_svg = document.getElementById("g_svg");
 const g_plot = document.getElementById("g_plot");
+const g_bullets = document.getElementById("g_bullets");
 const g_xaxis = document.getElementById("g_xaxis");
 const g_yaxis = document.getElementById("g_yaxis");
+const g_labels = document.getElementById("g_labels");
 function windowResize() {
     svg_ss.setAttribute("width", window.innerWidth);
     svg_ss.setAttribute("height", window.innerHeight);
@@ -192,7 +194,7 @@ function plotAxisLabels() {
     g_yaxis.innerHTML = "";
     for (let i = i_min; i <= i_max; i += stepLabel) {
         let yText = camera.world2svg(new Vector(0, i)).y;
-        let label = `<text x="26" y="${-yText}">${i}</text>\n`;
+        let label = `<text x="26" y="${-yText}" dy="0.25em">${i}</text>\n`;
         g_yaxis.insertAdjacentHTML("beforeend", label);
     }
 }
@@ -230,6 +232,51 @@ function strMon(mon) {
     }
 }
 
+function strLable(id) {
+    let bullet = document.getElementById(id);
+    const arr_base = bullet.dataset.b.split(",");
+    let str_base = "";
+    const offset_X = parseInt(bullet.dataset.i);
+    for (let i = 0; i < arr_base.length; ++i) {
+        if (i > 0)
+            str_base += "+";
+        str_base += strMon(basis[offset_X + parseInt(arr_base[i])]);
+    }
+    return str_base;
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
+
+function plotBulletLabels() {
+    g_labels.innerHTML = "";
+    for (bullet of g_bullets.childNodes) {
+        if (bullet.tagName === "circle" && bullet.id.slice(0, 1) === "b") {
+            let str_mon = strLable(bullet.id);
+            str_mon = replaceAll(str_mon, "\\\\Delta ", "Δ");
+            str_mon = replaceAll(str_mon, "\\\\Delta", "Δ");
+            str_mon = replaceAll(str_mon, "\\^\\\\prime", "'");
+            str_mon = replaceAll(str_mon, "\\^\\{\\\\prime\\\\prime}", "''");
+            str_mon = replaceAll(str_mon, "_0", "0");
+            str_mon = replaceAll(str_mon, "_1", "1");
+            str_mon = replaceAll(str_mon, "_2", "2");
+            str_mon = replaceAll(str_mon, "_3", "3");
+            str_mon = replaceAll(str_mon, "_4", "4");
+            str_mon = replaceAll(str_mon, "_5", "5");
+            str_mon = replaceAll(str_mon, "_6", "6");
+            str_mon = replaceAll(str_mon, "_7", "7");
+
+            const re = /^(?!(P|P\^\d|P\^\d\d|Δ|M|M_1)h(0|1|2)).*h(0|1|2)/;
+            if (str_mon.length < 10 && parseFloat(bullet.getAttribute("cx")) <= 127 && !(str_mon.match(re) && str_mon.length > 2)) {
+                let label = `<text x=${parseFloat(bullet.getAttribute("cx")) - 0.06} y=${-parseFloat(bullet.getAttribute("cy")) + 0.16}>${str_mon}</text>\n`;
+                g_labels.insertAdjacentHTML("beforeend", label);
+            }
+        }
+    }
+
+}
+
 /***************************************************
  * init
  ***************************************************/
@@ -243,5 +290,6 @@ function init() {
     g_plot.setAttribute("transform", camera.getTransform());
     plotGridLines();
     plotAxisLabels();
+    plotBulletLabels();
     initHandlers();
 }
