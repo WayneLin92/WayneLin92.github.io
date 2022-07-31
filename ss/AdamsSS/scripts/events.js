@@ -106,6 +106,52 @@ function on_pointerup(event) {
 			prevPtsDist = getDistPts();
 		}
 	}
+
+	let tgt = event.target;
+	if (tgt.getAttribute("class") === "b") {
+		select_bullet(tgt);
+	}
+	else if (tgt.getAttribute("id") === "circle_selected") {
+		/* info pane */
+		const posX = event.clientX;
+		const posY = window.innerHeight - event.clientY;
+
+		div_binfo_style.left = posX + "px";
+		div_binfo_style.bottom = posY + "px";
+		div_binfo_style.visibility = "visible";
+
+		const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
+		p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
+		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
+		const str_base = strLable(tgt.dataset.id);
+		const tex_base = katex.renderToString(str_base, { throwOnError: false });
+		p_latex.innerHTML = `LaTeX: ${tex_base}`;
+
+		const level = parseInt(bullet.dataset.l);
+		if (level === 5000) { p_diff.innerHTML = `PC`; }
+		else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
+		else if (level > 9800) {
+			const r = 10000 - level;
+			let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
+			str_diff = str_diff.replace('None', '?');
+			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+		}
+		else {
+			const r = level;
+			let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
+			str_diff = str_diff.replace('None', '?');
+			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+		}
+
+
+		if (bullet.dataset.g === "1") {
+			p_button_rename_style.display = "block";
+		}
+		else {
+			p_button_rename_style.display = "none";
+		}
+	}
+
 	restartTimer();
 }
 
@@ -155,57 +201,6 @@ function select_bullet(bullet) {
 			}
 		}
 	}
-}
-
-function on_click(event) {
-	let tgt = event.target;
-	if (tgt.getAttribute("class") === "b") {
-		select_bullet(tgt);
-	}
-	else if (tgt.getAttribute("id") === "circle_selected") {
-		/* info pane */
-		const posX = event.clientX;
-		const posY = window.innerHeight - event.clientY;
-
-		div_binfo_style.left = posX + "px";
-		div_binfo_style.bottom = posY + "px";
-		div_binfo_style.visibility = "visible";
-
-		const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
-		p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
-		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
-		const str_base = strLable(tgt.dataset.id);
-		const tex_base = katex.renderToString(str_base, { throwOnError: false });
-		p_latex.innerHTML = `LaTeX: ${tex_base}`;
-
-		const level = parseInt(bullet.dataset.l);
-		if (level === 5000) { p_diff.innerHTML = `PC`; }
-		else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
-		else if (level > 9800) {
-			const r = 10000 - level;
-			let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
-			str_diff = str_diff.replace('None', '?');
-			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
-		}
-		else {
-			const r = level;
-			let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
-			str_diff = str_diff.replace('None', '?');
-			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
-		}
-
-
-		if (bullet.dataset.g === "1") {
-			p_button_rename_style.display = "block";
-		}
-		else {
-			p_button_rename_style.display = "none";
-		}
-	}
-}
-
-function on_click_document(event) {
-	div_menu_style.visibility = "hidden";
 }
 
 function on_key_down(event) {
@@ -323,9 +318,7 @@ function initHandlers() {
 	svg_ss.addEventListener("pointerup", on_pointerup);
 	svg_ss.addEventListener("pointerleave", on_pointerup);
 
-	svg_ss.addEventListener("contextmenu", on_contextmenu);
-	svg_ss.addEventListener("click", on_click);
-	document.addEventListener("click", on_click_document);
+	svg_ss.addEventListener("contextmenu", on_contextmenu);	
 	document.addEventListener("keydown", on_key_down);
 
 	/* Desktop browser will support pointer enter and leave events */

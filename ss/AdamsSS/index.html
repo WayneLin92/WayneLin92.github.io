@@ -14382,7 +14382,6 @@
 <line x1=161.77 y1=57.0702 x2=161 y2=59 stroke-width=0.02></line>
 <line x1=154 y1=65 x2=153 y2=67 stroke-width=0.02></line>
 <line x1=152 y1=67 x2=151 y2=69 stroke-width=0.02></line>
-<line x1=95.8852 y1=12.0351 x2=95 y2=14 stroke-width=0.0184497 stroke-dasharray="0.2,0.2"></line>
 
         </g>
         <g id="g_d3_lines" stroke="red">
@@ -14977,10 +14976,6 @@
 <line x1=173 y1=44 x2=171.917 y2=47.0253 stroke-width=0.0138373></line>
 <line x1=169.914 y1=47.0263 x2=169 y2=50 stroke-width=0.0150135></line>
 <line x1=184.083 y1=33.9747 x2=183.216 y2=36.934 stroke-width=0.00722222></line>
-<line x1=109.917 y1=16.0253 x2=109.18 y2=18.945 stroke-width=0.0144444 stroke-dasharray="0.2,0.2"></line>
-<line x1=109.917 y1=16.0253 x2=109 y2=19 stroke-width=0.0144444 stroke-dasharray="0.2,0.2"></line>
-<line x1=109.751 y1=16.076 x2=109.18 y2=18.945 stroke-width=0.0144444 stroke-dasharray="0.2,0.2"></line>
-<line x1=109.751 y1=16.076 x2=109 y2=19 stroke-width=0.0144444 stroke-dasharray="0.2,0.2"></line>
 
         </g>
         <g id="g_d4_lines" stroke="green">
@@ -15576,15 +15571,6 @@
 <line x1=191.107 y1=25.9673 x2=190 y2=30 stroke-width=0.00728758></line>
 <line x1=181 y1=36 x2=180 y2=40 stroke-width=0.00850218></line>
 <line x1=180 y1=37 x2=179.062 y2=40.9809 stroke-width=0.00850218></line>
-<line x1=69.7705 y1=14.0702 x2=69.1148 y2=17.9649 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=69.7705 y1=14.0702 x2=68.8852 y2=18.0351 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=91.1059 y1=11.9676 x2=89.8852 y2=16.0351 stroke-width=0.0184497 stroke-dasharray="0.2,0.2"></line>
-<line x1=85.7705 y1=22.0702 x2=85.1148 y2=25.9649 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=85.7705 y1=22.0702 x2=84.8852 y2=26.0351 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=106.77 y1=11.0702 x2=106.23 y2=14.9298 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=106.77 y1=11.0702 x2=106 y2=15 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=101.77 y1=30.0702 x2=101.115 y2=33.9649 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=101.77 y1=30.0702 x2=100.885 y2=34.0351 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
 
         </g>
         <g id="g_d5_lines" stroke="blue">
@@ -15617,10 +15603,6 @@
 <line x1=97.8852 y1=11.0351 x2=97 y2=17 stroke-width=0.02></line>
 <line x1=112.083 y1=14.9747 x2=110.894 y2=21.0324 stroke-width=0.0144444></line>
 <line x1=188.083 y1=22.9746 x2=187.042 y2=28.9872 stroke-width=0.00723983></line>
-<line x1=91 y1=6 x2=90 y2=15 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=91 y1=6 x2=89.7705 y2=15.0702 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=87.7705 y1=12.0702 x2=86.8852 y2=18.0351 stroke-width=0.02 stroke-dasharray="0.2,0.2"></line>
-<line x1=92.7514 y1=13.076 x2=91.8852 y2=19.0351 stroke-width=0.0144444 stroke-dasharray="0.2,0.2"></line>
 
         </g>
         <g id="g_bullets" fill="black">
@@ -29073,12 +29055,13 @@
     <p id="p_button_rename" style="display:none"><button onclick="on_rename()">Rename</button></p>
     <p><button onclick="on_click_fixed_factor_lc()">Set as the fixed factor</button></p>
   </div>
-  <div id=div_menubar>
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-    <select id="page">
+  
+  <div id="div_menubar">
+    <select id="select_dashed">
+      <option>No dashed line</option>
+      <option>Show dashed line</option>
+    </select>
+    <select id="select_page">
       <option>E2</option>
       <option>E3</option>
       <option>E4</option>
