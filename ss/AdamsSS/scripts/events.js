@@ -1,27 +1,23 @@
-/* pointers */
-const pointerCache = new Array();
-var prevPtsDist = null;
-var prevPt = null;
-
 /* elements */
 const div_binfo_style = document.getElementById("div_binfo").style;
 const circle_mouseon = document.getElementById("circle_mouseon");
 const circle_selected = document.getElementById("circle_selected");
-const circle_fixed_factor = document.getElementById("circle_fixed_factor");
 const rect_selected = document.getElementById("rect_selected");
-const rect_fixed_factor = document.getElementById("rect_fixed_factor");
-const rect_prod = document.getElementById("rect_prod");
 const p_deg = document.getElementById("p_deg");
 const p_base = document.getElementById("p_base");
 const p_latex = document.getElementById("p_latex");
 const p_diff = document.getElementById("p_diff");
 const g_prod = document.getElementById("g_prod");
 const div_menu_style = document.getElementById("div_menu").style;
-const a_menu_bullet_style = document.getElementById("a_menu_bullet").style;
 const p_button_rename_style = document.getElementById("p_button_rename").style;
 
+/* pointers */
+const pointerCache = new Array();
+var prevPtsDist = null;
+var prevPt = null;
+
 /* other globals */
-var id_right_click = null;
+const arr_factors = [1, 2, 5, 13, 21, 28, 33, 42];
 var timerClearCache = null;
 
 function getDistPts() {
@@ -38,7 +34,7 @@ function restartTimer() {
 function on_pointerdown(event) {
 	div_menu_style.visibility = "hidden";
 	div_binfo_style.visibility = "hidden";
-	// This event is cached to support 2-finger gestures
+	/* This event is cached to support 2-finger gestures */
 	pointerCache.push(event);
 
 	if (pointerCache.length == 1) {
@@ -50,9 +46,9 @@ function on_pointerdown(event) {
 	restartTimer();
 }
 
-// This function implements a 2-pointer horizontal pinch/zoom gesture.
+/* This function implements a 2-pointer horizontal pinch/zoom gesture. */
 function on_pointermove(event) {
-	// Check if this event is in the cache and update it
+	/* Check if this event is in the cache and update it */
 	let index = 0;
 	for (; index < pointerCache.length; index++) {
 		if (event.pointerId === pointerCache[index].pointerId) {
@@ -61,7 +57,7 @@ function on_pointermove(event) {
 		}
 	}
 
-	// Move only when the only one down pointer moves
+	/* Move only when the only one down pointer moves */
 	if (pointerCache.length == 1 && index < pointerCache.length) {
 		let curPt = new Vector(event.offsetX, event.offsetY);
 		let deltaScreen = curPt.sub(prevPt);
@@ -69,7 +65,7 @@ function on_pointermove(event) {
 		prevPt = curPt;
 	}
 
-	// If two pointers are down, check for pinch gestures
+	/* If two pointers are down, check for pinch gestures */
 	if (pointerCache.length == 2 && index < pointerCache.length) {
 		let p1Svg = camera.flip(new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY));
 		let p2Svg = camera.flip(new Vector(pointerCache[1].offsetX, pointerCache[1].offsetY));
@@ -83,7 +79,7 @@ function on_pointermove(event) {
  * Return if at least one event is removed
  */
 function removeEvent(event_id) {
-	// Remove this event from the target's cache
+	/* Remove this event from the target's cache */
 	for (let i = 0; i < pointerCache.length; i++) {
 		if (pointerCache[i].pointerId == event_id) {
 			pointerCache.splice(i, 1);
@@ -180,18 +176,22 @@ function select_bullet(bullet) {
 
 	rect_selected.setAttribute("x", Math.round(bullet.getAttribute("cx")) - 0.5);
 	rect_selected.setAttribute("y", Math.round(bullet.getAttribute("cy")) - 0.5);
-	if (Number(rect_fixed_factor.getAttribute("x")) > -1) {
-		/* Highlight the product */
 
-		rect_prod.setAttribute("x", Math.round(bullet.getAttribute("cx")) + Number(rect_fixed_factor.getAttribute("x")));
-		rect_prod.setAttribute("y", Math.round(bullet.getAttribute("cy")) + Number(rect_fixed_factor.getAttribute("y")));
+	const id_selected = circle_selected.dataset.id.slice(1);
+	g_prod.innerHTML = "";
+	for (const i of arr_factors) {
+		const bullet_i = document.getElementById("b" + i);
+		const rect_prod = document.getElementById("rect_prod" + i);
+		rect_prod.setAttribute("x", Math.round(bullet.getAttribute("cx")) + Math.round(bullet_i.getAttribute("cx")) - 0.5);
+		rect_prod.setAttribute("y", Math.round(bullet.getAttribute("cy")) + Math.round(bullet_i.getAttribute("cy")) - 0.5);
 
-		let id1 = circle_selected.dataset.id.slice(1);
-		let id2 = circle_fixed_factor.dataset.id.slice(1);
-		if (Number(id1) > Number(id2)) {
-			[id1, id2] = [id2, id1];
+		let id1, id2;
+		if (Number(id_selected) < i) {
+			[id1, id2] = [id_selected, i];
 		}
-		g_prod.innerHTML = "";
+		else {
+			[id1, id2] = [i, id_selected];
+		}
 		if (basis_prod[id1 + "," + id2]) {
 			for (const index of basis_prod[id1 + "," + id2]) {
 				const id = "b" + index;
@@ -241,18 +241,6 @@ function on_pointerleave_bullet(event) {
  ************************************/
 
 function on_contextmenu(event) {
-	if (event.target.getAttribute("class") === "b") {
-		a_menu_bullet_style.display = "block";
-		id_right_click = event.target.id;
-	}
-	else if (event.target.getAttribute("id") === "circle_selected") {
-		a_menu_bullet_style.display = "block";
-		id_right_click = event.target.dataset.id;
-	}
-	else {
-		a_menu_bullet_style.display = "none"
-	}
-
 	let posX = event.clientX;
 	let posY = event.clientY;
 
@@ -261,25 +249,6 @@ function on_contextmenu(event) {
 	div_menu_style.visibility = "visible";
 
 	event.preventDefault();
-}
-
-function fixed_factor(id) {
-	let tgt = document.getElementById(id);
-	circle_fixed_factor.setAttribute("cx", tgt.getAttribute("cx"));
-	circle_fixed_factor.setAttribute("cy", tgt.getAttribute("cy"));
-	circle_fixed_factor.setAttribute("r", Number(tgt.getAttribute("r")) * 1.5);
-	circle_fixed_factor.dataset.id = id;
-
-	rect_fixed_factor.setAttribute("x", Math.round(tgt.getAttribute("cx")) - 0.5);
-	rect_fixed_factor.setAttribute("y", Math.round(tgt.getAttribute("cy")) - 0.5);
-}
-
-function on_click_fixed_factor() {
-	fixed_factor(id_right_click);
-}
-
-function on_click_fixed_factor_lc() {
-	fixed_factor(circle_selected.dataset.id);
 }
 
 function on_rename() {
@@ -308,6 +277,53 @@ function on_click_about() {
 	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
 }
 
+function on_select_page(event) {
+	let p = 2;
+	switch (event.target.value) {
+		case "E2":
+			p = 2
+			break;
+
+		case "E3":
+			p = 3
+			break;
+
+		case "E4":
+			p = 4
+			break;
+
+		case "E5":
+			p = 5
+			break;
+
+		case "E6":
+			p = 6
+			break;
+
+		default:
+			p = 200;
+			break;
+	}
+	let bullets = document.getElementsByClassName("b");
+	for (const b of bullets) {
+		if (b.dataset.page >= p) {
+			b.style.visibility = "visible";
+		}
+		else {
+			b.style.visibility = "hidden";
+		}
+	}
+	let lines = document.getElementsByClassName("l");
+	for (const line of lines) {
+		if (line.dataset.page >= p) {
+			line.style.visibility = "visible";
+		}
+		else {
+			line.style.visibility = "hidden";
+		}
+	}
+}
+
 /***********************************
  * Initialization of event handlers
  ***********************************/
@@ -318,7 +334,7 @@ function initHandlers() {
 	svg_ss.addEventListener("pointerup", on_pointerup);
 	svg_ss.addEventListener("pointerleave", on_pointerup);
 
-	svg_ss.addEventListener("contextmenu", on_contextmenu);	
+	svg_ss.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("keydown", on_key_down);
 
 	/* Desktop browser will support pointer enter and leave events */
@@ -334,7 +350,6 @@ function initHandlers() {
 	if (navigator.userAgent.match("Macintosh")) {
 		config.camera_zoom_rate = 1.06;
 	}
-
 
 	let str_text_date = `<text id="text8733d2c" x="60" y="-40" opacity="0.5" transform="scale(1,-1)" style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;-o-user-select: none;">js:07/29</text>`;
 	g_yaxis.insertAdjacentHTML("afterend", str_text_date);
