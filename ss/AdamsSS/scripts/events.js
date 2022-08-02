@@ -32,18 +32,20 @@ function restartTimer() {
 }
 
 function on_pointerdown(event) {
-	div_menu_style.visibility = "hidden";
-	div_binfo_style.visibility = "hidden";
-	/* This event is cached to support 2-finger gestures */
-	pointerCache.push(event);
+	if (event.button === 0) {
+		div_menu_style.visibility = "hidden";
+		div_binfo_style.visibility = "hidden";
+		/* This event is cached to support 2-finger gestures */
+		pointerCache.push(event);
 
-	if (pointerCache.length == 1) {
-		prevPt = new Vector(event.offsetX, event.offsetY);
+		if (pointerCache.length == 1) {
+			prevPt = new Vector(event.offsetX, event.offsetY);
+		}
+		else if (pointerCache.length == 2) {
+			prevPtsDist = getDistPts();
+		}
+		restartTimer();
 	}
-	else if (pointerCache.length == 2) {
-		prevPtsDist = getDistPts();
-	}
-	restartTimer();
 }
 
 /* This function implements a 2-pointer horizontal pinch/zoom gesture. */
@@ -91,64 +93,66 @@ function removeEvent(event_id) {
 
 function on_pointerup(event) {
 	/* Remove this pointer from the cache */
-	if (removeEvent(event.pointerId)) {
-		if (pointerCache.length == 0) {
-			prevPt = null;
+	if (event.button === 0) {
+		if (removeEvent(event.pointerId)) {
+			if (pointerCache.length == 0) {
+				prevPt = null;
+			}
+			else if (pointerCache.length == 1) {
+				prevPt = new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY);
+			}
+			else if (pointerCache.length == 2) {
+				prevPtsDist = getDistPts();
+			}
 		}
-		else if (pointerCache.length == 1) {
-			prevPt = new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY);
+
+		let tgt = event.target;
+		if (tgt.getAttribute("class") === "b") {
+			select_bullet(tgt);
 		}
-		else if (pointerCache.length == 2) {
-			prevPtsDist = getDistPts();
+		else if (tgt.getAttribute("id") === "circle_selected") {
+			/* info pane */
+			const posX = event.clientX;
+			const posY = window.innerHeight - event.clientY;
+
+			div_binfo_style.left = posX + "px";
+			div_binfo_style.bottom = posY + "px";
+			div_binfo_style.visibility = "visible";
+
+			const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
+			p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
+			p_base.innerHTML = `Base: ${bullet.dataset.b}`;
+			const str_base = strLable(tgt.dataset.id);
+			const tex_base = katex.renderToString(str_base, { throwOnError: false });
+			p_latex.innerHTML = `LaTeX: ${tex_base}`;
+
+			const level = parseInt(bullet.dataset.l);
+			if (level === 5000) { p_diff.innerHTML = `PC`; }
+			else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
+			else if (level > 9800) {
+				const r = 10000 - level;
+				let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
+				str_diff = str_diff.replace('None', '?');
+				p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+			}
+			else {
+				const r = level;
+				let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
+				str_diff = str_diff.replace('None', '?');
+				p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
+			}
+
+
+			if (bullet.dataset.g === "1") {
+				p_button_rename_style.display = "block";
+			}
+			else {
+				p_button_rename_style.display = "none";
+			}
 		}
+
+		restartTimer();
 	}
-
-	let tgt = event.target;
-	if (tgt.getAttribute("class") === "b") {
-		select_bullet(tgt);
-	}
-	else if (tgt.getAttribute("id") === "circle_selected") {
-		/* info pane */
-		const posX = event.clientX;
-		const posY = window.innerHeight - event.clientY;
-
-		div_binfo_style.left = posX + "px";
-		div_binfo_style.bottom = posY + "px";
-		div_binfo_style.visibility = "visible";
-
-		const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
-		p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
-		p_base.innerHTML = `Base: ${bullet.dataset.b}`;
-		const str_base = strLable(tgt.dataset.id);
-		const tex_base = katex.renderToString(str_base, { throwOnError: false });
-		p_latex.innerHTML = `LaTeX: ${tex_base}`;
-
-		const level = parseInt(bullet.dataset.l);
-		if (level === 5000) { p_diff.innerHTML = `PC`; }
-		else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
-		else if (level > 9800) {
-			const r = 10000 - level;
-			let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
-			str_diff = str_diff.replace('None', '?');
-			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
-		}
-		else {
-			const r = level;
-			let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
-			str_diff = str_diff.replace('None', '?');
-			p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
-		}
-
-
-		if (bullet.dataset.g === "1") {
-			p_button_rename_style.display = "block";
-		}
-		else {
-			p_button_rename_style.display = "none";
-		}
-	}
-
-	restartTimer();
 }
 
 function on_wheel(event) {
@@ -241,14 +245,16 @@ function on_pointerleave_bullet(event) {
  ************************************/
 
 function on_contextmenu(event) {
-	let posX = event.clientX;
-	let posY = event.clientY;
+	if (!event.ctrlKey) {
+		let posX = event.clientX;
+		let posY = event.clientY;
 
-	div_menu_style.left = posX + "px";
-	div_menu_style.top = posY + "px";
-	div_menu_style.visibility = "visible";
+		div_menu_style.left = posX + "px";
+		div_menu_style.top = posY + "px";
+		div_menu_style.visibility = "visible";
 
-	event.preventDefault();
+		event.preventDefault();
+	}
 }
 
 function on_rename() {
@@ -308,6 +314,11 @@ function on_select_page(event) {
 	for (const b of bullets) {
 		if (b.dataset.page >= p) {
 			b.style.visibility = "visible";
+			if (b.dataset.page === "200" && b.dataset.d !== "None" && b.dataset.l > 10000 - p) {
+				b.setAttribute("opacity", "0.6");
+			} else {
+				b.setAttribute("opacity", "1");
+			}
 		}
 		else {
 			b.style.visibility = "hidden";
