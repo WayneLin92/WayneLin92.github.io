@@ -310,7 +310,7 @@ function on_select_page(event) {
 			p = 200;
 			break;
 	}
-	let bullets = document.getElementsByClassName("b");
+	const bullets = document.getElementsByClassName("b");
 	for (const b of bullets) {
 		if (b.dataset.page >= p) {
 			b.style.visibility = "visible";
@@ -324,13 +324,22 @@ function on_select_page(event) {
 			b.style.visibility = "hidden";
 		}
 	}
-	let lines = document.getElementsByClassName("l");
-	for (const line of lines) {
-		if (line.dataset.page >= p) {
-			line.style.visibility = "visible";
+	const lines = document.getElementsByClassName("l");
+	for (const ele of lines) {
+		if (ele.dataset.page >= p) {
+			ele.style.visibility = "visible";
 		}
 		else {
-			line.style.visibility = "hidden";
+			ele.style.visibility = "hidden";
+		}
+	}
+	const labels = document.getElementsByClassName("label");
+	for (const ele of labels) {
+		if (ele.dataset.page >= p) {
+			ele.style.visibility = "visible";
+		}
+		else {
+			ele.style.visibility = "hidden";
 		}
 	}
 }

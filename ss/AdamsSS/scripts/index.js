@@ -233,7 +233,7 @@ function strMon(mon) {
 }
 
 function strLable(id) {
-    let bullet = document.getElementById(id);
+    const bullet = document.getElementById(id);
     const arr_base = bullet.dataset.b.split(",");
     let str_base = "";
     const offset_X = parseInt(bullet.dataset.i);
@@ -250,31 +250,24 @@ function replaceAll(str, find, replace) {
 }
 
 function plotBulletLabels() {
+    const bullets = document.getElementsByClassName("b");
     g_labels.innerHTML = "";
-    for (bullet of g_bullets.childNodes) {
+    for (bullet of bullets) {
         if (bullet.tagName === "circle" && bullet.id.slice(0, 1) === "b") {
             let str_mon = strLable(bullet.id);
-            str_mon = replaceAll(str_mon, "\\\\Delta ", "Δ");
-            str_mon = replaceAll(str_mon, "\\\\Delta", "Δ");
-            str_mon = replaceAll(str_mon, "\\^\\\\prime", "'");
-            str_mon = replaceAll(str_mon, "\\^\\{\\\\prime\\\\prime}", "''");
-            str_mon = replaceAll(str_mon, "_0", "0");
-            str_mon = replaceAll(str_mon, "_1", "1");
-            str_mon = replaceAll(str_mon, "_2", "2");
-            str_mon = replaceAll(str_mon, "_3", "3");
-            str_mon = replaceAll(str_mon, "_4", "4");
-            str_mon = replaceAll(str_mon, "_5", "5");
-            str_mon = replaceAll(str_mon, "_6", "6");
-            str_mon = replaceAll(str_mon, "_7", "7");
+            str_mon = replaceAll(str_mon, /\\Delta\s?/, "Δ");
+            str_mon = replaceAll(str_mon, /\^\\prime\s?/, "'");
+            str_mon = replaceAll(str_mon, /\^\{\\prime\\prime}\s?/, "''");
+            str_mon = replaceAll(str_mon, /_(\d)/, "$1");
 
             const re = /^(?!(P|P\^\d|P\^\d\d|Δ|M|M_1)h(0|1|2)).*h(0|1|2)/;
             if (str_mon.length < 10 && parseFloat(bullet.getAttribute("cx")) <= 127 && !(str_mon.match(re) && str_mon.length > 2)) {
-                let label = `<text x=${parseFloat(bullet.getAttribute("cx")) - 0.06} y=${-parseFloat(bullet.getAttribute("cy")) + 0.16}>${str_mon}</text>\n`;
+                const r = parseFloat(bullet.getAttribute("r"));
+                const label = `<text class="label" x=${parseFloat(bullet.getAttribute("cx")) - r * 0.75} y=${-parseFloat(bullet.getAttribute("cy")) + r * 2} font-size=${r * 1.125} data-page=${bullet.dataset.page}>${str_mon}</text>\n`;
                 g_labels.insertAdjacentHTML("beforeend", label);
             }
         }
     }
-
 }
 
 /***************************************************
