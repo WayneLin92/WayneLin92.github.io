@@ -131,13 +131,13 @@ function on_pointerup(event) {
 			else if (level === 9800) { p_diff.innerHTML = `Permanant`; }
 			else if (level > 9800) {
 				const r = 10000 - level;
-				let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
+				let str_diff = `d_{${r}}(\\mathrm{this})=(${bullet.dataset.d})`;
 				str_diff = str_diff.replace('None', '?');
 				p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
 			}
 			else {
 				const r = level;
-				let str_diff = `d_${r}(${bullet.dataset.d})=\\mathrm{this}`;
+				let str_diff = `d_{${r}}(${bullet.dataset.d})=\\mathrm{this}`;
 				str_diff = str_diff.replace('None', '?');
 				p_diff.innerHTML = katex.renderToString(str_diff, { throwOnError: false });
 			}
@@ -305,8 +305,17 @@ function AdjustVisibility() {
 			b.style.visibility = "hidden";
 		}
 	}
-	const lines = document.getElementsByClassName("l");
-	for (const ele of lines) {
+	const structlines = document.getElementsByClassName("strt_l");
+	for (const ele of structlines) {
+		if (ele.dataset.page >= config_dynamic.page) {
+			ele.style.visibility = "visible";
+		}
+		else {
+			ele.style.visibility = "hidden";
+		}
+	}
+	const difflines = document.getElementsByClassName("diff_l");
+	for (const ele of difflines) {
 		if (ele.dataset.page == config_dynamic.page || (config_dynamic.showAllLines && ele.dataset.page > config_dynamic.page)) {
 			ele.style.visibility = "visible";
 		}
@@ -314,9 +323,9 @@ function AdjustVisibility() {
 			ele.style.visibility = "hidden";
 		}
 	}
-	const dlines = document.getElementsByClassName("dl");
+	const dlines = document.getElementsByClassName("dashed_l");
 	for (const ele of dlines) {
-		if (config_dynamic.showDashed && (ele.dataset.page == config_dynamic.page || (config_dynamic.showAllLines && ele.dataset.page > config_dynamic.page))) {
+		if (config_dynamic.showDashed && (ele.dataset.r <= config_dynamic.page || config_dynamic.showAllLines)) {
 			ele.style.visibility = "visible";
 		}
 		else {
