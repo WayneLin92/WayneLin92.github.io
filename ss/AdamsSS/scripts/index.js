@@ -29,6 +29,9 @@ const config_dynamic = {
     camera_unit_screen_min:
         (window.innerWidth - config.margin) / (config.x_max + 1),
     camera_unit_screen_max: Math.min(window.innerWidth, window.innerHeight) - 30,
+    page: 2,
+    showDashed: true,
+    showAllLines: true,
 };
 
 /* The canvas is always as big as the window */

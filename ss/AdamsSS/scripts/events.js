@@ -127,8 +127,8 @@ function on_pointerup(event) {
 			p_latex.innerHTML = `LaTeX: ${tex_base}`;
 
 			const level = parseInt(bullet.dataset.l);
-			if (level === 5000) { p_diff.innerHTML = `PC`; }
-			else if (level === 9800) { p_diff.innerHTML = `PC or boundary`; }
+			if (level === 5000) { p_diff.innerHTML = `Permanant`; }
+			else if (level === 9800) { p_diff.innerHTML = `Permanant`; }
 			else if (level > 9800) {
 				const r = 10000 - level;
 				let str_diff = `d_${r}(\\mathrm{this})=(${bullet.dataset.d})`;
@@ -249,7 +249,14 @@ function on_contextmenu(event) {
 		let posX = event.clientX;
 		let posY = event.clientY;
 
-		div_menu_style.left = posX + "px";
+		if (event.target.id === "button_cm") {
+			div_menu_style.left = null;
+			div_menu_style.right = (window.innerWidth - posX) + "px";
+		}
+		else {
+			div_menu_style.left = posX + "px";
+			div_menu_style.right = null;
+		}
 		div_menu_style.top = posY + "px";
 		div_menu_style.visibility = "visible";
 
@@ -280,41 +287,15 @@ function on_copy_aliases() {
 }
 
 function on_click_about() {
-	alert(`navigator.userAgent=${navigator.userAgent}\nnavigator.vendor=${navigator.vendor}\nwindow.opera=${window.opera}\n2022-06-13 22:34:08`);
+	alert("Author: Weinan Lin");
 }
 
-function on_select_page(event) {
-	let p = 2;
-	switch (event.target.value) {
-		case "E2":
-			p = 2
-			break;
-
-		case "E3":
-			p = 3
-			break;
-
-		case "E4":
-			p = 4
-			break;
-
-		case "E5":
-			p = 5
-			break;
-
-		case "E6":
-			p = 6
-			break;
-
-		default:
-			p = 200;
-			break;
-	}
+function AdjustVisibility() {
 	const bullets = document.getElementsByClassName("b");
 	for (const b of bullets) {
-		if (b.dataset.page >= p) {
+		if (b.dataset.page >= config_dynamic.page) {
 			b.style.visibility = "visible";
-			if (b.dataset.page === "200" && b.dataset.d !== "None" && b.dataset.l > 10000 - p) {
+			if (b.dataset.page === "200" && b.dataset.d !== "None" && b.dataset.l > 10000 - config_dynamic.page) {
 				b.setAttribute("opacity", "0.6");
 			} else {
 				b.setAttribute("opacity", "1");
@@ -326,7 +307,16 @@ function on_select_page(event) {
 	}
 	const lines = document.getElementsByClassName("l");
 	for (const ele of lines) {
-		if (ele.dataset.page >= p) {
+		if (ele.dataset.page == config_dynamic.page || (config_dynamic.showAllLines && ele.dataset.page > config_dynamic.page)) {
+			ele.style.visibility = "visible";
+		}
+		else {
+			ele.style.visibility = "hidden";
+		}
+	}
+	const dlines = document.getElementsByClassName("dl");
+	for (const ele of dlines) {
+		if (config_dynamic.showDashed && (ele.dataset.page == config_dynamic.page || (config_dynamic.showAllLines && ele.dataset.page > config_dynamic.page))) {
 			ele.style.visibility = "visible";
 		}
 		else {
@@ -335,13 +325,80 @@ function on_select_page(event) {
 	}
 	const labels = document.getElementsByClassName("label");
 	for (const ele of labels) {
-		if (ele.dataset.page >= p) {
+		if (ele.dataset.page >= config_dynamic.page) {
 			ele.style.visibility = "visible";
 		}
 		else {
 			ele.style.visibility = "hidden";
 		}
 	}
+}
+
+function on_select_page(event) {
+	switch (event.target.value) {
+		case "E2":
+			config_dynamic.page = 2;
+			break;
+
+		case "E3":
+			config_dynamic.page = 3;
+			break;
+
+		case "E4":
+			config_dynamic.page = 4;
+			break;
+
+		case "E5":
+			config_dynamic.page = 5;
+			break;
+
+		case "E6":
+			config_dynamic.page = 6;
+			break;
+
+		case "Einf":
+			config_dynamic.page = 200;
+			break;
+
+		default:
+			console.log("Faulty on_select_page option" + event.target.value);
+			break;
+	}
+	AdjustVisibility();
+}
+
+function on_select_dashed(event) {
+	switch (event.target.value) {
+		case "Show dashed":
+			config_dynamic.showDashed = true;
+			break;
+
+		case "No dashed":
+			config_dynamic.showDashed = false;
+			break;
+
+		default:
+			console.log("Faulty on_select_dashed option" + event.target.value);
+			break;
+	}
+	AdjustVisibility();
+}
+
+function on_select_lines(event) {
+	switch (event.target.value) {
+		case "All":
+			config_dynamic.showAllLines = true;
+			break;
+
+		case "Current":
+			config_dynamic.showAllLines = false;
+			break;
+
+		default:
+			console.log("Faulty select_lines option" + event.target.value);
+			break;
+	}
+	AdjustVisibility();
 }
 
 /***********************************
