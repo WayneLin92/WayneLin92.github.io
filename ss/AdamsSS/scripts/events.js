@@ -38,10 +38,10 @@ function on_pointerdown(event) {
 		/* This event is cached to support 2-finger gestures */
 		pointerCache.push(event);
 
-		if (pointerCache.length == 1) {
+		if (pointerCache.length === 1) {
 			prevPt = new Vector(event.offsetX, event.offsetY);
 		}
-		else if (pointerCache.length == 2) {
+		else if (pointerCache.length === 2) {
 			prevPtsDist = getDistPts();
 		}
 		restartTimer();
@@ -60,7 +60,7 @@ function on_pointermove(event) {
 	}
 
 	/* Move only when the only one down pointer moves */
-	if (pointerCache.length == 1 && index < pointerCache.length) {
+	if (pointerCache.length === 1 && index < pointerCache.length) {
 		let curPt = new Vector(event.offsetX, event.offsetY);
 		let deltaScreen = curPt.sub(prevPt);
 		camera.translate(new Vector(deltaScreen.x, -deltaScreen.y));
@@ -68,7 +68,7 @@ function on_pointermove(event) {
 	}
 
 	/* If two pointers are down, check for pinch gestures */
-	if (pointerCache.length == 2 && index < pointerCache.length) {
+	if (pointerCache.length === 2 && index < pointerCache.length) {
 		let p1Svg = camera.flip(new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY));
 		let p2Svg = camera.flip(new Vector(pointerCache[1].offsetX, pointerCache[1].offsetY));
 		let curDist = p1Svg.dist(p2Svg);
@@ -83,7 +83,7 @@ function on_pointermove(event) {
 function removeEvent(event_id) {
 	/* Remove this event from the target's cache */
 	for (let i = 0; i < pointerCache.length; i++) {
-		if (pointerCache[i].pointerId == event_id) {
+		if (pointerCache[i].pointerId === event_id) {
 			pointerCache.splice(i, 1);
 			return true;
 		}
@@ -95,19 +95,19 @@ function on_pointerup(event) {
 	/* Remove this pointer from the cache */
 	if (event.button === 0) {
 		if (removeEvent(event.pointerId)) {
-			if (pointerCache.length == 0) {
+			if (pointerCache.length === 0) {
 				prevPt = null;
 			}
-			else if (pointerCache.length == 1) {
+			else if (pointerCache.length === 1) {
 				prevPt = new Vector(pointerCache[0].offsetX, pointerCache[0].offsetY);
 			}
-			else if (pointerCache.length == 2) {
+			else if (pointerCache.length === 2) {
 				prevPtsDist = getDistPts();
 			}
 		}
 
 		let tgt = event.target;
-		if (tgt.getAttribute("class") === "b") {
+		if (tgt.classList.contains("b")) {
 			select_bullet(tgt);
 		}
 		else if (tgt.getAttribute("id") === "circle_selected") {
@@ -300,6 +300,19 @@ function AdjustVisibility() {
 			} else {
 				b.setAttribute("opacity", "1");
 			}
+
+			if (config_dynamic.showLines === "Minimal") {
+				if (b.classList.contains("prim_b")) {
+					b.setAttribute("stroke", "red");
+					b.setAttribute("stroke-width", b.getAttribute("r") / 3);
+				}
+			}
+			else {
+				if (b.classList.contains("prim_b")) {
+					b.removeAttribute("stroke");
+					b.removeAttribute("stroke-width");
+				}
+			}
 		}
 		else {
 			b.style.visibility = "hidden";
@@ -314,24 +327,46 @@ function AdjustVisibility() {
 			ele.style.visibility = "hidden";
 		}
 	}
+
 	const difflines = document.getElementsByClassName("diff_l");
-	for (const ele of difflines) {
-		if (ele.dataset.page == config_dynamic.page || (config_dynamic.showAllLines && ele.dataset.page > config_dynamic.page)) {
-			ele.style.visibility = "visible";
+	if (config_dynamic.showLines === "Minimal") {
+		for (const ele of difflines) {
+			ele.style.visibility = "hidden";
 		}
-		else {
+		for (const ele of document.getElementsByClassName("prim_l")) {
+			if (ele.dataset.page >= config_dynamic.page) {
+				ele.style.visibility = "visible";
+			}
+		}
+	}
+	else {
+		for (const ele of difflines) {
+			if (ele.dataset.page == config_dynamic.page || (config_dynamic.showLines === "All" && ele.dataset.page > config_dynamic.page)) {
+				ele.style.visibility = "visible";
+			}
+			else {
+				ele.style.visibility = "hidden";
+			}
+		}
+	}
+
+	const dashedlines = document.getElementsByClassName("dashed_l");
+	if (config_dynamic.showLines !== "Minimal") {
+		for (const ele of dashedlines) {
+			if (config_dynamic.showDashed && (ele.dataset.r <= config_dynamic.page || config_dynamic.showLines === "All")) {
+				ele.style.visibility = "visible";
+			}
+			else {
+				ele.style.visibility = "hidden";
+			}
+		}
+	}
+	else {
+		for (const ele of dashedlines) {
 			ele.style.visibility = "hidden";
 		}
 	}
-	const dlines = document.getElementsByClassName("dashed_l");
-	for (const ele of dlines) {
-		if (config_dynamic.showDashed && (ele.dataset.r <= config_dynamic.page || config_dynamic.showAllLines)) {
-			ele.style.visibility = "visible";
-		}
-		else {
-			ele.style.visibility = "hidden";
-		}
-	}
+
 	const labels = document.getElementsByClassName("label");
 	for (const ele of labels) {
 		if (ele.dataset.page >= config_dynamic.page) {
@@ -394,19 +429,7 @@ function on_select_dashed(event) {
 }
 
 function on_select_lines(event) {
-	switch (event.target.value) {
-		case "All":
-			config_dynamic.showAllLines = true;
-			break;
-
-		case "Current":
-			config_dynamic.showAllLines = false;
-			break;
-
-		default:
-			console.log("Faulty select_lines option" + event.target.value);
-			break;
-	}
+	config_dynamic.showLines = event.target.value
 	AdjustVisibility();
 }
 
