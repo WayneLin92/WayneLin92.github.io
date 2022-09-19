@@ -265,7 +265,7 @@ function plotBulletLabels() {
             str_mon = replaceAll(str_mon, /_(\d)/, "$1");
 
             const re = /^(?!(P|P\^\d|P\^\d\d|Δ|M|M_1|\()h(0|1|2)).*h(0|1|2)/;
-            if (str_mon.length <= 14 && parseFloat(bullet.getAttribute("cx")) <= 127 && !(str_mon.match(re) && str_mon.length > 2)) {
+            if (str_mon.length <= 10 && parseFloat(bullet.getAttribute("cx")) <= 127 && !(str_mon.match(re) && str_mon.length > 2)) {
                 const r = parseFloat(bullet.getAttribute("r"));
                 const label = `<text class="label" x=${parseFloat(bullet.getAttribute("cx")) - r * 0.75} y=${-parseFloat(bullet.getAttribute("cy")) + r * 2} font-size=${r * 1.125} data-page=${bullet.dataset.page}>${str_mon}</text>\n`;
                 g_labels.insertAdjacentHTML("beforeend", label);
