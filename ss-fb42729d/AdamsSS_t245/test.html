@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <!-- Adding some CSS -->
+  <style>
+    body {
+      background: white;
+      font-family: sans-serif;
+      color: #5e5e5e;
+    }
+
+    #menu {
+      visibility: hidden;
+      opacity: 0;
+      position: fixed;
+      background: #fff;
+      color: #555;
+      font-family: sans-serif;
+      font-size: 11px;
+      -webkit-box-shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+      -moz-box-shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+      box-shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+      padding: 0px;
+      border: 1px solid #c6c6c6;
+    }
+
+    #menu a {
+      display: block;
+      color: #555;
+      text-decoration: none;
+      padding: 6px 8px 6px 30px;
+      width: 250px;
+      position: relative;
+    }
+
+    #menu a img,
+    #menu a i.fa {
+      height: 20px;
+      font-size: 17px;
+      width: 20px;
+      position: absolute;
+      left: 5px;
+      top: 2px;
+    }
+
+    #menu a span {
+      color: #bcb1b3;
+      float: right;
+    }
+
+    #menu a:hover {
+      color: #fff;
+      background: #3879d9;
+    }
+
+    #menu hr {
+      border: 1px solid #ebebeb;
+      border-bottom: 0;
+    }
+  </style>
+
+  <body>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <h2>CSS3 and JAVASCRIPT custom menu.</h2>
+    <em>Stephan Stanisic | Lisence free</em>
+    <p>
+      Right-click anywhere on this page to open the custom menu. Styled like the
+      Google Chrome contextmenu. And yes, you can use
+      <i class="fa fa-flag"></i>font-awesome
+    </p>
+    <p style="font-size: small">
+      <b>Lisence</b>
+      <br />
+      "THE PIZZA-WARE LICENSE" (Revision 42): <br />
+      You can do whatever you want with this stuff. If we meet some day, and you
+      think this stuff is worth it, you can buy me a Pizza in return.
+      <br />
+      <a
+        style="font-size: xx-small"
+        href="https://github.com/KLVN/UrbanDictionary_API#license"
+        >https://github.com/KLVN/UrbanDictionary_API#license</a
+      >
+    </p>
+    <br />
+    <br />
+    <small
+      >(The white body background is just because I hate the light blue editor
+      background on the result on jsfiddle)</small
+    >
+    <div id="menu">
+      <a href="">
+         AdBlock Plus
+        <span>Ctrl + ?!</span>
+      </a>
+      <a href="#">
+        <img src="http://puu.sh/nr5Z6/4360098fc1.png" /> SNTX
+        <span>Ctrl + ?!</span>
+      </a>
+      <hr />
+      <a href="#">
+        <i class="fa fa-fort-awesome"></i> Fort Awesome <span>Ctrl + ?!</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-flag"></i> Font Awesome <span>Ctrl + ?!</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-fort-awesome"></i> Font Awesome <span>Ctrl + ?!</span>
+      </a>
+    </div>
+    <script>
+      var i = document.getElementById("menu").style;
+      if (document.addEventListener) {
+        document.addEventListener(
+          "contextmenu",
+          function (e) {
+            var posX = e.clientX;
+            var posY = e.clientY;
+            menu(posX, posY);
+            e.preventDefault();
+          },
+          false
+        );
+        document.addEventListener(
+          "click",
+          function (e) {
+            i.opacity = "0";
+            setTimeout(function () {
+              i.visibility = "hidden";
+            }, 501);
+          },
+          false
+        );
+      } else {
+        document.attachEvent("oncontextmenu", function (e) {
+          var posX = e.clientX;
+          var posY = e.clientY;
+          menu(posX, posY);
+          e.preventDefault();
+        });
+        document.attachEvent("onclick", function (e) {
+          i.opacity = "0";
+          setTimeout(function () {
+            i.visibility = "hidden";
+          }, 501);
+        });
+      }
+
+      function menu(x, y) {
+        i.top = y + "px";
+        i.left = x + "px";
+        i.visibility = "visible";
+        i.opacity = "1";
+      }
+    </script>
+  </body>
+</html>
