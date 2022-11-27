@@ -17,6 +17,7 @@ var prevPtsDist = null;
 var prevPt = null;
 
 /* other globals */
+const arr_factors = [1, 3, 7, 15, 23, 29, 33, 42];
 var timerClearCache = null;
 
 function getDistPts() {
@@ -119,7 +120,7 @@ function on_pointerup(event) {
 			div_binfo_style.visibility = "visible";
 
 			const bullet = document.getElementById(tgt.dataset.id); /* The actualy bullet behind what is clicked */
-			p_deg.innerHTML = `Deg: (${getAxisNumber(Math.round(bullet.getAttribute("cx")))},${Math.round(bullet.getAttribute("cy"))})`;
+			p_deg.innerHTML = `Deg: (${Math.round(bullet.getAttribute("cx"))},${Math.round(bullet.getAttribute("cy"))})`;
 			p_base.innerHTML = `Base: ${bullet.dataset.b}`;
 			const str_base = strLable(tgt.dataset.id);
 			const tex_base = katex.renderToString(str_base, { throwOnError: false });
@@ -189,9 +190,7 @@ function select_bullet(bullet) {
 
 		const id1 = i, id2 = id_selected;
 		if (basis_prod[id1 + "," + id2]) {
-			const O = basis_prod[id1 + "," + id2][1];
-			rect_prod.setAttribute("height", O - Math.round(rect_prod.getAttribute("y")));
-			for (const index of basis_prod[id1 + "," + id2][0]) {
+			for (const index of basis_prod[id1 + "," + id2]) {
 				const id = "b" + index;
 				const bullet = document.getElementById(id);
 				circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
@@ -203,16 +202,14 @@ function select_bullet(bullet) {
 
 function on_key_down(event) {
 	if (typeof MODE !== 'undefined' && MODE == "DualSS") {
-		// console.log(event.which)
+		console.log(event.which)
 		if (event.which === 39) { // Right arrow
 			sep_right += 1;
 			AdjustVisibilityBySeparator();
-			plotAxisLabels();
 		}
 		else if (event.which === 37) { // Left arrow
 			sep_right -= 1;
 			AdjustVisibilityBySeparator();
-			plotAxisLabels();
 		}
 		else if (event.which === 38) { // Up arrow
 			if(sep_width === 1) {
@@ -223,7 +220,6 @@ function on_key_down(event) {
 				sep_width = 1;
 			}
 			AdjustVisibilityBySeparator();
-			plotAxisLabels();
 		}
 		else if (event.which === 40) { // Down arrow
 			if(sep_width === 1) {
@@ -234,7 +230,6 @@ function on_key_down(event) {
 				sep_width = 1;
 			}
 			AdjustVisibilityBySeparator();
-			plotAxisLabels();
 		}
 	}
 }

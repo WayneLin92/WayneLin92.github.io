@@ -182,18 +182,6 @@ function plotGridLines() {
     }
 }
 
-function getAxisNumber(x) {
-    if (typeof MODE !== 'undefined' && MODE == "DualSS") {
-        if (x < sep_right)
-            return x;
-        else
-            return x - 1;
-    }
-    else{
-        return x;
-    }
-}
-
 function plotAxisLabels() {
     var stepLabel = Math.ceil(config.axis_text_sep_screen / camera.unit_svg);
     let i_min = Math.ceil(camera.svg2world(new Vector(30, 0)).x / stepLabel) * stepLabel;
@@ -201,7 +189,7 @@ function plotAxisLabels() {
     g_xaxis.innerHTML = "";
     for (let i = i_min; i <= i_max; i += stepLabel) {
         let xText = camera.world2svg(new Vector(i, 0)).x;
-        let label = `<text x="${xText}" y="-10">${getAxisNumber(i)}</text>\n`;
+        let label = `<text x="${xText}" y="-10">${i}</text>\n`;
         g_xaxis.insertAdjacentHTML("beforeend", label);
     }
     i_min = Math.ceil(camera.svg2world(new Vector(0, 30)).y / stepLabel) * stepLabel;
@@ -272,7 +260,6 @@ function plotBulletLabels() {
             let str_mon = strLable(bullet.id);
             str_mon = replaceAll(str_mon, /\\Delta\s?/, "Δ");
             str_mon = replaceAll(str_mon, /\\mu\s?/, "μ");
-            str_mon = replaceAll(str_mon, /\\rho\s?/, "ρ");
             str_mon = replaceAll(str_mon, /\\iota\s?/, "ι");
             str_mon = replaceAll(str_mon, /\^\\prime\s?/, "'");
             str_mon = replaceAll(str_mon, /\^\{\\prime\\prime}\s?/, "''");
@@ -282,12 +269,7 @@ function plotBulletLabels() {
             const re = /^(?!(P|P\^\d|P\^\d\d|Δ|M|M_1|\()h(0|1|2)).*h(0|1|2)/;
             if (str_mon.length <= 10 && parseFloat(bullet.getAttribute("cx")) <= 127 && !(str_mon.match(re) && str_mon.length > 2)) {
                 const r = parseFloat(bullet.getAttribute("r"));
-                let class_ = "label";
-                if (bullet.classList.contains("b0"))
-                    class_ += " label0";
-                else if (bullet.classList.contains("b1"))
-                    class_ += " label1";
-                const label = `<text class="${class_}" x=${parseFloat(bullet.getAttribute("cx")) - r * 0.75} y=${-parseFloat(bullet.getAttribute("cy")) + r * 2} font-size=${r * 1.125} data-page=${bullet.dataset.page}>${str_mon}</text>\n`;
+                const label = `<text class="label" x=${parseFloat(bullet.getAttribute("cx")) - r * 0.75} y=${-parseFloat(bullet.getAttribute("cy")) + r * 2} font-size=${r * 1.125} data-page=${bullet.dataset.page}>${str_mon}</text>\n`;
                 g_labels.insertAdjacentHTML("beforeend", label);
             }
         }
@@ -300,50 +282,55 @@ function AdjustVisibilityBySeparator() {
     rect_separator.setAttribute('x', sep_right - sep_width);
     rect_separator.setAttribute('width', sep_width);
     rect_second_ss.setAttribute('x', sep_right - sep_width - 300);
-    const sep_left = sep_right - sep_width;
 
+    const sep_left = sep_right - sep_width;
     const bullets_b0 = document.getElementsByClassName("b0");
 	for (const b of bullets_b0) {
         const x = Math.round(b.getAttribute("cx"));
-		if (x <= sep_left)
+		if (x <= sep_left) {
 			b.style.visibility = "visible";
-		else
+		}
+		else {
 			b.style.visibility = "hidden";
+		}
 	}
-
     const bullets_b1 = document.getElementsByClassName("b1");
 	for (const b of bullets_b1) {
         const x = Math.round(b.getAttribute("cx"));
-		if (x >= sep_right)
+		if (x >= sep_right) {
 			b.style.visibility = "visible";
-		else
+		}
+		else {
 			b.style.visibility = "hidden";
+		}
 	}
-
     const lines_l0 = document.getElementsByClassName("l0");
 	for (const line of lines_l0) {
         const x1 = parseInt(line.dataset.x1);
         const x2 = parseInt(line.dataset.x2);
-		if (x1 <= sep_left && x2 <= sep_left)
+		if (x1 <= sep_left && x2 <= sep_left) {
 			line.style.visibility = "visible";
-		else
+		}
+		else {
 			line.style.visibility = "hidden";
+		}
 	}
-
     const lines_l1 = document.getElementsByClassName("l1");
 	for (const line of lines_l1) {
         const x1 = parseInt(line.dataset.x1);
         const x2 = parseInt(line.dataset.x2);
-		if (x1 >= sep_right && x2 >= sep_right)
+		if (x1 >= sep_right && x2 >= sep_right) {
 			line.style.visibility = "visible";
-		else
+		}
+		else {
 			line.style.visibility = "hidden";
+		}
 	}
-
     const lines_lbc = document.getElementsByClassName("lbc");
     if (sep_width != 1) {
-        for (const line of lines_lbc)
+        for (const line of lines_lbc) {
             line.style.visibility = "hidden";
+        }
     }
     else {
         for (const line of lines_lbc) {
@@ -356,7 +343,6 @@ function AdjustVisibilityBySeparator() {
             }
         }
     }
-
     const lines_ltc = document.getElementsByClassName("ltc");
     if (sep_width == 1) {
         for (const line of lines_ltc) {
@@ -366,45 +352,20 @@ function AdjustVisibilityBySeparator() {
     else {
         for (const line of lines_ltc) {
             const x2 = parseInt(line.dataset.x2);
-            if (x2 == sep_right)
+            if (x2 == sep_right) {
                 line.style.visibility = "visible";
-            else
+            }
+            else {
                 line.style.visibility = "hidden";
+            }
         }
-    }
-
-    const labels0 = document.getElementsByClassName("label0");
-    for (const label of labels0) {
-        const x = Math.round(parseFloat(label.getAttribute("x")));
-		if (x <= sep_left)
-			label.style.visibility = "visible";
-		else
-			label.style.visibility = "hidden";
-	}
-    
-    const labels1 = document.getElementsByClassName("label1");
-    for (const label of labels1) {
-        const x = Math.round(parseFloat(label.getAttribute("x")));
-		if (x >= sep_right)
-			label.style.visibility = "visible";
-		else
-			label.style.visibility = "hidden";
-	}
-}
-
-function addRectProduct() {
-    for (const i of arr_factors) {
-        const id = "b" + i;
-		const bullet = document.getElementById(id);
-        let rect_product = `<rect id="rect_prod${i}" x="-1000" y="-1000" width="1" height="1" fill="green" opacity="0.1"  data-x="${bullet.getAttribute("cx")}" data-y="${bullet.getAttribute("cy")}" />`;
-        g_plot.insertAdjacentHTML("afterbegin", rect_product);
     }
 }
 
 /***************************************************
  * init
  ***************************************************/
-function init1() {
+function init() {
     svg_ss.setAttribute("width", window.innerWidth);
     svg_ss.setAttribute("height", window.innerHeight);
     g_svg.setAttribute(
@@ -415,7 +376,6 @@ function init1() {
     plotGridLines();
     plotAxisLabels();
     plotBulletLabels();
-    addRectProduct();
 
     if (typeof MODE !== 'undefined') {
         if (MODE == "DualSS") {
@@ -423,10 +383,5 @@ function init1() {
         }
     }
 
-
-}
-
-function init() {
-    init1();
     initHandlers();
 }

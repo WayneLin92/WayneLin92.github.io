@@ -11,7 +11,7 @@
         {
             "label": "Compile /ss/index_.md",
             "type": "shell",
-            "command": "python task.py -f ./ss/index_.md -o ./ss/index.html -t \"Spectral sequences\""
+            "command": "python task.py -f ./ss-fb42729d/index_.md -o ./ss-fb42729d/index.html -t \"Spectral sequences\""
         },
         {
             "label": "Compile /SelectedTopicsInAlgebraicTopology/index_.md",
