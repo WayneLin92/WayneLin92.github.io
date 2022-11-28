@@ -18,3 +18,4 @@
 ## Archive
 * [Adams Spectral sequence (t<=220)](./archive/AdamsSS_t220/index.html)
 * [Adams Spectral sequence (t<=245)](./archive/AdamsSS_t245/index.html)
+* [tmp](./AdamsSS_tmp/index.html)

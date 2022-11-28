@@ -188,9 +188,10 @@ function select_bullet(bullet) {
 		rect_prod.setAttribute("y", Math.round(bullet.getAttribute("cy")) + Math.round(rect_prod.dataset.y) - 0.5);
 
 		const id1 = i, id2 = id_selected;
+		const O = basis_prod[id1 + "," + id2] ? basis_prod[id1 + "," + id2][1] : 300;
+		rect_prod.setAttribute("height", O - Math.round(rect_prod.getAttribute("y")));
+
 		if (basis_prod[id1 + "," + id2]) {
-			const O = basis_prod[id1 + "," + id2][1];
-			rect_prod.setAttribute("height", O - Math.round(rect_prod.getAttribute("y")));
 			for (const index of basis_prod[id1 + "," + id2][0]) {
 				const id = "b" + index;
 				const bullet = document.getElementById(id);
@@ -215,7 +216,7 @@ function on_key_down(event) {
 			plotAxisLabels();
 		}
 		else if (event.which === 38) { // Up arrow
-			if(sep_width === 1) {
+			if (sep_width === 1) {
 				sep_right += 1;
 				sep_width = sep_max_width;
 			}
@@ -226,7 +227,7 @@ function on_key_down(event) {
 			plotAxisLabels();
 		}
 		else if (event.which === 40) { // Down arrow
-			if(sep_width === 1) {
+			if (sep_width === 1) {
 				sep_width = sep_max_width;
 			}
 			else {

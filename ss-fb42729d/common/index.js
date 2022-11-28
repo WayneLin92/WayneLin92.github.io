@@ -274,6 +274,14 @@ function plotBulletLabels() {
             str_mon = replaceAll(str_mon, /\\mu\s?/, "μ");
             str_mon = replaceAll(str_mon, /\\rho\s?/, "ρ");
             str_mon = replaceAll(str_mon, /\\iota\s?/, "ι");
+            str_mon = replaceAll(str_mon, /\\eta\s?/, "η");
+            str_mon = replaceAll(str_mon, /\\nu\s?/, "ν");
+            str_mon = replaceAll(str_mon, /\\bar\\sigma\s?/, "σ&#772");
+            str_mon = replaceAll(str_mon, /\\sigma\s?/, "σ");
+            str_mon = replaceAll(str_mon, /\\epsilon\s?/, "ε");
+            str_mon = replaceAll(str_mon, /\\bar\\kappa\s?/, "κ&#772");
+            str_mon = replaceAll(str_mon, /\\kappa\s?/, "κ");
+            str_mon = replaceAll(str_mon, /\\zeta\s?/, "ζ");
             str_mon = replaceAll(str_mon, /\^\\prime\s?/, "'");
             str_mon = replaceAll(str_mon, /\^\{\\prime\\prime}\s?/, "''");
             str_mon = replaceAll(str_mon, /_(\d)/, "$1");
