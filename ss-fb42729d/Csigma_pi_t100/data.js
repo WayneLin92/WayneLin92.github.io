@@ -1,7 +1,7 @@
-const MODE="DualSS";
-const sep_max_width=9;
-var sep_right=1;
-var sep_width=1;
+const MODE="DualPi";
+const SEP_MAX_WIDTH=9;
+var SEP_RIGHT=1;
+var SEP_WIDTH=1;
 const gen_names = [
  "2",
  "\\eta",

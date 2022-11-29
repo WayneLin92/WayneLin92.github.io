@@ -188,11 +188,18 @@ function select_bullet(bullet) {
 		rect_prod.setAttribute("y", Math.round(bullet.getAttribute("cy")) + Math.round(rect_prod.dataset.y) - 0.5);
 
 		const id1 = i, id2 = id_selected;
-		const O = basis_prod[id1 + "," + id2] ? basis_prod[id1 + "," + id2][1] : 300;
-		rect_prod.setAttribute("height", O - Math.round(rect_prod.getAttribute("y")));
+		let bp;
+		if (MODE == "Pi" || MODE == "DualPi") {
+			const O = basis_prod[id1 + "," + id2] ? basis_prod[id1 + "," + id2][1] : 300;
+			rect_prod.setAttribute("height", O - Math.round(rect_prod.getAttribute("y")));
+			if (basis_prod[id1 + "," + id2])
+				bp = basis_prod[id1 + "," + id2][0];
+		}
+		else
+			bp = basis_prod[id1 + "," + id2];
 
-		if (basis_prod[id1 + "," + id2]) {
-			for (const index of basis_prod[id1 + "," + id2][0]) {
+		if (bp) {
+			for (const index of bp) {
 				const id = "b" + index;
 				const bullet = document.getElementById(id);
 				circle_prod = `<circle cx="${bullet.getAttribute("cx")}" cy="${bullet.getAttribute("cy")}" r="${Number(bullet.getAttribute("r")) * 1.7}"></circle>`;
@@ -203,36 +210,36 @@ function select_bullet(bullet) {
 }
 
 function on_key_down(event) {
-	if (typeof MODE !== 'undefined' && MODE == "DualSS") {
+	if (MODE == "DualPi") {
 		// console.log(event.which)
 		if (event.which === 39) { // Right arrow
-			sep_right += 1;
+			SEP_RIGHT += 1;
 			AdjustVisibilityBySeparator();
 			plotAxisLabels();
 		}
 		else if (event.which === 37) { // Left arrow
-			sep_right -= 1;
+			SEP_RIGHT -= 1;
 			AdjustVisibilityBySeparator();
 			plotAxisLabels();
 		}
 		else if (event.which === 38) { // Up arrow
-			if (sep_width === 1) {
-				sep_right += 1;
-				sep_width = sep_max_width;
+			if (SEP_WIDTH === 1) {
+				SEP_RIGHT += 1;
+				SEP_WIDTH = SEP_MAX_WIDTH;
 			}
 			else {
-				sep_width = 1;
+				SEP_WIDTH = 1;
 			}
 			AdjustVisibilityBySeparator();
 			plotAxisLabels();
 		}
 		else if (event.which === 40) { // Down arrow
-			if (sep_width === 1) {
-				sep_width = sep_max_width;
+			if (SEP_WIDTH === 1) {
+				SEP_WIDTH = SEP_MAX_WIDTH;
 			}
 			else {
-				sep_right -= 1;
-				sep_width = 1;
+				SEP_RIGHT -= 1;
+				SEP_WIDTH = 1;
 			}
 			AdjustVisibilityBySeparator();
 			plotAxisLabels();
@@ -287,7 +294,7 @@ function on_rename() {
 	let str_mon = strMon(mon);
 	var tex_mon = katex.renderToString(str_mon, { throwOnError: false });
 	p_latex.innerHTML = `LaTeX: ${tex_mon}`;
-	plotBulletLabels();
+	addBulletLabels();
 }
 
 function on_copy_aliases() {
