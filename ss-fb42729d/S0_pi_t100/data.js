@@ -1,3 +1,4 @@
+const MODE="Pi";
 const gen_names = [
  "2",
  "\\eta",
