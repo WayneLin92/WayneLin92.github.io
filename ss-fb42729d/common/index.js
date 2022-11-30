@@ -189,6 +189,12 @@ function getAxisNumber(x) {
         else
             return x - 1;
     }
+    else if (MODE == "Exact") {
+        if (x % 3 == 2)
+            return Math.floor(x / 3 - T_TOP_CELL + 1)
+        else
+            return Math.floor(x / 3);
+    }
     else {
         return x;
     }
@@ -407,6 +413,12 @@ function addRectProduct() {
         const bullet = document.getElementById(id);
         let rect_product = `<rect id="rect_prod${i}" x="-1000" y="-1000" width="1" height="1" fill="green" opacity="0.1"  data-x="${bullet.getAttribute("cx")}" data-y="${bullet.getAttribute("cy")}" />`;
         g_plot.insertAdjacentHTML("afterbegin", rect_product);
+    }
+    if (MODE === "Exact") {
+        for (let i = 0; i < 300; ++i) {
+            let rect_product = `<rect x="${3*i-0.5}" y="-0.5" width="1" height="300" fill="#00ffff" opacity="0.1"/>`;
+            g_plot.insertAdjacentHTML("afterbegin", rect_product);
+        }
     }
 }
 
