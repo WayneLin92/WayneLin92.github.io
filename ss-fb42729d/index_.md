@@ -13,6 +13,7 @@
 * [Ceta (t<=100)](./Ceta_AdamsE2_t100/index.html)
 * [Cnu (t<=100)](./Cnu_AdamsE2_t100/index.html)
 * [Csigma (t<=100)](./Csigma_AdamsE2_t100/index.html)
+* [RP10 (t<=130)](./RP10_AdamsE2_t130/index.html)
 ### Homotopy
 * [S0 (t<=100)](./S0_pi_t100/index.html)
 * [C2 (t<=100)](./C2_pi_t100/index.html)
@@ -22,9 +23,9 @@
 
 ### Exact sequence of homotopy groups
 * [C2 (t<=100)](./C2_exact_t100/index.html)
-* [Ceta (t<=100)](./Ceta_pi_t100/index.html)
-* [Cnu (t<=100)](./Cnu_pi_t100/index.html)
-<!-- * [Csigma (t<=100)](./Csigma_pi_t100/index.html) -->
+* [Ceta (t<=100)](./Ceta_exact_t100/index.html)
+* [Cnu (t<=100)](./Cnu_exact_t100/index.html)
+* [Csigma (t<=100)](./Csigma_exact_t100/index.html)
 
 ## Archive
 * [Adams Spectral sequence (t<=220)](./archive/AdamsSS_t220/index.html)

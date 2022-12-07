@@ -435,11 +435,11 @@ function init() {
     g_plot.setAttribute("transform", camera.getTransform());
     addGridLines();
     plotAxisLabels();
-    addBulletLabels();
+    if (MODE !== "FromRes")
+        addBulletLabels();
     addRectProduct();
 
-    if (MODE == "DualPi") {
+    if (MODE === "DualPi")
         AdjustVisibilityBySeparator();
-    }
     initHandlers();
 }
