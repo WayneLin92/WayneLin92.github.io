@@ -183,7 +183,7 @@ function addGridLines() {
 }
 
 function getAxisNumber(x) {
-    if (MODE == "DualSS") {
+    if (MODE == "DualPi") {
         if (x < SEP_RIGHT)
             return x;
         else
