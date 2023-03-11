@@ -14,6 +14,7 @@
 * [Cnu (t<=100)](./Cnu_AdamsE2_t100/index.html)
 * [Csigma (t<=100)](./Csigma_AdamsE2_t100/index.html)
 * [RP10 (t<=130)](./RP10_AdamsE2_t130/index.html)
+* [X<2> (t<=200)](./X2_AdamsE2_t200/index.html)
 ### Homotopy
 * [S0 (t<=100)](./S0_pi_t100/index.html)
 * [C2 (t<=100)](./C2_pi_t100/index.html)
