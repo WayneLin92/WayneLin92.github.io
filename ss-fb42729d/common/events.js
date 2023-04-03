@@ -304,6 +304,14 @@ function on_copy_aliases() {
 	alert("Copied and you can send it to me");
 }
 
+// function on_save_svg() {
+// 	svgExport.downloadPdf(
+// 		document.getElementById("svg_ss"),
+// 		"ss",
+// 		{}
+// 	);
+// }
+
 function on_click_about() {
 	alert("Author: Weinan Lin");
 }

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!-- created by Weinan Lin -->
+<html lang="en">
+<meta name="viewport" user-scalable="no"
+  content="width=device-width,minimum-scale=0.75,maximum-scale=0.75,initial-scale=0.75" />
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136262938-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function g_tag() {
+      dataLayer.push(arguments);
+    }
+    g_tag("js", new Date());
+    g_tag("config", "UA-136262938-1");
+  </script> -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+    integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+  <!-- The loading of KaTeX is deferred to speed up page rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"
+    integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
+    crossorigin="anonymous"></script>
+  <title>Homotopy of S0</title>
+  <link rel="stylesheet" href="../../common/index.css">
+</head>
+
+<body onload="init()">
+  <svg id="svg_ss">
+    <g id="g_svg">
+      <g id="g_plot">
+        <rect id="rect_selected" x="-1000" y="-1000" width="1" height="1" fill="red" opacity="0.1" />
+
+        <rect id="rect_separator" x="-1000" y="-0.5" width="1" height="300" fill="pink" opacity="0.2" data-x="14"
+          data-y="4" />
+        <rect id="rect_second_ss" x="-1000" y="-0.5" width="300" height="300" fill="yellow" opacity="0.1" data-x="14"
+          data-y="4" />
+
+        <g id="g_grid" stroke-width="0.009" stroke="grey"></g>
+        <g id="g_marron_lines" stroke="maroon" fill="transparent">
+          <!-- g_maroon_lines:7aa92c76 -->
+        </g>
+        <g id="g_purple_lines" stroke="purple" fill="transparent">
+          <!-- g_purple_lines:114fd993 -->
+        </g>
+        <g id="g_h0_lines" stroke="black" fill="transparent">
+          <line class="strt_l" x1=0 y1=0 x2=0 y2=1 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=1 x2=0 y2=2 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=2 x2=0 y2=3 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=3 x2=0 y2=4 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=4 x2=0 y2=5 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=3 y1=1 x2=3 y2=2 data-x1=3 data-x2=3 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=5 x2=0 y2=6 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=3 y1=2 x2=3 y2=3 data-x1=3 data-x2=3 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=6 x2=0 y2=7 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=7 x2=0 y2=8 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=8 x2=0 y2=9 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=7 y1=1 x2=7 y2=2 data-x1=7 data-x2=7 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=9 x2=0 y2=10 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=7 y1=2 x2=7 y2=3 data-x1=7 data-x2=7 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=10 x2=0 y2=11 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=7 y1=3 x2=7 y2=4 data-x1=7 data-x2=7 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=11 x2=0 y2=12 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=12 x2=0 y2=13 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=13 x2=0 y2=14 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=14 x2=0 y2=15 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=15 x2=0 y2=16 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=16 x2=0 y2=17 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=11 y1=5 x2=11 y2=6 data-x1=11 data-x2=11 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=17 x2=0 y2=18 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=11 y1=6 x2=11 y2=7 data-x1=11 data-x2=11 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=18 x2=0 y2=19 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14 y1=4 x2=14 y2=5 data-x1=14 data-x2=14 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=19 x2=0 y2=20 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14 y1=5 x2=14 y2=6 data-x1=14 data-x2=14 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=15 y1=4 x2=14.8852 y2=5.03508 data-x1=15 data-x2=15 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=20 x2=0 y2=21 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14.8852 y1=5.03508 x2=15 y2=6 data-x1=15 data-x2=15 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=21 x2=0 y2=22 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=15 y1=6 x2=15 y2=7 data-x1=15 data-x2=15 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=22 x2=0 y2=23 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=15 y1=7 x2=15 y2=8 data-x1=15 data-x2=15 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=17 y1=5 x2=17 y2=6 data-x1=17 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=23 x2=0 y2=24 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=17 y1=6 x2=17 y2=7 data-x1=17 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=24 x2=0 y2=25 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=20 y1=4 x2=20 y2=5 data-x1=20 data-x2=20 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=25 x2=0 y2=26 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=20 y1=5 x2=20 y2=6 data-x1=20 data-x2=20 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=26 x2=0 y2=27 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=27 x2=0 y2=28 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=28 x2=0 y2=29 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=19 y1=9 x2=19 y2=10 data-x1=19 data-x2=19 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=23 y1=5 x2=23 y2=6 data-x1=23 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=29 x2=0 y2=30 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=19 y1=10 x2=19 y2=11 data-x1=19 data-x2=19 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=30 x2=0 y2=31 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22 y1=8 x2=22 y2=9 data-x1=22 data-x2=22 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=31 x2=0 y2=32 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22 y1=9 x2=22 y2=10 data-x1=22 data-x2=22 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=32 x2=0 y2=33 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=23.1148 y1=8.96492 x2=23 y2=10 data-x1=23 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=33 x2=0 y2=34 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=23 y1=10 x2=23 y2=11 data-x1=23 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=3 x2=30 y2=4 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=34 x2=0 y2=35 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=23 y1=11 x2=23 y2=12 data-x1=23 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=25 y1=9 x2=25 y2=10 data-x1=25 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=4 x2=30 y2=5 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=35 x2=0 y2=36 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=25 y1=10 x2=25 y2=11 data-x1=25 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=36 x2=0 y2=37 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=28 y1=8 x2=28 y2=9 data-x1=28 data-x2=28 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=37 x2=0 y2=38 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=28 y1=9 x2=28 y2=10 data-x1=28 data-x2=28 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=7 x2=30 y2=8 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=38 x2=0 y2=39 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=8 x2=30 y2=9 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=39 x2=0 y2=40 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=9 x2=30 y2=10 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=40 x2=0 y2=41 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=27 y1=13 x2=27 y2=14 data-x1=27 data-x2=27 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=10 x2=30 y2=11 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31 y1=9 x2=31 y2=10 data-x1=31 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=41 x2=0 y2=42 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=27 y1=14 x2=27 y2=15 data-x1=27 data-x2=27 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=42 x2=0 y2=43 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=12 x2=30 y2=13 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31 y1=11 x2=31 y2=12 data-x1=31 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=34 y1=8 x2=34 y2=9 data-x1=34 data-x2=34 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=43 x2=0 y2=44 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=13 x2=30 y2=14 data-x1=30 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31 y1=12 x2=30.8852 y2=13.0351 data-x1=31 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=34 y1=9 x2=34 y2=10 data-x1=34 data-x2=34 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=44 x2=0 y2=45 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30.8852 y1=13.0351 x2=31 y2=14 data-x1=31 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=45 x2=0 y2=46 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31 y1=14 x2=31 y2=15 data-x1=31 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=37 y1=8 x2=37 y2=9 data-x1=37 data-x2=37 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=46 x2=0 y2=47 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31 y1=15 x2=31 y2=16 data-x1=31 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=33 y1=13 x2=33 y2=14 data-x1=33 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=37 y1=9 x2=37 y2=10 data-x1=37 data-x2=37 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=47 x2=0 y2=48 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=33 y1=14 x2=33 y2=15 data-x1=33 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=48 x2=0 y2=49 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=12 x2=36 y2=13 data-x1=36 data-x2=36 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=49 x2=0 y2=50 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=13 x2=36 y2=14 data-x1=36 data-x2=36 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=50 x2=0 y2=51 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=51 x2=0 y2=52 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=52 x2=0 y2=53 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=35 y1=17 x2=35 y2=18 data-x1=35 data-x2=35 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=39 y1=13 x2=39 y2=14 data-x1=39 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=53 x2=0 y2=54 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=35 y1=18 x2=35 y2=19 data-x1=35 data-x2=35 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=54 x2=0 y2=55 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38 y1=16 x2=38 y2=17 data-x1=38 data-x2=38 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=42 y1=12 x2=42 y2=13 data-x1=42 data-x2=42 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=55 x2=0 y2=56 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38 y1=17 x2=38 y2=18 data-x1=38 data-x2=38 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=42 y1=13 x2=42 y2=14 data-x1=42 data-x2=42 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=56 x2=0 y2=57 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=39.1148 y1=16.9649 x2=39 y2=18 data-x1=39 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=57 x2=0 y2=58 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=39 y1=18 x2=39 y2=19 data-x1=39 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=58 x2=0 y2=59 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=39 y1=19 x2=39 y2=20 data-x1=39 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=41 y1=17 x2=41 y2=18 data-x1=41 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=59 x2=0 y2=60 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=41 y1=18 x2=41 y2=19 data-x1=41 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=60 x2=0 y2=61 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=44 y1=16 x2=44 y2=17 data-x1=44 data-x2=44 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=61 x2=0 y2=62 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=44 y1=17 x2=44 y2=18 data-x1=44 data-x2=44 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=15 x2=46 y2=16 data-x1=46 data-x2=46 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=62 x2=0 y2=63 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=16 x2=46 y2=17 data-x1=46 data-x2=46 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=63 x2=0 y2=64 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=17 x2=46 y2=18 data-x1=46 data-x2=46 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=64 x2=0 y2=65 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=43 y1=21 x2=43 y2=22 data-x1=43 data-x2=43 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=47 y1=17 x2=47 y2=18 data-x1=47 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=65 x2=0 y2=66 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=43 y1=22 x2=43 y2=23 data-x1=43 data-x2=43 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=66 x2=0 y2=67 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=20 x2=46 y2=21 data-x1=46 data-x2=46 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=50 y1=16 x2=50 y2=17 data-x1=50 data-x2=50 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=67 x2=0 y2=68 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=21 x2=46 y2=22 data-x1=46 data-x2=46 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=47 y1=20 x2=46.8852 y2=21.0351 data-x1=47 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=50 y1=17 x2=50 y2=18 data-x1=50 data-x2=50 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=53 y1=14 x2=53 y2=15 data-x1=53 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=68 x2=0 y2=69 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46.8852 y1=21.0351 x2=47 y2=22 data-x1=47 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=53 y1=15 x2=53 y2=16 data-x1=53 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=69 x2=0 y2=70 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=47 y1=22 x2=47 y2=23 data-x1=47 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=53 y1=16 x2=53 y2=17 data-x1=53 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=70 x2=0 y2=71 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=47 y1=23 x2=47 y2=24 data-x1=47 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=49 y1=21 x2=49 y2=22 data-x1=49 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=53 y1=17 x2=53 y2=18 data-x1=53 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=71 x2=0 y2=72 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=49 y1=22 x2=49 y2=23 data-x1=49 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=72 x2=0 y2=73 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=52 y1=20 x2=52 y2=21 data-x1=52 data-x2=52 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=73 x2=0 y2=74 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=52 y1=21 x2=52 y2=22 data-x1=52 data-x2=52 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=74 x2=0 y2=75 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=75 x2=0 y2=76 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=76 x2=0 y2=77 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=51 y1=25 x2=51 y2=26 data-x1=51 data-x2=51 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=55 y1=21 x2=55 y2=22 data-x1=55 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=77 x2=0 y2=78 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=51 y1=26 x2=51 y2=27 data-x1=51 data-x2=51 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=78 x2=0 y2=79 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54 y1=24 x2=54 y2=25 data-x1=54 data-x2=54 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=58 y1=20 x2=58 y2=21 data-x1=58 data-x2=58 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62.1148 y1=15.9649 x2=62 y2=17 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=79 x2=0 y2=80 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54 y1=25 x2=54 y2=26 data-x1=54 data-x2=54 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=58 y1=21 x2=58 y2=22 data-x1=58 data-x2=58 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=17 x2=62 y2=18 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=80 x2=0 y2=81 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=55.1148 y1=24.9649 x2=55 y2=26 data-x1=55 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=18 x2=62 y2=19 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=81 x2=0 y2=82 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=55 y1=26 x2=55 y2=27 data-x1=55 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=19 x2=62 y2=20 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=82 x2=0 y2=83 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=55 y1=27 x2=55 y2=28 data-x1=55 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=57 y1=25 x2=57 y2=26 data-x1=57 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=20 x2=62 y2=21 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=83 x2=0 y2=84 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=57 y1=26 x2=57 y2=27 data-x1=57 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=84 x2=0 y2=85 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=60 y1=24 x2=60 y2=25 data-x1=60 data-x2=60 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=85 x2=0 y2=86 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=60 y1=25 x2=60 y2=26 data-x1=60 data-x2=60 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=23 x2=62 y2=24 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=86 x2=0 y2=87 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=24 x2=62 y2=25 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=87 x2=0 y2=88 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=25 x2=62 y2=26 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=88 x2=0 y2=89 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=59 y1=29 x2=59 y2=30 data-x1=59 data-x2=59 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=26 x2=62 y2=27 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63 y1=25 x2=62.8852 y2=26.0351 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=89 x2=0 y2=90 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=59 y1=30 x2=59 y2=31 data-x1=59 data-x2=59 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63.1148 y1=25.9649 x2=63 y2=27 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=90 x2=0 y2=91 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=28 x2=62 y2=29 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63 y1=27 x2=63 y2=28 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=66 y1=24 x2=66 y2=25 data-x1=66 data-x2=66 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=91 x2=0 y2=92 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=29 x2=62 y2=30 data-x1=62 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63 y1=28 x2=62.8852 y2=29.0351 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=66 y1=25 x2=66 y2=26 data-x1=66 data-x2=66 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=92 x2=0 y2=93 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62.8852 y1=29.0351 x2=63 y2=30 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=93 x2=0 y2=94 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63 y1=30 x2=63 y2=31 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=69 y1=24 x2=69 y2=25 data-x1=69 data-x2=69 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=94 x2=0 y2=95 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63 y1=31 x2=63 y2=32 data-x1=63 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=65 y1=29 x2=65 y2=30 data-x1=65 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=69 y1=25 x2=69 y2=26 data-x1=69 data-x2=69 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=95 x2=0 y2=96 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=65 y1=30 x2=65 y2=31 data-x1=65 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=96 x2=0 y2=97 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=68 y1=28 x2=68 y2=29 data-x1=68 data-x2=68 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=97 x2=0 y2=98 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=68 y1=29 x2=68 y2=30 data-x1=68 data-x2=68 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=98 x2=0 y2=99 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=99 x2=0 y2=100 data-x1=0 data-x2=0 stroke-width=0.02 data-page=200 /><path class="strt_l dashed_l" d="M 16 2 C 16.3 3.2, 16.3 4.8, 16 6" data-x1=16 data-x2=16 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 19 3 C 19.3 4.8, 19.3 7.2, 19 9" data-x1=19 data-x2=19 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 22 4 C 22.3 5.8, 22.3 8.2, 22 10" data-x1=22 data-x2=22 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 23 4 C 23.3 4.6, 23.3 5.4, 23 6" data-x1=23 data-x2=23 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 23 6 C 23.3 6.88947, 23.4148 8.07544, 23.1148 8.96492" data-x1=23 data-x2=23 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 5 C 30.3 5.6, 30.3 6.4, 30 7" data-x1=30 data-x2=30 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 11 C 30.3 11.6, 30.3 12.4, 30 13" data-x1=30 data-x2=30 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 31 10 C 31.3 10.8895, 31.4148 12.0754, 31.1148 12.9649" data-x1=31 data-x2=31 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 36 6 C 36.3 7.8, 36.3 10.2, 36 12" data-x1=36 data-x2=36 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 39 7 C 39.3 8.8, 39.3 11.2, 39 13" data-x1=39 data-x2=39 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 37 10 C 37.3 10.6, 37.3 11.4, 37 12" data-x1=37 data-x2=37 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 40 8 C 40.3 8.6, 40.3 9.4, 40 10" data-x1=40 data-x2=40 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 39 14 C 39.3 14.8895, 39.4148 16.0754, 39.1148 16.9649" data-x1=39 data-x2=39 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 48 12 C 48.3 12.6, 48.3 13.4, 48 14" data-x1=48 data-x2=48 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 46 18 C 46.3 18.9, 46.3 20.1, 46 21" data-x1=46 data-x2=46 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 47 18 C 47.3 18.8895, 47.4148 20.0754, 47.1148 20.9649" data-x1=47 data-x2=47 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 54 12 C 54.3 12.6, 54.3 13.4, 54 14" data-x1=54 data-x2=54 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 10 C 56.3 11.8, 56.3 14.2, 56 16" data-x1=56 data-x2=56 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 53 18 C 53.3 18.6, 53.3 19.4, 53 20" data-x1=53 data-x2=53 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 16 C 56.3 16.6, 56.3 17.4, 56 18" data-x1=56 data-x2=56 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 12 C 60.3 12.6, 60.3 13.4, 60 14" data-x1=60 data-x2=60 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 14 C 60.3 15.2, 60.3 16.8, 60 18" data-x1=60 data-x2=60 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 55 22 C 55.3 22.8895, 55.4148 24.0754, 55.1148 24.9649" data-x1=55 data-x2=55 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 61.8852 16.0351 C 62.1852 16.6246, 62.3 17.4105, 62 18" data-x1=62 data-x2=62 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 21 C 62.3 21.6, 62.3 22.4, 62 23" data-x1=62 data-x2=62 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 64 20 C 64.3 20.6, 64.3 21.4, 64 22" data-x1=64 data-x2=64 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 68 16 C 68.3 16.9, 68.3 18.1, 68 19" data-x1=68 data-x2=68 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 72 12 C 72.3 13.8, 72.3 16.2, 72 18" data-x1=72 data-x2=72 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 27 C 62.3 27.6, 62.3 28.4, 62 29" data-x1=62 data-x2=62 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62.8852 26.0351 C 63.1852 26.914, 63.4148 28.086, 63.1148 28.9649" data-x1=63 data-x2=63 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 70 20 C 70.3 20.6, 70.3 21.4, 70 22" data-x1=70 data-x2=70 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 74 16 C 74.3 16.9, 74.3 18.1, 74 19" data-x1=74 data-x2=74 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 14 C 76.3 15.8, 76.3 18.2, 76 20" data-x1=76 data-x2=76 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 69 26 C 69.3 26.6, 69.3 27.4, 69 28" data-x1=69 data-x2=69 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 72 24 C 72.3 24.6, 72.3 25.4, 72 26" data-x1=72 data-x2=72 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 20 C 76.3 20.6, 76.3 21.4, 76 22" data-x1=76 data-x2=76 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 80 16 C 80.3 16.9, 80.3 18.1, 80 19" data-x1=80 data-x2=80 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 22 C 76.3 22.9, 76.3 24.1, 76 25" data-x1=76 data-x2=76 stroke-width=0.02 stroke="red" stroke-dasharray="0.2,0.2" />
+
+        </g>
+        <g id="g_h1_lines" stroke="black" fill="transparent">
+          <line class="strt_l" x1=0 y1=0 x2=1 y2=1 data-x1=0 data-x2=1 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=1 y1=1 x2=2 y2=2 data-x1=1 data-x2=2 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=2 y1=2 x2=3 y2=3 data-x1=2 data-x2=3 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=7 y1=1 x2=8 y2=2 data-x1=7 data-x2=8 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=8 y1=2 x2=9 y2=3 data-x1=8 data-x2=9 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=8 y1=3 x2=9 y2=4 data-x1=8 data-x2=9 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=9 y1=5 x2=10 y2=6 data-x1=9 data-x2=10 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=10 y1=6 x2=11 y2=7 data-x1=10 data-x2=11 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14 y1=4 x2=15.1148 y2=4.96492 data-x1=14 data-x2=15 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=16 y1=2 x2=17 y2=3 data-x1=16 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=15.1148 y1=4.96492 x2=16 y2=6 data-x1=15 data-x2=16 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=17 y1=3 x2=18 y2=4 data-x1=17 data-x2=18 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=16 y1=6 x2=17 y2=7 data-x1=16 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=16 y1=7 x2=17 y2=8 data-x1=16 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=20 y1=4 x2=21 y2=5 data-x1=20 data-x2=21 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=17 y1=9 x2=18 y2=10 data-x1=17 data-x2=18 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=23 y1=4 x2=24 y2=5 data-x1=23 data-x2=24 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=18 y1=10 x2=19 y2=11 data-x1=18 data-x2=19 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22 y1=8 x2=22.8852 y2=9.03508 data-x1=22 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22.8852 y1=9.03508 x2=24 y2=10 data-x1=23 data-x2=24 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=24 y1=10 x2=25 y2=11 data-x1=24 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=24 y1=11 x2=25 y2=12 data-x1=24 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=28 y1=8 x2=29 y2=9 data-x1=28 data-x2=29 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=25 y1=13 x2=26 y2=14 data-x1=25 data-x2=26 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=26 y1=14 x2=27 y2=15 data-x1=26 data-x2=27 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=12 x2=31.1148 y2=12.9649 data-x1=30 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=34 y1=8 x2=35 y2=9 data-x1=34 data-x2=35 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=6 x2=37 y2=7 data-x1=36 data-x2=37 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31.1148 y1=12.9649 x2=32 y2=14 data-x1=31 data-x2=32 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=32 y1=14 x2=33 y2=15 data-x1=32 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=32 y1=15 x2=33 y2=16 data-x1=32 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=12 x2=37 y2=13 data-x1=36 data-x2=37 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=33 y1=17 x2=34 y2=18 data-x1=33 data-x2=34 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=34 y1=18 x2=35 y2=19 data-x1=34 data-x2=35 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38 y1=16 x2=38.8852 y2=17.0351 data-x1=38 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=42 y1=12 x2=43 y2=13 data-x1=42 data-x2=43 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38.8852 y1=17.0351 x2=40 y2=18 data-x1=39 data-x2=40 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=40 y1=18 x2=41 y2=19 data-x1=40 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=40 y1=19 x2=41 y2=20 data-x1=40 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=44 y1=16 x2=45 y2=17 data-x1=44 data-x2=45 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=41 y1=21 x2=42 y2=22 data-x1=41 data-x2=42 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=42 y1=22 x2=43 y2=23 data-x1=42 data-x2=43 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=20 x2=47.1148 y2=20.9649 data-x1=46 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=50 y1=16 x2=51 y2=17 data-x1=50 data-x2=51 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=47.1148 y1=20.9649 x2=48 y2=22 data-x1=47 data-x2=48 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=48 y1=22 x2=49 y2=23 data-x1=48 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=48 y1=23 x2=49 y2=24 data-x1=48 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=52 y1=20 x2=53 y2=21 data-x1=52 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=49 y1=25 x2=50 y2=26 data-x1=49 data-x2=50 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=50 y1=26 x2=51 y2=27 data-x1=50 data-x2=51 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54 y1=24 x2=54.8852 y2=25.0351 data-x1=54 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=58 y1=20 x2=59 y2=21 data-x1=58 data-x2=59 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54.8852 y1=25.0351 x2=56 y2=26 data-x1=55 data-x2=56 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=56 y1=26 x2=57 y2=27 data-x1=56 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=56 y1=27 x2=57 y2=28 data-x1=56 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=60 y1=24 x2=61 y2=25 data-x1=60 data-x2=61 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=57 y1=29 x2=58 y2=30 data-x1=57 data-x2=58 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=58 y1=30 x2=59 y2=31 data-x1=58 data-x2=59 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=28 x2=63.1148 y2=28.9649 data-x1=62 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=66 y1=24 x2=67 y2=25 data-x1=66 data-x2=67 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63.1148 y1=28.9649 x2=64 y2=30 data-x1=63 data-x2=64 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=64 y1=30 x2=65 y2=31 data-x1=64 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=64 y1=31 x2=65 y2=32 data-x1=64 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=68 y1=28 x2=69 y2=29 data-x1=68 data-x2=69 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=65 y1=33 x2=66 y2=34 data-x1=65 data-x2=66 stroke-width=0.02 data-page=200 /><path class="strt_l dashed_l" d="M 9 4 C 9.5 4.5, 9.875 5.5, 10 6" data-x1=9 data-x2=10 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 14 2 C 14.5 2.5, 14.875 3.5, 15 4" data-x1=14 data-x2=15 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 15 4 C 15.5 4.5, 15.875 5.5, 16 6" data-x1=15 data-x2=16 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 19 3 C 19.5 3.5, 19.875 4.5, 20 5" data-x1=19 data-x2=20 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 21 3 C 21.5 3.5, 21.95 7.5, 22 8" data-x1=21 data-x2=22 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 17 8 C 17.5 8.5, 17.875 9.5, 18 10" data-x1=17 data-x2=18 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 21 5 C 21.5 5.5, 21.9167 7.5, 22 8" data-x1=21 data-x2=22 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 24 5 C 24.5 5.5, 24.9167 7.5, 25 8" data-x1=24 data-x2=25 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 23.1148 8.96492 C 23.6148 9.46492, 23.8772 10.5, 24 11" data-x1=23 data-x2=24 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 3 C 30.5 3.5, 30.875 4.5, 31 5" data-x1=30 data-x2=31 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 25 12 C 25.5 12.5, 25.875 13.5, 26 14" data-x1=25 data-x2=26 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 7 C 30.5 7.5, 30.875 8.5, 31 9" data-x1=30 data-x2=31 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 29 9 C 29.5 9.5, 29.875 10.5, 30 11" data-x1=29 data-x2=30 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 31 11 C 31.5 11.5, 31.9167 13.5, 32 14" data-x1=31 data-x2=32 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 35 9 C 35.5 9.5, 35.9167 11.5, 36 12" data-x1=35 data-x2=36 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 37 7 C 37.5 7.5, 37.875 8.5, 38 9" data-x1=37 data-x2=38 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 38 6 C 38.5 6.5, 38.9167 8.5, 39 9" data-x1=38 data-x2=39 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 37 8 C 37.5 8.5, 37.9688 15.5, 38 16" data-x1=37 data-x2=38 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 40 8 C 40.5 8.5, 40.875 9.5, 41 10" data-x1=40 data-x2=41 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 33 16 C 33.5 16.5, 33.875 17.5, 34 18" data-x1=33 data-x2=34 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 37 13 C 37.5 13.5, 37.9167 15.5, 38 16" data-x1=37 data-x2=38 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 39.1148 16.9649 C 39.6148 17.4649, 39.8772 18.5, 40 19" data-x1=39 data-x2=40 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 43 13 C 43.5 13.5, 43.9167 15.5, 44 16" data-x1=43 data-x2=44 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 48 12 C 48.5 12.5, 48.875 13.5, 49 14" data-x1=48 data-x2=49 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 41 20 C 41.5 20.5, 41.875 21.5, 42 22" data-x1=41 data-x2=42 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 46 15 C 46.5 15.5, 46.875 16.5, 47 17" data-x1=46 data-x2=47 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 45 17 C 45.5 17.5, 45.9167 19.5, 46 20" data-x1=45 data-x2=46 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 54 12 C 54.5 12.5, 54.875 13.5, 55 14" data-x1=54 data-x2=55 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 10 C 56.5 10.5, 56.875 11.5, 57 12" data-x1=56 data-x2=57 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 47 20 C 47.5 20.5, 47.875 21.5, 48 22" data-x1=47 data-x2=48 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 53 14 C 53.5 14.5, 53.875 15.5, 54 16" data-x1=53 data-x2=54 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 51 17 C 51.5 17.5, 51.9167 19.5, 52 20" data-x1=51 data-x2=52 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 16 C 56.5 16.5, 56.875 17.5, 57 18" data-x1=56 data-x2=57 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 12 C 60.5 12.5, 60.875 13.5, 61 14" data-x1=60 data-x2=61 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 49 24 C 49.5 24.5, 49.875 25.5, 50 26" data-x1=49 data-x2=50 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 53 21 C 53.5 21.5, 53.9167 23.5, 54 24" data-x1=53 data-x2=54 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 14 C 60.5 14.5, 60.9167 16.5, 61 17" data-x1=60 data-x2=61 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62.1148 15.9649 C 62.6148 16.4649, 62.8772 17.5, 63 18" data-x1=62 data-x2=63 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 61.8852 16.0351 C 62.3852 16.5351, 62.8728 17.5, 63 18" data-x1=62 data-x2=63 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 55.1148 24.9649 C 55.6148 25.4649, 55.8772 26.5, 56 27" data-x1=55 data-x2=56 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 59 21 C 59.5 21.5, 59.9167 23.5, 60 24" data-x1=59 data-x2=60 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 64 20 C 64.5 20.5, 64.875 21.5, 65 22" data-x1=64 data-x2=65 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 68 16 C 68.5 16.5, 68.875 17.5, 69 18" data-x1=68 data-x2=69 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 72 12 C 72.5 12.5, 72.875 13.5, 73 14" data-x1=72 data-x2=73 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 57 28 C 57.5 28.5, 57.875 29.5, 58 30" data-x1=57 data-x2=58 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 23 C 62.5 23.5, 62.875 24.5, 63 25" data-x1=62 data-x2=63 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 61 25 C 61.5 25.5, 61.875 26.5, 62 27" data-x1=61 data-x2=62 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 63.1148 25.9649 C 63.6148 26.4649, 63.938 29.5, 64 30" data-x1=63 data-x2=64 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 70 20 C 70.5 20.5, 70.875 21.5, 71 22" data-x1=70 data-x2=71 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 74 16 C 74.5 16.5, 74.875 17.5, 75 18" data-x1=74 data-x2=75 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 14 C 76.5 14.5, 76.875 15.5, 77 16" data-x1=76 data-x2=77 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 67 25 C 67.5 25.5, 67.9167 27.5, 68 28" data-x1=67 data-x2=68 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 69 24 C 69.5 24.5, 69.9643 30.5, 70 31" data-x1=69 data-x2=70 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 72 24 C 72.5 24.5, 72.875 25.5, 73 26" data-x1=72 data-x2=73 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 20 C 76.5 20.5, 76.875 21.5, 77 22" data-x1=76 data-x2=77 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 80 16 C 80.5 16.5, 80.875 17.5, 81 18" data-x1=80 data-x2=81 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 65 32 C 65.5 32.5, 65.875 33.5, 66 34" data-x1=65 data-x2=66 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 69 29 C 69.5 29.5, 69.875 30.5, 70 31" data-x1=69 data-x2=70 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 22 C 76.5 22.5, 76.875 23.5, 77 24" data-x1=76 data-x2=77 stroke-width=0.02 stroke="blue" stroke-dasharray="0.2,0.2" />
+
+        </g>
+        <g id="g_h2_lines" stroke="DarkSlateGray" fill="transparent">
+          <line class="strt_l" x1=0 y1=0 x2=3 y2=1 data-x1=0 data-x2=3 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=1 x2=3 y2=2 data-x1=0 data-x2=3 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=0 y1=2 x2=3 y2=3 data-x1=0 data-x2=3 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=3 y1=1 x2=6 y2=2 data-x1=3 data-x2=6 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=6 y1=2 x2=9 y2=3 data-x1=6 data-x2=9 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=11 y1=5 x2=14 y2=6 data-x1=11 data-x2=14 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14 y1=4 x2=17 y2=5 data-x1=14 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14 y1=5 x2=17 y2=6 data-x1=14 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=14 y1=6 x2=17 y2=7 data-x1=14 data-x2=17 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=17 y1=5 x2=20 y2=6 data-x1=17 data-x2=20 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=19 y1=3 x2=22 y2=4 data-x1=19 data-x2=22 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=20 y1=4 x2=23 y2=5 data-x1=20 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=20 y1=5 x2=23 y2=6 data-x1=20 data-x2=23 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=19 y1=9 x2=22 y2=10 data-x1=19 data-x2=22 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=23 y1=5 x2=26 y2=6 data-x1=23 data-x2=26 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22 y1=8 x2=25 y2=9 data-x1=22 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22 y1=9 x2=25 y2=10 data-x1=22 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=22 y1=10 x2=25 y2=11 data-x1=22 data-x2=25 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=25 y1=9 x2=28 y2=10 data-x1=25 data-x2=28 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=28 y1=8 x2=31 y2=9 data-x1=28 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=28 y1=9 x2=31 y2=10 data-x1=28 data-x2=31 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=27 y1=13 x2=30 y2=14 data-x1=27 data-x2=30 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=31 y1=9 x2=34 y2=10 data-x1=31 data-x2=34 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=12 x2=33 y2=13 data-x1=30 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=34 y1=8 x2=37 y2=9 data-x1=34 data-x2=37 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=6 x2=39 y2=7 data-x1=36 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=13 x2=33 y2=14 data-x1=30 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=34 y1=9 x2=37 y2=10 data-x1=34 data-x2=37 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=30 y1=14 x2=33 y2=15 data-x1=30 data-x2=33 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=33 y1=13 x2=36 y2=14 data-x1=33 data-x2=36 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=12 x2=39 y2=13 data-x1=36 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=36 y1=13 x2=39 y2=14 data-x1=36 data-x2=39 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=35 y1=17 x2=38 y2=18 data-x1=35 data-x2=38 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=39 y1=13 x2=42 y2=14 data-x1=39 data-x2=42 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38 y1=16 x2=41 y2=17 data-x1=38 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38 y1=17 x2=41 y2=18 data-x1=38 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=38 y1=18 x2=41 y2=19 data-x1=38 data-x2=41 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=41 y1=17 x2=44 y2=18 data-x1=41 data-x2=44 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=44 y1=16 x2=47 y2=17 data-x1=44 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=44 y1=17 x2=47 y2=18 data-x1=44 data-x2=47 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=43 y1=21 x2=46 y2=22 data-x1=43 data-x2=46 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=47 y1=17 x2=50 y2=18 data-x1=47 data-x2=50 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=20 x2=49 y2=21 data-x1=46 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=50 y1=16 x2=53 y2=17 data-x1=50 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=21 x2=49 y2=22 data-x1=46 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=50 y1=17 x2=53 y2=18 data-x1=50 data-x2=53 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=46 y1=22 x2=49 y2=23 data-x1=46 data-x2=49 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=49 y1=21 x2=52 y2=22 data-x1=49 data-x2=52 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=52 y1=20 x2=55 y2=21 data-x1=52 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=52 y1=21 x2=55 y2=22 data-x1=52 data-x2=55 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=51 y1=25 x2=54 y2=26 data-x1=51 data-x2=54 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=55 y1=21 x2=58 y2=22 data-x1=55 data-x2=58 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54 y1=24 x2=57 y2=25 data-x1=54 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54 y1=25 x2=57 y2=26 data-x1=54 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=54 y1=26 x2=57 y2=27 data-x1=54 data-x2=57 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=57 y1=25 x2=60 y2=26 data-x1=57 data-x2=60 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=60 y1=24 x2=63 y2=25 data-x1=60 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=60 y1=25 x2=62.8852 y2=26.0351 data-x1=60 data-x2=63 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=59 y1=29 x2=62 y2=30 data-x1=59 data-x2=62 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=63 y1=25 x2=66 y2=26 data-x1=63 data-x2=66 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=28 x2=65 y2=29 data-x1=62 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=66 y1=24 x2=69 y2=25 data-x1=66 data-x2=69 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=29 x2=65 y2=30 data-x1=62 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=66 y1=25 x2=69 y2=26 data-x1=66 data-x2=69 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=62 y1=30 x2=65 y2=31 data-x1=62 data-x2=65 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=65 y1=29 x2=68 y2=30 data-x1=65 data-x2=68 stroke-width=0.02 data-page=200 /><line class="strt_l" x1=68 y1=28 x2=71 y2=29 data-x1=68 data-x2=71 stroke-width=0.02 data-page=200 /><path class="strt_l dashed_l" d="M 6 2 C 6.5 2.16667, 8.625 3.5, 9 4" data-x1=6 data-x2=9 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 7 1 C 7.5 1.16667, 9.85 5.5, 10 6" data-x1=7 data-x2=10 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 8 3 C 8.5 3.16667, 10.625 4.5, 11 5" data-x1=8 data-x2=11 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 14 2 C 14.5 2.16667, 16.85 6.5, 17 7" data-x1=14 data-x2=17 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 16 2 C 16.5 2.16667, 18.8929 8.5, 19 9" data-x1=16 data-x2=19 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 15 4 C 15.5 4.16667, 17.875 9.5, 18 10" data-x1=15 data-x2=18 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 16 7 C 16.5 7.16667, 18.625 8.5, 19 9" data-x1=16 data-x2=19 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 21 3 C 21.5 3.16667, 23.8929 9.5, 24 10" data-x1=21 data-x2=24 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 20 6 C 20.5 6.16667, 22.8618 8.46492, 23.1148 8.96492" data-x1=20 data-x2=23 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 22 4 C 22.5 4.16667, 24.8125 7.5, 25 8" data-x1=22 data-x2=25 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 23 4 C 23.5 4.16667, 25.625 5.5, 26 6" data-x1=23 data-x2=26 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 23.1148 8.96492 C 23.6148 9.13158, 25.851 13.5, 26 14" data-x1=23 data-x2=26 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 26 6 C 26.5 6.16667, 28.75 8.5, 29 9" data-x1=26 data-x2=29 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 3 C 30.5 3.16667, 32.625 4.5, 33 5" data-x1=30 data-x2=33 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 4 C 30.5 4.16667, 32.75 6.5, 33 7" data-x1=30 data-x2=33 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 24 11 C 24.5 11.1667, 26.625 12.5, 27 13" data-x1=24 data-x2=27 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 5 C 30.5 5.16667, 32.8929 11.5, 33 12" data-x1=30 data-x2=33 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 7 C 30.5 7.16667, 32.85 11.5, 33 12" data-x1=30 data-x2=33 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 28 10 C 28.5 10.1667, 30.8618 12.4649, 31.1148 12.9649" data-x1=28 data-x2=31 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 8 C 30.5 8.16667, 32.85 12.5, 33 13" data-x1=30 data-x2=33 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 30 9 C 30.5 9.16667, 32.85 13.5, 33 14" data-x1=30 data-x2=33 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 31 11 C 31.5 11.1667, 33.625 12.5, 34 13" data-x1=31 data-x2=34 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 34 8 C 34.5 8.16667, 36.625 9.5, 37 10" data-x1=34 data-x2=37 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 31 12 C 31.5 12.1667, 33.875 17.5, 34 18" data-x1=31 data-x2=34 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 34 9 C 34.5 9.16667, 36.625 10.5, 37 11" data-x1=34 data-x2=37 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 34 10 C 34.5 10.1667, 36.75 12.5, 37 13" data-x1=34 data-x2=37 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 38 6 C 38.5 6.16667, 40.8125 9.5, 41 10" data-x1=38 data-x2=41 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 37 8 C 37.5 8.16667, 39.85 12.5, 40 13" data-x1=37 data-x2=40 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 39 7 C 39.5 7.16667, 41.625 8.5, 42 9" data-x1=39 data-x2=42 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 32 15 C 32.5 15.1667, 34.625 16.5, 35 17" data-x1=32 data-x2=35 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 40 8 C 40.5 8.16667, 42.75 10.5, 43 11" data-x1=40 data-x2=43 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 36 14 C 36.5 14.1667, 38.8618 16.4649, 39.1148 16.9649" data-x1=36 data-x2=39 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 42 12 C 42.5 12.1667, 44.75 14.5, 45 15" data-x1=42 data-x2=45 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 42 13 C 42.5 13.1667, 44.75 15.5, 45 16" data-x1=42 data-x2=45 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 39.1148 16.9649 C 39.6148 17.1316, 41.851 21.5, 42 22" data-x1=39 data-x2=42 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 42 14 C 42.5 14.1667, 44.75 16.5, 45 17" data-x1=42 data-x2=45 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 40 19 C 40.5 19.1667, 42.625 20.5, 43 21" data-x1=40 data-x2=43 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 48 12 C 48.5 12.1667, 50.75 14.5, 51 15" data-x1=48 data-x2=51 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 46 15 C 46.5 15.1667, 48.85 19.5, 49 20" data-x1=46 data-x2=49 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 44 18 C 44.5 18.1667, 46.8618 20.4649, 47.1148 20.9649" data-x1=44 data-x2=47 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 46 16 C 46.5 16.1667, 48.85 20.5, 49 21" data-x1=46 data-x2=49 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 46 17 C 46.5 17.1667, 48.85 21.5, 49 22" data-x1=46 data-x2=49 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 50 16 C 50.5 16.1667, 52.625 17.5, 53 18" data-x1=50 data-x2=53 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 54 12 C 54.5 12.1667, 56.75 14.5, 57 15" data-x1=54 data-x2=57 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 10 C 56.5 10.1667, 58.625 11.5, 59 12" data-x1=56 data-x2=59 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 47 20 C 47.5 20.1667, 49.875 25.5, 50 26" data-x1=47 data-x2=50 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 50 17 C 50.5 17.1667, 52.625 18.5, 53 19" data-x1=50 data-x2=53 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 53 14 C 53.5 14.1667, 55.625 15.5, 56 16" data-x1=53 data-x2=56 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 50 18 C 50.5 18.1667, 52.75 20.5, 53 21" data-x1=50 data-x2=53 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 53 15 C 53.5 15.1667, 55.75 17.5, 56 18" data-x1=53 data-x2=56 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 53 16 C 53.5 16.1667, 55.75 18.5, 56 19" data-x1=53 data-x2=56 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 48 23 C 48.5 23.1667, 50.625 24.5, 51 25" data-x1=48 data-x2=51 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 16 C 56.5 16.1667, 58.75 18.5, 59 19" data-x1=56 data-x2=59 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 12 C 60.5 12.1667, 62.75 14.5, 63 15" data-x1=60 data-x2=63 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 52 22 C 52.5 22.1667, 54.8618 24.4649, 55.1148 24.9649" data-x1=52 data-x2=55 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 14 C 60.5 14.1667, 62.85 18.5, 63 19" data-x1=60 data-x2=63 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 58 20 C 58.5 20.1667, 60.75 22.5, 61 23" data-x1=58 data-x2=61 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62.1148 15.9649 C 62.6148 16.1316, 64.7529 18.5, 65 19" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 61.8852 16.0351 C 62.3852 16.2018, 64.747 18.5, 65 19" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 58 21 C 58.5 21.1667, 60.75 23.5, 61 24" data-x1=58 data-x2=61 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 17 C 62.5 17.1667, 64.85 21.5, 65 22" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 55.1148 24.9649 C 55.6148 25.1316, 57.851 29.5, 58 30" data-x1=55 data-x2=58 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 58 22 C 58.5 22.1667, 60.75 24.5, 61 25" data-x1=58 data-x2=61 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 18 C 62.5 18.1667, 64.85 22.5, 65 23" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 56 27 C 56.5 27.1667, 58.625 28.5, 59 29" data-x1=56 data-x2=59 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 64 20 C 64.5 20.1667, 66.75 22.5, 67 23" data-x1=64 data-x2=67 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 68 16 C 68.5 16.1667, 70.75 18.5, 71 19" data-x1=68 data-x2=71 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 72 12 C 72.5 12.1667, 74.75 14.5, 75 15" data-x1=72 data-x2=75 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 23 C 62.5 23.1667, 64.85 27.5, 65 28" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 60 26 C 60.5 26.1667, 62.8618 28.4649, 63.1148 28.9649" data-x1=60 data-x2=63 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 24 C 62.5 24.1667, 64.85 28.5, 65 29" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 62 25 C 62.5 25.1667, 64.85 29.5, 65 30" data-x1=62 data-x2=65 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 63.1148 25.9649 C 63.6148 26.1316, 65.6315 27.5, 66 28" data-x1=63 data-x2=66 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 63 27 C 63.5 27.1667, 65.625 28.5, 66 29" data-x1=63 data-x2=66 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 66 24 C 66.5 24.1667, 68.625 25.5, 69 26" data-x1=66 data-x2=69 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 70 20 C 70.5 20.1667, 72.75 22.5, 73 23" data-x1=70 data-x2=73 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 74 16 C 74.5 16.1667, 76.75 18.5, 77 19" data-x1=74 data-x2=77 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 14 C 76.5 14.1667, 78.75 16.5, 79 17" data-x1=76 data-x2=79 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 63 28 C 63.5 28.1667, 65.875 33.5, 66 34" data-x1=63 data-x2=66 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 66 25 C 66.5 25.1667, 68.625 26.5, 69 27" data-x1=66 data-x2=69 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 66 26 C 66.5 26.1667, 68.75 28.5, 69 29" data-x1=66 data-x2=69 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 69 24 C 69.5 24.1667, 71.85 28.5, 72 29" data-x1=69 data-x2=72 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 65 29 C 65.5 29.1667, 67.8125 32.5, 68 33" data-x1=65 data-x2=68 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 64 31 C 64.5 31.1667, 66.625 32.5, 67 33" data-x1=64 data-x2=67 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 72 24 C 72.5 24.1667, 74.75 26.5, 75 27" data-x1=72 data-x2=75 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 76 20 C 76.5 20.1667, 78.75 22.5, 79 23" data-x1=76 data-x2=79 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+<path class="strt_l dashed_l" d="M 80 16 C 80.5 16.1667, 82.75 18.5, 83 19" data-x1=80 data-x2=83 stroke-width=0.02 stroke="green" stroke-dasharray="0.2,0.2" />
+
+        </g>
+        <g id="g_h3_lines" stroke="DarkSlateGray" fill="transparent" opacity="0.5">
+          <!-- h3_lines:0x2b309dc4U -->
+        </g>
+        <g id="g_d2_lines" stroke="DeepSkyBlue" fill="transparent">
+          <!-- d2_lines:d9dec788 -->
+        </g>
+        <g id="g_d3_lines" stroke="red" fill="transparent">
+          <!-- d3_lines:1a07bf89 -->
+        </g>
+        <g id="g_d4_lines" stroke="green" fill="transparent">
+          <!-- d4_lines:7d935e97 -->
+        </g>
+        <g id="g_d5_lines" stroke="blue" fill="transparent">
+          <!-- d5_lines:f6d7f992 -->
+        </g>
+        <g id="g_d6_lines" stroke="orange" fill="transparent">
+          <!-- d6_lines:05c49c4a -->
+        </g>
+        <g id="g_bullets" fill="black">
+          <g id="g_prod" fill="green"></g>
+          <circle id="circle_mouseon" cx="-1000" cy="-1000" r="0" fill="grey"></circle>
+          <circle id=b0 class="b b0" cx=0 cy=0 r=0.08 data-b=0 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 0) id: 0</title></circle>
+<circle id=b1 class="b b0" cx=0 cy=1 r=0.08 fill="#00c0ff" data-b=1 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(0, 1) id: 1</title></circle>
+<circle id=b2 class="b b0" cx=0 cy=2 r=0.08 data-b=2 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 2) id: 2</title></circle>
+<circle id=b3 class="b b0" cx=1 cy=1 r=0.08 fill="#00c0ff" data-b=3 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(1, 1) id: 3</title></circle>
+<circle id=b4 class="b b0" cx=0 cy=3 r=0.08 data-b=4 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 3) id: 4</title></circle>
+<circle id=b5 class="b b0" cx=0 cy=4 r=0.08 data-b=5 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 4) id: 5</title></circle>
+<circle id=b6 class="b b0" cx=2 cy=2 r=0.08 data-b=6 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(2, 2) id: 6</title></circle>
+<circle id=b7 class="b b0" cx=3 cy=1 r=0.08 fill="#00c0ff" data-b=7 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(3, 1) id: 7</title></circle>
+<circle id=b8 class="b b0" cx=0 cy=5 r=0.08 data-b=8 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 5) id: 8</title></circle>
+<circle id=b9 class="b b0" cx=3 cy=2 r=0.08 data-b=9 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(3, 2) id: 9</title></circle>
+<circle id=b10 class="b b0" cx=0 cy=6 r=0.08 data-b=10 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 6) id: 10</title></circle>
+<circle id=b11 class="b b0" cx=3 cy=3 r=0.08 data-b=11 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(3, 3) id: 11</title></circle>
+<circle id=b12 class="b b0" cx=0 cy=7 r=0.08 data-b=12 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 7) id: 12</title></circle>
+<circle id=b13 class="b b0" cx=0 cy=8 r=0.08 data-b=13 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 8) id: 13</title></circle>
+<circle id=b14 class="b b0" cx=6 cy=2 r=0.08 data-b=14 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(6, 2) id: 14</title></circle>
+<circle id=b15 class="b b0" cx=7 cy=1 r=0.08 fill="#00c0ff" data-b=15 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(7, 1) id: 15</title></circle>
+<circle id=b16 class="b b0" cx=0 cy=9 r=0.08 data-b=16 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 9) id: 16</title></circle>
+<circle id=b17 class="b b0" cx=7 cy=2 r=0.08 data-b=17 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(7, 2) id: 17</title></circle>
+<circle id=b18 class="b b0" cx=0 cy=10 r=0.08 data-b=18 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 10) id: 18</title></circle>
+<circle id=b19 class="b b0" cx=7 cy=3 r=0.08 data-b=19 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(7, 3) id: 19</title></circle>
+<circle id=b20 class="b b0" cx=8 cy=2 r=0.08 data-b=20 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(8, 2) id: 20</title></circle>
+<circle id=b21 class="b b0" cx=0 cy=11 r=0.08 data-b=21 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 11) id: 21</title></circle>
+<circle id=b22 class="b b0" cx=7 cy=4 r=0.08 data-b=22 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(7, 4) id: 22</title></circle>
+<circle id=b23 class="b b0" cx=8 cy=3 r=0.08 fill="#00c0ff" data-b=23 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(8, 3) id: 23</title></circle>
+<circle id=b24 class="b b0" cx=0 cy=12 r=0.08 data-b=24 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 12) id: 24</title></circle>
+<circle id=b25 class="b b0" cx=9 cy=3 r=0.08 data-b=25 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(9, 3) id: 25</title></circle>
+<circle id=b26 class="b b0" cx=0 cy=13 r=0.08 data-b=26 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 13) id: 26</title></circle>
+<circle id=b27 class="b b0" cx=9 cy=4 r=0.08 data-b=27 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(9, 4) id: 27</title></circle>
+<circle id=b28 class="b b0" cx=0 cy=14 r=0.08 data-b=28 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 14) id: 28</title></circle>
+<circle id=b29 class="b b0" cx=9 cy=5 r=0.08 fill="#00c0ff" data-b=29 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(9, 5) id: 29</title></circle>
+<circle id=b30 class="b b0" cx=0 cy=15 r=0.08 data-b=30 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 15) id: 30</title></circle>
+<circle id=b31 class="b b0" cx=0 cy=16 r=0.08 data-b=31 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 16) id: 31</title></circle>
+<circle id=b32 class="b b0" cx=10 cy=6 r=0.08 data-b=32 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(10, 6) id: 32</title></circle>
+<circle id=b33 class="b b0" cx=11 cy=5 r=0.08 fill="#00c0ff" data-b=33 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(11, 5) id: 33</title></circle>
+<circle id=b34 class="b b0" cx=14 cy=2 r=0.08 data-b=34 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(14, 2) id: 34</title></circle>
+<circle id=b35 class="b b0" cx=0 cy=17 r=0.08 data-b=35 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 17) id: 35</title></circle>
+<circle id=b36 class="b b0" cx=11 cy=6 r=0.08 data-b=36 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(11, 6) id: 36</title></circle>
+<circle id=b37 class="b b0" cx=0 cy=18 r=0.08 data-b=37 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 18) id: 37</title></circle>
+<circle id=b38 class="b b0" cx=11 cy=7 r=0.08 data-b=38 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(11, 7) id: 38</title></circle>
+<circle id=b39 class="b b0" cx=14 cy=4 r=0.08 fill="#00c0ff" data-b=39 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(14, 4) id: 39</title></circle>
+<circle id=b40 class="b b0" cx=16 cy=2 r=0.08 fill="#00c0ff" data-b=40 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(16, 2) id: 40</title></circle>
+<circle id=b41 class="b b0" cx=0 cy=19 r=0.08 data-b=41 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 19) id: 41</title></circle>
+<circle id=b42 class="b b0" cx=14 cy=5 r=0.08 data-b=42 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(14, 5) id: 42</title></circle>
+<circle id=b43 class="b b0" cx=15 cy=4 r=0.08 fill="#00c0ff" data-b=43 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(15, 4) id: 43</title></circle>
+<circle id=b44 class="b b0" cx=0 cy=20 r=0.08 data-b=44 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 20) id: 44</title></circle>
+<circle id=b45 class="b b0" cx=14 cy=6 r=0.08 data-b=45 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(14, 6) id: 45</title></circle>
+<circle id=b46 class="b b0" cx=15.1148 cy=4.96492 r=0.08 data-b=46 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(15, 5) id: 46</title></circle>
+<circle id=b47 class="b b0" cx=14.8852 cy=5.03508 r=0.08 data-b=47 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(15, 5) id: 47</title></circle>
+<circle id=b48 class="b b0" cx=17 cy=3 r=0.08 data-b=48 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(17, 3) id: 48</title></circle>
+<circle id=b49 class="b b0" cx=0 cy=21 r=0.08 data-b=49 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 21) id: 49</title></circle>
+<circle id=b50 class="b b0" cx=15 cy=6 r=0.08 data-b=50 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(15, 6) id: 50</title></circle>
+<circle id=b51 class="b b0" cx=0 cy=22 r=0.08 data-b=51 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 22) id: 51</title></circle>
+<circle id=b52 class="b b0" cx=15 cy=7 r=0.08 data-b=52 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(15, 7) id: 52</title></circle>
+<circle id=b53 class="b b0" cx=16 cy=6 r=0.08 data-b=53 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(16, 6) id: 53</title></circle>
+<circle id=b54 class="b b0" cx=17 cy=5 r=0.08 data-b=54 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(17, 5) id: 54</title></circle>
+<circle id=b55 class="b b0" cx=18 cy=4 r=0.08 data-b=55 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(18, 4) id: 55</title></circle>
+<circle id=b56 class="b b0" cx=19 cy=3 r=0.08 fill="#00c0ff" data-b=56 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(19, 3) id: 56</title></circle>
+<circle id=b57 class="b b0" cx=0 cy=23 r=0.08 data-b=57 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 23) id: 57</title></circle>
+<circle id=b58 class="b b0" cx=15 cy=8 r=0.08 data-b=58 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(15, 8) id: 58</title></circle>
+<circle id=b59 class="b b0" cx=16 cy=7 r=0.08 fill="#00c0ff" data-b=59 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(16, 7) id: 59</title></circle>
+<circle id=b60 class="b b0" cx=17 cy=6 r=0.08 data-b=60 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(17, 6) id: 60</title></circle>
+<circle id=b61 class="b b0" cx=0 cy=24 r=0.08 data-b=61 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 24) id: 61</title></circle>
+<circle id=b62 class="b b0" cx=17 cy=7 r=0.08 data-b=62 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(17, 7) id: 62</title></circle>
+<circle id=b63 class="b b0" cx=20 cy=4 r=0.08 fill="#00c0ff" data-b=63 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(20, 4) id: 63</title></circle>
+<circle id=b64 class="b b0" cx=21 cy=3 r=0.08 data-b=64 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(21, 3) id: 64</title></circle>
+<circle id=b65 class="b b0" cx=0 cy=25 r=0.08 data-b=65 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 25) id: 65</title></circle>
+<circle id=b66 class="b b0" cx=17 cy=8 r=0.08 data-b=66 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(17, 8) id: 66</title></circle>
+<circle id=b67 class="b b0" cx=20 cy=5 r=0.08 data-b=67 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(20, 5) id: 67</title></circle>
+<circle id=b68 class="b b0" cx=0 cy=26 r=0.08 data-b=68 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 26) id: 68</title></circle>
+<circle id=b69 class="b b0" cx=17 cy=9 r=0.08 fill="#00c0ff" data-b=69 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(17, 9) id: 69</title></circle>
+<circle id=b70 class="b b0" cx=20 cy=6 r=0.08 data-b=70 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(20, 6) id: 70</title></circle>
+<circle id=b71 class="b b0" cx=21 cy=5 r=0.08 data-b=71 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(21, 5) id: 71</title></circle>
+<circle id=b72 class="b b0" cx=22 cy=4 r=0.08 data-b=72 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(22, 4) id: 72</title></circle>
+<circle id=b73 class="b b0" cx=0 cy=27 r=0.08 data-b=73 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 27) id: 73</title></circle>
+<circle id=b74 class="b b0" cx=23 cy=4 r=0.08 fill="#00c0ff" data-b=74 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(23, 4) id: 74</title></circle>
+<circle id=b75 class="b b0" cx=0 cy=28 r=0.08 data-b=75 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 28) id: 75</title></circle>
+<circle id=b76 class="b b0" cx=18 cy=10 r=0.08 data-b=76 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(18, 10) id: 76</title></circle>
+<circle id=b77 class="b b0" cx=19 cy=9 r=0.08 fill="#00c0ff" data-b=77 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(19, 9) id: 77</title></circle>
+<circle id=b78 class="b b0" cx=23 cy=5 r=0.08 data-b=78 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(23, 5) id: 78</title></circle>
+<circle id=b79 class="b b0" cx=0 cy=29 r=0.08 data-b=79 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 29) id: 79</title></circle>
+<circle id=b80 class="b b0" cx=19 cy=10 r=0.08 data-b=80 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(19, 10) id: 80</title></circle>
+<circle id=b81 class="b b0" cx=23 cy=6 r=0.08 data-b=81 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(23, 6) id: 81</title></circle>
+<circle id=b82 class="b b0" cx=24 cy=5 r=0.08 data-b=82 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(24, 5) id: 82</title></circle>
+<circle id=b83 class="b b0" cx=0 cy=30 r=0.08 data-b=83 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 30) id: 83</title></circle>
+<circle id=b84 class="b b0" cx=19 cy=11 r=0.08 data-b=84 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(19, 11) id: 84</title></circle>
+<circle id=b85 class="b b0" cx=22 cy=8 r=0.08 fill="#00c0ff" data-b=85 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(22, 8) id: 85</title></circle>
+<circle id=b86 class="b b0" cx=0 cy=31 r=0.08 data-b=86 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 31) id: 86</title></circle>
+<circle id=b87 class="b b0" cx=22 cy=9 r=0.08 data-b=87 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(22, 9) id: 87</title></circle>
+<circle id=b88 class="b b0" cx=0 cy=32 r=0.08 data-b=88 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 32) id: 88</title></circle>
+<circle id=b89 class="b b0" cx=22 cy=10 r=0.08 data-b=89 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(22, 10) id: 89</title></circle>
+<circle id=b90 class="b b0" cx=23.1148 cy=8.96492 r=0.08 fill="#00c0ff" data-b=90 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(23, 9) id: 90</title></circle>
+<circle id=b91 class="b b0" cx=22.8852 cy=9.03508 r=0.08 data-b=91 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(23, 9) id: 91</title></circle>
+<circle id=b92 class="b b0" cx=26 cy=6 r=0.08 data-b=92 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(26, 6) id: 92</title></circle>
+<circle id=b93 class="b b0" cx=0 cy=33 r=0.08 data-b=93 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 33) id: 93</title></circle>
+<circle id=b94 class="b b0" cx=23 cy=10 r=0.08 data-b=94 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(23, 10) id: 94</title></circle>
+<circle id=b95 class="b b0" cx=30 cy=3 r=0.08 fill="#00c0ff" data-b=95 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(30, 3) id: 95</title></circle>
+<circle id=b96 class="b b0" cx=0 cy=34 r=0.08 data-b=96 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 34) id: 96</title></circle>
+<circle id=b97 class="b b0" cx=23 cy=11 r=0.08 data-b=97 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(23, 11) id: 97</title></circle>
+<circle id=b98 class="b b0" cx=24 cy=10 r=0.08 data-b=98 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(24, 10) id: 98</title></circle>
+<circle id=b99 class="b b0" cx=25 cy=9 r=0.08 data-b=99 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(25, 9) id: 99</title></circle>
+<circle id=b100 class="b b0" cx=30 cy=4 r=0.08 data-b=100 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 4) id: 100</title></circle>
+<circle id=b101 class="b b0" cx=0 cy=35 r=0.08 data-b=101 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 35) id: 101</title></circle>
+<circle id=b102 class="b b0" cx=23 cy=12 r=0.08 data-b=102 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(23, 12) id: 102</title></circle>
+<circle id=b103 class="b b0" cx=24 cy=11 r=0.08 fill="#00c0ff" data-b=103 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(24, 11) id: 103</title></circle>
+<circle id=b104 class="b b0" cx=25 cy=10 r=0.08 data-b=104 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(25, 10) id: 104</title></circle>
+<circle id=b105 class="b b0" cx=30 cy=5 r=0.08 data-b=105 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 5) id: 105</title></circle>
+<circle id=b106 class="b b0" cx=0 cy=36 r=0.08 data-b=106 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 36) id: 106</title></circle>
+<circle id=b107 class="b b0" cx=25 cy=11 r=0.08 data-b=107 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(25, 11) id: 107</title></circle>
+<circle id=b108 class="b b0" cx=28 cy=8 r=0.08 data-b=108 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(28, 8) id: 108</title></circle>
+<circle id=b109 class="b b0" cx=0 cy=37 r=0.08 data-b=109 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 37) id: 109</title></circle>
+<circle id=b110 class="b b0" cx=25 cy=12 r=0.08 data-b=110 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(25, 12) id: 110</title></circle>
+<circle id=b111 class="b b0" cx=28 cy=9 r=0.08 data-b=111 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(28, 9) id: 111</title></circle>
+<circle id=b112 class="b b0" cx=30 cy=7 r=0.08 fill="#00c0ff" data-b=112 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(30, 7) id: 112</title></circle>
+<circle id=b113 class="b b0" cx=0 cy=38 r=0.08 data-b=113 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 38) id: 113</title></circle>
+<circle id=b114 class="b b0" cx=25 cy=13 r=0.08 fill="#00c0ff" data-b=114 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(25, 13) id: 114</title></circle>
+<circle id=b115 class="b b0" cx=28 cy=10 r=0.08 data-b=115 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(28, 10) id: 115</title></circle>
+<circle id=b116 class="b b0" cx=29 cy=9 r=0.08 data-b=116 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(29, 9) id: 116</title></circle>
+<circle id=b117 class="b b0" cx=30 cy=8 r=0.08 data-b=117 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 8) id: 117</title></circle>
+<circle id=b118 class="b b0" cx=0 cy=39 r=0.08 data-b=118 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 39) id: 118</title></circle>
+<circle id=b119 class="b b0" cx=30 cy=9 r=0.08 data-b=119 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 9) id: 119</title></circle>
+<circle id=b120 class="b b0" cx=0 cy=40 r=0.08 data-b=120 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 40) id: 120</title></circle>
+<circle id=b121 class="b b0" cx=26 cy=14 r=0.08 data-b=121 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(26, 14) id: 121</title></circle>
+<circle id=b122 class="b b0" cx=27 cy=13 r=0.08 fill="#00c0ff" data-b=122 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(27, 13) id: 122</title></circle>
+<circle id=b123 class="b b0" cx=30 cy=10 r=0.08 data-b=123 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 10) id: 123</title></circle>
+<circle id=b124 class="b b0" cx=31 cy=9 r=0.08 data-b=124 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 9) id: 124</title></circle>
+<circle id=b125 class="b b0" cx=0 cy=41 r=0.08 data-b=125 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 41) id: 125</title></circle>
+<circle id=b126 class="b b0" cx=27 cy=14 r=0.08 data-b=126 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(27, 14) id: 126</title></circle>
+<circle id=b127 class="b b0" cx=30 cy=11 r=0.08 data-b=127 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 11) id: 127</title></circle>
+<circle id=b128 class="b b0" cx=31 cy=10 r=0.08 data-b=128 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 10) id: 128</title></circle>
+<circle id=b129 class="b b0" cx=0 cy=42 r=0.08 data-b=129 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 42) id: 129</title></circle>
+<circle id=b130 class="b b0" cx=27 cy=15 r=0.08 data-b=130 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(27, 15) id: 130</title></circle>
+<circle id=b131 class="b b0" cx=30 cy=12 r=0.08 fill="#00c0ff" data-b=131 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(30, 12) id: 131</title></circle>
+<circle id=b132 class="b b0" cx=31 cy=11 r=0.08 fill="#00c0ff" data-b=132 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(31, 11) id: 132</title></circle>
+<circle id=b133 class="b b0" cx=34 cy=8 r=0.08 data-b=133 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(34, 8) id: 133</title></circle>
+<circle id=b134 class="b b0" cx=36 cy=6 r=0.08 fill="#00c0ff" data-b=134 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(36, 6) id: 134</title></circle>
+<circle id=b135 class="b b0" cx=0 cy=43 r=0.08 data-b=135 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 43) id: 135</title></circle>
+<circle id=b136 class="b b0" cx=30 cy=13 r=0.08 data-b=136 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 13) id: 136</title></circle>
+<circle id=b137 class="b b0" cx=31 cy=12 r=0.08 data-b=137 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 12) id: 137</title></circle>
+<circle id=b138 class="b b0" cx=34 cy=9 r=0.08 data-b=138 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(34, 9) id: 138</title></circle>
+<circle id=b139 class="b b0" cx=0 cy=44 r=0.08 data-b=139 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 44) id: 139</title></circle>
+<circle id=b140 class="b b0" cx=30 cy=14 r=0.08 data-b=140 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(30, 14) id: 140</title></circle>
+<circle id=b141 class="b b0" cx=31.1148 cy=12.9649 r=0.08 data-b=141 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 13) id: 141</title></circle>
+<circle id=b142 class="b b0" cx=30.8852 cy=13.0351 r=0.08 data-b=142 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 13) id: 142</title></circle>
+<circle id=b143 class="b b0" cx=34 cy=10 r=0.08 data-b=143 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(34, 10) id: 143</title></circle>
+<circle id=b144 class="b b0" cx=35 cy=9 r=0.08 data-b=144 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(35, 9) id: 144</title></circle>
+<circle id=b145 class="b b0" cx=37 cy=7 r=0.08 data-b=145 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(37, 7) id: 145</title></circle>
+<circle id=b146 class="b b0" cx=38 cy=6 r=0.08 data-b=146 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(38, 6) id: 146</title></circle>
+<circle id=b147 class="b b0" cx=0 cy=45 r=0.08 data-b=147 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 45) id: 147</title></circle>
+<circle id=b148 class="b b0" cx=31 cy=14 r=0.08 data-b=148 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 14) id: 148</title></circle>
+<circle id=b149 class="b b0" cx=37 cy=8 r=0.08 data-b=149 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(37, 8) id: 149</title></circle>
+<circle id=b150 class="b b0" cx=0 cy=46 r=0.08 data-b=150 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 46) id: 150</title></circle>
+<circle id=b151 class="b b0" cx=31 cy=15 r=0.08 data-b=151 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 15) id: 151</title></circle>
+<circle id=b152 class="b b0" cx=32 cy=14 r=0.08 data-b=152 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(32, 14) id: 152</title></circle>
+<circle id=b153 class="b b0" cx=33 cy=13 r=0.08 data-b=153 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(33, 13) id: 153</title></circle>
+<circle id=b154 class="b b0" cx=37 cy=9 r=0.08 data-b=154 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(37, 9) id: 154</title></circle>
+<circle id=b155 class="b b0" cx=39 cy=7 r=0.08 data-b=155 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 7) id: 155</title></circle>
+<circle id=b156 class="b b0" cx=0 cy=47 r=0.08 data-b=156 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 47) id: 156</title></circle>
+<circle id=b157 class="b b0" cx=31 cy=16 r=0.08 data-b=157 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(31, 16) id: 157</title></circle>
+<circle id=b158 class="b b0" cx=32 cy=15 r=0.08 fill="#00c0ff" data-b=158 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(32, 15) id: 158</title></circle>
+<circle id=b159 class="b b0" cx=33 cy=14 r=0.08 data-b=159 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(33, 14) id: 159</title></circle>
+<circle id=b160 class="b b0" cx=37 cy=10 r=0.08 data-b=160 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(37, 10) id: 160</title></circle>
+<circle id=b161 class="b b0" cx=0 cy=48 r=0.08 data-b=161 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 48) id: 161</title></circle>
+<circle id=b162 class="b b0" cx=33 cy=15 r=0.08 data-b=162 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(33, 15) id: 162</title></circle>
+<circle id=b163 class="b b0" cx=36 cy=12 r=0.08 data-b=163 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(36, 12) id: 163</title></circle>
+<circle id=b164 class="b b0" cx=40 cy=8 r=0.08 data-b=164 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(40, 8) id: 164</title></circle>
+<circle id=b165 class="b b0" cx=0 cy=49 r=0.08 data-b=165 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 49) id: 165</title></circle>
+<circle id=b166 class="b b0" cx=33 cy=16 r=0.08 data-b=166 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(33, 16) id: 166</title></circle>
+<circle id=b167 class="b b0" cx=36 cy=13 r=0.08 data-b=167 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(36, 13) id: 167</title></circle>
+<circle id=b168 class="b b0" cx=0 cy=50 r=0.08 data-b=168 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 50) id: 168</title></circle>
+<circle id=b169 class="b b0" cx=33 cy=17 r=0.08 fill="#00c0ff" data-b=169 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(33, 17) id: 169</title></circle>
+<circle id=b170 class="b b0" cx=36 cy=14 r=0.08 data-b=170 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(36, 14) id: 170</title></circle>
+<circle id=b171 class="b b0" cx=37 cy=13 r=0.08 data-b=171 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(37, 13) id: 171</title></circle>
+<circle id=b172 class="b b0" cx=0 cy=51 r=0.08 data-b=172 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 51) id: 172</title></circle>
+<circle id=b173 class="b b0" cx=0 cy=52 r=0.08 data-b=173 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 52) id: 173</title></circle>
+<circle id=b174 class="b b0" cx=34 cy=18 r=0.08 data-b=174 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(34, 18) id: 174</title></circle>
+<circle id=b175 class="b b0" cx=35 cy=17 r=0.08 fill="#00c0ff" data-b=175 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(35, 17) id: 175</title></circle>
+<circle id=b176 class="b b0" cx=39 cy=13 r=0.08 data-b=176 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 13) id: 176</title></circle>
+<circle id=b177 class="b b0" cx=0 cy=53 r=0.08 data-b=177 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 53) id: 177</title></circle>
+<circle id=b178 class="b b0" cx=35 cy=18 r=0.08 data-b=178 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(35, 18) id: 178</title></circle>
+<circle id=b179 class="b b0" cx=39 cy=14 r=0.08 data-b=179 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 14) id: 179</title></circle>
+<circle id=b180 class="b b0" cx=0 cy=54 r=0.08 data-b=180 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 54) id: 180</title></circle>
+<circle id=b181 class="b b0" cx=35 cy=19 r=0.08 data-b=181 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(35, 19) id: 181</title></circle>
+<circle id=b182 class="b b0" cx=38 cy=16 r=0.08 fill="#00c0ff" data-b=182 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(38, 16) id: 182</title></circle>
+<circle id=b183 class="b b0" cx=42 cy=12 r=0.08 data-b=183 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(42, 12) id: 183</title></circle>
+<circle id=b184 class="b b0" cx=0 cy=55 r=0.08 data-b=184 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 55) id: 184</title></circle>
+<circle id=b185 class="b b0" cx=38 cy=17 r=0.08 data-b=185 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(38, 17) id: 185</title></circle>
+<circle id=b186 class="b b0" cx=42 cy=13 r=0.08 data-b=186 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(42, 13) id: 186</title></circle>
+<circle id=b187 class="b b0" cx=0 cy=56 r=0.08 data-b=187 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 56) id: 187</title></circle>
+<circle id=b188 class="b b0" cx=38 cy=18 r=0.08 data-b=188 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(38, 18) id: 188</title></circle>
+<circle id=b189 class="b b0" cx=39.1148 cy=16.9649 r=0.08 fill="#00c0ff" data-b=189 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(39, 17) id: 189</title></circle>
+<circle id=b190 class="b b0" cx=38.8852 cy=17.0351 r=0.08 data-b=190 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 17) id: 190</title></circle>
+<circle id=b191 class="b b0" cx=42 cy=14 r=0.08 data-b=191 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(42, 14) id: 191</title></circle>
+<circle id=b192 class="b b0" cx=43 cy=13 r=0.08 data-b=192 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(43, 13) id: 192</title></circle>
+<circle id=b193 class="b b0" cx=0 cy=57 r=0.08 data-b=193 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 57) id: 193</title></circle>
+<circle id=b194 class="b b0" cx=39 cy=18 r=0.08 data-b=194 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 18) id: 194</title></circle>
+<circle id=b195 class="b b0" cx=0 cy=58 r=0.08 data-b=195 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 58) id: 195</title></circle>
+<circle id=b196 class="b b0" cx=39 cy=19 r=0.08 data-b=196 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 19) id: 196</title></circle>
+<circle id=b197 class="b b0" cx=40 cy=18 r=0.08 data-b=197 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(40, 18) id: 197</title></circle>
+<circle id=b198 class="b b0" cx=41 cy=17 r=0.08 data-b=198 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(41, 17) id: 198</title></circle>
+<circle id=b199 class="b b0" cx=0 cy=59 r=0.08 data-b=199 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 59) id: 199</title></circle>
+<circle id=b200 class="b b0" cx=39 cy=20 r=0.08 data-b=200 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(39, 20) id: 200</title></circle>
+<circle id=b201 class="b b0" cx=40 cy=19 r=0.08 fill="#00c0ff" data-b=201 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(40, 19) id: 201</title></circle>
+<circle id=b202 class="b b0" cx=41 cy=18 r=0.08 data-b=202 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(41, 18) id: 202</title></circle>
+<circle id=b203 class="b b0" cx=0 cy=60 r=0.08 data-b=203 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 60) id: 203</title></circle>
+<circle id=b204 class="b b0" cx=41 cy=19 r=0.08 data-b=204 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(41, 19) id: 204</title></circle>
+<circle id=b205 class="b b0" cx=44 cy=16 r=0.08 data-b=205 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(44, 16) id: 205</title></circle>
+<circle id=b206 class="b b0" cx=48 cy=12 r=0.08 data-b=206 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(48, 12) id: 206</title></circle>
+<circle id=b207 class="b b0" cx=0 cy=61 r=0.08 data-b=207 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 61) id: 207</title></circle>
+<circle id=b208 class="b b0" cx=41 cy=20 r=0.08 data-b=208 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(41, 20) id: 208</title></circle>
+<circle id=b209 class="b b0" cx=44 cy=17 r=0.08 data-b=209 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(44, 17) id: 209</title></circle>
+<circle id=b210 class="b b0" cx=46 cy=15 r=0.08 fill="#00c0ff" data-b=210 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(46, 15) id: 210</title></circle>
+<circle id=b211 class="b b0" cx=0 cy=62 r=0.08 data-b=211 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 62) id: 211</title></circle>
+<circle id=b212 class="b b0" cx=41 cy=21 r=0.08 fill="#00c0ff" data-b=212 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(41, 21) id: 212</title></circle>
+<circle id=b213 class="b b0" cx=44 cy=18 r=0.08 data-b=213 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(44, 18) id: 213</title></circle>
+<circle id=b214 class="b b0" cx=45 cy=17 r=0.08 data-b=214 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(45, 17) id: 214</title></circle>
+<circle id=b215 class="b b0" cx=46 cy=16 r=0.08 data-b=215 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(46, 16) id: 215</title></circle>
+<circle id=b216 class="b b0" cx=0 cy=63 r=0.08 data-b=216 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 63) id: 216</title></circle>
+<circle id=b217 class="b b0" cx=46 cy=17 r=0.08 data-b=217 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(46, 17) id: 217</title></circle>
+<circle id=b218 class="b b0" cx=0 cy=64 r=0.08 data-b=218 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 64) id: 218</title></circle>
+<circle id=b219 class="b b0" cx=42 cy=22 r=0.08 data-b=219 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(42, 22) id: 219</title></circle>
+<circle id=b220 class="b b0" cx=43 cy=21 r=0.08 fill="#00c0ff" data-b=220 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(43, 21) id: 220</title></circle>
+<circle id=b221 class="b b0" cx=46 cy=18 r=0.08 data-b=221 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(46, 18) id: 221</title></circle>
+<circle id=b222 class="b b0" cx=47 cy=17 r=0.08 data-b=222 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 17) id: 222</title></circle>
+<circle id=b223 class="b b0" cx=0 cy=65 r=0.08 data-b=223 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 65) id: 223</title></circle>
+<circle id=b224 class="b b0" cx=43 cy=22 r=0.08 data-b=224 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(43, 22) id: 224</title></circle>
+<circle id=b225 class="b b0" cx=47 cy=18 r=0.08 data-b=225 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 18) id: 225</title></circle>
+<circle id=b226 class="b b0" cx=0 cy=66 r=0.08 data-b=226 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 66) id: 226</title></circle>
+<circle id=b227 class="b b0" cx=43 cy=23 r=0.08 data-b=227 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(43, 23) id: 227</title></circle>
+<circle id=b228 class="b b0" cx=46 cy=20 r=0.08 fill="#00c0ff" data-b=228 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(46, 20) id: 228</title></circle>
+<circle id=b229 class="b b0" cx=50 cy=16 r=0.08 data-b=229 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(50, 16) id: 229</title></circle>
+<circle id=b230 class="b b0" cx=54 cy=12 r=0.08 data-b=230 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(54, 12) id: 230</title></circle>
+<circle id=b231 class="b b0" cx=56 cy=10 r=0.08 data-b=231 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(56, 10) id: 231</title></circle>
+<circle id=b232 class="b b0" cx=0 cy=67 r=0.08 data-b=232 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 67) id: 232</title></circle>
+<circle id=b233 class="b b0" cx=46 cy=21 r=0.08 data-b=233 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(46, 21) id: 233</title></circle>
+<circle id=b234 class="b b0" cx=47 cy=20 r=0.08 fill="#00c0ff" data-b=234 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(47, 20) id: 234</title></circle>
+<circle id=b235 class="b b0" cx=50 cy=17 r=0.08 data-b=235 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(50, 17) id: 235</title></circle>
+<circle id=b236 class="b b0" cx=53 cy=14 r=0.08 fill="#00c0ff" data-b=236 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(53, 14) id: 236</title></circle>
+<circle id=b237 class="b b0" cx=0 cy=68 r=0.08 data-b=237 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 68) id: 237</title></circle>
+<circle id=b238 class="b b0" cx=46 cy=22 r=0.08 data-b=238 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(46, 22) id: 238</title></circle>
+<circle id=b239 class="b b0" cx=47.1148 cy=20.9649 r=0.08 data-b=239 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 21) id: 239</title></circle>
+<circle id=b240 class="b b0" cx=46.8852 cy=21.0351 r=0.08 data-b=240 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 21) id: 240</title></circle>
+<circle id=b241 class="b b0" cx=50 cy=18 r=0.08 data-b=241 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(50, 18) id: 241</title></circle>
+<circle id=b242 class="b b0" cx=51 cy=17 r=0.08 data-b=242 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(51, 17) id: 242</title></circle>
+<circle id=b243 class="b b0" cx=53 cy=15 r=0.08 data-b=243 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(53, 15) id: 243</title></circle>
+<circle id=b244 class="b b0" cx=0 cy=69 r=0.08 data-b=244 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 69) id: 244</title></circle>
+<circle id=b245 class="b b0" cx=47 cy=22 r=0.08 data-b=245 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 22) id: 245</title></circle>
+<circle id=b246 class="b b0" cx=53 cy=16 r=0.08 data-b=246 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(53, 16) id: 246</title></circle>
+<circle id=b247 class="b b0" cx=0 cy=70 r=0.08 data-b=247 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 70) id: 247</title></circle>
+<circle id=b248 class="b b0" cx=47 cy=23 r=0.08 data-b=248 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 23) id: 248</title></circle>
+<circle id=b249 class="b b0" cx=48 cy=22 r=0.08 data-b=249 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(48, 22) id: 249</title></circle>
+<circle id=b250 class="b b0" cx=49 cy=21 r=0.08 data-b=250 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(49, 21) id: 250</title></circle>
+<circle id=b251 class="b b0" cx=53 cy=17 r=0.08 data-b=251 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(53, 17) id: 251</title></circle>
+<circle id=b252 class="b b0" cx=0 cy=71 r=0.08 data-b=252 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 71) id: 252</title></circle>
+<circle id=b253 class="b b0" cx=47 cy=24 r=0.08 data-b=253 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(47, 24) id: 253</title></circle>
+<circle id=b254 class="b b0" cx=48 cy=23 r=0.08 fill="#00c0ff" data-b=254 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(48, 23) id: 254</title></circle>
+<circle id=b255 class="b b0" cx=49 cy=22 r=0.08 data-b=255 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(49, 22) id: 255</title></circle>
+<circle id=b256 class="b b0" cx=53 cy=18 r=0.08 data-b=256 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(53, 18) id: 256</title></circle>
+<circle id=b257 class="b b0" cx=0 cy=72 r=0.08 data-b=257 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 72) id: 257</title></circle>
+<circle id=b258 class="b b0" cx=49 cy=23 r=0.08 data-b=258 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(49, 23) id: 258</title></circle>
+<circle id=b259 class="b b0" cx=52 cy=20 r=0.08 data-b=259 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(52, 20) id: 259</title></circle>
+<circle id=b260 class="b b0" cx=56 cy=16 r=0.08 data-b=260 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(56, 16) id: 260</title></circle>
+<circle id=b261 class="b b0" cx=60 cy=12 r=0.08 data-b=261 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(60, 12) id: 261</title></circle>
+<circle id=b262 class="b b0" cx=0 cy=73 r=0.08 data-b=262 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 73) id: 262</title></circle>
+<circle id=b263 class="b b0" cx=49 cy=24 r=0.08 data-b=263 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(49, 24) id: 263</title></circle>
+<circle id=b264 class="b b0" cx=52 cy=21 r=0.08 data-b=264 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(52, 21) id: 264</title></circle>
+<circle id=b265 class="b b0" cx=0 cy=74 r=0.08 data-b=265 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 74) id: 265</title></circle>
+<circle id=b266 class="b b0" cx=49 cy=25 r=0.08 fill="#00c0ff" data-b=266 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(49, 25) id: 266</title></circle>
+<circle id=b267 class="b b0" cx=52 cy=22 r=0.08 data-b=267 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(52, 22) id: 267</title></circle>
+<circle id=b268 class="b b0" cx=53 cy=21 r=0.08 data-b=268 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(53, 21) id: 268</title></circle>
+<circle id=b269 class="b b0" cx=60 cy=14 r=0.08 data-b=269 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(60, 14) id: 269</title></circle>
+<circle id=b270 class="b b0" cx=0 cy=75 r=0.08 data-b=270 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 75) id: 270</title></circle>
+<circle id=b271 class="b b0" cx=0 cy=76 r=0.08 data-b=271 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 76) id: 271</title></circle>
+<circle id=b272 class="b b0" cx=50 cy=26 r=0.08 data-b=272 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(50, 26) id: 272</title></circle>
+<circle id=b273 class="b b0" cx=51 cy=25 r=0.08 fill="#00c0ff" data-b=273 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(51, 25) id: 273</title></circle>
+<circle id=b274 class="b b0" cx=55 cy=21 r=0.08 data-b=274 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(55, 21) id: 274</title></circle>
+<circle id=b275 class="b b0" cx=0 cy=77 r=0.08 data-b=275 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 77) id: 275</title></circle>
+<circle id=b276 class="b b0" cx=51 cy=26 r=0.08 data-b=276 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(51, 26) id: 276</title></circle>
+<circle id=b277 class="b b0" cx=55 cy=22 r=0.08 data-b=277 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(55, 22) id: 277</title></circle>
+<circle id=b278 class="b b0" cx=0 cy=78 r=0.08 data-b=278 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 78) id: 278</title></circle>
+<circle id=b279 class="b b0" cx=51 cy=27 r=0.08 data-b=279 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(51, 27) id: 279</title></circle>
+<circle id=b280 class="b b0" cx=54 cy=24 r=0.08 fill="#00c0ff" data-b=280 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(54, 24) id: 280</title></circle>
+<circle id=b281 class="b b0" cx=58 cy=20 r=0.08 data-b=281 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(58, 20) id: 281</title></circle>
+<circle id=b282 class="b b0" cx=62.1148 cy=15.9649 r=0.08 fill="#00c0ff" data-b=282 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(62, 16) id: 282</title></circle>
+<circle id=b283 class="b b0" cx=61.8852 cy=16.0351 r=0.08 data-b=283 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 16) id: 283</title></circle>
+<circle id=b284 class="b b0" cx=0 cy=79 r=0.08 data-b=284 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 79) id: 284</title></circle>
+<circle id=b285 class="b b0" cx=54 cy=25 r=0.08 data-b=285 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(54, 25) id: 285</title></circle>
+<circle id=b286 class="b b0" cx=58 cy=21 r=0.08 data-b=286 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(58, 21) id: 286</title></circle>
+<circle id=b287 class="b b0" cx=62 cy=17 r=0.08 data-b=287 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 17) id: 287</title></circle>
+<circle id=b288 class="b b0" cx=0 cy=80 r=0.08 data-b=288 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 80) id: 288</title></circle>
+<circle id=b289 class="b b0" cx=54 cy=26 r=0.08 data-b=289 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(54, 26) id: 289</title></circle>
+<circle id=b290 class="b b0" cx=55.1148 cy=24.9649 r=0.08 fill="#00c0ff" data-b=290 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(55, 25) id: 290</title></circle>
+<circle id=b291 class="b b0" cx=54.8852 cy=25.0351 r=0.08 data-b=291 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(55, 25) id: 291</title></circle>
+<circle id=b292 class="b b0" cx=58 cy=22 r=0.08 data-b=292 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(58, 22) id: 292</title></circle>
+<circle id=b293 class="b b0" cx=59 cy=21 r=0.08 data-b=293 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(59, 21) id: 293</title></circle>
+<circle id=b294 class="b b0" cx=62 cy=18 r=0.08 data-b=294 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 18) id: 294</title></circle>
+<circle id=b295 class="b b0" cx=0 cy=81 r=0.08 data-b=295 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 81) id: 295</title></circle>
+<circle id=b296 class="b b0" cx=55 cy=26 r=0.08 data-b=296 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(55, 26) id: 296</title></circle>
+<circle id=b297 class="b b0" cx=62 cy=19 r=0.08 data-b=297 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 19) id: 297</title></circle>
+<circle id=b298 class="b b0" cx=0 cy=82 r=0.08 data-b=298 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 82) id: 298</title></circle>
+<circle id=b299 class="b b0" cx=55 cy=27 r=0.08 data-b=299 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(55, 27) id: 299</title></circle>
+<circle id=b300 class="b b0" cx=56 cy=26 r=0.08 data-b=300 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(56, 26) id: 300</title></circle>
+<circle id=b301 class="b b0" cx=57 cy=25 r=0.08 data-b=301 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(57, 25) id: 301</title></circle>
+<circle id=b302 class="b b0" cx=62 cy=20 r=0.08 data-b=302 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 20) id: 302</title></circle>
+<circle id=b303 class="b b0" cx=0 cy=83 r=0.08 data-b=303 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 83) id: 303</title></circle>
+<circle id=b304 class="b b0" cx=55 cy=28 r=0.08 data-b=304 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(55, 28) id: 304</title></circle>
+<circle id=b305 class="b b0" cx=56 cy=27 r=0.08 fill="#00c0ff" data-b=305 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(56, 27) id: 305</title></circle>
+<circle id=b306 class="b b0" cx=57 cy=26 r=0.08 data-b=306 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(57, 26) id: 306</title></circle>
+<circle id=b307 class="b b0" cx=62 cy=21 r=0.08 data-b=307 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 21) id: 307</title></circle>
+<circle id=b308 class="b b0" cx=0 cy=84 r=0.08 data-b=308 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 84) id: 308</title></circle>
+<circle id=b309 class="b b0" cx=57 cy=27 r=0.08 data-b=309 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(57, 27) id: 309</title></circle>
+<circle id=b310 class="b b0" cx=60 cy=24 r=0.08 data-b=310 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(60, 24) id: 310</title></circle>
+<circle id=b311 class="b b0" cx=64 cy=20 r=0.08 data-b=311 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(64, 20) id: 311</title></circle>
+<circle id=b312 class="b b0" cx=68 cy=16 r=0.08 data-b=312 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(68, 16) id: 312</title></circle>
+<circle id=b313 class="b b0" cx=72 cy=12 r=0.08 data-b=313 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(72, 12) id: 313</title></circle>
+<circle id=b314 class="b b0" cx=0 cy=85 r=0.08 data-b=314 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 85) id: 314</title></circle>
+<circle id=b315 class="b b0" cx=57 cy=28 r=0.08 data-b=315 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(57, 28) id: 315</title></circle>
+<circle id=b316 class="b b0" cx=60 cy=25 r=0.08 data-b=316 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(60, 25) id: 316</title></circle>
+<circle id=b317 class="b b0" cx=62 cy=23 r=0.08 fill="#00c0ff" data-b=317 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(62, 23) id: 317</title></circle>
+<circle id=b318 class="b b0" cx=0 cy=86 r=0.08 data-b=318 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 86) id: 318</title></circle>
+<circle id=b319 class="b b0" cx=57 cy=29 r=0.08 fill="#00c0ff" data-b=319 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(57, 29) id: 319</title></circle>
+<circle id=b320 class="b b0" cx=60 cy=26 r=0.08 data-b=320 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(60, 26) id: 320</title></circle>
+<circle id=b321 class="b b0" cx=61 cy=25 r=0.08 data-b=321 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(61, 25) id: 321</title></circle>
+<circle id=b322 class="b b0" cx=62 cy=24 r=0.08 data-b=322 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 24) id: 322</title></circle>
+<circle id=b323 class="b b0" cx=0 cy=87 r=0.08 data-b=323 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 87) id: 323</title></circle>
+<circle id=b324 class="b b0" cx=62 cy=25 r=0.08 data-b=324 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 25) id: 324</title></circle>
+<circle id=b325 class="b b0" cx=0 cy=88 r=0.08 data-b=325 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 88) id: 325</title></circle>
+<circle id=b326 class="b b0" cx=58 cy=30 r=0.08 data-b=326 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(58, 30) id: 326</title></circle>
+<circle id=b327 class="b b0" cx=59 cy=29 r=0.08 fill="#00c0ff" data-b=327 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(59, 29) id: 327</title></circle>
+<circle id=b328 class="b b0" cx=62 cy=26 r=0.08 data-b=328 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 26) id: 328</title></circle>
+<circle id=b329 class="b b0" cx=63 cy=25 r=0.08 data-b=329 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 25) id: 329</title></circle>
+<circle id=b330 class="b b0" cx=0 cy=89 r=0.08 data-b=330 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 89) id: 330</title></circle>
+<circle id=b331 class="b b0" cx=59 cy=30 r=0.08 data-b=331 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(59, 30) id: 331</title></circle>
+<circle id=b332 class="b b0" cx=62 cy=27 r=0.08 data-b=332 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 27) id: 332</title></circle>
+<circle id=b333 class="b b0" cx=63.1148 cy=25.9649 r=0.08 fill="#00c0ff" data-b=333 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(63, 26) id: 333</title></circle>
+<circle id=b334 class="b b0" cx=62.8852 cy=26.0351 r=0.08 data-b=334 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 26) id: 334</title></circle>
+<circle id=b335 class="b b0" cx=0 cy=90 r=0.08 data-b=335 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 90) id: 335</title></circle>
+<circle id=b336 class="b b0" cx=59 cy=31 r=0.08 data-b=336 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(59, 31) id: 336</title></circle>
+<circle id=b337 class="b b0" cx=62 cy=28 r=0.08 fill="#00c0ff" data-b=337 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(62, 28) id: 337</title></circle>
+<circle id=b338 class="b b0" cx=63 cy=27 r=0.08 data-b=338 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 27) id: 338</title></circle>
+<circle id=b339 class="b b0" cx=66 cy=24 r=0.08 data-b=339 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(66, 24) id: 339</title></circle>
+<circle id=b340 class="b b0" cx=70 cy=20 r=0.08 data-b=340 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(70, 20) id: 340</title></circle>
+<circle id=b341 class="b b0" cx=74 cy=16 r=0.08 data-b=341 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(74, 16) id: 341</title></circle>
+<circle id=b342 class="b b0" cx=76 cy=14 r=0.08 data-b=342 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(76, 14) id: 342</title></circle>
+<circle id=b343 class="b b0" cx=0 cy=91 r=0.08 data-b=343 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 91) id: 343</title></circle>
+<circle id=b344 class="b b0" cx=62 cy=29 r=0.08 data-b=344 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 29) id: 344</title></circle>
+<circle id=b345 class="b b0" cx=63 cy=28 r=0.08 data-b=345 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 28) id: 345</title></circle>
+<circle id=b346 class="b b0" cx=66 cy=25 r=0.08 data-b=346 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(66, 25) id: 346</title></circle>
+<circle id=b347 class="b b0" cx=0 cy=92 r=0.08 data-b=347 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 92) id: 347</title></circle>
+<circle id=b348 class="b b0" cx=62 cy=30 r=0.08 data-b=348 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(62, 30) id: 348</title></circle>
+<circle id=b349 class="b b0" cx=63.1148 cy=28.9649 r=0.08 data-b=349 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 29) id: 349</title></circle>
+<circle id=b350 class="b b0" cx=62.8852 cy=29.0351 r=0.08 data-b=350 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 29) id: 350</title></circle>
+<circle id=b351 class="b b0" cx=66 cy=26 r=0.08 data-b=351 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(66, 26) id: 351</title></circle>
+<circle id=b352 class="b b0" cx=67 cy=25 r=0.08 data-b=352 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(67, 25) id: 352</title></circle>
+<circle id=b353 class="b b0" cx=0 cy=93 r=0.08 data-b=353 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 93) id: 353</title></circle>
+<circle id=b354 class="b b0" cx=63 cy=30 r=0.08 data-b=354 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 30) id: 354</title></circle>
+<circle id=b355 class="b b0" cx=69 cy=24 r=0.08 data-b=355 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(69, 24) id: 355</title></circle>
+<circle id=b356 class="b b0" cx=0 cy=94 r=0.08 data-b=356 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 94) id: 356</title></circle>
+<circle id=b357 class="b b0" cx=63 cy=31 r=0.08 data-b=357 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 31) id: 357</title></circle>
+<circle id=b358 class="b b0" cx=64 cy=30 r=0.08 data-b=358 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(64, 30) id: 358</title></circle>
+<circle id=b359 class="b b0" cx=65 cy=29 r=0.08 data-b=359 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(65, 29) id: 359</title></circle>
+<circle id=b360 class="b b0" cx=69 cy=25 r=0.08 data-b=360 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(69, 25) id: 360</title></circle>
+<circle id=b361 class="b b0" cx=0 cy=95 r=0.08 data-b=361 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 95) id: 361</title></circle>
+<circle id=b362 class="b b0" cx=63 cy=32 r=0.08 data-b=362 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(63, 32) id: 362</title></circle>
+<circle id=b363 class="b b0" cx=64 cy=31 r=0.08 fill="#00c0ff" data-b=363 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(64, 31) id: 363</title></circle>
+<circle id=b364 class="b b0" cx=65 cy=30 r=0.08 data-b=364 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(65, 30) id: 364</title></circle>
+<circle id=b365 class="b b0" cx=69 cy=26 r=0.08 data-b=365 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(69, 26) id: 365</title></circle>
+<circle id=b366 class="b b0" cx=0 cy=96 r=0.08 data-b=366 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 96) id: 366</title></circle>
+<circle id=b367 class="b b0" cx=65 cy=31 r=0.08 data-b=367 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(65, 31) id: 367</title></circle>
+<circle id=b368 class="b b0" cx=68 cy=28 r=0.08 data-b=368 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(68, 28) id: 368</title></circle>
+<circle id=b369 class="b b0" cx=72 cy=24 r=0.08 data-b=369 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(72, 24) id: 369</title></circle>
+<circle id=b370 class="b b0" cx=76 cy=20 r=0.08 data-b=370 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(76, 20) id: 370</title></circle>
+<circle id=b371 class="b b0" cx=80 cy=16 r=0.08 data-b=371 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(80, 16) id: 371</title></circle>
+<circle id=b372 class="b b0" cx=0 cy=97 r=0.08 data-b=372 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 97) id: 372</title></circle>
+<circle id=b373 class="b b0" cx=65 cy=32 r=0.08 data-b=373 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(65, 32) id: 373</title></circle>
+<circle id=b374 class="b b0" cx=68 cy=29 r=0.08 data-b=374 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(68, 29) id: 374</title></circle>
+<circle id=b375 class="b b0" cx=0 cy=98 r=0.08 data-b=375 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 98) id: 375</title></circle>
+<circle id=b376 class="b b0" cx=65 cy=33 r=0.08 fill="#00c0ff" data-b=376 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(65, 33) id: 376</title></circle>
+<circle id=b377 class="b b0" cx=68 cy=30 r=0.08 data-b=377 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(68, 30) id: 377</title></circle>
+<circle id=b378 class="b b0" cx=69 cy=29 r=0.08 data-b=378 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(69, 29) id: 378</title></circle>
+<circle id=b379 class="b b0" cx=76 cy=22 r=0.08 data-b=379 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(76, 22) id: 379</title></circle>
+<circle id=b380 class="b b0" cx=0 cy=99 r=0.08 data-b=380 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 99) id: 380</title></circle>
+<circle id=b381 class="b b0" cx=0 cy=100 r=0.08 data-b=381 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(0, 100) id: 381</title></circle>
+<circle id=b382 class="b b0" cx=66 cy=34 r=0.08 data-b=382 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(66, 34) id: 382</title></circle>
+<circle id=b383 class="b b0" cx=67 cy=33 r=0.08 fill="#00c0ff" data-b=383 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=1 data-page=200><title>(67, 33) id: 383</title></circle>
+<circle id=b384 class="b b0" cx=71 cy=29 r=0.08 data-b=384 data-l=9800 data-d="None" data-i=0 data-j=0 data-g=0 data-page=200><title>(71, 29) id: 384</title></circle>
+
+          <circle id="circle_selected" data-id="" cx="-1000" cy="-1000" r="0" fill="red" opacity="0.7"></circle>
+        </g>
+        <g id="g_labels" text-anchor="end" style="
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -o-user-select: none;
+              " unselectable="on" onselectstart="return false;" onmousedown="return false;" transform="scale(1,-1)">
+        </g>
+      </g>
+      <rect x="0" y="0" width="30" height="100%" fill="white" />
+      <rect id="bottomBlock" x="0" y="0" width="100%" height="30" fill="white" />
+      <line x1="30" y1="30" x2="100%" y2="30" stroke-width="2" stroke="black"></line>
+      <line x1="30" y1="30" x2="30" y2="100%" stroke-width="2" stroke="black"></line>
+      <g id="g_xaxis" text-anchor="middle" unselectable="on" onselectstart="return false;" onmousedown="return false;"
+        transform="scale(1,-1)"></g>
+      <g id="g_yaxis" text-anchor="end" unselectable="on" onselectstart="return false;" onmousedown="return false;"
+        transform="scale(1,-1)"></g>
+    </g>
+  </svg>
+  <div id="div_binfo">
+    <p id="p_latex">LaTeX:</p>
+    <p id="p_deg">Deg:</p>
+    <p id="p_base">Base:</p>
+    <p id="p_diff"></p>
+    <p id="p_button_rename" style="display:none"><button onclick="on_rename()">Rename</button></p>
+  </div>
+
+  <div id="div_menubar">
+    <select id="select_dashed" onchange="on_select_dashed(event)">
+      <option>Show dashed</option>
+      <option>No dashed</option>
+    </select>
+    <select id="select_lines" onchange="on_select_lines(event)">
+      <option>All</option>
+      <option>Current</option>
+      <option>Minimal</option>
+    </select>
+    <select id="select_page" onchange="on_select_page(event)">
+      <option>E2</option>
+      <option>E3</option>
+      <option>E4</option>
+      <option>E5</option>
+      <option>E6</option>
+      <option>Einf</option>
+    </select>
+    <button id="button_cm" onclick="on_contextmenu(event)">︙</button>
+  </div>
+
+  <div id="div_menu">
+    <a id="a_copy_aliases" href="#" onclick="on_copy_aliases()">
+      Copy generator aliases
+      <span></span>
+    </a>
+    <a href="#">
+      Export to pdf
+      <span></span>
+    </a>
+    <a href="#">
+      <u>I</u>nstructions
+      <span></span>
+    </a>
+    <a href="#" onclick="on_click_about()">
+      About
+      <span></span>
+    </a>
+  </div>
+  <script src="data.js"></script>
+  <script src="../../common/index.js"></script>
+  <script src="../../common/events.js"></script>
+</body>
+
+</html>

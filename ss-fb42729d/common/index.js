@@ -435,8 +435,8 @@ function init() {
     g_plot.setAttribute("transform", camera.getTransform());
     addGridLines();
     plotAxisLabels();
-    if (MODE !== "FromRes")
-        addBulletLabels();
+    // if (MODE !== "FromRes")
+    //     addBulletLabels();
     addRectProduct();
 
     if (MODE === "DualPi")
