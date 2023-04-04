@@ -11,8 +11,8 @@ Here is my [CV](./assets/pdf/CV.pdf).
 Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 
 ## Publications and preprints
-* [On the May spectral sequence at the prime 2](https://arxiv.org/pdf/2010.14754.pdf), [arXiv:2010.14754](https://arxiv.org/abs/2010.14754) (Accepted by Advances in Mathematics)
-* Gröbner bases and Ext groups for noncommutative algebras; Application to the Steenrod algebra (coming soon)
+* On the May spectral sequence at the prime 2. Advances in Mathematics (2022). [arXiv:2010.14754](https://arxiv.org/abs/2010.14754)
+* Noncommutative Gröbner Bases and Ext groups; Application to the Steenrod Algebra. [arXiv:2304.00506](https://arxiv.org/abs/2304.00506)
 <!-- * A cross-page deduction system for spectral sequences (Programmed but not written in math) -->
   
 ## Teaching
@@ -54,4 +54,4 @@ Office: Room 211, Building 23, Peking University
 
 
 ---
-The webpage was updated on 2022-06-10.
+The webpage was updated on 2023-04-04.
