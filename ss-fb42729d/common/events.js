@@ -321,7 +321,7 @@ function AdjustVisibilityByMenu() {
 	for (const b of bullets) {
 		if (b.dataset.page >= config_dynamic.page) {
 			b.style.visibility = "visible";
-			if (b.dataset.page === "200" && b.dataset.d !== "None" && b.dataset.l > 10000 - config_dynamic.page) {
+			if (b.dataset.page == config.R_PERM && b.dataset.d !== "None" && b.dataset.l > 10000 - config_dynamic.page) {
 				b.setAttribute("opacity", "0.6");
 			} else {
 				b.setAttribute("opacity", "1");
@@ -427,7 +427,7 @@ function on_select_page(event) {
 			break;
 
 		case "Einf":
-			config_dynamic.page = 200;
+			config_dynamic.page = config.R_PERM;
 			break;
 
 		default:

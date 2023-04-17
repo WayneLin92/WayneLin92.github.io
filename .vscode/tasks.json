@@ -9,9 +9,9 @@
             "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\""
         },
         {
-            "label": "Compile /ss-fb42729d/index_.md",
+            "label": "Compile /ss-fb42729d/",
             "type": "shell",
-            "command": "python task.py -f ./ss-fb42729d/index_.md -o ./ss-fb42729d/index.html -t \"Spectral sequences\""
+            "command": "python task.py -f ./ss-fb42729d/index_.md -o ./ss-fb42729d/index.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/mix.md -o ./ss-fb42729d/mix.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/auto.md -o ./ss-fb42729d/auto.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/auto100.md -o ./ss-fb42729d/auto100.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/mix100.md -o ./ss-fb42729d/mix100.html -t \"Spectral sequences\""
         },
         {
             "label": "Compile /ss/index_.md",

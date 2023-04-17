@@ -21,6 +21,7 @@ const config = {
     color_arrow: "#a0a0a0",
     color_normal: "#000000",
     rainbow_step: 5 / 23,
+    R_PERM: 200
 };
 
 const config_dynamic = {
