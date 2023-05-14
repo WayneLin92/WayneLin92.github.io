@@ -1,34 +1,16 @@
 # Spectral sequences
-### Adams Spectral sequence
-* [S0 (t<=261)](./mix/S0_AdamsE2_t261/index.html)
-* [C2 (t<=246)](./mix/C2_AdamsE2_t246/index.html)
-* [Ceta (t<=200)](./mix/Ceta_AdamsE2_t200/index.html)
-* [Cnu (t<=200)](./mix/Cnu_AdamsE2_t200/index.html)
-* [Csigma (t<=200)](./mix/Csigma_AdamsE2_t200/index.html)
+## Spectra
+### [S0](./mix/S0_ss/index.html)-modules
+[C2](./mix/C2_ss/index.html), [Ceta](./mix/Ceta_ss/index.html), [Cnu](./mix/Cnu_ss/index.html), [Csigma](./mix/Csigma_ss/index.html)<br>
+[j](./mix/j_ss/index.html), j/2<br>
+RP4, RP6, ...
 
-### Homotopy
-* [S0 (t<=261)](./mix/S0_pi_t261/index.html)
-* [C2 (t<=246)](./mix/C2_pi_t246/index.html)
-* [Ceta (t<=200)](./mix/Ceta_pi_t200/index.html)
-* [Cnu (t<=200)](./mix/Cnu_pi_t200/index.html)
-* [Csigma (t<=200)](./mix/Csigma_pi_t200/index.html)
+### [tmf](./mix/tmf_ss/index.html)-modules
+tmf/2, tmf/eta, tmf/nu<br>
+tmf∧RP4, ...
 
-### Exact sequence of homotopy groups
-* [C2 (t<=246)](./mix/C2_exact_t246/index.html)
-* [Ceta (t<=200)](./mix/Ceta_exact_t200/index.html)
-* [Cnu (t<=200)](./mix/Cnu_exact_t200/index.html)
-* [Csigma (t<=200)](./mix/Csigma_exact_t200/index.html)
+### ko-modules
 
-## Others
-* [RP10 (t<=130)](./others/RP10_AdamsE2_t130/index.html)
-* [X<2> (t<=200)](./others/X2_AdamsE2_t200/index.html)
+## Maps
 
-## Archive
-* [S0 (t<=255)](./archive/AdamsSS_t255/index.html)
-* [C2 (t<=200)](./archive/C2_AdamsSS_t200/index.html)
-* [Ceta (t<=200)](./archive/Ceta_AdamsSS_t200/index.html)
-* [Cnu (t<=200)](./archive/Cnu_AdamsSS_t200/index.html)
-* [Csigma (t<=200)](./archive/Csigma_AdamsSS_t200/index.html)
-* [Adams Spectral sequence (t<=220)](./archive/AdamsSS_t220/index.html)
-* [Adams Spectral sequence (t<=245)](./archive/AdamsSS_t245/index.html)
-* [tmp](./others/AdamsSS_tmp/index.html)
+## Cofiber sequences

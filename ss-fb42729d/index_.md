@@ -1,5 +1,5 @@
 # Spectral sequences
 * [mix](./mix.html)
-* [mix100](./mix100.html)
+* [mix2](./mix2.html)
 * [auto](./auto.html)
 * [auto100](./auto100.html)

@@ -6,22 +6,26 @@
         {
             "label": "Compile /index_.md",
             "type": "shell",
-            "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\""
+            "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\"",
+            "problemMatcher": []
         },
         {
             "label": "Compile /ss-fb42729d/",
             "type": "shell",
-            "command": "python task.py -f ./ss-fb42729d/index_.md -o ./ss-fb42729d/index.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/mix.md -o ./ss-fb42729d/mix.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/auto.md -o ./ss-fb42729d/auto.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/auto100.md -o ./ss-fb42729d/auto100.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/mix100.md -o ./ss-fb42729d/mix100.html -t \"Spectral sequences\""
+            "command": "python task.py -f ./ss-fb42729d/index_.md -o ./ss-fb42729d/index.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/mix.md -o ./ss-fb42729d/mix.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/auto.md -o ./ss-fb42729d/auto.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/auto100.md -o ./ss-fb42729d/auto100.html -t \"Spectral sequences\" && python task.py -f ./ss-fb42729d/mix2.md -o ./ss-fb42729d/mix2.html -t \"Spectral sequences\"",
+            "problemMatcher": []
         },
         {
             "label": "Compile /ss/index_.md",
             "type": "shell",
-            "command": "python task.py -f ./ss/index_.md -o ./ss/index.html -t \"Spectral sequences\""
+            "command": "python task.py -f ./ss/index_.md -o ./ss/index.html -t \"Spectral sequences\"",
+            "problemMatcher": []
         },
         {
             "label": "Compile /SelectedTopicsInAlgebraicTopology/index_.md",
             "type": "shell",
-            "command": "python task.py -f ./SelectedTopicsInAlgebraicTopology/index_.md -o ./SelectedTopicsInAlgebraicTopology/index.html -t Teaching"
+            "command": "python task.py -f ./SelectedTopicsInAlgebraicTopology/index_.md -o ./SelectedTopicsInAlgebraicTopology/index.html -t Teaching",
+            "problemMatcher": []
         }
     ]
 }
