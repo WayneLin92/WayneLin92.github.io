@@ -127,8 +127,8 @@ function on_pointerup(event) {
 
 			const level = parseInt(bullet.dataset.l);
 			if (level === 5000) { p_diff.innerHTML = `Permanant`; }
-			else if (level === 9800) { p_diff.innerHTML = `Permanant`; }
-			else if (level > 9800) {
+			else if (level === 10000 - config.R_PERM) { p_diff.innerHTML = `Permanant`; }
+			else if (level > 10000 - config.R_PERM) {
 				const r = 10000 - level;
 				let str_diff = `d_{${r}}(\\mathrm{this})=(${bullet.dataset.d})`;
 				str_diff = str_diff.replace('None', '?');
