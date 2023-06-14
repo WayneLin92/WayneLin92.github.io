@@ -15,6 +15,7 @@ const p_button_rename_style = document.getElementById("p_button_rename").style;
 const pointerCache = new Array();
 var prevPtsDist = null;
 var prevPt = null;
+var prevPinchScale = null;
 
 /* other globals */
 var timerClearCache = null;
@@ -155,19 +156,22 @@ function on_pointerup(event) {
 }
 
 function on_wheel(event) {
-	// TODO: make the zoom rate smaller for the Macbook trackpad
-	if (event.deltaY < 0) {
-		let pivotScreen = new Vector(event.offsetX, event.offsetY);
-		let pivotSvg = camera.flip(pivotScreen);
-		camera.zoom(pivotSvg, config.camera_zoom_rate);
-		g_plot.setAttribute("transform", camera.getTransform());
-	} else {
-		let pivotScreen = new Vector(event.offsetX, event.offsetY);
-		let pivotSvg = camera.flip(pivotScreen);
-		camera.zoom(pivotSvg, 1 / config.camera_zoom_rate);
-		g_plot.setAttribute("transform", camera.getTransform());
-	}
+	let pivotScreen = new Vector(event.offsetX, event.offsetY);
+	let pivotSvg = camera.flip(pivotScreen);
+	camera.zoom(pivotSvg, event.deltaY < 0 ? config.camera_zoom_rate : 1 / config.camera_zoom_rate);
+	g_plot.setAttribute("transform", camera.getTransform());
 	plotAxisLabels();
+}
+
+/* For macbook trackpad pinch gesture */
+function on_pinch(event) {
+	let pivotScreen = new Vector(event.clientX, event.clientY);
+	let pivotSvg = camera.flip(pivotScreen);
+	camera.zoom(pivotSvg, event.scale / prevPinchScale);
+	prevPinchScale = event.scale
+	g_plot.setAttribute("transform", camera.getTransform());
+	plotAxisLabels();
+	event.preventDefault();
 }
 
 function select_bullet(bullet) {
@@ -471,6 +475,13 @@ function initHandlers() {
 
 	svg_ss.addEventListener("contextmenu", on_contextmenu);
 	document.addEventListener("keydown", on_key_down);
+
+	/* For macbook */
+	if (navigator.userAgent.match("Macintosh")) {
+		window.addEventListener("gesturestart", event => {prevPinchScale = 1.0; event.preventDefault();});
+		window.addEventListener("gesturechange", on_pinch);
+		window.addEventListener("gestureend", event => event.preventDefault());
+	}
 
 	/* Desktop browser will support pointer enter and leave events */
 	if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Macintosh")) {
