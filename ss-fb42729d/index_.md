@@ -4,3 +4,5 @@
 * [mix3](./mix3.html)
 * [auto](./auto.html)
 * [auto100](./auto100.html)
+* [程序`Adams`使用指南](./Adams_manual.html)
+* [程序`ss`使用指南](./ss_manual.html)

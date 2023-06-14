@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKTQQPYBTB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QKTQQPYBTB');
+    </script>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <title>ss_manual</title>
+    <style media="screen" type="text/css">
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h2>准备阶段</h2>
+<p>打开系统的terminal app, 然后使用如下<code>cd</code> (change directory的缩写) 命令指定使用ss程序所在文件夹.</p>
+<pre><code class="language-bash">cd the_path_containing_ss
+</code></pre>
+<p>mac系统推荐下载一下vscode (visual studio code)并使用vscode内置的terminal (vscode里按<code>ctrl+`</code>)来代替系统的terminal，它对颜色支持好一些，系统自带的terminal里 <code>ss</code> 程序显示的东西颜色会混乱（比如经常变成浅灰色），不过其实也不影响使用。</p>
+<h2>画图</h2>
+<p>画图命令因为目前同时依赖于C++和python所以需要用两个命令</p>
+<pre><code class="language-bash">./ss plot_ss diagram_name
+</code></pre>
+<pre><code class="language-bash">python3 plot.py diagram_name
+</code></pre>
+<p>国祯的机器需要用python3.11来代替python3。</p>
+<p>在terminal其实可以使用 <code>&amp;&amp;</code> 符号做到一行同时运行两个命令。如下命令等价于依次运行以上两条命令：</p>
+<pre><code class="language-bash">./ss plot_ss diagram_name &amp;&amp; python3 plot.py diagram_name
+</code></pre>
+<h2>添加differential</h2>
+<p>如下命令可以在<code>spectra</code>里的<code>(stem, s)</code>里添加<code>d_r(x)=dx</code>. 其中<code>x</code>与<code>dx</code>的值需要要去谱序列网页里查看点的信息。</p>
+<pre><code class="language-bash">./ss add_diff &lt;spectra&gt; &lt;stem&gt; &lt;s&gt; &lt;r&gt; &lt;x&gt; &lt;dx&gt; [diagram_name]
+</code></pre>
+<p>上面<code>&lt;&gt;</code>只是说明这个参数是必输参数，<code>[]</code>说明这个参数可以省略，上面<code>diagram_name</code>的默认值可以在根目录里的<code>ss.json</code>文件里设置，比如在该<code>json</code>文件里如果写着<code>&quot;default&quot;: &quot;abc&quot;</code>就表示不写<code>diagram_name</code>时默认使用<code>abc</code>.</p>
+<h2>推导differential</h2>
+<p>如下命令表示尝试确定<code>stem_min&lt;=stem&lt;=stem_max</code>范围内的未知differential. 在diagram_name的文件夹内还有一个<code>ss.jon</code>，这个文件夹描述了spectra及map等，以及<code>&quot;deduce&quot;: &quot;on/off&quot;</code>的选项可以调整在推导时跳过哪些spectra (因为run一遍比较久想赶时间时可以选择这么做)。</p>
+<pre><code class="language-bash">./ss deduce diff &lt;stem_min&gt; &lt;stem_max&gt; [diagram_name]
+</code></pre>
+
+</body>

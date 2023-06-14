@@ -20,7 +20,7 @@ if __name__ == "__main__":
     if args.f is None or args.o is None:
         print("missing argument -o or -f")
     else:
-        subprocess.run(f"markdown-it {args.f} -o {args.o}", shell=True)
+        subprocess.run(f"markdown-it {args.f} > {args.o}", shell=True)
         with open("template.html", "r", encoding="utf8") as file:
             template_html = file.read()
         with open(args.o, "r", encoding="utf8") as file:
