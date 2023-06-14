@@ -54,6 +54,13 @@
 <p>如下命令可以在<code>spectra</code>里的<code>(stem, s)</code>里添加<code>d_r(x)=dx</code>. 其中<code>x</code>与<code>dx</code>的值需要要去谱序列网页里查看点的信息。</p>
 <pre><code class="language-bash">./ss add_diff &lt;spectra&gt; &lt;stem&gt; &lt;s&gt; &lt;r&gt; &lt;x&gt; &lt;dx&gt; [diagram_name]
 </code></pre>
+<p>当一个differential target等于零时可以使用&quot;&quot;，比如</p>
+<pre><code class="language-bash">./ss add_diff S0 1 1 999 0 &quot;&quot; diagram_name
+</code></pre>
+<p>使用<code>r=999</code>就可以使它变成permanent cycle, 但注意<code>r</code>不能超过<code>999</code>。</p>
+<p>当设定某个点<code>dx=[0]</code>被未知d3 hit时，使用d4&quot;&quot;=这个点，比如</p>
+<pre><code class="language-bash">./ss add_diff S0 &lt;stem&gt; &lt;s&gt; 4 &quot;&quot; 0 diagram_name
+</code></pre>
 <p>上面<code>&lt;&gt;</code>只是说明这个参数是必输参数，<code>[]</code>说明这个参数可以省略，上面<code>diagram_name</code>的默认值可以在根目录里的<code>ss.json</code>文件里设置，比如在该<code>json</code>文件里如果写着<code>&quot;default&quot;: &quot;abc&quot;</code>就表示不写<code>diagram_name</code>时默认使用<code>abc</code>.</p>
 <h2>推导differential</h2>
 <p>如下命令表示尝试确定<code>stem_min&lt;=stem&lt;=stem_max</code>范围内的未知differential. 在diagram_name的文件夹内还有一个<code>ss.jon</code>，这个文件夹描述了spectra及map等，以及<code>&quot;deduce&quot;: &quot;on/off&quot;</code>的选项可以调整在推导时跳过哪些spectra (因为run一遍比较久想赶时间时可以选择这么做)。</p>
