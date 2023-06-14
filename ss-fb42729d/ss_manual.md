@@ -33,6 +33,18 @@ python3 plot.py diagram_name
 ./ss add_diff <spectra> <stem> <s> <r> <x> <dx> [diagram_name]
 ```
 
+当一个differential target等于零时可以使用""，比如
+```bash
+./ss add_diff S0 1 1 999 0 "" diagram_name
+```
+使用`r=999`就可以使它变成permanent cycle, 但注意`r`不能超过`999`。
+
+当设定某个点`dx=[0]`被未知d3 hit时，使用d4""=这个点，比如
+```bash
+./ss add_diff S0 <stem> <s> 4 "" 0 diagram_name
+```
+
+
 上面`<>`只是说明这个参数是必输参数，`[]`说明这个参数可以省略，上面`diagram_name`的默认值可以在根目录里的`ss.json`文件里设置，比如在该`json`文件里如果写着`"default": "abc"`就表示不写`diagram_name`时默认使用`abc`.
 
 ##  推导differential
