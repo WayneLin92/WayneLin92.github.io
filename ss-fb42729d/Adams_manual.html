@@ -33,5 +33,36 @@
 </head>
 
 <body class="markdown-body">
-    
+    <h2>计算Resolution</h2>
+<pre><code class="language-bash">./Adams res &lt;cw&gt; &lt;t_max&gt;
+</code></pre>
+<p>如上命令计算cw的resolution直到<code>t=t_max</code>. 其中<code>cw</code>可以取如下值</p>
+<ul>
+<li><code>S0</code>, <code>C2</code>, <code>Ceta</code>, <code>Cnu</code>, <code>Csigma</code></li>
+<li><code>C2h4</code>, <code>C2h5</code>, <code>C2h6</code>, <code>DC2h4</code>, <code>DC2h5</code>, <code>DC2h6</code></li>
+<li><code>RPm3_6</code> 代表从<code>-3</code>-cell到6-cell</li>
+<li><code>tmf_CP4_128</code> 代表tmf smash CP_4^{128}</li>
+</ul>
+<h2>计算Resolution上的乘法</h2>
+<pre><code class="language-bash">./Adams prod &lt;ring&gt; &lt;t_max&gt;
+</code></pre>
+<p>如上命令计算名为<code>ring</code>的ring spectra乘法结构直到<code>t=t_max</code>. 其中<code>cw</code>可以取resolution已经support的任何值。</p>
+<pre><code class="language-bash">./Adams prod_mod &lt;module&gt; &lt;ring&gt; &lt;t_max&gt;
+</code></pre>
+<p>如上命令计算over <code>ring</code>的<code>module</code>的module乘法结构直到<code>t=t_max</code>. 其中<code>cw</code>/<code>ring</code>可以取resolution已经support的任何值。</p>
+<h2>计算Resolution之间的链映射</h2>
+<pre><code class="language-bash">./Adams map_coh &lt;cw1&gt; &lt;cw2&gt;
+</code></pre>
+<p>如上命令为<code>cw1</code>-&gt;<code>cw2</code>建立链映射文件，里面包含cohomology映射H^*(cw2)-&gt;H^*(cw1). 具体支持哪些映射看程序实现，如果不支持程序会显示不支持。这个命令基本瞬间完成，无需<code>nohup</code>。</p>
+<pre><code class="language-bash">./Adams map_res &lt;cw1&gt; &lt;cw2&gt; &lt;t_max&gt;
+</code></pre>
+<p>如上命令基于前一条的链映射文件build链映射，直到的Ext(<code>cw1</code>)的<code>t=t_max</code>.</p>
+<h2>为<code>ss</code>程序导出所需的AdamsE2数据</h2>
+<pre><code class="language-bash">./Adams export &lt;ring&gt; &lt;t_max&gt;
+</code></pre>
+<pre><code class="language-bash">./Adams export_mod &lt;module&gt; &lt;ring&gt; &lt;t_max&gt;
+</code></pre>
+<pre><code class="language-bash">./Adams export_map &lt;cw1&gt; &lt;cw2&gt; &lt;t_max&gt;
+</code></pre>
+
 </body>

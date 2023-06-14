@@ -4,7 +4,7 @@
 cd the_path_containing_ss
 ```
 
-mac系统我推荐下载vscode (visual studio code)并使用vscode内置的terminal (vscode里按`` ctrl+` ``调出)来代替系统的terminal，它对颜色支持好一些，系统自带的terminal里 `ss` 程序显示的东西颜色会混乱（比如经常变成浅灰色），不过其实也不影响使用。
+mac系统我推荐下载vscode (visual studio code)并使用vscode内置的terminal (vscode里按`` ctrl+` ``调出)来代替系统的terminal，它对颜色支持好一些，系统自带的terminal里 `ss` 程序使用了非通用的颜色系统，显示的东西颜色会混乱（比如经常变成浅灰色），不过其实也不影响使用。
 
 主目录里除了`webpages`是个存放网页的文件夹外，剩下的每个文件夹代表着一个由spectra和它们之间的映射构成的"diagram", 这样的文件夹名字就是下面将会使用的`diagram_name`。 每个"diagram"都是独立的，可以靠复制文件夹来备份"diagram"以便误操作后使用原来的文件夹。注意文件夹名字不能有空格，最好都是字母数字以及下划线。
 
