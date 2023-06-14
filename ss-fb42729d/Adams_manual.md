@@ -5,7 +5,7 @@
 如上命令计算cw的resolution直到`t=t_max`. 其中`cw`可以取如下值
 * `S0`, `C2`, `Ceta`, `Cnu`, `Csigma`
 * `C2h4`, `C2h5`, `C2h6`, `DC2h4`, `DC2h5`, `DC2h6`
-* `RPm3_6` 代表从`-3`-cell到6-cell
+* `RPm3_6` 代表从(-3)-cell到6-cell
 * `tmf_CP4_128` 代表tmf smash CP_4^{128}
 
 ## 计算Resolution上的乘法
