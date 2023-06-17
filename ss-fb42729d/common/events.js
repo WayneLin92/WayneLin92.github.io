@@ -159,8 +159,6 @@ function on_wheel(event) {
 	let pivotScreen = new Vector(event.offsetX, event.offsetY);
 	let pivotSvg = camera.flip(pivotScreen);
 	camera.zoom(pivotSvg, event.deltaY < 0 ? config.camera_zoom_rate : 1 / config.camera_zoom_rate);
-	g_plot.setAttribute("transform", camera.getTransform());
-	plotAxisLabels();
 }
 
 /* For macbook trackpad pinch gesture */
@@ -168,9 +166,7 @@ function on_pinch(event) {
 	let pivotScreen = new Vector(event.clientX, event.clientY);
 	let pivotSvg = camera.flip(pivotScreen);
 	camera.zoom(pivotSvg, event.scale / prevPinchScale);
-	prevPinchScale = event.scale
-	g_plot.setAttribute("transform", camera.getTransform());
-	plotAxisLabels();
+	prevPinchScale = event.scale;
 	event.preventDefault();
 }
 
@@ -214,8 +210,28 @@ function select_bullet(bullet) {
 }
 
 function on_key_down(event) {
+	//console.log(event.which)
+	if (event.which === 39) { /* Right */
+		camera.translate(new Vector(-config.camera_translate_pixels, 0));
+	}
+	else if (event.which === 37) { /* Left */
+		camera.translate(new Vector(config.camera_translate_pixels, 0));
+	}
+	else if (event.which === 38) { /* Up */
+		camera.translate(new Vector(0, -config.camera_translate_pixels));
+	}
+	else if (event.which === 40) { /* Down */
+		camera.translate(new Vector(0, config.camera_translate_pixels));
+	}
+	else if (event.which === 189) { /* - */
+		const pivotSvg = new Vector(window.innerWidth / 2, window.innerHeight / 2);
+		camera.zoom(pivotSvg, 1 / config.camera_zoom_rate);
+	}
+	else if (event.which === 187) { /* = */
+		const pivotSvg = new Vector(window.innerWidth / 2, window.innerHeight / 2);
+		camera.zoom(pivotSvg, config.camera_zoom_rate);
+	}
 	if (MODE == "DualPi") {
-		// console.log(event.which)
 		if (event.which === 39) { // Right arrow
 			SEP_RIGHT += 1;
 			AdjustVisibilityBySeparator();
