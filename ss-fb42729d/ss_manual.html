@@ -63,8 +63,23 @@
 </code></pre>
 <p>上面<code>&lt;&gt;</code>只是说明这个参数是必输参数，<code>[]</code>说明这个参数可以省略，上面<code>diagram_name</code>的默认值可以在根目录里的<code>ss.json</code>文件里设置，比如在该<code>json</code>文件里如果写着<code>&quot;default&quot;: &quot;abc&quot;</code>就表示不写<code>diagram_name</code>时默认使用<code>abc</code>.</p>
 <h2>推导differential</h2>
+<h3>Apply Leibniz rule/naturality</h3>
 <p>如下命令表示尝试确定<code>stem_min&lt;=stem&lt;=stem_max</code>范围内的未知differential. 在diagram_name的文件夹内还有一个<code>ss.jon</code>，这个文件夹描述了spectra及map等，以及<code>&quot;deduce&quot;: &quot;on/off&quot;</code>的选项可以调整在推导时跳过哪些spectra (因为run一遍比较久想赶时间时可以选择这么做)。</p>
-<pre><code class="language-bash">./ss deduce diff &lt;stem_min&gt; &lt;stem_max&gt; [diagram_name]
+<pre><code class="language-bash">./ss deduce diff [stem_min] [stem_max] [diagram_name] [flags...]
+</code></pre>
+<p>最后的可选参数flags目前支持以下值</p>
+<ul>
+<li><code>all_x</code>: 假如某个degree现有基底为x, y，那么程序默认中尝试推导dx, dy, 但有时存在dx, dy都确定不了但d(x+y)可以被确定的情况，本选项可以令程序尝试确定所有基底线性组合的differential。</li>
+<li><code>xy</code>: 假如dx没有被成功确定，此选项可以令程序在仍然尝试确定d(xy)的值，因为确实有dx遍历所有情况d(xy)为同一值的情况。同样的程序也会尝试确定d(f(x))。</li>
+</ul>
+<p>示例</p>
+<pre><code class="language-bash">./ss deduce diff 0 150 diagram all_x
+./ss deduce diff 0 150 diagram xy
+./ss deduce diff 0 150 diagram all_x xy
+</code></pre>
+<h3>Apply hard-coded human knowledge</h3>
+<p>我在程序中加入了一些额外的知识，目前主要是image of j以及tmf相关，使用以下命令可以去除许多特别长的differential。</p>
+<pre><code class="language-bash">./ss deduce manual [diagram_name]
 </code></pre>
 
 </body>

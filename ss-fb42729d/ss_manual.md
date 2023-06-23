@@ -48,9 +48,25 @@ python3 plot.py diagram_name
 上面`<>`只是说明这个参数是必输参数，`[]`说明这个参数可以省略，上面`diagram_name`的默认值可以在根目录里的`ss.json`文件里设置，比如在该`json`文件里如果写着`"default": "abc"`就表示不写`diagram_name`时默认使用`abc`.
 
 ##  推导differential
+### Apply Leibniz rule/naturality
 如下命令表示尝试确定`stem_min<=stem<=stem_max`范围内的未知differential. 在diagram_name的文件夹内还有一个`ss.jon`，这个文件夹描述了spectra及map等，以及`"deduce": "on/off"`的选项可以调整在推导时跳过哪些spectra (因为run一遍比较久想赶时间时可以选择这么做)。
 ```bash
-./ss deduce diff <stem_min> <stem_max> [diagram_name]
+./ss deduce diff [stem_min] [stem_max] [diagram_name] [flags...]
 ```
 
+最后的可选参数flags目前支持以下值
+* `all_x`: 假如某个degree现有基底为x, y，那么程序默认中尝试推导dx, dy, 但有时存在dx, dy都确定不了但d(x+y)可以被确定的情况，本选项可以令程序尝试确定所有基底线性组合的differential。
+* `xy`: 假如dx没有被成功确定，此选项可以令程序在仍然尝试确定d(xy)的值，因为确实有dx遍历所有情况d(xy)为同一值的情况。同样的程序也会尝试确定d(f(x))。
 
+示例
+```bash
+./ss deduce diff 0 150 diagram all_x
+./ss deduce diff 0 150 diagram xy
+./ss deduce diff 0 150 diagram all_x xy
+```
+
+### Apply hard-coded human knowledge
+我在程序中加入了一些额外的知识，目前主要是image of j以及tmf相关，使用以下命令可以去除许多特别长的differential。
+```bash
+./ss deduce manual [diagram_name]
+```
