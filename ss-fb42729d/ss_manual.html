@@ -70,7 +70,7 @@
 <p>最后的可选参数flags目前支持以下值</p>
 <ul>
 <li><code>all_x</code>: 假如某个degree现有基底为x, y，那么程序默认中尝试推导dx, dy, 但有时存在dx, dy都确定不了但d(x+y)可以被确定的情况，本选项可以令程序尝试确定所有基底线性组合的differential。</li>
-<li><code>xy</code>: 假如dx没有被成功确定，此选项可以令程序在仍然尝试确定d(xy)的值，因为确实有dx遍历所有情况d(xy)为同一值的情况。同样的程序也会尝试确定d(f(x))。</li>
+<li><code>xy</code>: 假如dx没有被成功确定，此选项可以令程序继续尝试确定d(xy)的值，因为确实有dx遍历所有可能d(xy)仍为同一值的情况。同样的程序也会进一步对映射f尝试确定d(f(x))的值。</li>
 </ul>
 <p>示例</p>
 <pre><code class="language-bash">./ss deduce diff 0 150 diagram all_x
