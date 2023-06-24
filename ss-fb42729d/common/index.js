@@ -36,6 +36,8 @@ const config_dynamic = {
     showLines: "All",
 };
 
+const urlParams = new URLSearchParams(window.location.search);
+
 /* The canvas is always as big as the window */
 const svg_ss = document.getElementById("svg_ss");
 const g_svg = document.getElementById("g_svg");
@@ -424,6 +426,25 @@ function addRectProduct() {
     }
 }
 
+function processParams() {
+    let has_x = urlParams.get("x") !== null, has_y = urlParams.get("y") !== null;
+    if (has_x && has_y && urlParams.get("scale") !== null) {
+        const pivot_svg = camera.world2svg(new Vector(urlParams.get("x"), urlParams.get("y")));
+        const scale = urlParams.get("scale");
+        camera.zoom(pivot_svg, scale);
+    }
+    if (has_x) {
+        wx = urlParams.get("x");
+        const pivot_svg = camera.world2svg(new Vector(wx, 0));
+        camera.translate(new Vector(config.margin + (window.innerWidth - config.margin) / 2 - pivot_svg.x, 0));
+    }
+    if (has_y) {
+        wy = urlParams.get("y");
+        const pivot_svg = camera.world2svg(new Vector(0, wy));
+        camera.translate(new Vector(0, config.margin + (window.innerHeight - config.margin) / 2 - pivot_svg.y));
+    }
+}
+
 /***************************************************
  * init
  ***************************************************/
@@ -444,4 +465,6 @@ function init() {
     if (MODE === "DualPi")
         AdjustVisibilityBySeparator();
     initHandlers();
+
+    processParams();
 }
