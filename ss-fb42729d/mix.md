@@ -1,78 +1,247 @@
 # Spectral sequences
 ## Spectra
-### [S0](./mix/S0_ss/index.html)-modules
-[C2](./mix/C2_ss/index.html), [Ceta](./mix/Ceta_ss/index.html), [Cnu](./mix/Cnu_ss/index.html), [Csigma](./mix/Csigma_ss/index.html)<br>
-[C2∧Ceta](./mix/C2_Ceta_ss/index.html), [Ceta∧Cnu](./mix/Ceta_Cnu_ss/index.html)<br>
-[CW_2_eta](./mix/CW_2_eta_ss/index.html), [CW_eta_2](./mix/CW_eta_2_ss/index.html), [CW_eta_nu](./mix/CW_eta_nu_ss/index.html), [CW_nu_eta](./mix/CW_nu_eta_ss/index.html)<br>
-[C2h4](./mix/C2h4_ss/index.html), [C2h5](./mix/C2h5_ss/index.html), [C2h6](./mix/C2h6_ss/index.html)<br>
-[DC2h4](./mix/DC2h4_ss/index.html), [DC2h5](./mix/DC2h5_ss/index.html), [DC2h6](./mix/DC2h6_ss/index.html)<br>
-[RP4](./mix/RP1_4_ss/index.html), [RP6](./mix/RP1_6_ss/index.html), [RP8](./mix/RP1_8_ss/index.html), [RP10](./mix/RP1_10_ss/index.html), [RP12](./mix/RP1_12_ss/index.html), 
-[RP14](./mix/RP1_14_ss/index.html),
-[RP16](./mix/RP1_16_ss/index.html),
-[RP18](./mix/RP1_18_ss/index.html),
-[RP20](./mix/RP1_20_ss/index.html),
-[RP22](./mix/RP1_22_ss/index.html),
-[RP24](./mix/RP1_24_ss/index.html),
-[RP26](./mix/RP1_26_ss/index.html),
-[RP28](./mix/RP1_28_ss/index.html),
-[RP30](./mix/RP1_30_ss/index.html),
-[RP32](./mix/RP1_32_ss/index.html),
-[RP34](./mix/RP1_34_ss/index.html),
-[RP36](./mix/RP1_36_ss/index.html),
-[RP38](./mix/RP1_38_ss/index.html),
-[RP40](./mix/RP1_40_ss/index.html),
-[RP42](./mix/RP1_42_ss/index.html),
-[RP44](./mix/RP1_44_ss/index.html),
-[RP46](./mix/RP1_46_ss/index.html),
-[RP48](./mix/RP1_48_ss/index.html),
-[RP50](./mix/RP1_50_ss/index.html),
-[RP52](./mix/RP1_52_ss/index.html),
-[RP54](./mix/RP1_54_ss/index.html),
-[RP56](./mix/RP1_56_ss/index.html),
-[RP58](./mix/RP1_58_ss/index.html),
-[RP60](./mix/RP1_60_ss/index.html),
-[RP62](./mix/RP1_62_ss/index.html),
-[RP64](./mix/RP1_64_ss/index.html),
-[RP66](./mix/RP1_66_ss/index.html),
-[RP68](./mix/RP1_68_ss/index.html),
-[RP70](./mix/RP1_70_ss/index.html),
-[RP72](./mix/RP1_72_ss/index.html),
-[RP74](./mix/RP1_74_ss/index.html),
-[RP76](./mix/RP1_76_ss/index.html),
-[RP78](./mix/RP1_78_ss/index.html),
-[RP80](./mix/RP1_80_ss/index.html),
-[RP82](./mix/RP1_82_ss/index.html),
-[RP84](./mix/RP1_84_ss/index.html),
-[RP86](./mix/RP1_86_ss/index.html),
-[RP88](./mix/RP1_88_ss/index.html),
-[RP90](./mix/RP1_90_ss/index.html),
-[RP92](./mix/RP1_92_ss/index.html),
-[RP94](./mix/RP1_94_ss/index.html),
-[RP96](./mix/RP1_96_ss/index.html),
-[RP98](./mix/RP1_98_ss/index.html),
-[RP100](./mix/RP1_100_ss/index.html),
-[RP102](./mix/RP1_102_ss/index.html),
-[RP104](./mix/RP1_104_ss/index.html),
-[RP106](./mix/RP1_106_ss/index.html),
-[RP108](./mix/RP1_108_ss/index.html),
-[RP110](./mix/RP1_110_ss/index.html),
-[RP112](./mix/RP1_112_ss/index.html),
-[RP114](./mix/RP1_114_ss/index.html),
-[RP116](./mix/RP1_116_ss/index.html),
-[RPinf](./mix/RP1_256_ss/index.html)<br>
-[RP3_6](./mix/RP3_6_ss/index.html), [Fphi](./mix/Fphi_ss/index.html)<br>
-[CPinf](./mix/CP1_128_ss/index.html)<br>
-[j](./mix/j_ss/index.html), [j/2](./mix/j_C2_ss/index.html)<br>
+### [S0](plot.html?data=S0)-modules
+[C2](plot.html?data=C2), [Ceta](plot.html?data=Ceta), [Cnu](plot.html?data=Cnu), [Csigma](plot.html?data=Csigma)<br>
+[C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu)<br>
+[CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta)<br>
+[C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6)<br>
+[DC2h4](plot.html?data=DC2h4), [DC2h5](plot.html?data=DC2h5), [DC2h6](plot.html?data=DC2h6)<br>
+[RP4](plot.html?data=RP1_4), [RP6](plot.html?data=RP1_6), [RP8](plot.html?data=RP1_8), [RP10](plot.html?data=RP1_10), [RP12](plot.html?data=RP1_12), 
+[RP14](plot.html?data=RP1_14),
+[RP16](plot.html?data=RP1_16),
+[RP18](plot.html?data=RP1_18),
+[RP20](plot.html?data=RP1_20),
+[RP22](plot.html?data=RP1_22),
+[RP24](plot.html?data=RP1_24),
+[RP26](plot.html?data=RP1_26),
+[RP28](plot.html?data=RP1_28),
+[RP30](plot.html?data=RP1_30),
+[RP32](plot.html?data=RP1_32),
+[RP34](plot.html?data=RP1_34),
+[RP36](plot.html?data=RP1_36),
+[RP38](plot.html?data=RP1_38),
+[RP40](plot.html?data=RP1_40),
+[RP42](plot.html?data=RP1_42),
+[RP44](plot.html?data=RP1_44),
+[RP46](plot.html?data=RP1_46),
+[RP48](plot.html?data=RP1_48),
+[RP50](plot.html?data=RP1_50),
+[RP52](plot.html?data=RP1_52),
+[RP54](plot.html?data=RP1_54),
+[RP56](plot.html?data=RP1_56),
+[RP58](plot.html?data=RP1_58),
+[RP60](plot.html?data=RP1_60),
+[RP62](plot.html?data=RP1_62),
+[RP64](plot.html?data=RP1_64),
+[RP66](plot.html?data=RP1_66),
+[RP68](plot.html?data=RP1_68),
+[RP70](plot.html?data=RP1_70),
+[RP72](plot.html?data=RP1_72),
+[RP74](plot.html?data=RP1_74),
+[RP76](plot.html?data=RP1_76),
+[RP78](plot.html?data=RP1_78),
+[RP80](plot.html?data=RP1_80),
+[RP82](plot.html?data=RP1_82),
+[RP84](plot.html?data=RP1_84),
+[RP86](plot.html?data=RP1_86),
+[RP88](plot.html?data=RP1_88),
+[RP90](plot.html?data=RP1_90),
+[RP92](plot.html?data=RP1_92),
+[RP94](plot.html?data=RP1_94),
+[RP96](plot.html?data=RP1_96),
+[RP98](plot.html?data=RP1_98),
+[RP100](plot.html?data=RP1_100),
+[RP102](plot.html?data=RP1_102),
+[RP104](plot.html?data=RP1_104),
+[RP106](plot.html?data=RP1_106),
+[RP108](plot.html?data=RP1_108),
+[RP110](plot.html?data=RP1_110),
+[RP112](plot.html?data=RP1_112),
+[RP114](plot.html?data=RP1_114),
+[RP116](plot.html?data=RP1_116),
+[RPinf](plot.html?data=RP1_256)<br>
+[RP3_6](plot.html?data=RP3_6), [Fphi](plot.html?data=Fphi)<br>
+[CPinf](plot.html?data=CP1_128)<br>
+[j](plot.html?data=j), [j/2](plot.html?data=j_C2)<br>
 
-### [tmf](./mix/tmf_ss/index.html)-modules
-[tmf∧C2](./mix/tmf_C2_ss/index.html), [tmf∧Ceta](./mix/tmf_Ceta_ss/index.html), [tmf∧Cnu](./mix/tmf_Cnu_ss/index.html)<br>
+### [tmf](plot.html?data=tmf)-modules
+[tmf∧C2](plot.html?data=tmf_C2), [tmf∧Ceta](plot.html?data=tmf_Ceta), [tmf∧Cnu](plot.html?data=tmf_Cnu)<br>
 tmf∧RP4, ...
 
 ### ko-modules
 
-### [X2](./mix/X2_ss/index.html)-modules
+### [X2](plot.html?data=X2)-modules
 
 ## Maps
-$S^0$
+[MapS0 --> tmf](plot.html?data=MapS0__tmf),<br>
+[MapC2 --> S0](plot.html?data=MapC2__S0),<br>
+[MapCeta --> S0](plot.html?data=MapCeta__S0),<br>
+[MapCnu --> S0](plot.html?data=MapCnu__S0),<br>
+[MapCsigma --> S0](plot.html?data=MapCsigma__S0),<br>
+
+[Mapj --> j_C2](plot.html?data=Mapj__j_C2),<br>
+[MapC2 --> j_C2](plot.html?data=MapC2__j_C2),<br>
+[Mapj_C2 --> j](plot.html?data=Mapj_C2__j),<br>
+[MapC2 --> C2h4](plot.html?data=MapC2__C2h4),<br>
+[MapC2 --> C2h5](plot.html?data=MapC2__C2h5),<br>
+[MapC2 --> C2h6](plot.html?data=MapC2__C2h6),<br>
+[MapC2h4 --> S0](plot.html?data=MapC2h4__S0),<br>
+[MapC2h5 --> S0](plot.html?data=MapC2h5__S0),<br>
+[MapC2h6 --> S0](plot.html?data=MapC2h6__S0),<br>
+[MapDC2h4 --> C2](plot.html?data=MapDC2h4__C2),<br>
+[MapDC2h5 --> C2](plot.html?data=MapDC2h5__C2),<br>
+[MapDC2h6 --> C2](plot.html?data=MapDC2h6__C2),<br>
+
+[MapC2 --> tmf_C2](plot.html?data=MapC2__tmf_C2),<br>
+[MapCeta --> tmf_Ceta](plot.html?data=MapCeta__tmf_Ceta),<br>
+[MapCnu --> tmf_Cnu](plot.html?data=MapCnu__tmf_Cnu),<br>
+[Maptmf_C2 --> tmf](plot.html?data=Maptmf_C2__tmf),<br>
+[Maptmf_Ceta --> tmf](plot.html?data=Maptmf_Ceta__tmf),<br>
+[Maptmf_Cnu --> tmf](plot.html?data=Maptmf_Cnu__tmf),<br>
+
+[MapC2_Ceta --> C2](plot.html?data=MapC2_Ceta__C2),<br>
+[MapC2_Ceta --> Ceta](plot.html?data=MapC2_Ceta__Ceta),<br>
+[MapCeta_Cnu --> Ceta](plot.html?data=MapCeta_Cnu__Ceta),<br>
+[MapCeta_Cnu --> Cnu](plot.html?data=MapCeta_Cnu__Cnu),<br>
+[MapCW_2_eta --> Ceta](plot.html?data=MapCW_2_eta__Ceta),<br>
+[MapCW_eta_2 --> Ceta](plot.html?data=MapCW_eta_2__Ceta),<br>
+[MapCW_eta_nu --> Cnu](plot.html?data=MapCW_eta_nu__Cnu),<br>
+[MapCW_nu_eta --> Ceta](plot.html?data=MapCW_nu_eta__Ceta),<br>
+[MapC2 --> C2_Ceta](plot.html?data=MapC2__C2_Ceta),<br>
+[MapCeta --> C2_Ceta](plot.html?data=MapCeta__C2_Ceta),<br>
+[MapCeta --> Ceta_Cnu](plot.html?data=MapCeta__Ceta_Cnu),<br>
+[MapCnu --> Ceta_Cnu](plot.html?data=MapCnu__Ceta_Cnu),<br>
+[MapC2 --> CW_2_eta](plot.html?data=MapC2__CW_2_eta),<br>
+[MapCeta --> CW_eta_2](plot.html?data=MapCeta__CW_eta_2),<br>
+[MapCeta --> CW_eta_nu](plot.html?data=MapCeta__CW_eta_nu),<br>
+[MapCnu --> CW_nu_eta](plot.html?data=MapCnu__CW_nu_eta),<br>
+[MapCW_eta_2 --> RP1_6](plot.html?data=MapCW_eta_2__RP1_6),<br>
+[MapRP1_6 --> CW_2_eta](plot.html?data=MapRP1_6__CW_2_eta),<br>
+    
+[MapRP1_2 --> RP1_4](plot.html?data=MapRP1_2__RP1_4),<br>
+[MapRP1_4 --> RP1_6](plot.html?data=MapRP1_4__RP1_6),<br>
+[MapRP1_6 --> RP1_8](plot.html?data=MapRP1_6__RP1_8),<br>
+[MapRP1_8 --> RP1_10](plot.html?data=MapRP1_8__RP1_10),<br>
+[MapRP1_10 --> RP1_12](plot.html?data=MapRP1_10__RP1_12),<br>
+[MapRP1_12 --> RP1_256](plot.html?data=MapRP1_12__RP1_256),<br>
+[MapRP1_10 --> RP1_256](plot.html?data=MapRP1_10__RP1_256),<br>
+[MapRP3_4 --> RP3_6](plot.html?data=MapRP3_4__RP3_6),<br>
+[MapRP1_4 --> RP3_4](plot.html?data=MapRP1_4__RP3_4),<br>
+[MapRP1_6 --> RP5_6](plot.html?data=MapRP1_6__RP5_6),<br>
+[MapRP1_8 --> RP5_8](plot.html?data=MapRP1_8__RP5_8),<br>
+[MapRP1_12 --> RP9_12](plot.html?data=MapRP1_12__RP9_12),<br>
+[MapRP1_10 --> S0](plot.html?data=MapRP1_10__S0),<br>
+[MapRP1_6 --> RP3_6](plot.html?data=MapRP1_6__RP3_6),<br>
+[MapRP3_6 --> RP5_6](plot.html?data=MapRP3_6__RP5_6),<br>
+[MapFphi --> RP1_256](plot.html?data=MapFphi__RP1_256),<br>
+[MapKahnPriddy](plot.html?data=MapKahnPriddy),<br>
+[MapKahnPriddyC](plot.html?data=MapKahnPriddyC),<br>
+[MapRP1_256 --> CP1_128](plot.html?data=MapRP1_256__CP1_128),<br>
+
+[MapRP1_100 --> RP1_102](plot.html?data=MapRP1_100__RP1_102),<br>
+[MapRP1_100 --> RP97_100](plot.html?data=MapRP1_100__RP97_100),<br>
+[MapRP1_102 --> RP1_104](plot.html?data=MapRP1_102__RP1_104),<br>
+[MapRP1_102 --> RP99_102](plot.html?data=MapRP1_102__RP99_102),<br>
+[MapRP1_104 --> RP101_104](plot.html?data=MapRP1_104__RP101_104),<br>
+[MapRP1_104 --> RP1_106](plot.html?data=MapRP1_104__RP1_106),<br>
+[MapRP1_106 --> RP103_106](plot.html?data=MapRP1_106__RP103_106),<br>
+[MapRP1_106 --> RP1_108](plot.html?data=MapRP1_106__RP1_108),<br>
+[MapRP1_108 --> RP105_108](plot.html?data=MapRP1_108__RP105_108),<br>
+[MapRP1_108 --> RP1_110](plot.html?data=MapRP1_108__RP1_110),<br>
+[MapRP1_110 --> RP107_110](plot.html?data=MapRP1_110__RP107_110),<br>
+[MapRP1_110 --> RP1_112](plot.html?data=MapRP1_110__RP1_112),<br>
+[MapRP1_112 --> RP109_112](plot.html?data=MapRP1_112__RP109_112),<br>
+[MapRP1_112 --> RP1_114](plot.html?data=MapRP1_112__RP1_114),<br>
+[MapRP1_114 --> RP111_114](plot.html?data=MapRP1_114__RP111_114),<br>
+[MapRP1_114 --> RP1_116](plot.html?data=MapRP1_114__RP1_116),<br>
+[MapRP1_116 --> RP113_116](plot.html?data=MapRP1_116__RP113_116),<br>
+[MapRP1_116 --> RP1_256](plot.html?data=MapRP1_116__RP1_256),<br>
+[MapRP1_12 --> RP1_14](plot.html?data=MapRP1_12__RP1_14),<br>
+[MapRP1_14 --> RP11_14](plot.html?data=MapRP1_14__RP11_14),<br>
+[MapRP1_14 --> RP1_16](plot.html?data=MapRP1_14__RP1_16),<br>
+[MapRP1_16 --> RP13_16](plot.html?data=MapRP1_16__RP13_16),<br>
+[MapRP1_16 --> RP1_18](plot.html?data=MapRP1_16__RP1_18),<br>
+[MapRP1_18 --> RP15_18](plot.html?data=MapRP1_18__RP15_18),<br>
+[MapRP1_18 --> RP1_20](plot.html?data=MapRP1_18__RP1_20),<br>
+[MapRP1_20 --> RP17_20](plot.html?data=MapRP1_20__RP17_20),<br>
+[MapRP1_20 --> RP1_22](plot.html?data=MapRP1_20__RP1_22),<br>
+[MapRP1_22 --> RP19_22](plot.html?data=MapRP1_22__RP19_22),<br>
+[MapRP1_22 --> RP1_24](plot.html?data=MapRP1_22__RP1_24),<br>
+[MapRP1_24 --> RP1_26](plot.html?data=MapRP1_24__RP1_26),<br>
+[MapRP1_24 --> RP21_24](plot.html?data=MapRP1_24__RP21_24),<br>
+[MapRP1_26 --> RP1_28](plot.html?data=MapRP1_26__RP1_28),<br>
+[MapRP1_26 --> RP23_26](plot.html?data=MapRP1_26__RP23_26),<br>
+[MapRP1_28 --> RP1_30](plot.html?data=MapRP1_28__RP1_30),<br>
+[MapRP1_28 --> RP25_28](plot.html?data=MapRP1_28__RP25_28),<br>
+[MapRP1_30 --> RP1_32](plot.html?data=MapRP1_30__RP1_32),<br>
+[MapRP1_30 --> RP27_30](plot.html?data=MapRP1_30__RP27_30),<br>
+[MapRP1_32 --> RP1_34](plot.html?data=MapRP1_32__RP1_34),<br>
+[MapRP1_32 --> RP29_32](plot.html?data=MapRP1_32__RP29_32),<br>
+[MapRP1_34 --> RP1_36](plot.html?data=MapRP1_34__RP1_36),<br>
+[MapRP1_34 --> RP31_34](plot.html?data=MapRP1_34__RP31_34),<br>
+[MapRP1_36 --> RP1_38](plot.html?data=MapRP1_36__RP1_38),<br>
+[MapRP1_36 --> RP33_36](plot.html?data=MapRP1_36__RP33_36),<br>
+[MapRP1_38 --> RP1_40](plot.html?data=MapRP1_38__RP1_40),<br>
+[MapRP1_38 --> RP35_38](plot.html?data=MapRP1_38__RP35_38),<br>
+[MapRP1_40 --> RP1_42](plot.html?data=MapRP1_40__RP1_42),<br>
+[MapRP1_40 --> RP37_40](plot.html?data=MapRP1_40__RP37_40),<br>
+[MapRP1_42 --> RP1_44](plot.html?data=MapRP1_42__RP1_44),<br>
+[MapRP1_42 --> RP39_42](plot.html?data=MapRP1_42__RP39_42),<br>
+[MapRP1_44 --> RP1_46](plot.html?data=MapRP1_44__RP1_46),<br>
+[MapRP1_44 --> RP41_44](plot.html?data=MapRP1_44__RP41_44),<br>
+[MapRP1_46 --> RP1_48](plot.html?data=MapRP1_46__RP1_48),<br>
+[MapRP1_46 --> RP43_46](plot.html?data=MapRP1_46__RP43_46),<br>
+[MapRP1_48 --> RP1_50](plot.html?data=MapRP1_48__RP1_50),<br>
+[MapRP1_48 --> RP45_48](plot.html?data=MapRP1_48__RP45_48),<br>
+[MapRP1_50 --> RP1_52](plot.html?data=MapRP1_50__RP1_52),<br>
+[MapRP1_50 --> RP47_50](plot.html?data=MapRP1_50__RP47_50),<br>
+[MapRP1_52 --> RP1_54](plot.html?data=MapRP1_52__RP1_54),<br>
+[MapRP1_52 --> RP49_52](plot.html?data=MapRP1_52__RP49_52),<br>
+[MapRP1_54 --> RP1_56](plot.html?data=MapRP1_54__RP1_56),<br>
+[MapRP1_54 --> RP51_54](plot.html?data=MapRP1_54__RP51_54),<br>
+[MapRP1_56 --> RP1_58](plot.html?data=MapRP1_56__RP1_58),<br>
+[MapRP1_56 --> RP53_56](plot.html?data=MapRP1_56__RP53_56),<br>
+[MapRP1_58 --> RP1_60](plot.html?data=MapRP1_58__RP1_60),<br>
+[MapRP1_58 --> RP55_58](plot.html?data=MapRP1_58__RP55_58),<br>
+[MapRP1_60 --> RP1_62](plot.html?data=MapRP1_60__RP1_62),<br>
+[MapRP1_60 --> RP57_60](plot.html?data=MapRP1_60__RP57_60),<br>
+[MapRP1_62 --> RP1_64](plot.html?data=MapRP1_62__RP1_64),<br>
+[MapRP1_62 --> RP59_62](plot.html?data=MapRP1_62__RP59_62),<br>
+[MapRP1_64 --> RP1_66](plot.html?data=MapRP1_64__RP1_66),<br>
+[MapRP1_64 --> RP61_64](plot.html?data=MapRP1_64__RP61_64),<br>
+[MapRP1_66 --> RP1_68](plot.html?data=MapRP1_66__RP1_68),<br>
+[MapRP1_66 --> RP63_66](plot.html?data=MapRP1_66__RP63_66),<br>
+[MapRP1_68 --> RP1_70](plot.html?data=MapRP1_68__RP1_70),<br>
+[MapRP1_68 --> RP65_68](plot.html?data=MapRP1_68__RP65_68),<br>
+[MapRP1_70 --> RP1_72](plot.html?data=MapRP1_70__RP1_72),<br>
+[MapRP1_70 --> RP67_70](plot.html?data=MapRP1_70__RP67_70),<br>
+[MapRP1_72 --> RP1_74](plot.html?data=MapRP1_72__RP1_74),<br>
+[MapRP1_72 --> RP69_72](plot.html?data=MapRP1_72__RP69_72),<br>
+[MapRP1_74 --> RP1_76](plot.html?data=MapRP1_74__RP1_76),<br>
+[MapRP1_74 --> RP71_74](plot.html?data=MapRP1_74__RP71_74),<br>
+[MapRP1_76 --> RP1_78](plot.html?data=MapRP1_76__RP1_78),<br>
+[MapRP1_76 --> RP73_76](plot.html?data=MapRP1_76__RP73_76),<br>
+[MapRP1_78 --> RP1_80](plot.html?data=MapRP1_78__RP1_80),<br>
+[MapRP1_78 --> RP75_78](plot.html?data=MapRP1_78__RP75_78),<br>
+[MapRP1_80 --> RP1_82](plot.html?data=MapRP1_80__RP1_82),<br>
+[MapRP1_80 --> RP77_80](plot.html?data=MapRP1_80__RP77_80),<br>
+[MapRP1_82 --> RP1_84](plot.html?data=MapRP1_82__RP1_84),<br>
+[MapRP1_82 --> RP79_82](plot.html?data=MapRP1_82__RP79_82),<br>
+[MapRP1_84 --> RP1_86](plot.html?data=MapRP1_84__RP1_86),<br>
+[MapRP1_84 --> RP81_84](plot.html?data=MapRP1_84__RP81_84),<br>
+[MapRP1_86 --> RP1_88](plot.html?data=MapRP1_86__RP1_88),<br>
+[MapRP1_86 --> RP83_86](plot.html?data=MapRP1_86__RP83_86),<br>
+[MapRP1_88 --> RP1_90](plot.html?data=MapRP1_88__RP1_90),<br>
+[MapRP1_88 --> RP85_88](plot.html?data=MapRP1_88__RP85_88),<br>
+[MapRP1_90 --> RP1_92](plot.html?data=MapRP1_90__RP1_92),<br>
+[MapRP1_90 --> RP87_90](plot.html?data=MapRP1_90__RP87_90),<br>
+[MapRP1_92 --> RP1_94](plot.html?data=MapRP1_92__RP1_94),<br>
+[MapRP1_92 --> RP89_92](plot.html?data=MapRP1_92__RP89_92),<br>
+[MapRP1_94 --> RP1_96](plot.html?data=MapRP1_94__RP1_96),<br>
+[MapRP1_94 --> RP91_94](plot.html?data=MapRP1_94__RP91_94),<br>
+[MapRP1_96 --> RP1_98](plot.html?data=MapRP1_96__RP1_98),<br>
+[MapRP1_96 --> RP93_96](plot.html?data=MapRP1_96__RP93_96),<br>
+[MapRP1_98 --> RP1_100](plot.html?data=MapRP1_98__RP1_100),<br>
+[MapRP1_98 --> RP95_98](plot.html?data=MapRP1_98__RP95_98),<br>
 
 ## Cofiber sequences
