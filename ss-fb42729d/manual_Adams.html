@@ -14,7 +14,7 @@
 
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="github-markdown.css">
-    <title>Adams_manual</title>
+    <title>manual_Adams</title>
     <style media="screen" type="text/css">
         .markdown-body {
             box-sizing: border-box;
@@ -49,14 +49,14 @@
 <p>如上命令计算名为<code>ring</code>的ring spectra乘法结构直到<code>t=t_max</code>. 其中<code>cw</code>可以取resolution已经support的任何值。</p>
 <pre><code class="language-bash">./Adams prod_mod &lt;module&gt; &lt;ring&gt; &lt;t_max&gt;
 </code></pre>
-<p>如上命令计算over <code>ring</code>的<code>module</code>的module乘法结构直到<code>t=t_max</code>. 其中<code>cw</code>/<code>ring</code>可以取resolution已经support的任何值。</p>
+<p>如上命令计算over <code>ring</code>的<code>module</code>的module乘法结构直到<code>t=t_max</code>. 其中(<code>module</code>, <code>ring</code>)可以取resolution已经support的任何spectra。</p>
 <h2>计算Resolution之间的链映射</h2>
 <pre><code class="language-bash">./Adams map_coh &lt;cw1&gt; &lt;cw2&gt;
 </code></pre>
 <p>如上命令为<code>cw1</code>-&gt;<code>cw2</code>建立链映射文件，里面包含cohomology映射H^*(cw2)-&gt;H^*(cw1). 具体支持哪些映射看程序实现，如果不支持程序会显示不支持。这个命令基本瞬间完成，无需<code>nohup</code>。</p>
 <pre><code class="language-bash">./Adams map_res &lt;cw1&gt; &lt;cw2&gt; &lt;t_max&gt;
 </code></pre>
-<p>如上命令基于前一条的链映射文件build链映射，直到的Ext(<code>cw1</code>)的<code>t=t_max</code>.</p>
+<p>如上命令基于前一条命令创建的链映射文件计算链映射，算到 Ext(<code>cw1</code>) 的 <code>t=t_max</code>.</p>
 <h2>为<code>ss</code>程序导出所需的AdamsE2数据</h2>
 <pre><code class="language-bash">./Adams export &lt;ring&gt; &lt;t_max&gt;
 </code></pre>

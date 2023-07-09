@@ -17,7 +17,7 @@
 ```bash
 ./Adams prod_mod <module> <ring> <t_max>
 ```
-如上命令计算over `ring`的`module`的module乘法结构直到`t=t_max`. 其中`cw`/`ring`可以取resolution已经support的任何值。
+如上命令计算over `ring`的`module`的module乘法结构直到`t=t_max`. 其中(`module`, `ring`)可以取resolution已经support的任何spectra。
 
 ## 计算Resolution之间的链映射
 ```bash
@@ -28,7 +28,7 @@
 ```bash
 ./Adams map_res <cw1> <cw2> <t_max>
 ```
-如上命令基于前一条的链映射文件build链映射，直到的Ext(`cw1`)的`t=t_max`.
+如上命令基于前一条命令创建的链映射文件计算链映射，算到 Ext(`cw1`) 的 `t=t_max`.
 
 ## 为`ss`程序导出所需的AdamsE2数据
 ```bash

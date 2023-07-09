@@ -14,7 +14,7 @@
 
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="github-markdown.css">
-    <title>ss_manual</title>
+    <title>manual_ss</title>
     <style media="screen" type="text/css">
         .markdown-body {
             box-sizing: border-box;
@@ -35,21 +35,15 @@
 <body class="markdown-body">
     <h2>准备阶段</h2>
 <p>打开系统的terminal app, 然后使用如下<code>cd</code> (change directory的缩写) 命令指定使用ss程序所在文件夹.</p>
-<pre><code class="language-bash">cd the_path_containing_ss
+<pre><code class="language-bash">cd &lt;the_path_containing_ss&gt;
 </code></pre>
-<p>mac系统我推荐下载vscode (visual studio code)并使用vscode内置的terminal (vscode里按<code>ctrl+`</code>调出)来代替系统的terminal，它对颜色支持好一些，系统自带的terminal里 <code>ss</code> 程序使用了非通用的颜色系统，显示的东西颜色会混乱（比如经常变成浅灰色），不过其实也不影响使用。</p>
-<p>主目录里除了<code>webpages</code>是个存放网页的文件夹外，剩下的每个文件夹代表着一个由spectra和它们之间的映射构成的&quot;diagram&quot;, 这样的文件夹名字就是下面将会使用的<code>diagram_name</code>。 每个&quot;diagram&quot;都是独立的，可以靠复制文件夹来备份&quot;diagram&quot;以便误操作后使用原来的文件夹。注意文件夹名字不能有空格，最好都是字母数字以及下划线。</p>
+<p>mac系统我推荐下载vscode (visual studio code) 并使用vscode内置的terminal (vscode里按<code>ctrl+`</code>调出) 来代替系统的terminal，它对颜色支持好一些，系统自带的terminal程序使用了非通用的颜色系统，显示的东西颜色会混乱 (比如经常变成浅灰色)，不过其实也不影响使用。</p>
+<p>主目录里除了<code>webpages</code>是个存放网页的文件夹外，剩下的每个文件夹代表着一个由spectra和它们之间的映射构成的&quot;diagram&quot;, 这样的文件夹名字就是下面将会使用的<code>diagram_name</code>。 每个&quot;diagram&quot;都是独立的，可以靠复制文件夹来备份&quot;diagram&quot;以便误操作后使用原来的文件夹。<strong>注意文件夹名字不能有空格</strong>，最好都是字母数字以及下划线。</p>
 <h2>画图</h2>
-<p>画图命令因为目前同时依赖于C++和python所以需要用两个命令</p>
-<pre><code class="language-bash">./ss plot_ss diagram_name
+<p>如下命令会把数据库文件变成网页文件。</p>
+<pre><code class="language-bash">./ss plot_ss &lt;diagram_name&gt;
 </code></pre>
-<pre><code class="language-bash">python3 plot.py diagram_name
-</code></pre>
-<p>国祯的机器需要用python3.11来代替python3。</p>
-<p>在terminal其实可以使用 <code>&amp;&amp;</code> 符号做到一行同时运行两个命令。如下命令等价于依次运行以上两条命令：</p>
-<pre><code class="language-bash">./ss plot_ss diagram_name &amp;&amp; python3 plot.py diagram_name
-</code></pre>
-<p>画的图存在名为<code>webpages/mix.html</code>的网页文件里，双击即可打开这个本地网页。后续图更新时只需刷新网页即可。</p>
+<p>图的数据存在<code>webpages/mix</code>文件夹里，网页<code>webpages/mix.html</code>里整理了很多链接可以访问这些图，双击即可打开这个本地网页。图再次更新后时刷新网页即可。</p>
 <h2>添加differential</h2>
 <p>如下命令可以在<code>spectra</code>里的<code>(stem, s)</code>里添加<code>d_r(x)=dx</code>. 其中<code>x</code>与<code>dx</code>的值需要要去谱序列网页里查看点的信息。</p>
 <pre><code class="language-bash">./ss add_diff &lt;spectra&gt; &lt;stem&gt; &lt;s&gt; &lt;r&gt; &lt;x&gt; &lt;dx&gt; [diagram_name]
@@ -77,9 +71,14 @@
 ./ss deduce diff 0 150 diagram xy
 ./ss deduce diff 0 150 diagram all_x xy
 </code></pre>
-<h3>Apply hard-coded human knowledge</h3>
-<p>我在程序中加入了一些额外的知识，目前主要是image of j以及tmf相关，使用以下命令可以去除许多特别长的differential。</p>
+<h3>除了原推导方法外手动应用一些数学</h3>
+<p>我在程序中加入了一些额外的知识，目前主要是关于image of j和tmf，使用以下命令可以去除许多特别长的differential。</p>
 <pre><code class="language-bash">./ss deduce manual [diagram_name]
 </code></pre>
+<h3>合并信息</h3>
+<p>使用如下的命令可以把<code>diagramA</code>的信息添加到<code>diagramB</code>。</p>
+<pre><code class="language-bash">./ss migrate_ss &lt;diagramA&gt; &lt;diagramB&gt;
+</code></pre>
+<p>这个程序的运行原理是检查两个diagram里ss.json中有没有相同名字的spectra, 有的话就把第一个的信息添加到第二个。如果第一个的计算范围大于第二个，该操作不会扩大第二个spectra的计算范围。该操作也不会给<code>diagramB</code>添加<code>diagramA</code>有但<code>diagramB</code>没有的spectra。</p>
 
 </body>

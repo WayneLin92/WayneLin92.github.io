@@ -1,31 +1,20 @@
 ## 准备阶段
 打开系统的terminal app, 然后使用如下`cd` (change directory的缩写) 命令指定使用ss程序所在文件夹.
 ```bash
-cd the_path_containing_ss
+cd <the_path_containing_ss>
 ```
 
-mac系统我推荐下载vscode (visual studio code)并使用vscode内置的terminal (vscode里按`` ctrl+` ``调出)来代替系统的terminal，它对颜色支持好一些，系统自带的terminal里 `ss` 程序使用了非通用的颜色系统，显示的东西颜色会混乱（比如经常变成浅灰色），不过其实也不影响使用。
+mac系统我推荐下载vscode (visual studio code) 并使用vscode内置的terminal (vscode里按`` ctrl+` ``调出) 来代替系统的terminal，它对颜色支持好一些，系统自带的terminal程序使用了非通用的颜色系统，显示的东西颜色会混乱 (比如经常变成浅灰色)，不过其实也不影响使用。
 
-主目录里除了`webpages`是个存放网页的文件夹外，剩下的每个文件夹代表着一个由spectra和它们之间的映射构成的"diagram", 这样的文件夹名字就是下面将会使用的`diagram_name`。 每个"diagram"都是独立的，可以靠复制文件夹来备份"diagram"以便误操作后使用原来的文件夹。注意文件夹名字不能有空格，最好都是字母数字以及下划线。
+主目录里除了`webpages`是个存放网页的文件夹外，剩下的每个文件夹代表着一个由spectra和它们之间的映射构成的"diagram", 这样的文件夹名字就是下面将会使用的`diagram_name`。 每个"diagram"都是独立的，可以靠复制文件夹来备份"diagram"以便误操作后使用原来的文件夹。**注意文件夹名字不能有空格**，最好都是字母数字以及下划线。
 
 ## 画图
-画图命令因为目前同时依赖于C++和python所以需要用两个命令
+如下命令会把数据库文件变成网页文件。
 ```bash
-./ss plot_ss diagram_name
+./ss plot_ss <diagram_name>
 ```
 
-```bash
-python3 plot.py diagram_name
-```
-
-国祯的机器需要用python3.11来代替python3。
-
-在terminal其实可以使用 `&&` 符号做到一行同时运行两个命令。如下命令等价于依次运行以上两条命令：
-```bash
-./ss plot_ss diagram_name && python3 plot.py diagram_name
-```
-
-画的图存在名为`webpages/mix.html`的网页文件里，双击即可打开这个本地网页。后续图更新时只需刷新网页即可。
+图的数据存在`webpages/mix`文件夹里，网页`webpages/mix.html`里整理了很多链接可以访问这些图，双击即可打开这个本地网页。图再次更新后时刷新网页即可。
 
 ## 添加differential
 如下命令可以在`spectra`里的`(stem, s)`里添加`d_r(x)=dx`. 其中`x`与`dx`的值需要要去谱序列网页里查看点的信息。
@@ -65,8 +54,15 @@ python3 plot.py diagram_name
 ./ss deduce diff 0 150 diagram all_x xy
 ```
 
-### Apply hard-coded human knowledge
-我在程序中加入了一些额外的知识，目前主要是image of j以及tmf相关，使用以下命令可以去除许多特别长的differential。
+### 除了原推导方法外手动应用一些数学
+我在程序中加入了一些额外的知识，目前主要是关于image of j和tmf，使用以下命令可以去除许多特别长的differential。
 ```bash
 ./ss deduce manual [diagram_name]
 ```
+
+### 合并信息
+使用如下的命令可以把`diagramA`的信息添加到`diagramB`。
+```bash
+./ss migrate_ss <diagramA> <diagramB>
+```
+这个程序的运行原理是检查两个diagram里ss.json中有没有相同名字的spectra, 有的话就把第一个的信息添加到第二个。如果第一个的计算范围大于第二个，该操作不会扩大第二个spectra的计算范围。该操作也不会给`diagramB`添加`diagramA`有但`diagramB`没有的spectra。
