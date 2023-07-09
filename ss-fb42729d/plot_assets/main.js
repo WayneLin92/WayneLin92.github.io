@@ -449,7 +449,7 @@ function select_bullet(bullet) {
     rect_selected.setAttribute("y", Math.round(bullet.getAttribute("cy")) - 0.5);
 
     g_prod.innerHTML = "";
-    if (bullet.classList.contains("cw1") && bullet.dataset.i in DATA_JSON["maps"]) {
+    if (bullet.classList.contains("cw1") && Math.round(bullet.getAttribute("cx")) == DATA_JSON.sep_right && bullet.dataset.i in DATA_JSON["maps"]) {
         for (const i of DATA_JSON["maps"][bullet.dataset.i]) { // maps
             const bullet2 = DATA_JSON["cw2"]["bullets"][i];
             const circle_prod = `<circle class="p baux cw2" cx="${bullet2['x'] + DATA_JSON["cw2"].shift}" cy="${bullet2['y']}" r="${bullet2['r'] * 1.7}", data-i=${i}></circle>`;

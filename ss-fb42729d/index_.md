@@ -6,3 +6,4 @@
 * [auto100](./auto100.html)
 * [程序`Adams`使用指南](./Adams_manual.html)
 * [程序`ss`使用指南](./ss_manual.html)
+* [本网页使用指南](./manual_html.html)
