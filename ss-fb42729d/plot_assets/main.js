@@ -378,7 +378,7 @@ function on_pointerdown(event) {
     if (event.button === 0) {
         div_menu_style.visibility = "hidden";
         div_binfo_style.visibility = "hidden";
-        if (event.ctrlKey && "sep_right" in DATA_JSON) {
+        if (event.shiftKey && "sep_right" in DATA_JSON) {
             DATA_JSON.sep_right = Math.ceil(camera.svg2world_v2(event.offsetX, 0).x);
             updateVisibility();
             updateAxisLabels();
@@ -542,7 +542,7 @@ function on_pinch(event) {
 
 function on_key_down(event) {
     //console.log(event.which)
-    if (!event.ctrlKey) {
+    if (!event.shiftKey) {
         if (event.which === 39) { /* Right */
             camera.translate(new Vector(-CONFIG.camera_translate_pixels, 0));
         }
@@ -564,7 +564,7 @@ function on_key_down(event) {
             camera.zoom(pivotSvg, CONFIG.camera_zoom_rate);
         }
     }
-    if ("from" in DATA_JSON && event.ctrlKey) {
+    if ("from" in DATA_JSON && event.shiftKey) {
         if (event.which === 39) { // Right arrow
             if (DATA_JSON.sep_right < CONFIG.x_max) {
                 DATA_JSON.sep_right += 1;
