@@ -3,7 +3,7 @@
 
 * `plot.html?data=S0`: 显示S0的谱序列
 * `plot.html?data=C2`: 显示C2的谱序列
-* `plot.html?data=MapC2__S0`: 显示C2到S0的谱序列映射，映射格式基本都为`MapCW1__CW2`，比如可能是`MapRP1_4__RP3_4`。例外是`MapKahnPriddy`。名字具体以来源diagram里的`ss.json`为准。
+* `plot.html?data=C2__S0`: 显示C2到S0的谱序列映射，映射格式基本都为`CW1__CW2`，两个下划线代表映射，比如可能是`RP1_4__RP3_4`。例外是`KahnPriddy`。名字具体以来源diagram里的`ss.json`为准。
 * `plot.html?data=S0&x=126&y=10&scale=2`: 显示S0的谱序列, 并将degree (126, 10) 尽可能放到屏幕中央并且放大两倍，这个功能很适合我们互相分享链接，稍微编辑一下就可以让对方一打开就显示具体某个位置。
 
 ## 谱序列映射网页说明
