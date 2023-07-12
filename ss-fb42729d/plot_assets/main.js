@@ -811,6 +811,7 @@ function loadPlot(data_json) {
             }
         }
         updateVisibility();
+        updateAxisLabels();
     }
 }
 
@@ -865,6 +866,9 @@ function loadScript(path, on_load) {
 }
 
 function processParams() {
+    const dir = urlParams.get("diagram") || "mix";
+    const data = urlParams.get("data") || "S0";
+
     /* Adjust camera */
     if (urlParams.get("scale") !== null) {
         const pivot_svg = camera.world2svg(new Vector(urlParams.get("x"), urlParams.get("y")));
@@ -872,7 +876,7 @@ function processParams() {
         camera.zoom(pivot_svg, scale);
     }
     if (urlParams.get("x") !== null) {
-        const wx = Number(urlParams.get("x"));
+        const wx = Number(urlParams.get("x")) + (data.includes("__") ? 1 : 0);
         const pivot_svg = camera.world2svg(new Vector(wx, 0));
         camera.translate(new Vector(CONFIG.margin + (window.innerWidth - CONFIG.margin) / 2 - pivot_svg.x, 0));
     }
@@ -883,8 +887,6 @@ function processParams() {
     }
 
     /* Add bullets */
-    const dir = urlParams.get("diagram") || "mix";
-    const data = urlParams.get("data") || "S0";
     loadScript(`${dir}/${data}.js`, () => {
         DATA_JSON = globalThis[`DATA_JSON_${data}`];
         if ("bullets" in DATA_JSON) {
