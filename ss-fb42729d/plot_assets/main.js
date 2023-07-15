@@ -868,6 +868,7 @@ function loadScript(path, on_load) {
 function processParams() {
     const dir = urlParams.get("diagram") || "mix";
     const data = urlParams.get("data") || "S0";
+    document.getElementById("title").innerHTML = `${data}: AdamsSS`;
 
     /* Adjust camera */
     if (urlParams.get("scale") !== null) {
