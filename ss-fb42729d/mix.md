@@ -1,7 +1,7 @@
 # Spectral sequences
 ## Spectra
 ### [S0](plot.html?data=S0)-modules
-[C2](plot.html?data=C2), [Ceta](plot.html?data=Ceta), [Cnu](plot.html?data=Cnu), [Csigma](plot.html?data=Csigma)<br>
+[C2](plot.html?data=C2), [Ceta](plot.html?data=Ceta), [Cnu](plot.html?data=Cnu), [Csigma](plot.html?data=Csigma), [Csigmasq](plot.html?data=Csigmasq), [Ctheta4](plot.html?data=Ctheta4), [Ctheta5](plot.html?data=Ctheta5)<br>
 [C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu)<br>
 [CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta)<br>
 [C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6)<br>
@@ -139,6 +139,13 @@ tmf∧RP4, ...
 [Ceta --> S0](plot.html?data=Ceta__S0),<br>
 [Cnu --> S0](plot.html?data=Cnu__S0),<br>
 [Csigma --> S0](plot.html?data=Csigma__S0),<br>
+
+[C2h4 --> Csigmasq](plot.html?data=C2h4__Csigmasq),<br>
+[C2h5 --> Ctheta4](plot.html?data=C2h5__Ctheta4),<br>
+[C2h6 --> Ctheta5](plot.html?data=C2h6__Ctheta5),<br>
+[Csigmasq --> DC2h4](plot.html?data=Csigmasq__DC2h4),<br>
+[Ctheta4 --> DC2h5](plot.html?data=Ctheta4__DC2h5),<br>
+[Ctheta5 --> DC2h6](plot.html?data=Ctheta5__DC2h6),<br>
 
 [j --> j_C2](plot.html?data=j__j_C2),<br>
 [C2 --> j_C2](plot.html?data=C2__j_C2),<br>
