@@ -905,13 +905,13 @@ function processParams() {
         else if ("from" in DATA_JSON) {
             DATA_JSON.sep_right = 1;
             loadScript(`${dir}/${DATA_JSON["from"]}.js`, () => {
-                DATA_JSON["cw1"] = globalThis[`DATA_JSON_${DATA_JSON["from"]}`];
+                DATA_JSON["cw1"] = Object.assign({}, globalThis[`DATA_JSON_${DATA_JSON["from"]}`]);
                 DATA_JSON["cw1"].class = "cw1";
                 DATA_JSON["cw1"].shift = 1;
                 Plot(DATA_JSON["cw1"]);
 
                 loadScript(`${dir}/${DATA_JSON["to"]}.js`, () => {
-                    DATA_JSON["cw2"] = globalThis[`DATA_JSON_${DATA_JSON["to"]}`];
+                    DATA_JSON["cw2"] = Object.assign({}, globalThis[`DATA_JSON_${DATA_JSON["to"]}`]);
                     DATA_JSON["cw2"].class = "cw2";
                     DATA_JSON["cw2"].shift = DATA_JSON["sus"];
                     Plot(DATA_JSON["cw2"]);

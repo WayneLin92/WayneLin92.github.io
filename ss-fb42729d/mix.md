@@ -1,11 +1,20 @@
 # Spectral sequences
 ## Spectra
 ### [S0](plot.html?data=S0)-modules
+#### 2-cell complexes
 [C2](plot.html?data=C2), [Ceta](plot.html?data=Ceta), [Cnu](plot.html?data=Cnu), [Csigma](plot.html?data=Csigma), [Csigmasq](plot.html?data=Csigmasq), [Ctheta4](plot.html?data=Ctheta4), [Ctheta5](plot.html?data=Ctheta5)<br>
-[C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu)<br>
+
+#### 3-cell complexes
 [CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta)<br>
-[C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6)<br>
-[DC2h4](plot.html?data=DC2h4), [DC2h5](plot.html?data=DC2h5), [DC2h6](plot.html?data=DC2h6)<br>
+[C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6), [DC2h4](plot.html?data=DC2h4), [DC2h5](plot.html?data=DC2h5), [DC2h6](plot.html?data=DC2h6)<br>
+
+#### 4-cell complexes
+[C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu)<br>
+
+#### infinite-cell complex
+[j](plot.html?data=j), [j/2](plot.html?data=j_C2)<br>
+
+#### RP
 [RP4](plot.html?data=RP1_4), [RP6](plot.html?data=RP1_6), [RP8](plot.html?data=RP1_8), [RP10](plot.html?data=RP1_10), [RP12](plot.html?data=RP1_12), 
 [RP14](plot.html?data=RP1_14),
 [RP16](plot.html?data=RP1_16),
@@ -122,8 +131,9 @@
 
 
 [RP3_6](plot.html?data=RP3_6), [Fphi](plot.html?data=Fphi)<br>
+
+#### CP
 [CP4](plot.html?data=CP1_4), [CPinf](plot.html?data=CP1_128)<br>
-[j](plot.html?data=j), [j/2](plot.html?data=j_C2)<br>
 
 ### [tmf](plot.html?data=tmf)-modules
 [tmf∧C2](plot.html?data=tmf_C2), [tmf∧Ceta](plot.html?data=tmf_Ceta), [tmf∧Cnu](plot.html?data=tmf_Cnu)<br>
