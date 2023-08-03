@@ -5,11 +5,15 @@
 [C2](plot.html?data=C2), [Ceta](plot.html?data=Ceta), [Cnu](plot.html?data=Cnu), [Csigma](plot.html?data=Csigma), [Csigmasq](plot.html?data=Csigmasq), [Ctheta4](plot.html?data=Ctheta4), [Ctheta5](plot.html?data=Ctheta5)<br>
 
 #### 3-cell complexes
-[CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta)<br>
+[CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta), [CW_nu_sigma](plot.html?data=CW_nu_sigma), [CW_sigma_nu](plot.html?data=CW_sigma_nu)<br>
 [C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6), [DC2h4](plot.html?data=DC2h4), [DC2h5](plot.html?data=DC2h5), [DC2h6](plot.html?data=DC2h6)<br>
 
 #### 4-cell complexes
-[C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu)<br>
+[CW_2_eta_nu](plot.html?data=CW_2_eta_nu), [CW_nu_eta_2](plot.html?data=CW_nu_eta_2), [CW_eta_nu_sigma](plot.html?data=CW_eta_nu_sigma), [CW_sigma_nu_eta](plot.html?data=CW_sigma_nu_eta)<br> [C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu), [Cnu∧Csigma](plot.html?data=Cnu_Csigma)<br>
+[CW_sigmasq_2_sigmasq](plot.html?data=CW_sigmasq_2_sigmasq), [CW_theta4_2_theta4](plot.html?data=CW_theta4_2_theta4), [CW_theta5_2_theta5](plot.html?data=CW_theta4_2_theta4)<br>
+
+#### 5-cell complexes
+[CW_2_eta_nu_sigma](plot.html?data=CW_2_eta_nu_sigma), [Joker](plot.html?data=Joker), [CW_eta_nu_eta_Eq_nu_nu](plot.html?data=CW_eta_nu_eta_Eq_nu_nu), [CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?data=CW_nu_sigma_nu_Eq_sigma_sigma), [CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?data=CW_nu_sigma_nu_Eq_sigma_sigma), [CW_eta_2_eta_Eq_2_nu](plot.html?data=CW_eta_2_eta_Eq_2_nu), [CW_eta_2_eta_Eq_nu_2](plot.html?data=CW_eta_2_eta_Eq_nu_2)<br>
 
 #### infinite-cell complex
 [j](plot.html?data=j), [j/2](plot.html?data=j_C2)<br>
@@ -137,7 +141,7 @@
 
 ### [tmf](plot.html?data=tmf)-modules
 [tmf∧C2](plot.html?data=tmf_C2), [tmf∧Ceta](plot.html?data=tmf_Ceta), [tmf∧Cnu](plot.html?data=tmf_Cnu)<br>
-tmf∧RP4, ...
+[tmf∧RPinf](plot.html?data=tmf_Cnu)<br>
 
 ### ko-modules
 
