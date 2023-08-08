@@ -28,7 +28,7 @@ const CONFIG_DYNAMIC = {
     camera_unit_screen_max: Math.min(window.innerWidth, window.innerHeight) - 30,
     page: 2,
     dashedLevel: 5,
-    showLines: "All",
+    showLines: "All diff",
 };
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -667,12 +667,12 @@ function updateVisibility() {
                         }
                     }
                     else if (classList.contains("dl")) {
-                        if (ele.dataset.page == CONFIG_DYNAMIC.page || (CONFIG_DYNAMIC.showLines === "All" && ele.dataset.page > CONFIG_DYNAMIC.page)) {
+                        if (ele.dataset.page == CONFIG_DYNAMIC.page || (CONFIG_DYNAMIC.showLines === "All diff" && ele.dataset.page > CONFIG_DYNAMIC.page)) {
                             ele.removeAttribute("style");
                         }
                     }
                     else if (classList.contains("nd")) {
-                        if (ele.dataset.r <= CONFIG_DYNAMIC.dashedLevel && (CONFIG_DYNAMIC.showLines === "All" || ele.dataset.r <= CONFIG_DYNAMIC.page)) {
+                        if (ele.dataset.r <= CONFIG_DYNAMIC.dashedLevel && (CONFIG_DYNAMIC.showLines === "All diff" || ele.dataset.r <= CONFIG_DYNAMIC.page)) {
                             ele.removeAttribute("style");
                         }
                     }
