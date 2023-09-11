@@ -7,6 +7,7 @@
 #### 3-cell complexes
 [CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta), [CW_nu_sigma](plot.html?data=CW_nu_sigma), [CW_sigma_nu](plot.html?data=CW_sigma_nu)<br>
 [CW_2_V_eta](plot.html?data=CW_2_V_eta), [CW_eta_V_nu](plot.html?data=CW_eta_V_nu), [CW_nu_V_sigma](plot.html?data=CW_nu_V_sigma)<br>
+[CW_2_A_eta](plot.html?data=CW_2_A_eta), [CW_eta_A_nu](plot.html?data=CW_eta_A_nu), [CW_nu_A_sigma](plot.html?data=CW_nu_A_sigma)<br>
 [C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6), [DC2h4](plot.html?data=DC2h4), [DC2h5](plot.html?data=DC2h5), [DC2h6](plot.html?data=DC2h6)<br>
 
 #### 4-cell complexes
