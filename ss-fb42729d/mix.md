@@ -6,16 +6,17 @@
 
 #### 3-cell complexes
 [CW_2_eta](plot.html?data=CW_2_eta), [CW_eta_2](plot.html?data=CW_eta_2), [CW_eta_nu](plot.html?data=CW_eta_nu), [CW_nu_eta](plot.html?data=CW_nu_eta), [CW_nu_sigma](plot.html?data=CW_nu_sigma), [CW_sigma_nu](plot.html?data=CW_sigma_nu)<br>
-[CW_2_V_eta](plot.html?data=CW_2_V_eta), [CW_eta_V_nu](plot.html?data=CW_eta_V_nu), [CW_nu_V_sigma](plot.html?data=CW_nu_V_sigma)<br>
-[CW_2_A_eta](plot.html?data=CW_2_A_eta), [CW_eta_A_nu](plot.html?data=CW_eta_A_nu), [CW_nu_A_sigma](plot.html?data=CW_nu_A_sigma)<br>
+[CW_2_V_eta](plot.html?data=CW_2_V_eta), [CW_2_V_nu](plot.html?data=CW_2_V_nu), [CW_2_V_sigma](plot.html?data=CW_2_V_sigma), [CW_eta_V_nu](plot.html?data=CW_eta_V_nu), [CW_eta_V_sigma](plot.html?data=CW_eta_V_sigma), [CW_nu_V_sigma](plot.html?data=CW_nu_V_sigma)<br>
+[CW_2_A_eta](plot.html?data=CW_2_A_eta), [CW_2_A_nu](plot.html?data=CW_2_A_nu), [CW_2_A_sigma](plot.html?data=CW_2_A_sigma), [CW_eta_A_nu](plot.html?data=CW_eta_A_nu), [CW_eta_A_sigma](plot.html?data=CW_eta_A_sigma), [CW_nu_A_sigma](plot.html?data=CW_nu_A_sigma)<br>
 [C2h4](plot.html?data=C2h4), [C2h5](plot.html?data=C2h5), [C2h6](plot.html?data=C2h6), [DC2h4](plot.html?data=DC2h4), [DC2h5](plot.html?data=DC2h5), [DC2h6](plot.html?data=DC2h6)<br>
 
 #### 4-cell complexes
-[CW_2_eta_nu](plot.html?data=CW_2_eta_nu), [CW_nu_eta_2](plot.html?data=CW_nu_eta_2), [CW_eta_nu_sigma](plot.html?data=CW_eta_nu_sigma), [CW_sigma_nu_eta](plot.html?data=CW_sigma_nu_eta)<br> [C2∧Ceta](plot.html?data=C2_Ceta), [Ceta∧Cnu](plot.html?data=Ceta_Cnu), [Cnu∧Csigma](plot.html?data=Cnu_Csigma)<br>
+[CW_2_eta_nu](plot.html?data=CW_2_eta_nu), [CW_nu_eta_2](plot.html?data=CW_nu_eta_2), [CW_eta_nu_sigma](plot.html?data=CW_eta_nu_sigma), [CW_sigma_nu_eta](plot.html?data=CW_sigma_nu_eta)<br> [C2∧Ceta](plot.html?data=C2_Ceta), [C2∧Cnu](plot.html?data=C2_Cnu), [C2∧Csigma](plot.html?data=C2_Csigma), [Ceta∧Cnu](plot.html?data=Ceta_Cnu), [Ceta∧Csigma](plot.html?data=Ceta_Csigma), [Cnu∧Csigma](plot.html?data=Cnu_Csigma)<br>
 [CW_sigmasq_2_sigmasq](plot.html?data=CW_sigmasq_2_sigmasq), [CW_theta4_2_theta4](plot.html?data=CW_theta4_2_theta4), [CW_theta5_2_theta5](plot.html?data=CW_theta4_2_theta4)<br>
 
 #### 5-cell complexes
-[CW_2_eta_nu_sigma](plot.html?data=CW_2_eta_nu_sigma), [Joker](plot.html?data=Joker), [CW_eta_nu_eta_Eq_nu_nu](plot.html?data=CW_eta_nu_eta_Eq_nu_nu), [CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?data=CW_nu_sigma_nu_Eq_sigma_sigma), [CW_eta_2_eta_Eq_2_nu](plot.html?data=CW_eta_2_eta_Eq_2_nu), [CW_eta_2_eta_Eq_nu_2](plot.html?data=CW_eta_2_eta_Eq_nu_2)， [CW_2_theta5_2_Eq_eta_theta5](plot.html?data=CW_2_theta5_2_Eq_eta_theta5)<br>
+[CW_2_eta_nu_sigma](plot.html?data=CW_2_eta_nu_sigma), [CW_sigma_nu_eta_2](plot.html?data=CW_sigma_nu_eta_2)<br>
+[Joker](plot.html?data=Joker), [CW_eta_nu_eta_Eq_nu_nu](plot.html?data=CW_eta_nu_eta_Eq_nu_nu), [CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?data=CW_nu_sigma_nu_Eq_sigma_sigma), [CW_eta_2_eta_Eq_2_nu](plot.html?data=CW_eta_2_eta_Eq_2_nu), [CW_eta_2_eta_Eq_nu_2](plot.html?data=CW_eta_2_eta_Eq_nu_2)， [CW_2_theta5_2_Eq_eta_theta5](plot.html?data=CW_2_theta5_2_Eq_eta_theta5)<br>
 
 #### infinite-cell complex
 [j](plot.html?data=j), [j/2](plot.html?data=j_C2)<br>
@@ -136,7 +137,7 @@
 [RP117_256](plot.html?data=RP117_256)<br>
 
 
-[RP3_6](plot.html?data=RP3_6), [Fphi](plot.html?data=Fphi)<br>
+[RP3_6](plot.html?data=RP3_6), [Fphi4](plot.html?data=Fphi4), [Fphi6](plot.html?data=Fphi6), [Fphi8](plot.html?data=Fphi8), [Fphi10](plot.html?data=Fphi10), [Fphi12](plot.html?data=Fphi12), [Fphi14](plot.html?data=Fphi14), [Fphi16](plot.html?data=Fphi16), [Fphi](plot.html?data=Fphi)<br>
 
 #### CP
 [CP4](plot.html?data=CP1_4), [CPinf](plot.html?data=CP1_128)<br>
