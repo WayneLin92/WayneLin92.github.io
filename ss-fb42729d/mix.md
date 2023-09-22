@@ -13,6 +13,13 @@
 #### 4-cell complexes
 [CW_2_eta_nu](plot.html?data=CW_2_eta_nu), [CW_nu_eta_2](plot.html?data=CW_nu_eta_2), [CW_eta_nu_sigma](plot.html?data=CW_eta_nu_sigma), [CW_sigma_nu_eta](plot.html?data=CW_sigma_nu_eta)<br> [C2∧Ceta](plot.html?data=C2_Ceta), [C2∧Cnu](plot.html?data=C2_Cnu), [C2∧Csigma](plot.html?data=C2_Csigma), [Ceta∧Cnu](plot.html?data=Ceta_Cnu), [Ceta∧Csigma](plot.html?data=Ceta_Csigma), [Cnu∧Csigma](plot.html?data=Cnu_Csigma)<br>
 [CW_sigmasq_2_sigmasq](plot.html?data=CW_sigmasq_2_sigmasq), [CW_theta4_2_theta4](plot.html?data=CW_theta4_2_theta4), [CW_theta5_2_theta5](plot.html?data=CW_theta4_2_theta4)<br>
+[CW_2_eta_V_eta](plot.html?data=CW_2_eta_V_eta), [CW_eta_2_A_eta](plot.html?data=CW_eta_2_A_eta), [CW_eta_nu_V_nu](plot.html?data=CW_eta_nu_V_nu), [CW_nu_eta_A_nu](plot.html?data=CW_nu_eta_A_nu), [CW_nu_sigma_V_sigma](plot.html?data=CW_nu_sigma_V_sigma), [CW_sigma_nu_A_sigma](plot.html?data=CW_sigma_nu_A_sigma)<br>
+ 
+ 
+ 
+ 
+ 
+ 
 
 #### 5-cell complexes
 [CW_2_eta_nu_sigma](plot.html?data=CW_2_eta_nu_sigma), [CW_sigma_nu_eta_2](plot.html?data=CW_sigma_nu_eta_2)<br>
