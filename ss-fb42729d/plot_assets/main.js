@@ -3,12 +3,15 @@
 /************************************************************************
  *                          config variables
  ***********************************************************************/
-
-var MODE = "";
+const urlParams = new URLSearchParams(window.location.search);
+const DATA_NAME = urlParams.get("data") || "S0";
+const COUNT_MAPS = DATA_NAME.split("__").length - 1;
+const MODE = ["ss", "map", "cofseq"][COUNT_MAPS];
 var DATA_JSON = {};
 
 const CONFIG = {
-    x_max: 270,
+    x_max: MODE === "cofseq" ? 270 * 3 : 270,
+    x_min_cofseq: [0, 0, 0],
     y_max: 130,
     y_max_grid: 256,
     x_max_init: 80,
@@ -31,7 +34,6 @@ const CONFIG_DYNAMIC = {
     showLines: "All diff",
 };
 
-const urlParams = new URLSearchParams(window.location.search);
 
 /************************************************************************
  *                          elements
@@ -56,6 +58,8 @@ const g_labels = document.getElementById("g_labels");
 const g_xaxis = document.getElementById("g_xaxis");
 const g_yaxis = document.getElementById("g_yaxis");
 const g_diff_lines = {
+    0: document.getElementById("g_difflines_black"), ////////
+    1: document.getElementById("g_difflines_blue"), ////////
     2: document.getElementById("g_difflines_deepskyblue"),
     3: document.getElementById("g_difflines_red"),
     4: document.getElementById("g_difflines_green"),
@@ -75,6 +79,7 @@ const div_menu_style = document.getElementById("div_menu").style;
 
 const rect_separator = document.getElementById("rect_separator");
 const rect_second_ss = document.getElementById("rect_second_ss");
+const select_page = document.getElementById("select_page");
 
 /* Resize window */
 function windowResize() {
@@ -203,17 +208,14 @@ const camera = {
 camera.setTransform();
 
 function getAxisNumber(x) {
-    if ("from" in DATA_JSON) {
+    if (MODE === "map") {
         if (x < DATA_JSON.sep_right)
             return x - DATA_JSON["cw2"].shift;
         else
             return x - 1;
     }
-    else if (MODE == "Exact") {
-        if (x % 3 == 2)
-            return Math.floor(x / 3 - T_TOP_CELL + 1)
-        else
-            return Math.floor(x / 3);
+    else if (MODE === "cofseq") {
+        return Math.floor(x / 3) + CONFIG.x_min_cofseq[x % 3];
     }
     else {
         return x;
@@ -222,6 +224,12 @@ function getAxisNumber(x) {
 
 function updateAxisLabels() {
     var stepLabel = Math.ceil(CONFIG.axis_text_sep_screen / camera.unit_svg);
+    if (MODE === "cofseq") {
+        if (stepLabel > 3)
+            stepLabel = Math.floor(stepLabel / 3) * 3;
+        else if (stepLabel == 2)
+            stepLabel = 3;
+    }
     let i_min = Math.ceil(camera.svg2world(new Vector(30, 0)).x / stepLabel) * stepLabel;
     let i_max = Math.floor(camera.svg2world(new Vector(window.innerWidth, 0)).x);
     g_xaxis.innerHTML = "";
@@ -272,8 +280,17 @@ function getJsonForBullet(bullet) {
     else if (bullet.classList.contains("cw1")) {
         return DATA_JSON["cw1"];
     }
-    else {
+    else if (bullet.classList.contains("cw1")) {
         return DATA_JSON["cw2"];
+    }
+    else if (bullet.classList.contains("cs0")) {
+        return DATA_JSON["cofseq_groups"][0];
+    }
+    else if (bullet.classList.contains("cs1")) {
+        return DATA_JSON["cofseq_groups"][1];
+    }
+    else if (bullet.classList.contains("cs2")) {
+        return DATA_JSON["cofseq_groups"][2];
     }
 }
 
@@ -335,16 +352,16 @@ function addBulletLabels() {
     }
 }
 
-function updateRectProduct() {
+function addRects() {
     for (const i of []) { //arr_factors
         const id = "b" + i;
         const bullet = document.getElementById(id);
         let rect_product = `<rect id="rect_prod${i}" x="-1000" y="-1000" width="1" height="1" fill="green" opacity="0.1"  data-x="${bullet.getAttribute("cx")}" data-y="${bullet.getAttribute("cy")}" />`;
         g_plot.insertAdjacentHTML("afterbegin", rect_product);
     }
-    if (MODE === "Exact") {
-        for (let i = 0; i < 300; ++i) {
-            let rect_product = `<rect x="${3 * i - 0.5}" y="-0.5" width="1" height="300" fill="#00ffff" opacity="0.1"/>`;
+    if (MODE === "cofseq") {
+        for (let i = 0; i < CONFIG.x_max / 3; i += 2) {
+            let rect_product = `<rect x="${3 * i - 0.5}" y="-0.5" width="3" height="300" fill="#dddddd"/>`;
             g_plot.insertAdjacentHTML("afterbegin", rect_product);
         }
     }
@@ -452,8 +469,8 @@ function select_bullet(bullet) {
     if (bullet.classList.contains("cw1") && Math.round(bullet.getAttribute("cx")) == DATA_JSON.sep_right && bullet.dataset.i in DATA_JSON["maps"]) {
         for (const i of DATA_JSON["maps"][bullet.dataset.i]) { // maps
             const bullet2 = DATA_JSON["cw2"]["bullets"][i];
-            const circle_prod = `<circle class="p baux cw2" cx="${bullet2['x'] + DATA_JSON["cw2"].shift}" cy="${bullet2['y']}" r="${bullet2['r'] * 1.7}", data-i=${i}></circle>`;
-			g_prod.insertAdjacentHTML("beforeend", circle_prod);
+            const circle_prod = `<circle class="p baux cw2" cx="${bullet2.x + DATA_JSON["cw2"].shift}" cy="${bullet2.y}" r="${bullet2['r'] * 1.7}", data-i=${i}></circle>`;
+            g_prod.insertAdjacentHTML("beforeend", circle_prod);
         }
     }
 }
@@ -688,6 +705,8 @@ function updateVisibility() {
 }
 
 const select_page_map = {
+    "E0": 0,
+    "E1": 1,
     "E2": 2,
     "E3": 3,
     "E4": 4,
@@ -762,10 +781,12 @@ function initHandlers() {
  ***********************************************************************/
 
 function loadPlot(data_json) {
-    const shift = "shift" in data_json ? data_json.shift : 0;
+    const xshift = "shift" in data_json ? data_json.shift : 0;
+    const xfactor = "factor" in data_json ? data_json.factor : 1;
+    const trans = (x) => ((x - Math.round(x)) + Math.round(x) * xfactor + xshift);
     for (const batchEnd = data_json.iPlotB + CONFIG.plot_batchSize; data_json.iPlotB < batchEnd && data_json.iPlotB < data_json["bullets"].length; data_json.iPlotB++) {
         const bullet = data_json["bullets"][data_json.iPlotB];
-        const ele_bullet = `<circle data-i="${data_json.iPlotB}" class="p b ${data_json.class}" cx="${bullet['x'] + shift}" cy="${bullet['y']}" r="${bullet['r']}"> </circle>`;
+        const ele_bullet = `<circle data-i="${data_json.iPlotB}" class="p b ${data_json.class}" cx="${trans(bullet.x)}" cy="${bullet.y}" r="${bullet.r}"> </circle>`;
         g_bullets[bullet['c']].insertAdjacentHTML("beforeend", ele_bullet);
     }
     for (const batchEnd = data_json.iPlotSL + CONFIG.plot_batchSize / 2; data_json.iPlotSL < batchEnd && data_json.iPlotSL < data_json["prods"].length; data_json.iPlotSL++) {
@@ -775,26 +796,44 @@ function loadPlot(data_json) {
             const bullet2 = data_json["bullets"][i];
             const width = Math.min(bullet1['r'], bullet2['r']) / 4;
             const page = Math.min(bullet1['p'], bullet2['p']);
-            const ele_line = `<line class="p sl ${data_json.class}" x1="${bullet1['x'] + shift}" y1="${bullet1['y']}" x2="${bullet2['x'] + shift}" y2="${bullet2['y']}" stroke="black" stroke-width="${width}" data-page="${page}"> </line>`;
+            const ele_line = `<line class="p sl ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(bullet2.x)}" y2="${bullet2.y}" stroke="black" stroke-width="${width}" data-page="${page}"> </line>`;
             g_strtlines.insertAdjacentHTML("beforeend", ele_line);
         }
     }
-    for (const batchEnd = data_json.iPlotDL + CONFIG.plot_batchSize / 4; data_json.iPlotDL < batchEnd && data_json.iPlotDL < data_json["diffs"].length; data_json.iPlotDL++) {
-        const diff = data_json["diffs"][data_json.iPlotDL];
-        const bullet1 = data_json["bullets"][diff["i"]];
-        for (const j of diff["j"]) {
-            const bullet2 = data_json["bullets"][j];
-            const width = Math.min(bullet1['r'], bullet2['r']) / 4;
-            const page = Math.min(bullet1['p'], bullet2['p']);
-            const ele_line = `<line class="p dl ${data_json.class}" x1="${bullet1['x'] + shift}" y1="${bullet1['y']}" x2="${bullet2['x'] + shift}" y2="${bullet2['y']}" stroke-width="${width}" data-page="${page}"> </line>`;
-            g_diff_lines[diff["r"] <= 6 ? diff["r"] : 6].insertAdjacentHTML("beforeend", ele_line);
+    if (data_json["type"] !== "cofseq_gp") {
+        for (const batchEnd = data_json.iPlotDL + CONFIG.plot_batchSize / 4; data_json.iPlotDL < batchEnd && data_json.iPlotDL < data_json["diffs"].length; data_json.iPlotDL++) {
+            const diff = data_json["diffs"][data_json.iPlotDL];
+            const bullet1 = data_json["bullets"][diff["i"]];
+            for (const j of diff["j"]) {
+                const bullet2 = data_json["bullets"][j];
+                const width = Math.min(bullet1['r'], bullet2['r']) / 4;
+                const page = Math.min(bullet1['p'], bullet2['p']);
+                const ele_line = `<line class="p dl ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(bullet2.x)}" y2="${bullet2.y}" stroke-width="${width}" data-page="${page}"> </line>`;
+                g_diff_lines[diff["r"] <= 6 ? diff["r"] : 6].insertAdjacentHTML("beforeend", ele_line);
+            }
+        }
+    } 
+    else {
+        const trans2 = (x, nx) => ((x - Math.round(x)) + nx);
+        for (const batchEnd = data_json.iPlotDL + CONFIG.plot_batchSize / 4; data_json.iPlotDL < batchEnd && data_json.iPlotDL < data_json["diffs"].length; data_json.iPlotDL++) {
+            const diff = data_json["diffs"][data_json.iPlotDL];
+            const bullet1 = data_json["bullets"][diff["i"]];
+            const x1 = trans(bullet1.x);
+            const nx2 = Math.round(x1) - 1;
+            for (const j of diff["j"]) {
+                const bullet2 = data_json["bullets2"][j];
+                const width = Math.min(bullet1['r'], bullet2['r']) / 4;
+                const page = Math.min(bullet1['p'], bullet2['p']);
+                const ele_line = `<line class="p dl ${data_json.class}" x1="${x1}" y1="${bullet1.y}" x2="${trans2(bullet2.x, nx2)}" y2="${bullet2.y}" stroke-width="${width}" data-page="${page}"> </line>`;
+                g_diff_lines[diff["r"] <= 6 ? diff["r"] : 6].insertAdjacentHTML("beforeend", ele_line);
+            }
         }
     }
     for (const batchEnd = data_json.iPlotND + CONFIG.plot_batchSize / 4; data_json.iPlotND < batchEnd && data_json.iPlotND < data_json["nds"].length; data_json.iPlotND++) {
         const nd = data_json["nds"][data_json.iPlotND];
         const bullet1 = data_json["bullets"][nd["i"]];
         const width = bullet1['r'] / 4;
-        const ele_line = `<line class="p nd ${data_json.class}" x1="${bullet1['x'] + shift}" y1="${bullet1['y']}" x2="${Math.round(bullet1['x']) - 1 + shift}" y2="${Math.round(bullet1['y']) + nd['r']}" stroke-width="${width}" stroke-dasharray="0.1,0.1" data-r="${nd['r']}"> </line>`;
+        const ele_line = `<line class="p nd ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(Math.round(bullet1.x)) - 1}" y2="${Math.round(bullet1.y) + nd['r']}" stroke-width="${width}" stroke-dasharray="0.1,0.1" data-r="${nd['r']}"> </line>`;
         g_diff_lines[nd["r"] <= 6 ? nd["r"] : 6].insertAdjacentHTML("beforeend", ele_line);
     }
     if (data_json.iPlotB < data_json["bullets"].length || data_json.iPlotSL < data_json["prods"].length || data_json.iPlotDL < data_json["diffs"].length || data_json.iPlotND < data_json["nds"].length) {
@@ -825,7 +864,7 @@ function loadPlotMap(data_json) {
             const bullet2 = data_json["cw2"]["bullets"][i];
             const width = Math.min(bullet1['r'], bullet2['r']) / 4;
             const page = Math.min(bullet1['p'], bullet2['p']);
-            const ele_line = `<line class="p ml" x1="${bullet1['x'] + 1}" y1="${bullet1['y']}" x2="${bullet2['x'] + shift2}" y2="${bullet2['y']}" stroke-width="${width}" data-page="${page}"> </line>`;
+            const ele_line = `<line class="p ml" x1="${bullet1.x + 1}" y1="${bullet1.y}" x2="${bullet2.x + shift2}" y2="${bullet2.y}" stroke-width="${width}" data-page="${page}"> </line>`;
             g_strtlines_purple.insertAdjacentHTML("beforeend", ele_line);
         }
     }
@@ -838,36 +877,44 @@ function loadPlotMap(data_json) {
 }
 
 function Plot(data_json) {
-    if ("maps" in data_json) {
+    if (data_json["type"] === "map") {
         data_json.iPlotMap = 0;
         window.requestAnimationFrame(() => loadPlotMap(data_json));
     }
-    else if ("bullets" in data_json) {
-        data_json.iPlotB = 0;
-        data_json.iPlotSL = 0;
-        data_json.iPlotDL = 0;
-        data_json.iPlotND = 0;
+    else if (["ring", "module", "cofseq_gp"].includes(data_json["type"])) {
+        data_json.iPlotB = 0; /* bullets */
+        data_json.iPlotSL = 0; /* structure lines */
+        data_json.iPlotDL = 0; /* diff lines */
+        data_json.iPlotND = 0; /* null differential lines */
         window.requestAnimationFrame(() => loadPlot(data_json));
     }
 }
 
 const LOADED_SCRIPTS = new Set();
+function waitUntil(checkFlag, doSomething) {
+    if (checkFlag() === false) {
+        window.setTimeout(() => { waitUntil(checkFlag, doSomething) }, 200); /* this checks the flag every 100 milliseconds*/
+    } else {
+
+        doSomething();
+    }
+}
 function loadScript(path, on_load) {
     if (LOADED_SCRIPTS.has(path)) {
-        on_load();
+        waitUntil(() => { return LOADED_SCRIPTS.has(path + "_done") }, on_load);
     }
     else {
         LOADED_SCRIPTS.add(path);
         const scriptEle = document.createElement("script");
         scriptEle.setAttribute("src", path);
         document.body.appendChild(scriptEle);
-        scriptEle.addEventListener("load", on_load);
+        scriptEle.addEventListener("load", () => { on_load(); LOADED_SCRIPTS.add(path + "_done"); });
     }
 }
 
 function processParams() {
     const dir = urlParams.get("diagram") || "mix";
-    const data = urlParams.get("data") || "S0";
+    const data = DATA_NAME;
     document.getElementById("title").innerHTML = `${data}: AdamsSS`;
 
     /* Adjust camera */
@@ -890,7 +937,7 @@ function processParams() {
     /* Add bullets */
     loadScript(`${dir}/${data}.js`, () => {
         DATA_JSON = globalThis[`DATA_JSON_${data}`];
-        if ("bullets" in DATA_JSON) {
+        if (MODE === "ss") {
             DATA_JSON.class = "cw";
             Plot(DATA_JSON);
 
@@ -902,7 +949,7 @@ function processParams() {
             }
         }
         /* map */
-        else if ("from" in DATA_JSON) {
+        else if (MODE === "map") {
             DATA_JSON.sep_right = 1;
             loadScript(`${dir}/${DATA_JSON["from"]}.js`, () => {
                 DATA_JSON["cw1"] = Object.assign({}, globalThis[`DATA_JSON_${DATA_JSON["from"]}`]);
@@ -932,6 +979,32 @@ function processParams() {
                 });
             });
         }
+        /* cofseq */
+        else if (MODE === "cofseq") {
+            const n0 = Math.min(0, -DATA_JSON["degs_maps"][0][0], -DATA_JSON["degs_maps"][0][0] - DATA_JSON["degs_maps"][1][0]);
+            CONFIG.x_min_cofseq = [n0 + DATA_JSON["degs_maps"][0][0] + DATA_JSON["degs_maps"][1][0], n0 + DATA_JSON["degs_maps"][0][0], n0];
+
+            for (let iCw = 0; iCw < 3; ++iCw) {
+                DATA_JSON["cofseq_groups"][iCw].shift = 2 - iCw - 3 * CONFIG.x_min_cofseq[2 - iCw];
+                DATA_JSON["cofseq_groups"][iCw].factor = 3;
+                DATA_JSON["cofseq_groups"][iCw].class = "cs" + iCw;
+                DATA_JSON["cofseq_groups"][iCw]["bullets2"] = DATA_JSON["cofseq_groups"][(iCw + 1) % 3]["bullets"]
+                Plot(DATA_JSON["cofseq_groups"][iCw]);
+
+                loadScript(`${dir}/${DATA_JSON["names"][iCw]}.js`, () => {
+                    const data_json_csi = globalThis[`DATA_JSON_${DATA_JSON["names"][iCw]}`];
+                    DATA_JSON["cofseq_groups"][iCw]["basis"] = data_json_csi["basis"];
+                    if ("gen_names" in data_json_csi)
+                        DATA_JSON["cofseq_groups"][iCw]["gen_names"] = data_json_csi["gen_names"];
+                    else {
+                        DATA_JSON["cofseq_groups"][iCw]["v_names"] = data_json_csi["v_names"];
+                        loadScript(`${dir}/${data_json_csi["over"]}.js`, () => {
+                            DATA_JSON["cofseq_groups"][iCw]["gen_names"] = globalThis[`DATA_JSON_${data_json_csi["over"]}`]["gen_names"];
+                        });
+                    }
+                });
+            }
+        }
     });
 }
 
@@ -939,23 +1012,28 @@ function processParams() {
  *                   initialization
  ***************************************************/
 function addGridLines() {
-    let g_grid = document.getElementById("g_grid");
+    const g_grid = document.getElementById("g_grid");
     for (let i = 0; i <= CONFIG.y_max_grid; i += 1) {
-        let line = `<line x1="-0.5" y1="${i}" x2="${CONFIG.x_max + 0.5}" y2="${i}"></line>\n`;
+        const line = `<line x1="-0.5" y1="${i}" x2="${CONFIG.x_max + 0.5}" y2="${i}"></line>\n`;
         g_grid.insertAdjacentHTML("beforeend", line);
     }
     for (let i = 0; i <= CONFIG.x_max; i += 1) {
-        let line = `<line x1="${i}" y1="-.5" x2="${i}" y2="${CONFIG.y_max_grid}"></line>\n`;
+        const line = `<line x1="${i}" y1="-.5" x2="${i}" y2="${CONFIG.y_max_grid}"></line>\n`;
         g_grid.insertAdjacentHTML("beforeend", line);
     }
 }
 
 function init() {
+    if (MODE === "cofseq") {
+        const options = "<option>E0</option>\n<option>E1</option>\n";
+        select_page.insertAdjacentHTML("afterbegin", options);
+    }
+
     addGridLines();
     // if (MODE !== "FromRes")
     //     addBulletLabels();
     updateAxisLabels();
-    updateRectProduct();
+    addRects();
 
     initHandlers();
 

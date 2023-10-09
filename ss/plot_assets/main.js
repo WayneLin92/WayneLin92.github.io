@@ -4,6 +4,8 @@
  *                          config variables
  ***********************************************************************/
 
+const DATA_NAME = urlParams.get("data") || "S0";
+const COUNT_MAPS = DATA_NAME.split("__").length - 1;
 var MODE = "";
 var DATA_JSON = {};
 
