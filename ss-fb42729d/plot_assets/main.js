@@ -51,6 +51,7 @@ const g_plot = document.getElementById("g_plot");
 const g_bullets = {
     "black": document.getElementById("g_bullets_black"),
     "blue": document.getElementById("g_bullets_blue"),
+    "grey": document.getElementById("g_bullets_grey"),
 };
 const g_strtlines = document.getElementById("g_strtlines");
 const g_strtlines_purple = document.getElementById("g_strtlines_purple");
@@ -280,7 +281,7 @@ function getJsonForBullet(bullet) {
     else if (bullet.classList.contains("cw1")) {
         return DATA_JSON["cw1"];
     }
-    else if (bullet.classList.contains("cw1")) {
+    else if (bullet.classList.contains("cw2")) {
         return DATA_JSON["cw2"];
     }
     else if (bullet.classList.contains("cs0")) {
@@ -291,6 +292,9 @@ function getJsonForBullet(bullet) {
     }
     else if (bullet.classList.contains("cs2")) {
         return DATA_JSON["cofseq_groups"][2];
+    }
+    else{
+        console.log("Error in getJsonForBullet: ", bullet);
     }
 }
 
@@ -639,8 +643,7 @@ function on_click_about() {
 }
 
 function updateVisibility() {
-    const isMap = "from" in DATA_JSON;
-    if (isMap) {
+    if (MODE == "map") {
         var sep_right = DATA_JSON.sep_right;
         var sep_left = sep_right - 1;
         rect_separator.setAttribute('x', sep_left);
@@ -648,7 +651,8 @@ function updateVisibility() {
     }
     for (const ele of document.getElementsByClassName("p")) {
         const classList = ele.classList;
-        ele.style.visibility = "hidden";
+        if (!classList.contains("bp"))
+            ele.style.visibility = "hidden";
         if (classList.contains("b") || classList.contains("baux")) {
             if ((!classList.contains("cw1") || Math.round(ele.getAttribute("cx")) >= sep_right) && (!classList.contains("cw2") || Math.round(ele.getAttribute("cx")) <= sep_left)) {
                 const data_json = getJsonForBullet(ele);
@@ -789,6 +793,13 @@ function loadPlot(data_json) {
         const ele_bullet = `<circle data-i="${data_json.iPlotB}" class="p b ${data_json.class}" cx="${trans(bullet.x)}" cy="${bullet.y}" r="${bullet.r}"> </circle>`;
         g_bullets[bullet['c']].insertAdjacentHTML("beforeend", ele_bullet);
     }
+    if (data_json["type"] === "cofseq_gp" && "bullets_p" in data_json) {
+        for (const batchEnd = data_json.iPlotBP + CONFIG.plot_batchSize; data_json.iPlotBP < batchEnd && data_json.iPlotBP < data_json["bullets_p"].length; data_json.iPlotBP++) {
+            const bullet = data_json["bullets_p"][data_json.iPlotBP];
+            const ele_bullet = `<circle class="p bp ${data_json.class}" cx="${trans(bullet.x)}" cy="${bullet.y}" r="${bullet.r * 0.75}" fill="transparent" stroke="${bullet.c}" stroke-width="${bullet.r / 2}"> </circle>`;
+            g_bullets[bullet['c']].insertAdjacentHTML("beforeend", ele_bullet);
+        }
+    }
     for (const batchEnd = data_json.iPlotSL + CONFIG.plot_batchSize / 2; data_json.iPlotSL < batchEnd && data_json.iPlotSL < data_json["prods"].length; data_json.iPlotSL++) {
         const line = data_json["prods"][data_json.iPlotSL];
         const bullet1 = data_json["bullets"][line["i"]];
@@ -836,7 +847,7 @@ function loadPlot(data_json) {
         const ele_line = `<line class="p nd ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(Math.round(bullet1.x)) - 1}" y2="${Math.round(bullet1.y) + nd['r']}" stroke-width="${width}" stroke-dasharray="0.1,0.1" data-r="${nd['r']}"> </line>`;
         g_diff_lines[nd["r"] <= 6 ? nd["r"] : 6].insertAdjacentHTML("beforeend", ele_line);
     }
-    if (data_json.iPlotB < data_json["bullets"].length || data_json.iPlotSL < data_json["prods"].length || data_json.iPlotDL < data_json["diffs"].length || data_json.iPlotND < data_json["nds"].length) {
+    if (data_json.iPlotB < data_json["bullets"].length || data_json.iPlotSL < data_json["prods"].length || data_json.iPlotDL < data_json["diffs"].length || data_json.iPlotND < data_json["nds"].length || ("bullets_p" in data_json && data_json.iPlotBP < data_json["bullets_p"].length)) {
         window.requestAnimationFrame(() => loadPlot(data_json));
     }
     else {
@@ -886,6 +897,8 @@ function Plot(data_json) {
         data_json.iPlotSL = 0; /* structure lines */
         data_json.iPlotDL = 0; /* diff lines */
         data_json.iPlotND = 0; /* null differential lines */
+        if (data_json["type"] == "cofseq_gp")
+            data_json.iPlotBP = 0; /* bullets_p */
         window.requestAnimationFrame(() => loadPlot(data_json));
     }
 }
