@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKTQQPYBTB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QKTQQPYBTB');
+    </script>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <title>Spectral sequences</title>
+    <style media="screen" type="text/css">
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1>Spectral sequences</h1>
+<h2>Spectra</h2>
+<h3><a href="plot.html?diagram=mix1&amp;data=S0">S0</a>-modules</h3>
+<h4>2-cell complexes</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=C2">C2</a>, <a href="plot.html?diagram=mix1&amp;data=Ceta">Ceta</a>, <a href="plot.html?diagram=mix1&amp;data=Cnu">Cnu</a>, <a href="plot.html?diagram=mix1&amp;data=Csigma">Csigma</a>, <a href="plot.html?diagram=mix1&amp;data=Csigmasq">Csigmasq</a>, <a href="plot.html?diagram=mix1&amp;data=Ctheta4">Ctheta4</a>, <a href="plot.html?diagram=mix1&amp;data=Ctheta5">Ctheta5</a><br></p>
+<h4>3-cell complexes</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=CW_2_eta">CW_2_eta</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_2">CW_eta_2</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_nu">CW_eta_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_eta">CW_nu_eta</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_sigma">CW_nu_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_sigma_nu">CW_sigma_nu</a><br>
+<a href="plot.html?diagram=mix1&amp;data=CW_2_V_eta">CW_2_V_eta</a>, <a href="plot.html?diagram=mix1&amp;data=CW_2_V_nu">CW_2_V_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_2_V_sigma">CW_2_V_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_V_nu">CW_eta_V_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_V_sigma">CW_eta_V_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_V_sigma">CW_nu_V_sigma</a><br>
+<a href="plot.html?diagram=mix1&amp;data=CW_2_A_eta">CW_2_A_eta</a>, <a href="plot.html?diagram=mix1&amp;data=CW_2_A_nu">CW_2_A_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_2_A_sigma">CW_2_A_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_A_nu">CW_eta_A_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_A_sigma">CW_eta_A_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_A_sigma">CW_nu_A_sigma</a><br>
+<a href="plot.html?diagram=mix1&amp;data=C2h4">C2h4</a>, <a href="plot.html?diagram=mix1&amp;data=C2h5">C2h5</a>, <a href="plot.html?diagram=mix1&amp;data=C2h6">C2h6</a>, <a href="plot.html?diagram=mix1&amp;data=DC2h4">DC2h4</a>, <a href="plot.html?diagram=mix1&amp;data=DC2h5">DC2h5</a>, <a href="plot.html?diagram=mix1&amp;data=DC2h6">DC2h6</a><br></p>
+<h4>4-cell complexes</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=CW_2_eta_nu">CW_2_eta_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_eta_2">CW_nu_eta_2</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_nu_sigma">CW_eta_nu_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_sigma_nu_eta">CW_sigma_nu_eta</a><br> <a href="plot.html?diagram=mix1&amp;data=C2_Ceta">C2∧Ceta</a>, <a href="plot.html?diagram=mix1&amp;data=C2_Cnu">C2∧Cnu</a>, <a href="plot.html?diagram=mix1&amp;data=C2_Csigma">C2∧Csigma</a>, <a href="plot.html?diagram=mix1&amp;data=Ceta_Cnu">Ceta∧Cnu</a>, <a href="plot.html?diagram=mix1&amp;data=Ceta_Csigma">Ceta∧Csigma</a>, <a href="plot.html?diagram=mix1&amp;data=Cnu_Csigma">Cnu∧Csigma</a><br>
+<a href="plot.html?diagram=mix1&amp;data=CW_sigmasq_2_sigmasq">CW_sigmasq_2_sigmasq</a>, <a href="plot.html?diagram=mix1&amp;data=CW_theta4_2_theta4">CW_theta4_2_theta4</a>, <a href="plot.html?diagram=mix1&amp;data=CW_theta4_2_theta4">CW_theta5_2_theta5</a><br>
+<a href="plot.html?diagram=mix1&amp;data=CW_2_eta_V_eta">CW_2_eta_V_eta</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_2_A_eta">CW_eta_2_A_eta</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_nu_V_nu">CW_eta_nu_V_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_eta_A_nu">CW_nu_eta_A_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_sigma_V_sigma">CW_nu_sigma_V_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_sigma_nu_A_sigma">CW_sigma_nu_A_sigma</a><br></p>
+<h4>5-cell complexes</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=CW_2_eta_nu_sigma">CW_2_eta_nu_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_sigma_nu_eta_2">CW_sigma_nu_eta_2</a><br>
+<a href="plot.html?diagram=mix1&amp;data=Joker">Joker</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_nu_eta_Eq_nu_nu">CW_eta_nu_eta_Eq_nu_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_nu_sigma_nu_Eq_sigma_sigma">CW_nu_sigma_nu_Eq_sigma_sigma</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_2_eta_Eq_2_nu">CW_eta_2_eta_Eq_2_nu</a>, <a href="plot.html?diagram=mix1&amp;data=CW_eta_2_eta_Eq_nu_2">CW_eta_2_eta_Eq_nu_2</a>， <a href="plot.html?diagram=mix1&amp;data=CW_2_theta5_2_Eq_eta_theta5">CW_2_theta5_2_Eq_eta_theta5</a><br></p>
+<h4>infinite-cell complex</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=j">j</a>, <a href="plot.html?diagram=mix1&amp;data=j_C2">j/2</a><br></p>
+<h4>RP</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=RP1_4">RP4</a>, <a href="plot.html?diagram=mix1&amp;data=RP1_6">RP6</a>, <a href="plot.html?diagram=mix1&amp;data=RP1_8">RP8</a>, <a href="plot.html?diagram=mix1&amp;data=RP1_10">RP10</a>, <a href="plot.html?diagram=mix1&amp;data=RP1_12">RP12</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_14">RP14</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_16">RP16</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_18">RP18</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_20">RP20</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_22">RP22</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_24">RP24</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_26">RP26</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_28">RP28</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_30">RP30</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_32">RP32</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_34">RP34</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_36">RP36</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_38">RP38</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_40">RP40</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_42">RP42</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_44">RP44</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_46">RP46</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_48">RP48</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_50">RP50</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_52">RP52</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_54">RP54</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_56">RP56</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_58">RP58</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_60">RP60</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_62">RP62</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_64">RP64</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_66">RP66</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_68">RP68</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_70">RP70</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_72">RP72</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_74">RP74</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_76">RP76</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_78">RP78</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_80">RP80</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_82">RP82</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_84">RP84</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_86">RP86</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_88">RP88</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_90">RP90</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_92">RP92</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_94">RP94</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_96">RP96</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_98">RP98</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_100">RP100</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_102">RP102</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_104">RP104</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_106">RP106</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_108">RP108</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_110">RP110</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_112">RP112</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_114">RP114</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_116">RP116</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP1_256">RP256</a><br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=RP3_256">RP3_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP5_256">RP5_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP7_256">RP7_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP9_256">RP9_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP11_256">RP11_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP13_256">RP13_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP15_256">RP15_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP17_256">RP17_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP19_256">RP19_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP21_256">RP21_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP23_256">RP23_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP25_256">RP25_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP27_256">RP27_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP29_256">RP29_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP31_256">RP31_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP33_256">RP33_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP35_256">RP35_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP37_256">RP37_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP39_256">RP39_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP41_256">RP41_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP43_256">RP43_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP45_256">RP45_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP47_256">RP47_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP49_256">RP49_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP51_256">RP51_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP53_256">RP53_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP55_256">RP55_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP57_256">RP57_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP59_256">RP59_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP61_256">RP61_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP63_256">RP63_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP65_256">RP65_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP67_256">RP67_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP69_256">RP69_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP71_256">RP71_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP73_256">RP73_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP75_256">RP75_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP77_256">RP77_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP79_256">RP79_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP81_256">RP81_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP83_256">RP83_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP85_256">RP85_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP87_256">RP87_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP89_256">RP89_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP91_256">RP91_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP93_256">RP93_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP95_256">RP95_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP97_256">RP97_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP99_256">RP99_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP101_256">RP101_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP103_256">RP103_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP105_256">RP105_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP107_256">RP107_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP109_256">RP109_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP111_256">RP111_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP113_256">RP113_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP115_256">RP115_256</a>,
+<a href="plot.html?diagram=mix1&amp;data=RP117_256">RP117_256</a><br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=RP3_6">RP3_6</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi4">Fphi4</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi6">Fphi6</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi8">Fphi8</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi10">Fphi10</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi12">Fphi12</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi14">Fphi14</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi16">Fphi16</a>, <a href="plot.html?diagram=mix1&amp;data=Fphi">Fphi</a><br></p>
+<h4>CP</h4>
+<p><a href="plot.html?diagram=mix1&amp;data=CP1_4">CP4</a>, <a href="plot.html?diagram=mix1&amp;data=CP1_128">CPinf</a><br></p>
+<h3><a href="plot.html?diagram=mix1&amp;data=tmf">tmf</a>-modules</h3>
+<p><a href="plot.html?diagram=mix1&amp;data=tmf_C2">tmf∧C2</a>, <a href="plot.html?diagram=mix1&amp;data=tmf_Ceta">tmf∧Ceta</a>, <a href="plot.html?diagram=mix1&amp;data=tmf_Cnu">tmf∧Cnu</a><br>
+<a href="plot.html?diagram=mix1&amp;data=tmf_Cnu">tmf∧RPinf</a><br></p>
+<h3>ko-modules</h3>
+<h3><a href="plot.html?diagram=mix1&amp;data=X2">X2</a>-modules</h3>
+<h2>Maps</h2>
+<p><a href="plot.html?diagram=mix1&amp;data=S0__tmf">S0 --&gt; tmf</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__S0">C2 --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta__S0">Ceta --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Cnu__S0">Cnu --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Csigma__S0">Csigma --&gt; S0</a>,<br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=C2h4__Csigmasq">C2h4 --&gt; Csigmasq</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2h5__Ctheta4">C2h5 --&gt; Ctheta4</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2h6__Ctheta5">C2h6 --&gt; Ctheta5</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Csigmasq__DC2h4">Csigmasq --&gt; DC2h4</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ctheta4__DC2h5">Ctheta4 --&gt; DC2h5</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ctheta5__DC2h6">Ctheta5 --&gt; DC2h6</a>,<br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=j__j_C2">j --&gt; j_C2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__j_C2">C2 --&gt; j_C2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=j_C2__j">j_C2 --&gt; j</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__C2h4">C2 --&gt; C2h4</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__C2h5">C2 --&gt; C2h5</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__C2h6">C2 --&gt; C2h6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2h4__S0">C2h4 --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2h5__S0">C2h5 --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2h6__S0">C2h6 --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=DC2h4__C2">DC2h4 --&gt; C2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=DC2h5__C2">DC2h5 --&gt; C2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=DC2h6__C2">DC2h6 --&gt; C2</a>,<br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=C2__tmf_C2">C2 --&gt; tmf_C2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta__tmf_Ceta">Ceta --&gt; tmf_Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Cnu__tmf_Cnu">Cnu --&gt; tmf_Cnu</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=tmf_C2__tmf">tmf_C2 --&gt; tmf</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=tmf_Ceta__tmf">tmf_Ceta --&gt; tmf</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=tmf_Cnu__tmf">tmf_Cnu --&gt; tmf</a>,<br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=C2_Ceta__C2">C2_Ceta --&gt; C2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2_Ceta__Ceta">C2_Ceta --&gt; Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta_Cnu__Ceta">Ceta_Cnu --&gt; Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta_Cnu__Cnu">Ceta_Cnu --&gt; Cnu</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=CW_2_eta__Ceta">CW_2_eta --&gt; Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=CW_eta_2__Ceta">CW_eta_2 --&gt; Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=CW_eta_nu__Cnu">CW_eta_nu --&gt; Cnu</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=CW_nu_eta__Ceta">CW_nu_eta --&gt; Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__C2_Ceta">C2 --&gt; C2_Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta__C2_Ceta">Ceta --&gt; C2_Ceta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta__Ceta_Cnu">Ceta --&gt; Ceta_Cnu</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Cnu__Ceta_Cnu">Cnu --&gt; Ceta_Cnu</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=C2__CW_2_eta">C2 --&gt; CW_2_eta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta__CW_eta_2">Ceta --&gt; CW_eta_2</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Ceta__CW_eta_nu">Ceta --&gt; CW_eta_nu</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Cnu__CW_nu_eta">Cnu --&gt; CW_nu_eta</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=CW_eta_2__RP1_6">CW_eta_2 --&gt; RP1_6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_6__CW_2_eta">RP1_6 --&gt; CW_2_eta</a>,<br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=RP1_2__RP1_4">RP1_2 --&gt; RP1_4</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_4__RP1_6">RP1_4 --&gt; RP1_6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_6__RP1_8">RP1_6 --&gt; RP1_8</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_8__RP1_10">RP1_8 --&gt; RP1_10</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_10__RP1_12">RP1_10 --&gt; RP1_12</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_12__RP1_256">RP1_12 --&gt; RP1_256</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_10__RP1_256">RP1_10 --&gt; RP1_256</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP3_4__RP3_6">RP3_4 --&gt; RP3_6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_4__RP3_4">RP1_4 --&gt; RP3_4</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_6__RP5_6">RP1_6 --&gt; RP5_6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_8__RP5_8">RP1_8 --&gt; RP5_8</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_12__RP9_12">RP1_12 --&gt; RP9_12</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_10__S0">RP1_10 --&gt; S0</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_6__RP3_6">RP1_6 --&gt; RP3_6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP3_6__RP5_6">RP3_6 --&gt; RP5_6</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=Fphi__RP1_256">Fphi --&gt; RP1_256</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=KahnPriddy">KahnPriddy</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=KahnPriddyC">KahnPriddyC</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_256__CP1_128">RP1_256 --&gt; CP1_128</a>,<br></p>
+<p><a href="plot.html?diagram=mix1&amp;data=RP1_100__RP1_102">RP1_100 --&gt; RP1_102</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_100__RP97_100">RP1_100 --&gt; RP97_100</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_102__RP1_104">RP1_102 --&gt; RP1_104</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_102__RP99_102">RP1_102 --&gt; RP99_102</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_104__RP101_104">RP1_104 --&gt; RP101_104</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_104__RP1_106">RP1_104 --&gt; RP1_106</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_106__RP103_106">RP1_106 --&gt; RP103_106</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_106__RP1_108">RP1_106 --&gt; RP1_108</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_108__RP105_108">RP1_108 --&gt; RP105_108</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_108__RP1_110">RP1_108 --&gt; RP1_110</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_110__RP107_110">RP1_110 --&gt; RP107_110</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_110__RP1_112">RP1_110 --&gt; RP1_112</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_112__RP109_112">RP1_112 --&gt; RP109_112</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_112__RP1_114">RP1_112 --&gt; RP1_114</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_114__RP111_114">RP1_114 --&gt; RP111_114</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_114__RP1_116">RP1_114 --&gt; RP1_116</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_116__RP113_116">RP1_116 --&gt; RP113_116</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_116__RP1_256">RP1_116 --&gt; RP1_256</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_12__RP1_14">RP1_12 --&gt; RP1_14</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_14__RP11_14">RP1_14 --&gt; RP11_14</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_14__RP1_16">RP1_14 --&gt; RP1_16</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_16__RP13_16">RP1_16 --&gt; RP13_16</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_16__RP1_18">RP1_16 --&gt; RP1_18</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_18__RP15_18">RP1_18 --&gt; RP15_18</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_18__RP1_20">RP1_18 --&gt; RP1_20</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_20__RP17_20">RP1_20 --&gt; RP17_20</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_20__RP1_22">RP1_20 --&gt; RP1_22</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_22__RP19_22">RP1_22 --&gt; RP19_22</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_22__RP1_24">RP1_22 --&gt; RP1_24</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_24__RP1_26">RP1_24 --&gt; RP1_26</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_24__RP21_24">RP1_24 --&gt; RP21_24</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_26__RP1_28">RP1_26 --&gt; RP1_28</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_26__RP23_26">RP1_26 --&gt; RP23_26</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_28__RP1_30">RP1_28 --&gt; RP1_30</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_28__RP25_28">RP1_28 --&gt; RP25_28</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_30__RP1_32">RP1_30 --&gt; RP1_32</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_30__RP27_30">RP1_30 --&gt; RP27_30</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_32__RP1_34">RP1_32 --&gt; RP1_34</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_32__RP29_32">RP1_32 --&gt; RP29_32</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_34__RP1_36">RP1_34 --&gt; RP1_36</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_34__RP31_34">RP1_34 --&gt; RP31_34</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_36__RP1_38">RP1_36 --&gt; RP1_38</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_36__RP33_36">RP1_36 --&gt; RP33_36</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_38__RP1_40">RP1_38 --&gt; RP1_40</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_38__RP35_38">RP1_38 --&gt; RP35_38</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_40__RP1_42">RP1_40 --&gt; RP1_42</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_40__RP37_40">RP1_40 --&gt; RP37_40</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_42__RP1_44">RP1_42 --&gt; RP1_44</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_42__RP39_42">RP1_42 --&gt; RP39_42</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_44__RP1_46">RP1_44 --&gt; RP1_46</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_44__RP41_44">RP1_44 --&gt; RP41_44</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_46__RP1_48">RP1_46 --&gt; RP1_48</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_46__RP43_46">RP1_46 --&gt; RP43_46</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_48__RP1_50">RP1_48 --&gt; RP1_50</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_48__RP45_48">RP1_48 --&gt; RP45_48</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_50__RP1_52">RP1_50 --&gt; RP1_52</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_50__RP47_50">RP1_50 --&gt; RP47_50</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_52__RP1_54">RP1_52 --&gt; RP1_54</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_52__RP49_52">RP1_52 --&gt; RP49_52</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_54__RP1_56">RP1_54 --&gt; RP1_56</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_54__RP51_54">RP1_54 --&gt; RP51_54</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_56__RP1_58">RP1_56 --&gt; RP1_58</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_56__RP53_56">RP1_56 --&gt; RP53_56</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_58__RP1_60">RP1_58 --&gt; RP1_60</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_58__RP55_58">RP1_58 --&gt; RP55_58</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_60__RP1_62">RP1_60 --&gt; RP1_62</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_60__RP57_60">RP1_60 --&gt; RP57_60</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_62__RP1_64">RP1_62 --&gt; RP1_64</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_62__RP59_62">RP1_62 --&gt; RP59_62</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_64__RP1_66">RP1_64 --&gt; RP1_66</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_64__RP61_64">RP1_64 --&gt; RP61_64</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_66__RP1_68">RP1_66 --&gt; RP1_68</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_66__RP63_66">RP1_66 --&gt; RP63_66</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_68__RP1_70">RP1_68 --&gt; RP1_70</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_68__RP65_68">RP1_68 --&gt; RP65_68</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_70__RP1_72">RP1_70 --&gt; RP1_72</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_70__RP67_70">RP1_70 --&gt; RP67_70</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_72__RP1_74">RP1_72 --&gt; RP1_74</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_72__RP69_72">RP1_72 --&gt; RP69_72</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_74__RP1_76">RP1_74 --&gt; RP1_76</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_74__RP71_74">RP1_74 --&gt; RP71_74</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_76__RP1_78">RP1_76 --&gt; RP1_78</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_76__RP73_76">RP1_76 --&gt; RP73_76</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_78__RP1_80">RP1_78 --&gt; RP1_80</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_78__RP75_78">RP1_78 --&gt; RP75_78</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_80__RP1_82">RP1_80 --&gt; RP1_82</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_80__RP77_80">RP1_80 --&gt; RP77_80</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_82__RP1_84">RP1_82 --&gt; RP1_84</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_82__RP79_82">RP1_82 --&gt; RP79_82</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_84__RP1_86">RP1_84 --&gt; RP1_86</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_84__RP81_84">RP1_84 --&gt; RP81_84</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_86__RP1_88">RP1_86 --&gt; RP1_88</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_86__RP83_86">RP1_86 --&gt; RP83_86</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_88__RP1_90">RP1_88 --&gt; RP1_90</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_88__RP85_88">RP1_88 --&gt; RP85_88</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_90__RP1_92">RP1_90 --&gt; RP1_92</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_90__RP87_90">RP1_90 --&gt; RP87_90</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_92__RP1_94">RP1_92 --&gt; RP1_94</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_92__RP89_92">RP1_92 --&gt; RP89_92</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_94__RP1_96">RP1_94 --&gt; RP1_96</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_94__RP91_94">RP1_94 --&gt; RP91_94</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_96__RP1_98">RP1_96 --&gt; RP1_98</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_96__RP93_96">RP1_96 --&gt; RP93_96</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_98__RP1_100">RP1_98 --&gt; RP1_100</a>,<br>
+<a href="plot.html?diagram=mix1&amp;data=RP1_98__RP95_98">RP1_98 --&gt; RP95_98</a>,<br></p>
+<h2>Cofiber sequences</h2>
+
+</body>
