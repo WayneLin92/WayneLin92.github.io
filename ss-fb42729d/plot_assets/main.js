@@ -76,6 +76,7 @@ const p_base = document.getElementById("p_base");
 const p_latex = document.getElementById("p_latex");
 const p_diff = document.getElementById("p_diff");
 const g_prod = document.getElementById("g_prod");
+const g_map = document.getElementById("g_map");
 const div_menu_style = document.getElementById("div_menu").style;
 
 const rect_separator = document.getElementById("rect_separator");
@@ -357,13 +358,14 @@ function addBulletLabels() {
 }
 
 function addRects() {
-    for (const i of []) { //arr_factors
-        const id = "b" + i;
-        const bullet = document.getElementById(id);
-        let rect_product = `<rect id="rect_prod${i}" x="-1000" y="-1000" width="1" height="1" fill="green" opacity="0.1"  data-x="${bullet.getAttribute("cx")}" data-y="${bullet.getAttribute("cy")}" />`;
-        g_plot.insertAdjacentHTML("afterbegin", rect_product);
+    if (MODE === "ss") { // products
+        let i = 0;
+        for (const deg of DATA_JSON['degs_factors']) {
+            let rect_product = `<rect id="rect_prod${i++}" x="-1000" y="-1000" width="1" height="1" fill="green" opacity="0.1"  data-x="${deg[0]}" data-y="${deg[1]}" />`;
+            g_plot.insertAdjacentHTML("afterbegin", rect_product);
+        }
     }
-    if (MODE === "cofseq") {
+    if (MODE === "cofseq") { // color separators
         for (let i = 0; i < CONFIG.x_max / 3; i += 2) {
             let rect_product = `<rect x="${3 * i - 0.5}" y="-0.5" width="3" height="300" fill="#dddddd"/>`;
             g_plot.insertAdjacentHTML("afterbegin", rect_product);
@@ -470,11 +472,30 @@ function select_bullet(bullet) {
     rect_selected.setAttribute("y", Math.round(bullet.getAttribute("cy")) - 0.5);
 
     g_prod.innerHTML = "";
+    g_map.innerHTML = "";
+    // products
+    if (MODE == "ss") {
+        prods = DATA_JSON["prods"][bullet.dataset.i];
+        for (const j in DATA_JSON["degs_factors"]) {
+            let rect_prod = document.getElementById(`rect_prod${j}`);
+            rect_prod.setAttribute('x', parseFloat(rect_selected.getAttribute("x")) + parseFloat(rect_prod.dataset.x));
+            rect_prod.setAttribute('y', parseFloat(rect_selected.getAttribute("y")) + parseFloat(rect_prod.dataset.y));
+        }
+        for (const j in prods) {
+            for (const i of prods[j]['p']) {
+                const bullet2 = DATA_JSON["bullets"][i];
+                const circle_prod = `<circle class="p" cx="${bullet2.x}" cy="${bullet2.y}" r="${bullet2['r'] * 1.7}", data-i=${i}></circle>`;
+                g_prod.insertAdjacentHTML("beforeend", circle_prod);
+            }
+        }
+    }
+
+    // images of maps
     if (bullet.classList.contains("cw1") && Math.round(bullet.getAttribute("cx")) == DATA_JSON.sep_right && bullet.dataset.i in DATA_JSON["maps"]) {
-        for (const i of DATA_JSON["maps"][bullet.dataset.i]) { // maps
+        for (const i of DATA_JSON["maps"][bullet.dataset.i]) {
             const bullet2 = DATA_JSON["cw2"]["bullets"][i];
-            const circle_prod = `<circle class="p baux cw2" cx="${bullet2.x + DATA_JSON["cw2"].shift}" cy="${bullet2.y}" r="${bullet2['r'] * 1.7}", data-i=${i}></circle>`;
-            g_prod.insertAdjacentHTML("beforeend", circle_prod);
+            const circle_image = `<circle class="p baux cw2" cx="${bullet2.x + DATA_JSON["cw2"].shift}" cy="${bullet2.y}" r="${bullet2['r'] * 1.7}", data-i=${i}></circle>`;
+            g_map.insertAdjacentHTML("beforeend", circle_image);
         }
     }
 }
@@ -800,15 +821,21 @@ function loadPlot(data_json) {
             g_bullets[bullet['c']].insertAdjacentHTML("beforeend", ele_bullet);
         }
     }
-    for (const batchEnd = data_json.iPlotSL + CONFIG.plot_batchSize / 2; data_json.iPlotSL < batchEnd && data_json.iPlotSL < data_json["prods"].length; data_json.iPlotSL++) {
-        const line = data_json["prods"][data_json.iPlotSL];
-        const bullet1 = data_json["bullets"][line["i"]];
-        for (const i of line["p"]) {
-            const bullet2 = data_json["bullets"][i];
-            const width = Math.min(bullet1['r'], bullet2['r']) / 4;
-            const page = Math.min(bullet1['p'], bullet2['p']);
-            const ele_line = `<line class="p sl ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(bullet2.x)}" y2="${bullet2.y}" stroke="black" stroke-width="${width}" data-page="${page}"> </line>`;
-            g_strtlines.insertAdjacentHTML("beforeend", ele_line);
+    let keys_prods = Object.keys(data_json["prods"]);
+    for (const batchEnd = data_json.iPlotSL + CONFIG.plot_batchSize / 2; data_json.iPlotSL < batchEnd && data_json.iPlotSL < keys_prods.length; data_json.iPlotSL++) {
+        const lines = data_json["prods"][keys_prods[data_json.iPlotSL]];
+        for (const line of lines) {
+            if (line['l'] == 0) {
+                continue;
+            }
+            const bullet1 = data_json["bullets"][keys_prods[data_json.iPlotSL]];
+            for (const i of line["p"]) {
+                const bullet2 = data_json["bullets"][i];
+                const width = Math.min(bullet1['r'], bullet2['r']) / 4;
+                const page = Math.min(bullet1['p'], bullet2['p']);
+                const ele_line = `<line class="p sl ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(bullet2.x)}" y2="${bullet2.y}" stroke="black" stroke-width="${width}" data-page="${page}"> </line>`;
+                g_strtlines.insertAdjacentHTML("beforeend", ele_line);
+            }
         }
     }
     if (data_json["type"] !== "cofseq_gp") {
@@ -950,6 +977,7 @@ function processParams() {
     /* Add bullets */
     loadScript(`${dir}/${data}.js`, () => {
         DATA_JSON = globalThis[`DATA_JSON_${data}`];
+        addRects();
         if (MODE === "ss") {
             DATA_JSON.class = "cw";
             Plot(DATA_JSON);
@@ -1046,7 +1074,6 @@ function init() {
     // if (MODE !== "FromRes")
     //     addBulletLabels();
     updateAxisLabels();
-    addRects();
 
     initHandlers();
 
