@@ -874,7 +874,7 @@ function loadPlot(data_json) {
         const ele_line = `<line class="p nd ${data_json.class}" x1="${trans(bullet1.x)}" y1="${bullet1.y}" x2="${trans(Math.round(bullet1.x)) - 1}" y2="${Math.round(bullet1.y) + nd['r']}" stroke-width="${width}" stroke-dasharray="0.1,0.1" data-r="${nd['r']}"> </line>`;
         g_diff_lines[nd["r"] <= 6 ? nd["r"] : 6].insertAdjacentHTML("beforeend", ele_line);
     }
-    if (data_json.iPlotB < data_json["bullets"].length || data_json.iPlotSL < data_json["prods"].length || data_json.iPlotDL < data_json["diffs"].length || data_json.iPlotND < data_json["nds"].length || ("bullets_p" in data_json && data_json.iPlotBP < data_json["bullets_p"].length)) {
+    if (data_json.iPlotB < data_json["bullets"].length || data_json.iPlotSL < keys_prods.length || data_json.iPlotDL < data_json["diffs"].length || data_json.iPlotND < data_json["nds"].length || ("bullets_p" in data_json && data_json.iPlotBP < data_json["bullets_p"].length)) {
         window.requestAnimationFrame(() => loadPlot(data_json));
     }
     else {
