@@ -1,4 +1,4 @@
-# Weinan Lin (林伟南) 
+# Weinan Lin (林伟南)
 ## About Me
 I am currently an instructor in [School of Mathematical Science](http://english.math.pku.edu.cn/), Peking University.
 
@@ -13,14 +13,14 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 ## Publications and preprints
 * On the May spectral sequence at the prime 2. Advances in Mathematics (2022). [arXiv:2010.14754](https://arxiv.org/abs/2010.14754)
 * Noncommutative Gröbner Bases and Ext groups. Accepted by Peking Mathematical Journal (2023). [arXiv:2304.00506](https://arxiv.org/abs/2304.00506)
-  
+
 ## Teaching
 ### Peking University.
 
 | Semester | Course Name |
 |---|---|
-| Fall 2023 | [Selected Topics in Algebraic Topology](./assets/2022Fall/index.html) |
-| Spring 2022 | [Selected Topics in Algebraic Topology](./assets/2023Spring/index.html) |
+| Fall 2023 | [Selected Topics in Algebraic Topology](./assets/2023Fall/index.html) |
+| Spring 2022 | [Selected Topics in Algebraic Topology](./assets/2022Spring/index.html) |
 
 ### University of Chicago.
 

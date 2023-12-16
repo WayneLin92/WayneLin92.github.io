@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """doc"""
 import argparse
 import os
