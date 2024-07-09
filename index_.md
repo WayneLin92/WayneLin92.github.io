@@ -1,18 +1,16 @@
 # Weinan Lin (林伟南) 
 ## About Me
-I am currently an instructor in [School of Mathematical Science](http://english.math.pku.edu.cn/), Peking University.
+I am currently a Tenure-track Young Investigator in [Shanghai Center for Mathematics Science](https://scms.fudan.edu.cn/index.htm), Fudan University.
 
-My research interests includes stable homotopy theory and computational algebra for algebraic topology.
+My research interests include stable homotopy theory and computational algebra for algebraic topology.
 
 My PhD advisor is Prof. [J. Peter May](http://www.math.uchicago.edu/~may/).
 
 Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 
-Here is my [research statement](./assets/pdf/Research_Statement.pdf).
-
 ## Publications and preprints
 * On the May spectral sequence at the prime 2. Advances in Mathematics (2022). [arXiv:2010.14754](https://arxiv.org/abs/2010.14754)
-* Noncommutative Gröbner Bases and Ext groups. Accepted by Peking Mathematical Journal (2023). [arXiv:2304.00506](https://arxiv.org/abs/2304.00506)
+* Noncommutative Gröbner Bases and Ext groups. Peking Mathematical Journal (2023). [arXiv:2304.00506](https://arxiv.org/abs/2304.00506)
   
 ## Teaching
 ### Peking University.
@@ -48,10 +46,10 @@ Here is my [research statement](./assets/pdf/Research_Statement.pdf).
 [LaTeX diagram generator](./programs/tex_diagrams/index.html)
 
 # Contact Information
-Email: lwnpku@math.pku.edu.cn
+Email: linweinan@fudan.edu.cn
 
-Office: Room 201, Building 20, Peking University
+Office: Room 345, Shanghai Ceter for Mathematical Sciences, Fudan University
 
 
 ---
-The webpage was updated on 2024-02-20.
+The webpage was updated on 2024-07-05.

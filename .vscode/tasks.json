@@ -6,7 +6,8 @@
         {
             "label": "Compile /index_.md",
             "type": "shell",
-            "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\"",
+            "command": "python3 task.py -f index_.md -o index.html -t \"Weinan Lin | Home\"",
+            "windows": { "command": "python task.py -f index_.md -o index.html -t \"Weinan Lin | Home\""},
             "problemMatcher": []
         },
         {
