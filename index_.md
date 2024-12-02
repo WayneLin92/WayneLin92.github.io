@@ -42,6 +42,7 @@ Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 
 ## Programming
 [Spectral sequences](./ss/index.html)<br>
+[Spectral sequences (Kervaire invariant)](./ss/kervaire.html)<br>
 [My Github homepage](https://github.com/WayneLin92)<br>
 [LaTeX diagram generator](./programs/tex_diagrams/index.html)
 
@@ -52,4 +53,4 @@ Office: Room 345, Shanghai Ceter for Mathematical Sciences, Fudan University
 
 
 ---
-The webpage was updated on 2024-07-05.
+The webpage was updated on 2024-12-03.
