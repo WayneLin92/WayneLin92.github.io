@@ -1,987 +1,982 @@
 # Spectral sequences
 ## Adams Spectral sequence
 
-<style>
-.tab{
-    Padding-left:10px;
-}
-</style>
 ### Ring spectra
-[S0](plot.html?diagram=kervaire&data=S0)<span class="tab"> 
-[tmf](plot.html?diagram=kervaire&data=tmf)<span class="tab"> 
+[S0](plot.html?diagram=kervaire&data=S0)&nbsp;&nbsp;&nbsp;
+[tmf](plot.html?diagram=kervaire&data=tmf)&nbsp;&nbsp;&nbsp;
 
 ### Modules
-[C2](plot.html?diagram=kervaire&data=C2)<span class="tab"> 
-[Ceta](plot.html?diagram=kervaire&data=Ceta)<span class="tab"> 
-[Cnu](plot.html?diagram=kervaire&data=Cnu)<span class="tab"> 
-[Csigma](plot.html?diagram=kervaire&data=Csigma)<span class="tab"> 
-[CW_2_eta](plot.html?diagram=kervaire&data=CW_2_eta)<span class="tab"> 
-[CW_eta_2](plot.html?diagram=kervaire&data=CW_eta_2)<span class="tab"> 
-[CW_eta_nu](plot.html?diagram=kervaire&data=CW_eta_nu)<span class="tab"> 
-[CW_nu_eta](plot.html?diagram=kervaire&data=CW_nu_eta)<span class="tab"> 
-[CW_sigma_nu](plot.html?diagram=kervaire&data=CW_sigma_nu)<span class="tab"> 
-[CW_nu_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma)<span class="tab"> 
-[CW_2_eta_nu](plot.html?diagram=kervaire&data=CW_2_eta_nu)<span class="tab"> 
-[CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_nu_eta_2)<span class="tab"> 
-[CW_sigma_nu_eta](plot.html?diagram=kervaire&data=CW_sigma_nu_eta)<span class="tab"> 
-[CW_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_eta_nu_sigma)<span class="tab"> 
-[CW_sigma_nu_eta_2](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2)<span class="tab"> 
-[CW_2_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_2_eta_nu_sigma)<span class="tab"> 
+[C2](plot.html?diagram=kervaire&data=C2)&nbsp;&nbsp;&nbsp;
+[Ceta](plot.html?diagram=kervaire&data=Ceta)&nbsp;&nbsp;&nbsp;
+[Cnu](plot.html?diagram=kervaire&data=Cnu)&nbsp;&nbsp;&nbsp;
+[Csigma](plot.html?diagram=kervaire&data=Csigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta](plot.html?diagram=kervaire&data=CW_2_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2](plot.html?diagram=kervaire&data=CW_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu](plot.html?diagram=kervaire&data=CW_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta](plot.html?diagram=kervaire&data=CW_nu_eta)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu](plot.html?diagram=kervaire&data=CW_sigma_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_nu](plot.html?diagram=kervaire&data=CW_2_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta](plot.html?diagram=kervaire&data=CW_sigma_nu_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta_2](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_2_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
 
-[Csigmasq](plot.html?diagram=kervaire&data=Csigmasq)<span class="tab"> 
-[C2h4](plot.html?diagram=kervaire&data=C2h4)<span class="tab"> 
-[DC2h4](plot.html?diagram=kervaire&data=DC2h4)<span class="tab"> 
-[CW_sigmasq_2_sigmasq](plot.html?diagram=kervaire&data=CW_sigmasq_2_sigmasq)<span class="tab"> 
-[Ctheta4](plot.html?diagram=kervaire&data=Ctheta4)<span class="tab"> 
-[C2h5](plot.html?diagram=kervaire&data=C2h5)<span class="tab"> 
-[DC2h5](plot.html?diagram=kervaire&data=DC2h5)<span class="tab"> 
-[CW_theta4_2_theta4](plot.html?diagram=kervaire&data=CW_theta4_2_theta4)<span class="tab"> 
-[Ctheta5](plot.html?diagram=kervaire&data=Ctheta5)<span class="tab"> 
-[C2h6](plot.html?diagram=kervaire&data=C2h6)<span class="tab"> 
-[DC2h6](plot.html?diagram=kervaire&data=DC2h6)<span class="tab"> 
-[CW_theta5_2_theta5](plot.html?diagram=kervaire&data=CW_theta5_2_theta5)<span class="tab"> 
-[CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
+[Csigmasq](plot.html?diagram=kervaire&data=Csigmasq)&nbsp;&nbsp;&nbsp;
+[C2h4](plot.html?diagram=kervaire&data=C2h4)&nbsp;&nbsp;&nbsp;
+[DC2h4](plot.html?diagram=kervaire&data=DC2h4)&nbsp;&nbsp;&nbsp;
+[CW_sigmasq_2_sigmasq](plot.html?diagram=kervaire&data=CW_sigmasq_2_sigmasq)&nbsp;&nbsp;&nbsp;
+[Ctheta4](plot.html?diagram=kervaire&data=Ctheta4)&nbsp;&nbsp;&nbsp;
+[C2h5](plot.html?diagram=kervaire&data=C2h5)&nbsp;&nbsp;&nbsp;
+[DC2h5](plot.html?diagram=kervaire&data=DC2h5)&nbsp;&nbsp;&nbsp;
+[CW_theta4_2_theta4](plot.html?diagram=kervaire&data=CW_theta4_2_theta4)&nbsp;&nbsp;&nbsp;
+[Ctheta5](plot.html?diagram=kervaire&data=Ctheta5)&nbsp;&nbsp;&nbsp;
+[C2h6](plot.html?diagram=kervaire&data=C2h6)&nbsp;&nbsp;&nbsp;
+[DC2h6](plot.html?diagram=kervaire&data=DC2h6)&nbsp;&nbsp;&nbsp;
+[CW_theta5_2_theta5](plot.html?diagram=kervaire&data=CW_theta5_2_theta5)&nbsp;&nbsp;&nbsp;
+[CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
 
-[C2_C2](plot.html?diagram=kervaire&data=C2_C2)<span class="tab"> 
-[Ceta_Ceta](plot.html?diagram=kervaire&data=Ceta_Ceta)<span class="tab"> 
-[Cnu_Cnu](plot.html?diagram=kervaire&data=Cnu_Cnu)<span class="tab"> 
-[Csigma_Csigma](plot.html?diagram=kervaire&data=Csigma_Csigma)<span class="tab"> 
-[C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu)<span class="tab"> 
-[C2_Ceta](plot.html?diagram=kervaire&data=C2_Ceta)<span class="tab"> 
-[Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu)<span class="tab"> 
-[Cnu_Csigma](plot.html?diagram=kervaire&data=Cnu_Csigma)<span class="tab"> 
-[C2_Cnu](plot.html?diagram=kervaire&data=C2_Cnu)<span class="tab"> 
-[C2_Csigma](plot.html?diagram=kervaire&data=C2_Csigma)<span class="tab"> 
-[Ceta_Csigma](plot.html?diagram=kervaire&data=Ceta_Csigma)<span class="tab"> 
+[C2_C2](plot.html?diagram=kervaire&data=C2_C2)&nbsp;&nbsp;&nbsp;
+[Ceta_Ceta](plot.html?diagram=kervaire&data=Ceta_Ceta)&nbsp;&nbsp;&nbsp;
+[Cnu_Cnu](plot.html?diagram=kervaire&data=Cnu_Cnu)&nbsp;&nbsp;&nbsp;
+[Csigma_Csigma](plot.html?diagram=kervaire&data=Csigma_Csigma)&nbsp;&nbsp;&nbsp;
+[C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Ceta](plot.html?diagram=kervaire&data=C2_Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[Cnu_Csigma](plot.html?diagram=kervaire&data=Cnu_Csigma)&nbsp;&nbsp;&nbsp;
+[C2_Cnu](plot.html?diagram=kervaire&data=C2_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Csigma](plot.html?diagram=kervaire&data=C2_Csigma)&nbsp;&nbsp;&nbsp;
+[Ceta_Csigma](plot.html?diagram=kervaire&data=Ceta_Csigma)&nbsp;&nbsp;&nbsp;
 
-[CW_2_eta_theta5sq](plot.html?diagram=kervaire&data=CW_2_eta_theta5sq)<span class="tab"> 
-[CW_theta5sq_eta_2](plot.html?diagram=kervaire&data=CW_theta5sq_eta_2)<span class="tab"> 
-[CW_2sigma_sigma](plot.html?diagram=kervaire&data=CW_2sigma_sigma)<span class="tab"> 
-[CW_etasigma_2_eta_nu](plot.html?diagram=kervaire&data=CW_etasigma_2_eta_nu)<span class="tab"> 
-[CW_etasigma_2_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_etasigma_2_eta_nu_sigma)<span class="tab"> 
-[CW_nu_eta_2_etasigma](plot.html?diagram=kervaire&data=CW_nu_eta_2_etasigma)<span class="tab"> 
-[CW_sigma_2sigma](plot.html?diagram=kervaire&data=CW_sigma_2sigma)<span class="tab"> 
-[CW_sigma_nu_eta_2_etasigma](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2_etasigma)<span class="tab"> 
+[CW_2_eta_theta5sq](plot.html?diagram=kervaire&data=CW_2_eta_theta5sq)&nbsp;&nbsp;&nbsp;
+[CW_theta5sq_eta_2](plot.html?diagram=kervaire&data=CW_theta5sq_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_2sigma_sigma](plot.html?diagram=kervaire&data=CW_2sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_etasigma_2_eta_nu](plot.html?diagram=kervaire&data=CW_etasigma_2_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_etasigma_2_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_etasigma_2_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_2_etasigma](plot.html?diagram=kervaire&data=CW_nu_eta_2_etasigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_2sigma](plot.html?diagram=kervaire&data=CW_sigma_2sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta_2_etasigma](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2_etasigma)&nbsp;&nbsp;&nbsp;
 
-[C2nu](plot.html?diagram=kervaire&data=C2nu)<span class="tab"> 
-[C2sigma](plot.html?diagram=kervaire&data=C2sigma)<span class="tab"> 
-[Cetasigma](plot.html?diagram=kervaire&data=Cetasigma)<span class="tab"> 
-[Ctheta5sq](plot.html?diagram=kervaire&data=Ctheta5sq)<span class="tab"> 
-[C4](plot.html?diagram=kervaire&data=C4)<span class="tab"> 
-[C8](plot.html?diagram=kervaire&data=C8)<span class="tab"> 
-[Cetasq](plot.html?diagram=kervaire&data=Cetasq)<span class="tab"> 
-[Cetacube](plot.html?diagram=kervaire&data=Cetacube)<span class="tab"> 
-[Ceta4](plot.html?diagram=kervaire&data=Ceta4)<span class="tab"> 
-[Ceta5](plot.html?diagram=kervaire&data=Ceta5)<span class="tab"> 
-[Ckappa](plot.html?diagram=kervaire&data=Ckappa)<span class="tab"> 
-[Cg](plot.html?diagram=kervaire&data=Cg)<span class="tab"> 
+[C2nu](plot.html?diagram=kervaire&data=C2nu)&nbsp;&nbsp;&nbsp;
+[C2sigma](plot.html?diagram=kervaire&data=C2sigma)&nbsp;&nbsp;&nbsp;
+[Cetasigma](plot.html?diagram=kervaire&data=Cetasigma)&nbsp;&nbsp;&nbsp;
+[Ctheta5sq](plot.html?diagram=kervaire&data=Ctheta5sq)&nbsp;&nbsp;&nbsp;
+[C4](plot.html?diagram=kervaire&data=C4)&nbsp;&nbsp;&nbsp;
+[C8](plot.html?diagram=kervaire&data=C8)&nbsp;&nbsp;&nbsp;
+[Cetasq](plot.html?diagram=kervaire&data=Cetasq)&nbsp;&nbsp;&nbsp;
+[Cetacube](plot.html?diagram=kervaire&data=Cetacube)&nbsp;&nbsp;&nbsp;
+[Ceta4](plot.html?diagram=kervaire&data=Ceta4)&nbsp;&nbsp;&nbsp;
+[Ceta5](plot.html?diagram=kervaire&data=Ceta5)&nbsp;&nbsp;&nbsp;
+[Ckappa](plot.html?diagram=kervaire&data=Ckappa)&nbsp;&nbsp;&nbsp;
+[Cg](plot.html?diagram=kervaire&data=Cg)&nbsp;&nbsp;&nbsp;
 
-[CW_2_V_eta](plot.html?diagram=kervaire&data=CW_2_V_eta)<span class="tab"> 
-[CW_eta_V_nu](plot.html?diagram=kervaire&data=CW_eta_V_nu)<span class="tab"> 
-[CW_nu_V_sigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma)<span class="tab"> 
-[CW_2_V_nu](plot.html?diagram=kervaire&data=CW_2_V_nu)<span class="tab"> 
-[CW_2_V_sigma](plot.html?diagram=kervaire&data=CW_2_V_sigma)<span class="tab"> 
-[CW_eta_V_sigma](plot.html?diagram=kervaire&data=CW_eta_V_sigma)<span class="tab"> 
-[CW_2_A_eta](plot.html?diagram=kervaire&data=CW_2_A_eta)<span class="tab"> 
-[CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_A_nu)<span class="tab"> 
-[CW_nu_A_sigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma)<span class="tab"> 
-[CW_2_A_nu](plot.html?diagram=kervaire&data=CW_2_A_nu)<span class="tab"> 
-[CW_2_A_sigma](plot.html?diagram=kervaire&data=CW_2_A_sigma)<span class="tab"> 
-[CW_eta_A_sigma](plot.html?diagram=kervaire&data=CW_eta_A_sigma)<span class="tab"> 
-[CW_2_eta_V_eta](plot.html?diagram=kervaire&data=CW_2_eta_V_eta)<span class="tab"> 
-[CW_eta_2_A_eta](plot.html?diagram=kervaire&data=CW_eta_2_A_eta)<span class="tab"> 
-[CW_eta_nu_V_nu](plot.html?diagram=kervaire&data=CW_eta_nu_V_nu)<span class="tab"> 
-[CW_nu_eta_A_nu](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu)<span class="tab"> 
-[CW_nu_sigma_V_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_V_sigma)<span class="tab"> 
-[CW_sigma_nu_A_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma)<span class="tab"> 
+[CW_2_V_eta](plot.html?diagram=kervaire&data=CW_2_V_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu](plot.html?diagram=kervaire&data=CW_eta_V_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_V_sigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_V_nu](plot.html?diagram=kervaire&data=CW_2_V_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_V_sigma](plot.html?diagram=kervaire&data=CW_2_V_sigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_sigma](plot.html?diagram=kervaire&data=CW_eta_V_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta](plot.html?diagram=kervaire&data=CW_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_A_sigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_A_nu](plot.html?diagram=kervaire&data=CW_2_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_A_sigma](plot.html?diagram=kervaire&data=CW_2_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_sigma](plot.html?diagram=kervaire&data=CW_eta_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_V_eta](plot.html?diagram=kervaire&data=CW_2_eta_V_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_A_eta](plot.html?diagram=kervaire&data=CW_eta_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_V_nu](plot.html?diagram=kervaire&data=CW_eta_nu_V_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_A_nu](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma_V_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_V_sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_A_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma)&nbsp;&nbsp;&nbsp;
 
-[Joker](plot.html?diagram=kervaire&data=Joker)<span class="tab"> 
-[CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
+[Joker](plot.html?diagram=kervaire&data=Joker)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
 
-[Fphi4](plot.html?diagram=kervaire&data=Fphi4)<span class="tab"> 
-[Fphi6](plot.html?diagram=kervaire&data=Fphi6)<span class="tab"> 
-[Fphi8](plot.html?diagram=kervaire&data=Fphi8)<span class="tab"> 
-[Fphi10](plot.html?diagram=kervaire&data=Fphi10)<span class="tab"> 
-[Fphi12](plot.html?diagram=kervaire&data=Fphi12)<span class="tab"> 
-[Fphi14](plot.html?diagram=kervaire&data=Fphi14)<span class="tab"> 
-[Fphi16](plot.html?diagram=kervaire&data=Fphi16)<span class="tab"> 
-[Fphi](plot.html?diagram=kervaire&data=Fphi)<span class="tab"> 
+[Fphi4](plot.html?diagram=kervaire&data=Fphi4)&nbsp;&nbsp;&nbsp;
+[Fphi6](plot.html?diagram=kervaire&data=Fphi6)&nbsp;&nbsp;&nbsp;
+[Fphi8](plot.html?diagram=kervaire&data=Fphi8)&nbsp;&nbsp;&nbsp;
+[Fphi10](plot.html?diagram=kervaire&data=Fphi10)&nbsp;&nbsp;&nbsp;
+[Fphi12](plot.html?diagram=kervaire&data=Fphi12)&nbsp;&nbsp;&nbsp;
+[Fphi14](plot.html?diagram=kervaire&data=Fphi14)&nbsp;&nbsp;&nbsp;
+[Fphi16](plot.html?diagram=kervaire&data=Fphi16)&nbsp;&nbsp;&nbsp;
+[Fphi](plot.html?diagram=kervaire&data=Fphi)&nbsp;&nbsp;&nbsp;
 
-[RP3_6](plot.html?diagram=kervaire&data=RP3_6)<span class="tab"> 
-[RP1_4](plot.html?diagram=kervaire&data=RP1_4)<span class="tab"> 
-[RP1_6](plot.html?diagram=kervaire&data=RP1_6)<span class="tab"> 
-[RP1_8](plot.html?diagram=kervaire&data=RP1_8)<span class="tab"> 
-[RP1_10](plot.html?diagram=kervaire&data=RP1_10)<span class="tab"> 
-[RP1_12](plot.html?diagram=kervaire&data=RP1_12)<span class="tab"> 
-[RP1_14](plot.html?diagram=kervaire&data=RP1_14)<span class="tab"> 
-[RP1_16](plot.html?diagram=kervaire&data=RP1_16)<span class="tab"> 
-[RP1_18](plot.html?diagram=kervaire&data=RP1_18)<span class="tab"> 
-[RP1_20](plot.html?diagram=kervaire&data=RP1_20)<span class="tab"> 
-[RP1_22](plot.html?diagram=kervaire&data=RP1_22)<span class="tab"> 
-[RP1_24](plot.html?diagram=kervaire&data=RP1_24)<span class="tab"> 
-[RP1_26](plot.html?diagram=kervaire&data=RP1_26)<span class="tab"> 
-[RP1_28](plot.html?diagram=kervaire&data=RP1_28)<span class="tab"> 
-[RP1_30](plot.html?diagram=kervaire&data=RP1_30)<span class="tab"> 
-[RP1_32](plot.html?diagram=kervaire&data=RP1_32)<span class="tab"> 
-[RP1_34](plot.html?diagram=kervaire&data=RP1_34)<span class="tab"> 
-[RP1_36](plot.html?diagram=kervaire&data=RP1_36)<span class="tab"> 
-[RP1_38](plot.html?diagram=kervaire&data=RP1_38)<span class="tab"> 
-[RP1_40](plot.html?diagram=kervaire&data=RP1_40)<span class="tab"> 
-[RP1_42](plot.html?diagram=kervaire&data=RP1_42)<span class="tab"> 
-[RP1_44](plot.html?diagram=kervaire&data=RP1_44)<span class="tab"> 
-[RP1_46](plot.html?diagram=kervaire&data=RP1_46)<span class="tab"> 
-[RP1_48](plot.html?diagram=kervaire&data=RP1_48)<span class="tab"> 
-[RP1_50](plot.html?diagram=kervaire&data=RP1_50)<span class="tab"> 
-[RP1_52](plot.html?diagram=kervaire&data=RP1_52)<span class="tab"> 
-[RP1_54](plot.html?diagram=kervaire&data=RP1_54)<span class="tab"> 
-[RP1_56](plot.html?diagram=kervaire&data=RP1_56)<span class="tab"> 
-[RP1_58](plot.html?diagram=kervaire&data=RP1_58)<span class="tab"> 
-[RP1_60](plot.html?diagram=kervaire&data=RP1_60)<span class="tab"> 
-[RP1_62](plot.html?diagram=kervaire&data=RP1_62)<span class="tab"> 
-[RP1_64](plot.html?diagram=kervaire&data=RP1_64)<span class="tab"> 
-[RP1_66](plot.html?diagram=kervaire&data=RP1_66)<span class="tab"> 
-[RP1_68](plot.html?diagram=kervaire&data=RP1_68)<span class="tab"> 
-[RP1_70](plot.html?diagram=kervaire&data=RP1_70)<span class="tab"> 
-[RP1_72](plot.html?diagram=kervaire&data=RP1_72)<span class="tab"> 
-[RP1_74](plot.html?diagram=kervaire&data=RP1_74)<span class="tab"> 
-[RP1_76](plot.html?diagram=kervaire&data=RP1_76)<span class="tab"> 
-[RP1_78](plot.html?diagram=kervaire&data=RP1_78)<span class="tab"> 
-[RP1_80](plot.html?diagram=kervaire&data=RP1_80)<span class="tab"> 
-[RP1_82](plot.html?diagram=kervaire&data=RP1_82)<span class="tab"> 
-[RP1_84](plot.html?diagram=kervaire&data=RP1_84)<span class="tab"> 
-[RP1_86](plot.html?diagram=kervaire&data=RP1_86)<span class="tab"> 
-[RP1_88](plot.html?diagram=kervaire&data=RP1_88)<span class="tab"> 
-[RP1_90](plot.html?diagram=kervaire&data=RP1_90)<span class="tab"> 
-[RP1_92](plot.html?diagram=kervaire&data=RP1_92)<span class="tab"> 
-[RP1_94](plot.html?diagram=kervaire&data=RP1_94)<span class="tab"> 
-[RP1_96](plot.html?diagram=kervaire&data=RP1_96)<span class="tab"> 
-[RP1_98](plot.html?diagram=kervaire&data=RP1_98)<span class="tab"> 
-[RP1_100](plot.html?diagram=kervaire&data=RP1_100)<span class="tab"> 
-[RP1_102](plot.html?diagram=kervaire&data=RP1_102)<span class="tab"> 
-[RP1_104](plot.html?diagram=kervaire&data=RP1_104)<span class="tab"> 
-[RP1_106](plot.html?diagram=kervaire&data=RP1_106)<span class="tab"> 
-[RP1_108](plot.html?diagram=kervaire&data=RP1_108)<span class="tab"> 
-[RP1_110](plot.html?diagram=kervaire&data=RP1_110)<span class="tab"> 
-[RP1_112](plot.html?diagram=kervaire&data=RP1_112)<span class="tab"> 
-[RP1_114](plot.html?diagram=kervaire&data=RP1_114)<span class="tab"> 
-[RP1_116](plot.html?diagram=kervaire&data=RP1_116)<span class="tab"> 
-[RP1_256](plot.html?diagram=kervaire&data=RP1_256)<span class="tab"> 
-[RP3_256](plot.html?diagram=kervaire&data=RP3_256)<span class="tab"> 
-[RP5_256](plot.html?diagram=kervaire&data=RP5_256)<span class="tab"> 
-[RP7_256](plot.html?diagram=kervaire&data=RP7_256)<span class="tab"> 
-[RP9_256](plot.html?diagram=kervaire&data=RP9_256)<span class="tab"> 
-[RP11_256](plot.html?diagram=kervaire&data=RP11_256)<span class="tab"> 
-[RP13_256](plot.html?diagram=kervaire&data=RP13_256)<span class="tab"> 
-[RP15_256](plot.html?diagram=kervaire&data=RP15_256)<span class="tab"> 
-[RP17_256](plot.html?diagram=kervaire&data=RP17_256)<span class="tab"> 
-[RP19_256](plot.html?diagram=kervaire&data=RP19_256)<span class="tab"> 
-[RP21_256](plot.html?diagram=kervaire&data=RP21_256)<span class="tab"> 
-[RP23_256](plot.html?diagram=kervaire&data=RP23_256)<span class="tab"> 
-[RP25_256](plot.html?diagram=kervaire&data=RP25_256)<span class="tab"> 
-[RP27_256](plot.html?diagram=kervaire&data=RP27_256)<span class="tab"> 
-[RP29_256](plot.html?diagram=kervaire&data=RP29_256)<span class="tab"> 
-[RP31_256](plot.html?diagram=kervaire&data=RP31_256)<span class="tab"> 
-[RP33_256](plot.html?diagram=kervaire&data=RP33_256)<span class="tab"> 
-[RP35_256](plot.html?diagram=kervaire&data=RP35_256)<span class="tab"> 
-[RP37_256](plot.html?diagram=kervaire&data=RP37_256)<span class="tab"> 
-[RP39_256](plot.html?diagram=kervaire&data=RP39_256)<span class="tab"> 
-[RP41_256](plot.html?diagram=kervaire&data=RP41_256)<span class="tab"> 
-[RP43_256](plot.html?diagram=kervaire&data=RP43_256)<span class="tab"> 
-[RP45_256](plot.html?diagram=kervaire&data=RP45_256)<span class="tab"> 
-[RP47_256](plot.html?diagram=kervaire&data=RP47_256)<span class="tab"> 
-[RP49_256](plot.html?diagram=kervaire&data=RP49_256)<span class="tab"> 
-[RP51_256](plot.html?diagram=kervaire&data=RP51_256)<span class="tab"> 
-[RP53_256](plot.html?diagram=kervaire&data=RP53_256)<span class="tab"> 
-[RP55_256](plot.html?diagram=kervaire&data=RP55_256)<span class="tab"> 
-[RP57_256](plot.html?diagram=kervaire&data=RP57_256)<span class="tab"> 
-[RP59_256](plot.html?diagram=kervaire&data=RP59_256)<span class="tab"> 
-[RP61_256](plot.html?diagram=kervaire&data=RP61_256)<span class="tab"> 
-[RP63_256](plot.html?diagram=kervaire&data=RP63_256)<span class="tab"> 
-[RP65_256](plot.html?diagram=kervaire&data=RP65_256)<span class="tab"> 
-[RP67_256](plot.html?diagram=kervaire&data=RP67_256)<span class="tab"> 
-[RP69_256](plot.html?diagram=kervaire&data=RP69_256)<span class="tab"> 
-[RP71_256](plot.html?diagram=kervaire&data=RP71_256)<span class="tab"> 
-[RP73_256](plot.html?diagram=kervaire&data=RP73_256)<span class="tab"> 
-[RP75_256](plot.html?diagram=kervaire&data=RP75_256)<span class="tab"> 
-[RP77_256](plot.html?diagram=kervaire&data=RP77_256)<span class="tab"> 
-[RP79_256](plot.html?diagram=kervaire&data=RP79_256)<span class="tab"> 
-[RP81_256](plot.html?diagram=kervaire&data=RP81_256)<span class="tab"> 
-[RP83_256](plot.html?diagram=kervaire&data=RP83_256)<span class="tab"> 
-[RP85_256](plot.html?diagram=kervaire&data=RP85_256)<span class="tab"> 
-[RP87_256](plot.html?diagram=kervaire&data=RP87_256)<span class="tab"> 
-[RP89_256](plot.html?diagram=kervaire&data=RP89_256)<span class="tab"> 
-[RP91_256](plot.html?diagram=kervaire&data=RP91_256)<span class="tab"> 
-[RP93_256](plot.html?diagram=kervaire&data=RP93_256)<span class="tab"> 
-[RP95_256](plot.html?diagram=kervaire&data=RP95_256)<span class="tab"> 
-[RP97_256](plot.html?diagram=kervaire&data=RP97_256)<span class="tab"> 
-[RP99_256](plot.html?diagram=kervaire&data=RP99_256)<span class="tab"> 
-[RP101_256](plot.html?diagram=kervaire&data=RP101_256)<span class="tab"> 
-[RP103_256](plot.html?diagram=kervaire&data=RP103_256)<span class="tab"> 
-[RP105_256](plot.html?diagram=kervaire&data=RP105_256)<span class="tab"> 
-[RP107_256](plot.html?diagram=kervaire&data=RP107_256)<span class="tab"> 
-[RP109_256](plot.html?diagram=kervaire&data=RP109_256)<span class="tab"> 
-[RP111_256](plot.html?diagram=kervaire&data=RP111_256)<span class="tab"> 
-[RP113_256](plot.html?diagram=kervaire&data=RP113_256)<span class="tab"> 
-[RP115_256](plot.html?diagram=kervaire&data=RP115_256)<span class="tab"> 
-[RP117_256](plot.html?diagram=kervaire&data=RP117_256)<span class="tab"> 
+[RP3_6](plot.html?diagram=kervaire&data=RP3_6)&nbsp;&nbsp;&nbsp;
+[RP1_4](plot.html?diagram=kervaire&data=RP1_4)&nbsp;&nbsp;&nbsp;
+[RP1_6](plot.html?diagram=kervaire&data=RP1_6)&nbsp;&nbsp;&nbsp;
+[RP1_8](plot.html?diagram=kervaire&data=RP1_8)&nbsp;&nbsp;&nbsp;
+[RP1_10](plot.html?diagram=kervaire&data=RP1_10)&nbsp;&nbsp;&nbsp;
+[RP1_12](plot.html?diagram=kervaire&data=RP1_12)&nbsp;&nbsp;&nbsp;
+[RP1_14](plot.html?diagram=kervaire&data=RP1_14)&nbsp;&nbsp;&nbsp;
+[RP1_16](plot.html?diagram=kervaire&data=RP1_16)&nbsp;&nbsp;&nbsp;
+[RP1_18](plot.html?diagram=kervaire&data=RP1_18)&nbsp;&nbsp;&nbsp;
+[RP1_20](plot.html?diagram=kervaire&data=RP1_20)&nbsp;&nbsp;&nbsp;
+[RP1_22](plot.html?diagram=kervaire&data=RP1_22)&nbsp;&nbsp;&nbsp;
+[RP1_24](plot.html?diagram=kervaire&data=RP1_24)&nbsp;&nbsp;&nbsp;
+[RP1_26](plot.html?diagram=kervaire&data=RP1_26)&nbsp;&nbsp;&nbsp;
+[RP1_28](plot.html?diagram=kervaire&data=RP1_28)&nbsp;&nbsp;&nbsp;
+[RP1_30](plot.html?diagram=kervaire&data=RP1_30)&nbsp;&nbsp;&nbsp;
+[RP1_32](plot.html?diagram=kervaire&data=RP1_32)&nbsp;&nbsp;&nbsp;
+[RP1_34](plot.html?diagram=kervaire&data=RP1_34)&nbsp;&nbsp;&nbsp;
+[RP1_36](plot.html?diagram=kervaire&data=RP1_36)&nbsp;&nbsp;&nbsp;
+[RP1_38](plot.html?diagram=kervaire&data=RP1_38)&nbsp;&nbsp;&nbsp;
+[RP1_40](plot.html?diagram=kervaire&data=RP1_40)&nbsp;&nbsp;&nbsp;
+[RP1_42](plot.html?diagram=kervaire&data=RP1_42)&nbsp;&nbsp;&nbsp;
+[RP1_44](plot.html?diagram=kervaire&data=RP1_44)&nbsp;&nbsp;&nbsp;
+[RP1_46](plot.html?diagram=kervaire&data=RP1_46)&nbsp;&nbsp;&nbsp;
+[RP1_48](plot.html?diagram=kervaire&data=RP1_48)&nbsp;&nbsp;&nbsp;
+[RP1_50](plot.html?diagram=kervaire&data=RP1_50)&nbsp;&nbsp;&nbsp;
+[RP1_52](plot.html?diagram=kervaire&data=RP1_52)&nbsp;&nbsp;&nbsp;
+[RP1_54](plot.html?diagram=kervaire&data=RP1_54)&nbsp;&nbsp;&nbsp;
+[RP1_56](plot.html?diagram=kervaire&data=RP1_56)&nbsp;&nbsp;&nbsp;
+[RP1_58](plot.html?diagram=kervaire&data=RP1_58)&nbsp;&nbsp;&nbsp;
+[RP1_60](plot.html?diagram=kervaire&data=RP1_60)&nbsp;&nbsp;&nbsp;
+[RP1_62](plot.html?diagram=kervaire&data=RP1_62)&nbsp;&nbsp;&nbsp;
+[RP1_64](plot.html?diagram=kervaire&data=RP1_64)&nbsp;&nbsp;&nbsp;
+[RP1_66](plot.html?diagram=kervaire&data=RP1_66)&nbsp;&nbsp;&nbsp;
+[RP1_68](plot.html?diagram=kervaire&data=RP1_68)&nbsp;&nbsp;&nbsp;
+[RP1_70](plot.html?diagram=kervaire&data=RP1_70)&nbsp;&nbsp;&nbsp;
+[RP1_72](plot.html?diagram=kervaire&data=RP1_72)&nbsp;&nbsp;&nbsp;
+[RP1_74](plot.html?diagram=kervaire&data=RP1_74)&nbsp;&nbsp;&nbsp;
+[RP1_76](plot.html?diagram=kervaire&data=RP1_76)&nbsp;&nbsp;&nbsp;
+[RP1_78](plot.html?diagram=kervaire&data=RP1_78)&nbsp;&nbsp;&nbsp;
+[RP1_80](plot.html?diagram=kervaire&data=RP1_80)&nbsp;&nbsp;&nbsp;
+[RP1_82](plot.html?diagram=kervaire&data=RP1_82)&nbsp;&nbsp;&nbsp;
+[RP1_84](plot.html?diagram=kervaire&data=RP1_84)&nbsp;&nbsp;&nbsp;
+[RP1_86](plot.html?diagram=kervaire&data=RP1_86)&nbsp;&nbsp;&nbsp;
+[RP1_88](plot.html?diagram=kervaire&data=RP1_88)&nbsp;&nbsp;&nbsp;
+[RP1_90](plot.html?diagram=kervaire&data=RP1_90)&nbsp;&nbsp;&nbsp;
+[RP1_92](plot.html?diagram=kervaire&data=RP1_92)&nbsp;&nbsp;&nbsp;
+[RP1_94](plot.html?diagram=kervaire&data=RP1_94)&nbsp;&nbsp;&nbsp;
+[RP1_96](plot.html?diagram=kervaire&data=RP1_96)&nbsp;&nbsp;&nbsp;
+[RP1_98](plot.html?diagram=kervaire&data=RP1_98)&nbsp;&nbsp;&nbsp;
+[RP1_100](plot.html?diagram=kervaire&data=RP1_100)&nbsp;&nbsp;&nbsp;
+[RP1_102](plot.html?diagram=kervaire&data=RP1_102)&nbsp;&nbsp;&nbsp;
+[RP1_104](plot.html?diagram=kervaire&data=RP1_104)&nbsp;&nbsp;&nbsp;
+[RP1_106](plot.html?diagram=kervaire&data=RP1_106)&nbsp;&nbsp;&nbsp;
+[RP1_108](plot.html?diagram=kervaire&data=RP1_108)&nbsp;&nbsp;&nbsp;
+[RP1_110](plot.html?diagram=kervaire&data=RP1_110)&nbsp;&nbsp;&nbsp;
+[RP1_112](plot.html?diagram=kervaire&data=RP1_112)&nbsp;&nbsp;&nbsp;
+[RP1_114](plot.html?diagram=kervaire&data=RP1_114)&nbsp;&nbsp;&nbsp;
+[RP1_116](plot.html?diagram=kervaire&data=RP1_116)&nbsp;&nbsp;&nbsp;
+[RP1_256](plot.html?diagram=kervaire&data=RP1_256)&nbsp;&nbsp;&nbsp;
+[RP3_256](plot.html?diagram=kervaire&data=RP3_256)&nbsp;&nbsp;&nbsp;
+[RP5_256](plot.html?diagram=kervaire&data=RP5_256)&nbsp;&nbsp;&nbsp;
+[RP7_256](plot.html?diagram=kervaire&data=RP7_256)&nbsp;&nbsp;&nbsp;
+[RP9_256](plot.html?diagram=kervaire&data=RP9_256)&nbsp;&nbsp;&nbsp;
+[RP11_256](plot.html?diagram=kervaire&data=RP11_256)&nbsp;&nbsp;&nbsp;
+[RP13_256](plot.html?diagram=kervaire&data=RP13_256)&nbsp;&nbsp;&nbsp;
+[RP15_256](plot.html?diagram=kervaire&data=RP15_256)&nbsp;&nbsp;&nbsp;
+[RP17_256](plot.html?diagram=kervaire&data=RP17_256)&nbsp;&nbsp;&nbsp;
+[RP19_256](plot.html?diagram=kervaire&data=RP19_256)&nbsp;&nbsp;&nbsp;
+[RP21_256](plot.html?diagram=kervaire&data=RP21_256)&nbsp;&nbsp;&nbsp;
+[RP23_256](plot.html?diagram=kervaire&data=RP23_256)&nbsp;&nbsp;&nbsp;
+[RP25_256](plot.html?diagram=kervaire&data=RP25_256)&nbsp;&nbsp;&nbsp;
+[RP27_256](plot.html?diagram=kervaire&data=RP27_256)&nbsp;&nbsp;&nbsp;
+[RP29_256](plot.html?diagram=kervaire&data=RP29_256)&nbsp;&nbsp;&nbsp;
+[RP31_256](plot.html?diagram=kervaire&data=RP31_256)&nbsp;&nbsp;&nbsp;
+[RP33_256](plot.html?diagram=kervaire&data=RP33_256)&nbsp;&nbsp;&nbsp;
+[RP35_256](plot.html?diagram=kervaire&data=RP35_256)&nbsp;&nbsp;&nbsp;
+[RP37_256](plot.html?diagram=kervaire&data=RP37_256)&nbsp;&nbsp;&nbsp;
+[RP39_256](plot.html?diagram=kervaire&data=RP39_256)&nbsp;&nbsp;&nbsp;
+[RP41_256](plot.html?diagram=kervaire&data=RP41_256)&nbsp;&nbsp;&nbsp;
+[RP43_256](plot.html?diagram=kervaire&data=RP43_256)&nbsp;&nbsp;&nbsp;
+[RP45_256](plot.html?diagram=kervaire&data=RP45_256)&nbsp;&nbsp;&nbsp;
+[RP47_256](plot.html?diagram=kervaire&data=RP47_256)&nbsp;&nbsp;&nbsp;
+[RP49_256](plot.html?diagram=kervaire&data=RP49_256)&nbsp;&nbsp;&nbsp;
+[RP51_256](plot.html?diagram=kervaire&data=RP51_256)&nbsp;&nbsp;&nbsp;
+[RP53_256](plot.html?diagram=kervaire&data=RP53_256)&nbsp;&nbsp;&nbsp;
+[RP55_256](plot.html?diagram=kervaire&data=RP55_256)&nbsp;&nbsp;&nbsp;
+[RP57_256](plot.html?diagram=kervaire&data=RP57_256)&nbsp;&nbsp;&nbsp;
+[RP59_256](plot.html?diagram=kervaire&data=RP59_256)&nbsp;&nbsp;&nbsp;
+[RP61_256](plot.html?diagram=kervaire&data=RP61_256)&nbsp;&nbsp;&nbsp;
+[RP63_256](plot.html?diagram=kervaire&data=RP63_256)&nbsp;&nbsp;&nbsp;
+[RP65_256](plot.html?diagram=kervaire&data=RP65_256)&nbsp;&nbsp;&nbsp;
+[RP67_256](plot.html?diagram=kervaire&data=RP67_256)&nbsp;&nbsp;&nbsp;
+[RP69_256](plot.html?diagram=kervaire&data=RP69_256)&nbsp;&nbsp;&nbsp;
+[RP71_256](plot.html?diagram=kervaire&data=RP71_256)&nbsp;&nbsp;&nbsp;
+[RP73_256](plot.html?diagram=kervaire&data=RP73_256)&nbsp;&nbsp;&nbsp;
+[RP75_256](plot.html?diagram=kervaire&data=RP75_256)&nbsp;&nbsp;&nbsp;
+[RP77_256](plot.html?diagram=kervaire&data=RP77_256)&nbsp;&nbsp;&nbsp;
+[RP79_256](plot.html?diagram=kervaire&data=RP79_256)&nbsp;&nbsp;&nbsp;
+[RP81_256](plot.html?diagram=kervaire&data=RP81_256)&nbsp;&nbsp;&nbsp;
+[RP83_256](plot.html?diagram=kervaire&data=RP83_256)&nbsp;&nbsp;&nbsp;
+[RP85_256](plot.html?diagram=kervaire&data=RP85_256)&nbsp;&nbsp;&nbsp;
+[RP87_256](plot.html?diagram=kervaire&data=RP87_256)&nbsp;&nbsp;&nbsp;
+[RP89_256](plot.html?diagram=kervaire&data=RP89_256)&nbsp;&nbsp;&nbsp;
+[RP91_256](plot.html?diagram=kervaire&data=RP91_256)&nbsp;&nbsp;&nbsp;
+[RP93_256](plot.html?diagram=kervaire&data=RP93_256)&nbsp;&nbsp;&nbsp;
+[RP95_256](plot.html?diagram=kervaire&data=RP95_256)&nbsp;&nbsp;&nbsp;
+[RP97_256](plot.html?diagram=kervaire&data=RP97_256)&nbsp;&nbsp;&nbsp;
+[RP99_256](plot.html?diagram=kervaire&data=RP99_256)&nbsp;&nbsp;&nbsp;
+[RP101_256](plot.html?diagram=kervaire&data=RP101_256)&nbsp;&nbsp;&nbsp;
+[RP103_256](plot.html?diagram=kervaire&data=RP103_256)&nbsp;&nbsp;&nbsp;
+[RP105_256](plot.html?diagram=kervaire&data=RP105_256)&nbsp;&nbsp;&nbsp;
+[RP107_256](plot.html?diagram=kervaire&data=RP107_256)&nbsp;&nbsp;&nbsp;
+[RP109_256](plot.html?diagram=kervaire&data=RP109_256)&nbsp;&nbsp;&nbsp;
+[RP111_256](plot.html?diagram=kervaire&data=RP111_256)&nbsp;&nbsp;&nbsp;
+[RP113_256](plot.html?diagram=kervaire&data=RP113_256)&nbsp;&nbsp;&nbsp;
+[RP115_256](plot.html?diagram=kervaire&data=RP115_256)&nbsp;&nbsp;&nbsp;
+[RP117_256](plot.html?diagram=kervaire&data=RP117_256)&nbsp;&nbsp;&nbsp;
 
-[CP1_4](plot.html?diagram=kervaire&data=CP1_4)<span class="tab"> 
-[CP1_128](plot.html?diagram=kervaire&data=CP1_128)<span class="tab"> 
+[CP1_4](plot.html?diagram=kervaire&data=CP1_4)&nbsp;&nbsp;&nbsp;
+[CP1_128](plot.html?diagram=kervaire&data=CP1_128)&nbsp;&nbsp;&nbsp;
 
-[tmf_C2](plot.html?diagram=kervaire&data=tmf_C2)<span class="tab"> 
-[tmf_Ceta](plot.html?diagram=kervaire&data=tmf_Ceta)<span class="tab"> 
-[tmf_Cnu](plot.html?diagram=kervaire&data=tmf_Cnu)<span class="tab"> 
-[tmf_C2_Ceta](plot.html?diagram=kervaire&data=tmf_C2_Ceta)<span class="tab"> 
-[tmf_C2_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Cnu)<span class="tab"> 
-[tmf_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_Ceta_Cnu)<span class="tab"> 
-[tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu)<span class="tab"> 
-[tmf_RP1_256](plot.html?diagram=kervaire&data=tmf_RP1_256)<span class="tab"> 
+[tmf_C2](plot.html?diagram=kervaire&data=tmf_C2)&nbsp;&nbsp;&nbsp;
+[tmf_Ceta](plot.html?diagram=kervaire&data=tmf_Ceta)&nbsp;&nbsp;&nbsp;
+[tmf_Cnu](plot.html?diagram=kervaire&data=tmf_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Ceta](plot.html?diagram=kervaire&data=tmf_C2_Ceta)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_RP1_256](plot.html?diagram=kervaire&data=tmf_RP1_256)&nbsp;&nbsp;&nbsp;
 
 ### Cofiber Sequences
-[S0__C2__S0](plot.html?diagram=kervaire&data=S0__C2__S0)<span class="tab"> 
-[S0__Ceta__S0](plot.html?diagram=kervaire&data=S0__Ceta__S0)<span class="tab"> 
-[S0__Cnu__S0](plot.html?diagram=kervaire&data=S0__Cnu__S0)<span class="tab"> 
-[S0__Csigma__S0](plot.html?diagram=kervaire&data=S0__Csigma__S0)<span class="tab"> 
+[S0__C2__S0](plot.html?diagram=kervaire&data=S0__C2__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ceta__S0](plot.html?diagram=kervaire&data=S0__Ceta__S0)&nbsp;&nbsp;&nbsp;
+[S0__Cnu__S0](plot.html?diagram=kervaire&data=S0__Cnu__S0)&nbsp;&nbsp;&nbsp;
+[S0__Csigma__S0](plot.html?diagram=kervaire&data=S0__Csigma__S0)&nbsp;&nbsp;&nbsp;
 
-[S0__CW_2_eta__Ceta](plot.html?diagram=kervaire&data=S0__CW_2_eta__Ceta)<span class="tab"> 
-[C2__CW_2_eta__S0](plot.html?diagram=kervaire&data=C2__CW_2_eta__S0)<span class="tab"> 
-[S0__CW_eta_nu__Cnu](plot.html?diagram=kervaire&data=S0__CW_eta_nu__Cnu)<span class="tab"> 
-[Ceta__CW_eta_nu__S0](plot.html?diagram=kervaire&data=Ceta__CW_eta_nu__S0)<span class="tab"> 
-[S0__CW_nu_sigma__Csigma](plot.html?diagram=kervaire&data=S0__CW_nu_sigma__Csigma)<span class="tab"> 
-[Cnu__CW_nu_sigma__S0](plot.html?diagram=kervaire&data=Cnu__CW_nu_sigma__S0)<span class="tab"> 
-[S0__CW_eta_2__C2](plot.html?diagram=kervaire&data=S0__CW_eta_2__C2)<span class="tab"> 
-[Ceta__CW_eta_2__S0](plot.html?diagram=kervaire&data=Ceta__CW_eta_2__S0)<span class="tab"> 
-[S0__CW_nu_eta__Ceta](plot.html?diagram=kervaire&data=S0__CW_nu_eta__Ceta)<span class="tab"> 
-[Cnu__CW_nu_eta__S0](plot.html?diagram=kervaire&data=Cnu__CW_nu_eta__S0)<span class="tab"> 
-[S0__CW_sigma_nu__Cnu](plot.html?diagram=kervaire&data=S0__CW_sigma_nu__Cnu)<span class="tab"> 
-[Csigma__CW_sigma_nu__S0](plot.html?diagram=kervaire&data=Csigma__CW_sigma_nu__S0)<span class="tab"> 
-[S0__CW_2_eta_nu__CW_eta_nu](plot.html?diagram=kervaire&data=S0__CW_2_eta_nu__CW_eta_nu)<span class="tab"> 
-[C2__CW_2_eta_nu__Cnu](plot.html?diagram=kervaire&data=C2__CW_2_eta_nu__Cnu)<span class="tab"> 
-[CW_2_eta__CW_2_eta_nu__S0](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_nu__S0)<span class="tab"> 
-[S0__CW_eta_nu_sigma__CW_nu_sigma](plot.html?diagram=kervaire&data=S0__CW_eta_nu_sigma__CW_nu_sigma)<span class="tab"> 
-[Ceta__CW_eta_nu_sigma__Csigma](plot.html?diagram=kervaire&data=Ceta__CW_eta_nu_sigma__Csigma)<span class="tab"> 
-[CW_eta_nu__CW_eta_nu_sigma__S0](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_sigma__S0)<span class="tab"> 
-[S0__CW_nu_eta_2__CW_eta_2](plot.html?diagram=kervaire&data=S0__CW_nu_eta_2__CW_eta_2)<span class="tab"> 
-[Cnu__CW_nu_eta_2__C2](plot.html?diagram=kervaire&data=Cnu__CW_nu_eta_2__C2)<span class="tab"> 
-[CW_nu_eta__CW_nu_eta_2__S0](plot.html?diagram=kervaire&data=CW_nu_eta__CW_nu_eta_2__S0)<span class="tab"> 
-[S0__CW_2_eta_nu_sigma__CW_eta_nu_sigma](plot.html?diagram=kervaire&data=S0__CW_2_eta_nu_sigma__CW_eta_nu_sigma)<span class="tab"> 
-[C2__CW_2_eta_nu_sigma__CW_nu_sigma](plot.html?diagram=kervaire&data=C2__CW_2_eta_nu_sigma__CW_nu_sigma)<span class="tab"> 
-[CW_2_eta__CW_2_eta_nu_sigma__Csigma](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_nu_sigma__Csigma)<span class="tab"> 
-[CW_2_eta_nu__CW_2_eta_nu_sigma__S0](plot.html?diagram=kervaire&data=CW_2_eta_nu__CW_2_eta_nu_sigma__S0)<span class="tab"> 
-[CW_2_eta__CW_2_eta_theta5sq__S0](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_theta5sq__S0)<span class="tab"> 
+[S0__CW_2_eta__Ceta](plot.html?diagram=kervaire&data=S0__CW_2_eta__Ceta)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_eta__S0](plot.html?diagram=kervaire&data=C2__CW_2_eta__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_eta_nu__Cnu](plot.html?diagram=kervaire&data=S0__CW_eta_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_nu__S0](plot.html?diagram=kervaire&data=Ceta__CW_eta_nu__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_nu_sigma__Csigma](plot.html?diagram=kervaire&data=S0__CW_nu_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_sigma__S0](plot.html?diagram=kervaire&data=Cnu__CW_nu_sigma__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_eta_2__C2](plot.html?diagram=kervaire&data=S0__CW_eta_2__C2)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_2__S0](plot.html?diagram=kervaire&data=Ceta__CW_eta_2__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_nu_eta__Ceta](plot.html?diagram=kervaire&data=S0__CW_nu_eta__Ceta)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_eta__S0](plot.html?diagram=kervaire&data=Cnu__CW_nu_eta__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_sigma_nu__Cnu](plot.html?diagram=kervaire&data=S0__CW_sigma_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_sigma_nu__S0](plot.html?diagram=kervaire&data=Csigma__CW_sigma_nu__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_2_eta_nu__CW_eta_nu](plot.html?diagram=kervaire&data=S0__CW_2_eta_nu__CW_eta_nu)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_eta_nu__Cnu](plot.html?diagram=kervaire&data=C2__CW_2_eta_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__CW_2_eta_nu__S0](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_nu__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_eta_nu_sigma__CW_nu_sigma](plot.html?diagram=kervaire&data=S0__CW_eta_nu_sigma__CW_nu_sigma)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_nu_sigma__Csigma](plot.html?diagram=kervaire&data=Ceta__CW_eta_nu_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu__CW_eta_nu_sigma__S0](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_sigma__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_nu_eta_2__CW_eta_2](plot.html?diagram=kervaire&data=S0__CW_nu_eta_2__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_eta_2__C2](plot.html?diagram=kervaire&data=Cnu__CW_nu_eta_2__C2)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta__CW_nu_eta_2__S0](plot.html?diagram=kervaire&data=CW_nu_eta__CW_nu_eta_2__S0)&nbsp;&nbsp;&nbsp;
+[S0__CW_2_eta_nu_sigma__CW_eta_nu_sigma](plot.html?diagram=kervaire&data=S0__CW_2_eta_nu_sigma__CW_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_eta_nu_sigma__CW_nu_sigma](plot.html?diagram=kervaire&data=C2__CW_2_eta_nu_sigma__CW_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__CW_2_eta_nu_sigma__Csigma](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_nu_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_nu__CW_2_eta_nu_sigma__S0](plot.html?diagram=kervaire&data=CW_2_eta_nu__CW_2_eta_nu_sigma__S0)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__CW_2_eta_theta5sq__S0](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_theta5sq__S0)&nbsp;&nbsp;&nbsp;
 
-[S0__C2nu__S0](plot.html?diagram=kervaire&data=S0__C2nu__S0)<span class="tab"> 
-[S0__C2sigma__S0](plot.html?diagram=kervaire&data=S0__C2sigma__S0)<span class="tab"> 
-[S0__Cetasigma__S0](plot.html?diagram=kervaire&data=S0__Cetasigma__S0)<span class="tab"> 
-[S0__Csigmasq__S0](plot.html?diagram=kervaire&data=S0__Csigmasq__S0)<span class="tab"> 
-[S0__Ckappa__S0](plot.html?diagram=kervaire&data=S0__Ckappa__S0)<span class="tab"> 
-[S0__Cg__S0](plot.html?diagram=kervaire&data=S0__Cg__S0)<span class="tab"> 
-[S0__Ceta4__S0](plot.html?diagram=kervaire&data=S0__Ceta4__S0)<span class="tab"> 
-[S0__Ceta5__S0](plot.html?diagram=kervaire&data=S0__Ceta5__S0)<span class="tab"> 
-[S0__Ctheta4__S0](plot.html?diagram=kervaire&data=S0__Ctheta4__S0)<span class="tab"> 
-[S0__Ctheta5__S0](plot.html?diagram=kervaire&data=S0__Ctheta5__S0)<span class="tab"> 
-[S0__Ctheta5sq__S0](plot.html?diagram=kervaire&data=S0__Ctheta5sq__S0)<span class="tab"> 
-[S0__C4__S0](plot.html?diagram=kervaire&data=S0__C4__S0)<span class="tab"> 
-[S0__C8__S0](plot.html?diagram=kervaire&data=S0__C8__S0)<span class="tab"> 
-[S0__Cetasq__S0](plot.html?diagram=kervaire&data=S0__Cetasq__S0)<span class="tab"> 
-[S0__Cetacube__S0](plot.html?diagram=kervaire&data=S0__Cetacube__S0)<span class="tab"> 
-[C2__C2_C2__C2](plot.html?diagram=kervaire&data=C2__C2_C2__C2)<span class="tab"> 
-[C2__C2_Ceta__C2](plot.html?diagram=kervaire&data=C2__C2_Ceta__C2)<span class="tab"> 
+[S0__C2nu__S0](plot.html?diagram=kervaire&data=S0__C2nu__S0)&nbsp;&nbsp;&nbsp;
+[S0__C2sigma__S0](plot.html?diagram=kervaire&data=S0__C2sigma__S0)&nbsp;&nbsp;&nbsp;
+[S0__Cetasigma__S0](plot.html?diagram=kervaire&data=S0__Cetasigma__S0)&nbsp;&nbsp;&nbsp;
+[S0__Csigmasq__S0](plot.html?diagram=kervaire&data=S0__Csigmasq__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ckappa__S0](plot.html?diagram=kervaire&data=S0__Ckappa__S0)&nbsp;&nbsp;&nbsp;
+[S0__Cg__S0](plot.html?diagram=kervaire&data=S0__Cg__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ceta4__S0](plot.html?diagram=kervaire&data=S0__Ceta4__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ceta5__S0](plot.html?diagram=kervaire&data=S0__Ceta5__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ctheta4__S0](plot.html?diagram=kervaire&data=S0__Ctheta4__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ctheta5__S0](plot.html?diagram=kervaire&data=S0__Ctheta5__S0)&nbsp;&nbsp;&nbsp;
+[S0__Ctheta5sq__S0](plot.html?diagram=kervaire&data=S0__Ctheta5sq__S0)&nbsp;&nbsp;&nbsp;
+[S0__C4__S0](plot.html?diagram=kervaire&data=S0__C4__S0)&nbsp;&nbsp;&nbsp;
+[S0__C8__S0](plot.html?diagram=kervaire&data=S0__C8__S0)&nbsp;&nbsp;&nbsp;
+[S0__Cetasq__S0](plot.html?diagram=kervaire&data=S0__Cetasq__S0)&nbsp;&nbsp;&nbsp;
+[S0__Cetacube__S0](plot.html?diagram=kervaire&data=S0__Cetacube__S0)&nbsp;&nbsp;&nbsp;
+[C2__C2_C2__C2](plot.html?diagram=kervaire&data=C2__C2_C2__C2)&nbsp;&nbsp;&nbsp;
+[C2__C2_Ceta__C2](plot.html?diagram=kervaire&data=C2__C2_Ceta__C2)&nbsp;&nbsp;&nbsp;
 
-[C2__C2h4__S0](plot.html?diagram=kervaire&data=C2__C2h4__S0)<span class="tab"> 
-[C2__C2h5__S0](plot.html?diagram=kervaire&data=C2__C2h5__S0)<span class="tab"> 
-[C2__C2h6__S0](plot.html?diagram=kervaire&data=C2__C2h6__S0)<span class="tab"> 
-[S0__C2h4__Csigmasq](plot.html?diagram=kervaire&data=S0__C2h4__Csigmasq)<span class="tab"> 
-[S0__C2h5__Ctheta4](plot.html?diagram=kervaire&data=S0__C2h5__Ctheta4)<span class="tab"> 
-[S0__C2h6__Ctheta5](plot.html?diagram=kervaire&data=S0__C2h6__Ctheta5)<span class="tab"> 
-[Csigmasq__DC2h4__S0](plot.html?diagram=kervaire&data=Csigmasq__DC2h4__S0)<span class="tab"> 
-[Ctheta4__DC2h5__S0](plot.html?diagram=kervaire&data=Ctheta4__DC2h5__S0)<span class="tab"> 
-[Ctheta5__DC2h6__S0](plot.html?diagram=kervaire&data=Ctheta5__DC2h6__S0)<span class="tab"> 
-[S0__DC2h4__C2](plot.html?diagram=kervaire&data=S0__DC2h4__C2)<span class="tab"> 
-[S0__DC2h5__C2](plot.html?diagram=kervaire&data=S0__DC2h5__C2)<span class="tab"> 
-[S0__DC2h6__C2](plot.html?diagram=kervaire&data=S0__DC2h6__C2)<span class="tab"> 
-[S0__CW_sigmasq_2_sigmasq__C2h4](plot.html?diagram=kervaire&data=S0__CW_sigmasq_2_sigmasq__C2h4)<span class="tab"> 
-[S0__CW_theta4_2_theta4__C2h5](plot.html?diagram=kervaire&data=S0__CW_theta4_2_theta4__C2h5)<span class="tab"> 
-[S0__CW_theta5_2_theta5__C2h6](plot.html?diagram=kervaire&data=S0__CW_theta5_2_theta5__C2h6)<span class="tab"> 
-[DC2h4__CW_sigmasq_2_sigmasq__S0](plot.html?diagram=kervaire&data=DC2h4__CW_sigmasq_2_sigmasq__S0)<span class="tab"> 
-[DC2h5__CW_theta4_2_theta4__S0](plot.html?diagram=kervaire&data=DC2h5__CW_theta4_2_theta4__S0)<span class="tab"> 
-[DC2h6__CW_theta5_2_theta5__S0](plot.html?diagram=kervaire&data=DC2h6__CW_theta5_2_theta5__S0)<span class="tab"> 
-[C2__CW_2_eta_theta5sq__Ctheta5sq](plot.html?diagram=kervaire&data=C2__CW_2_eta_theta5sq__Ctheta5sq)<span class="tab"> 
+[C2__C2h4__S0](plot.html?diagram=kervaire&data=C2__C2h4__S0)&nbsp;&nbsp;&nbsp;
+[C2__C2h5__S0](plot.html?diagram=kervaire&data=C2__C2h5__S0)&nbsp;&nbsp;&nbsp;
+[C2__C2h6__S0](plot.html?diagram=kervaire&data=C2__C2h6__S0)&nbsp;&nbsp;&nbsp;
+[S0__C2h4__Csigmasq](plot.html?diagram=kervaire&data=S0__C2h4__Csigmasq)&nbsp;&nbsp;&nbsp;
+[S0__C2h5__Ctheta4](plot.html?diagram=kervaire&data=S0__C2h5__Ctheta4)&nbsp;&nbsp;&nbsp;
+[S0__C2h6__Ctheta5](plot.html?diagram=kervaire&data=S0__C2h6__Ctheta5)&nbsp;&nbsp;&nbsp;
+[Csigmasq__DC2h4__S0](plot.html?diagram=kervaire&data=Csigmasq__DC2h4__S0)&nbsp;&nbsp;&nbsp;
+[Ctheta4__DC2h5__S0](plot.html?diagram=kervaire&data=Ctheta4__DC2h5__S0)&nbsp;&nbsp;&nbsp;
+[Ctheta5__DC2h6__S0](plot.html?diagram=kervaire&data=Ctheta5__DC2h6__S0)&nbsp;&nbsp;&nbsp;
+[S0__DC2h4__C2](plot.html?diagram=kervaire&data=S0__DC2h4__C2)&nbsp;&nbsp;&nbsp;
+[S0__DC2h5__C2](plot.html?diagram=kervaire&data=S0__DC2h5__C2)&nbsp;&nbsp;&nbsp;
+[S0__DC2h6__C2](plot.html?diagram=kervaire&data=S0__DC2h6__C2)&nbsp;&nbsp;&nbsp;
+[S0__CW_sigmasq_2_sigmasq__C2h4](plot.html?diagram=kervaire&data=S0__CW_sigmasq_2_sigmasq__C2h4)&nbsp;&nbsp;&nbsp;
+[S0__CW_theta4_2_theta4__C2h5](plot.html?diagram=kervaire&data=S0__CW_theta4_2_theta4__C2h5)&nbsp;&nbsp;&nbsp;
+[S0__CW_theta5_2_theta5__C2h6](plot.html?diagram=kervaire&data=S0__CW_theta5_2_theta5__C2h6)&nbsp;&nbsp;&nbsp;
+[DC2h4__CW_sigmasq_2_sigmasq__S0](plot.html?diagram=kervaire&data=DC2h4__CW_sigmasq_2_sigmasq__S0)&nbsp;&nbsp;&nbsp;
+[DC2h5__CW_theta4_2_theta4__S0](plot.html?diagram=kervaire&data=DC2h5__CW_theta4_2_theta4__S0)&nbsp;&nbsp;&nbsp;
+[DC2h6__CW_theta5_2_theta5__S0](plot.html?diagram=kervaire&data=DC2h6__CW_theta5_2_theta5__S0)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_eta_theta5sq__Ctheta5sq](plot.html?diagram=kervaire&data=C2__CW_2_eta_theta5sq__Ctheta5sq)&nbsp;&nbsp;&nbsp;
 
-[C2__CW_2_V_eta__S2](plot.html?diagram=kervaire&data=C2__CW_2_V_eta__S2)<span class="tab"> 
-[Ceta__CW_2_V_eta__S1](plot.html?diagram=kervaire&data=Ceta__CW_2_V_eta__S1)<span class="tab"> 
-[Ceta__CW_eta_V_nu__S4](plot.html?diagram=kervaire&data=Ceta__CW_eta_V_nu__S4)<span class="tab"> 
-[Cnu__CW_eta_V_nu__S2](plot.html?diagram=kervaire&data=Cnu__CW_eta_V_nu__S2)<span class="tab"> 
-[Cnu__CW_nu_V_sigma__S8](plot.html?diagram=kervaire&data=Cnu__CW_nu_V_sigma__S8)<span class="tab"> 
-[Csigma__CW_nu_V_sigma__S4](plot.html?diagram=kervaire&data=Csigma__CW_nu_V_sigma__S4)<span class="tab"> 
-[S0__CW_2_A_eta__C2](plot.html?diagram=kervaire&data=S0__CW_2_A_eta__C2)<span class="tab"> 
-[S1__CW_2_A_eta__Ceta](plot.html?diagram=kervaire&data=S1__CW_2_A_eta__Ceta)<span class="tab"> 
-[S0__CW_eta_A_nu__Ceta](plot.html?diagram=kervaire&data=S0__CW_eta_A_nu__Ceta)<span class="tab"> 
-[S2__CW_eta_A_nu__Cnu](plot.html?diagram=kervaire&data=S2__CW_eta_A_nu__Cnu)<span class="tab"> 
-[S0__CW_nu_A_sigma__Cnu](plot.html?diagram=kervaire&data=S0__CW_nu_A_sigma__Cnu)<span class="tab"> 
-[S4__CW_nu_A_sigma__Csigma](plot.html?diagram=kervaire&data=S4__CW_nu_A_sigma__Csigma)<span class="tab"> 
+[C2__CW_2_V_eta__S2](plot.html?diagram=kervaire&data=C2__CW_2_V_eta__S2)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_2_V_eta__S1](plot.html?diagram=kervaire&data=Ceta__CW_2_V_eta__S1)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_V_nu__S4](plot.html?diagram=kervaire&data=Ceta__CW_eta_V_nu__S4)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_eta_V_nu__S2](plot.html?diagram=kervaire&data=Cnu__CW_eta_V_nu__S2)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_V_sigma__S8](plot.html?diagram=kervaire&data=Cnu__CW_nu_V_sigma__S8)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_nu_V_sigma__S4](plot.html?diagram=kervaire&data=Csigma__CW_nu_V_sigma__S4)&nbsp;&nbsp;&nbsp;
+[S0__CW_2_A_eta__C2](plot.html?diagram=kervaire&data=S0__CW_2_A_eta__C2)&nbsp;&nbsp;&nbsp;
+[S1__CW_2_A_eta__Ceta](plot.html?diagram=kervaire&data=S1__CW_2_A_eta__Ceta)&nbsp;&nbsp;&nbsp;
+[S0__CW_eta_A_nu__Ceta](plot.html?diagram=kervaire&data=S0__CW_eta_A_nu__Ceta)&nbsp;&nbsp;&nbsp;
+[S2__CW_eta_A_nu__Cnu](plot.html?diagram=kervaire&data=S2__CW_eta_A_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[S0__CW_nu_A_sigma__Cnu](plot.html?diagram=kervaire&data=S0__CW_nu_A_sigma__Cnu)&nbsp;&nbsp;&nbsp;
+[S4__CW_nu_A_sigma__Csigma](plot.html?diagram=kervaire&data=S4__CW_nu_A_sigma__Csigma)&nbsp;&nbsp;&nbsp;
 
-[Csigma__CW_sigma_2sigma__S0](plot.html?diagram=kervaire&data=Csigma__CW_sigma_2sigma__S0)<span class="tab"> 
-[Ceta__Joker__CW_eta_2](plot.html?diagram=kervaire&data=Ceta__Joker__CW_eta_2)<span class="tab"> 
-[CW_2_eta__Joker__Ceta](plot.html?diagram=kervaire&data=CW_2_eta__Joker__Ceta)<span class="tab"> 
-[CW_eta_2__RP1_6__CW_2_eta](plot.html?diagram=kervaire&data=CW_eta_2__RP1_6__CW_2_eta)<span class="tab"> 
-[Ceta__C2_Ceta__Ceta](plot.html?diagram=kervaire&data=Ceta__C2_Ceta__Ceta)<span class="tab"> 
-[Ceta__Ceta_Cnu__Ceta](plot.html?diagram=kervaire&data=Ceta__Ceta_Cnu__Ceta)<span class="tab"> 
-[Cnu__Ceta_Cnu__Cnu](plot.html?diagram=kervaire&data=Cnu__Ceta_Cnu__Cnu)<span class="tab"> 
+[Csigma__CW_sigma_2sigma__S0](plot.html?diagram=kervaire&data=Csigma__CW_sigma_2sigma__S0)&nbsp;&nbsp;&nbsp;
+[Ceta__Joker__CW_eta_2](plot.html?diagram=kervaire&data=Ceta__Joker__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__Joker__Ceta](plot.html?diagram=kervaire&data=CW_2_eta__Joker__Ceta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__RP1_6__CW_2_eta](plot.html?diagram=kervaire&data=CW_eta_2__RP1_6__CW_2_eta)&nbsp;&nbsp;&nbsp;
+[Ceta__C2_Ceta__Ceta](plot.html?diagram=kervaire&data=Ceta__C2_Ceta__Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta__Ceta_Cnu__Ceta](plot.html?diagram=kervaire&data=Ceta__Ceta_Cnu__Ceta)&nbsp;&nbsp;&nbsp;
+[Cnu__Ceta_Cnu__Cnu](plot.html?diagram=kervaire&data=Cnu__Ceta_Cnu__Cnu)&nbsp;&nbsp;&nbsp;
 
-[RP1_2__RP1_4__RP3_4](plot.html?diagram=kervaire&data=RP1_2__RP1_4__RP3_4)<span class="tab"> 
-[RP3_4__RP3_6__RP5_6](plot.html?diagram=kervaire&data=RP3_4__RP3_6__RP5_6)<span class="tab"> 
-[RP1_2__RP1_6__RP3_6](plot.html?diagram=kervaire&data=RP1_2__RP1_6__RP3_6)<span class="tab"> 
-[RP1_4__RP1_6__RP5_6](plot.html?diagram=kervaire&data=RP1_4__RP1_6__RP5_6)<span class="tab"> 
-[RP1_2__RP1_256__RP3_256](plot.html?diagram=kervaire&data=RP1_2__RP1_256__RP3_256)<span class="tab"> 
-[RP1_4__RP1_256__RP5_256](plot.html?diagram=kervaire&data=RP1_4__RP1_256__RP5_256)<span class="tab"> 
-[RP1_6__RP1_256__RP7_256](plot.html?diagram=kervaire&data=RP1_6__RP1_256__RP7_256)<span class="tab"> 
-[Fphi__RP1_256__S0](plot.html?diagram=kervaire&data=Fphi__RP1_256__S0)<span class="tab"> 
+[RP1_2__RP1_4__RP3_4](plot.html?diagram=kervaire&data=RP1_2__RP1_4__RP3_4)&nbsp;&nbsp;&nbsp;
+[RP3_4__RP3_6__RP5_6](plot.html?diagram=kervaire&data=RP3_4__RP3_6__RP5_6)&nbsp;&nbsp;&nbsp;
+[RP1_2__RP1_6__RP3_6](plot.html?diagram=kervaire&data=RP1_2__RP1_6__RP3_6)&nbsp;&nbsp;&nbsp;
+[RP1_4__RP1_6__RP5_6](plot.html?diagram=kervaire&data=RP1_4__RP1_6__RP5_6)&nbsp;&nbsp;&nbsp;
+[RP1_2__RP1_256__RP3_256](plot.html?diagram=kervaire&data=RP1_2__RP1_256__RP3_256)&nbsp;&nbsp;&nbsp;
+[RP1_4__RP1_256__RP5_256](plot.html?diagram=kervaire&data=RP1_4__RP1_256__RP5_256)&nbsp;&nbsp;&nbsp;
+[RP1_6__RP1_256__RP7_256](plot.html?diagram=kervaire&data=RP1_6__RP1_256__RP7_256)&nbsp;&nbsp;&nbsp;
+[Fphi__RP1_256__S0](plot.html?diagram=kervaire&data=Fphi__RP1_256__S0)&nbsp;&nbsp;&nbsp;
 
-[tmf__tmf_C2__tmf](plot.html?diagram=kervaire&data=tmf__tmf_C2__tmf)<span class="tab"> 
-[tmf__tmf_Ceta__tmf](plot.html?diagram=kervaire&data=tmf__tmf_Ceta__tmf)<span class="tab"> 
-[tmf__tmf_Cnu__tmf](plot.html?diagram=kervaire&data=tmf__tmf_Cnu__tmf)<span class="tab"> 
+[tmf__tmf_C2__tmf](plot.html?diagram=kervaire&data=tmf__tmf_C2__tmf)&nbsp;&nbsp;&nbsp;
+[tmf__tmf_Ceta__tmf](plot.html?diagram=kervaire&data=tmf__tmf_Ceta__tmf)&nbsp;&nbsp;&nbsp;
+[tmf__tmf_Cnu__tmf](plot.html?diagram=kervaire&data=tmf__tmf_Cnu__tmf)&nbsp;&nbsp;&nbsp;
 
 ### Maps
-[S0__tmf](plot.html?diagram=kervaire&data=S0__tmf)<span class="tab"> 
+[S0__tmf](plot.html?diagram=kervaire&data=S0__tmf)&nbsp;&nbsp;&nbsp;
 
-[C2__S0](plot.html?diagram=kervaire&data=C2__S0)<span class="tab"> 
-[Ceta__S0](plot.html?diagram=kervaire&data=Ceta__S0)<span class="tab"> 
-[Cnu__S0](plot.html?diagram=kervaire&data=Cnu__S0)<span class="tab"> 
-[Csigma__S0](plot.html?diagram=kervaire&data=Csigma__S0)<span class="tab"> 
+[C2__S0](plot.html?diagram=kervaire&data=C2__S0)&nbsp;&nbsp;&nbsp;
+[Ceta__S0](plot.html?diagram=kervaire&data=Ceta__S0)&nbsp;&nbsp;&nbsp;
+[Cnu__S0](plot.html?diagram=kervaire&data=Cnu__S0)&nbsp;&nbsp;&nbsp;
+[Csigma__S0](plot.html?diagram=kervaire&data=Csigma__S0)&nbsp;&nbsp;&nbsp;
 
-[C2__CW_2_eta](plot.html?diagram=kervaire&data=C2__CW_2_eta)<span class="tab"> 
-[Ceta__CW_eta_2](plot.html?diagram=kervaire&data=Ceta__CW_eta_2)<span class="tab"> 
-[Ceta__CW_eta_nu](plot.html?diagram=kervaire&data=Ceta__CW_eta_nu)<span class="tab"> 
-[Cnu__CW_nu_eta](plot.html?diagram=kervaire&data=Cnu__CW_nu_eta)<span class="tab"> 
-[Cnu__CW_nu_sigma](plot.html?diagram=kervaire&data=Cnu__CW_nu_sigma)<span class="tab"> 
-[CW_nu_sigma__Csigma](plot.html?diagram=kervaire&data=CW_nu_sigma__Csigma)<span class="tab"> 
-[CW_sigma_nu__Cnu](plot.html?diagram=kervaire&data=CW_sigma_nu__Cnu)<span class="tab"> 
-[CW_2_eta__Ceta](plot.html?diagram=kervaire&data=CW_2_eta__Ceta)<span class="tab"> 
-[CW_eta_2__C2](plot.html?diagram=kervaire&data=CW_eta_2__C2)<span class="tab"> 
-[CW_eta_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_nu__Cnu)<span class="tab"> 
-[CW_nu_eta__Ceta](plot.html?diagram=kervaire&data=CW_nu_eta__Ceta)<span class="tab"> 
-[C2__Q_CW_nu_eta_2](plot.html?diagram=kervaire&data=C2__Q_CW_nu_eta_2)<span class="tab"> 
-[Cnu__Q_CW_2_eta_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_2_eta_nu)<span class="tab"> 
-[CW_2_eta_nu__CW_eta_nu](plot.html?diagram=kervaire&data=CW_2_eta_nu__CW_eta_nu)<span class="tab"> 
-[CW_2_eta__CW_2_eta_nu](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_nu)<span class="tab"> 
-[CW_eta_2__Q_CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_eta_2__Q_CW_nu_eta_2)<span class="tab"> 
-[CW_eta_nu__Q_CW_2_eta_nu](plot.html?diagram=kervaire&data=CW_eta_nu__Q_CW_2_eta_nu)<span class="tab"> 
-[CW_nu_eta_2__CW_eta_2](plot.html?diagram=kervaire&data=CW_nu_eta_2__CW_eta_2)<span class="tab"> 
-[CW_nu_eta__CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_nu_eta__CW_nu_eta_2)<span class="tab"> 
-[C2__CW_sigma_nu_by_eta](plot.html?diagram=kervaire&data=C2__CW_sigma_nu_by_eta)<span class="tab"> 
-[Ceta__Csigma_by_nu](plot.html?diagram=kervaire&data=Ceta__Csigma_by_nu)<span class="tab"> 
-[Csigma__Ceta_by_nu](plot.html?diagram=kervaire&data=Csigma__Ceta_by_nu)<span class="tab"> 
-[Csigma__CW_2_eta_by_nu](plot.html?diagram=kervaire&data=Csigma__CW_2_eta_by_nu)<span class="tab"> 
-[CW_2_eta_nu_sigma__CW_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_2_eta_nu_sigma__CW_eta_nu_sigma)<span class="tab"> 
-[CW_2_eta_nu__CW_2_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_2_eta_nu__CW_2_eta_nu_sigma)<span class="tab"> 
-[CW_eta_2__Csigma_by_nu](plot.html?diagram=kervaire&data=CW_eta_2__Csigma_by_nu)<span class="tab"> 
-[CW_eta_nu_sigma__CW_nu_sigma](plot.html?diagram=kervaire&data=CW_eta_nu_sigma__CW_nu_sigma)<span class="tab"> 
-[CW_eta_nu_sigma__S0_by_2](plot.html?diagram=kervaire&data=CW_eta_nu_sigma__S0_by_2)<span class="tab"> 
-[CW_eta_nu__CW_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_sigma)<span class="tab"> 
-[CW_nu_eta_2__S0_by_sigma](plot.html?diagram=kervaire&data=CW_nu_eta_2__S0_by_sigma)<span class="tab"> 
-[CW_nu_eta__S0_by_sigma](plot.html?diagram=kervaire&data=CW_nu_eta__S0_by_sigma)<span class="tab"> 
-[CW_nu_sigma__C2_by_eta](plot.html?diagram=kervaire&data=CW_nu_sigma__C2_by_eta)<span class="tab"> 
-[CW_nu_sigma__S0_by_eta](plot.html?diagram=kervaire&data=CW_nu_sigma__S0_by_eta)<span class="tab"> 
-[CW_sigma_nu_eta_2__CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2__CW_nu_eta_2)<span class="tab"> 
-[CW_sigma_nu_eta__CW_nu_eta](plot.html?diagram=kervaire&data=CW_sigma_nu_eta__CW_nu_eta)<span class="tab"> 
-[CW_sigma_nu_eta__CW_sigma_nu_eta_2](plot.html?diagram=kervaire&data=CW_sigma_nu_eta__CW_sigma_nu_eta_2)<span class="tab"> 
-[Ceta__Q_CW_2_eta](plot.html?diagram=kervaire&data=Ceta__Q_CW_2_eta)<span class="tab"> 
-[Ceta__Q_CW_nu_eta](plot.html?diagram=kervaire&data=Ceta__Q_CW_nu_eta)<span class="tab"> 
-[Cnu__Q_CW_eta_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_nu)<span class="tab"> 
-[Cnu__Q_CW_sigma_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_sigma_nu)<span class="tab"> 
-[Csigma__CW_sigma_nu](plot.html?diagram=kervaire&data=Csigma__CW_sigma_nu)<span class="tab"> 
-[Csigma__Q_CW_nu_sigma](plot.html?diagram=kervaire&data=Csigma__Q_CW_nu_sigma)<span class="tab"> 
-[CW_sigma_nu__CW_sigma_nu_eta](plot.html?diagram=kervaire&data=CW_sigma_nu__CW_sigma_nu_eta)<span class="tab"> 
+[C2__CW_2_eta](plot.html?diagram=kervaire&data=C2__CW_2_eta)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_2](plot.html?diagram=kervaire&data=Ceta__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_nu](plot.html?diagram=kervaire&data=Ceta__CW_eta_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_eta](plot.html?diagram=kervaire&data=Cnu__CW_nu_eta)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_sigma](plot.html?diagram=kervaire&data=Cnu__CW_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma__Csigma](plot.html?diagram=kervaire&data=CW_nu_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu__Cnu](plot.html?diagram=kervaire&data=CW_sigma_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__Ceta](plot.html?diagram=kervaire&data=CW_2_eta__Ceta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__C2](plot.html?diagram=kervaire&data=CW_eta_2__C2)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta__Ceta](plot.html?diagram=kervaire&data=CW_nu_eta__Ceta)&nbsp;&nbsp;&nbsp;
+[C2__Q_CW_nu_eta_2](plot.html?diagram=kervaire&data=C2__Q_CW_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_2_eta_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_2_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_nu__CW_eta_nu](plot.html?diagram=kervaire&data=CW_2_eta_nu__CW_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__CW_2_eta_nu](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__Q_CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_eta_2__Q_CW_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu__Q_CW_2_eta_nu](plot.html?diagram=kervaire&data=CW_eta_nu__Q_CW_2_eta_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_2__CW_eta_2](plot.html?diagram=kervaire&data=CW_nu_eta_2__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta__CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_nu_eta__CW_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[C2__CW_sigma_nu_by_eta](plot.html?diagram=kervaire&data=C2__CW_sigma_nu_by_eta)&nbsp;&nbsp;&nbsp;
+[Ceta__Csigma_by_nu](plot.html?diagram=kervaire&data=Ceta__Csigma_by_nu)&nbsp;&nbsp;&nbsp;
+[Csigma__Ceta_by_nu](plot.html?diagram=kervaire&data=Csigma__Ceta_by_nu)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_2_eta_by_nu](plot.html?diagram=kervaire&data=Csigma__CW_2_eta_by_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_nu_sigma__CW_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_2_eta_nu_sigma__CW_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_nu__CW_2_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_2_eta_nu__CW_2_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__Csigma_by_nu](plot.html?diagram=kervaire&data=CW_eta_2__Csigma_by_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_sigma__CW_nu_sigma](plot.html?diagram=kervaire&data=CW_eta_nu_sigma__CW_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_sigma__S0_by_2](plot.html?diagram=kervaire&data=CW_eta_nu_sigma__S0_by_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu__CW_eta_nu_sigma](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_2__S0_by_sigma](plot.html?diagram=kervaire&data=CW_nu_eta_2__S0_by_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta__S0_by_sigma](plot.html?diagram=kervaire&data=CW_nu_eta__S0_by_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma__C2_by_eta](plot.html?diagram=kervaire&data=CW_nu_sigma__C2_by_eta)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma__S0_by_eta](plot.html?diagram=kervaire&data=CW_nu_sigma__S0_by_eta)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta_2__CW_nu_eta_2](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2__CW_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta__CW_nu_eta](plot.html?diagram=kervaire&data=CW_sigma_nu_eta__CW_nu_eta)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta__CW_sigma_nu_eta_2](plot.html?diagram=kervaire&data=CW_sigma_nu_eta__CW_sigma_nu_eta_2)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_CW_2_eta](plot.html?diagram=kervaire&data=Ceta__Q_CW_2_eta)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_CW_nu_eta](plot.html?diagram=kervaire&data=Ceta__Q_CW_nu_eta)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_eta_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_sigma_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_sigma_nu)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_sigma_nu](plot.html?diagram=kervaire&data=Csigma__CW_sigma_nu)&nbsp;&nbsp;&nbsp;
+[Csigma__Q_CW_nu_sigma](plot.html?diagram=kervaire&data=Csigma__Q_CW_nu_sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu__CW_sigma_nu_eta](plot.html?diagram=kervaire&data=CW_sigma_nu__CW_sigma_nu_eta)&nbsp;&nbsp;&nbsp;
 
-[Csigma__Csigmasq](plot.html?diagram=kervaire&data=Csigma__Csigmasq)<span class="tab"> 
-[Csigmasq__S0](plot.html?diagram=kervaire&data=Csigmasq__S0)<span class="tab"> 
-[C2h4__Csigmasq](plot.html?diagram=kervaire&data=C2h4__Csigmasq)<span class="tab"> 
-[Csigmasq__DC2h4](plot.html?diagram=kervaire&data=Csigmasq__DC2h4)<span class="tab"> 
-[Csigmasq__Csigma](plot.html?diagram=kervaire&data=Csigmasq__Csigma)<span class="tab"> 
-[Csigmasq__C2_by_sigmasq](plot.html?diagram=kervaire&data=Csigmasq__C2_by_sigmasq)<span class="tab"> 
-[Csigmasq__Q_C2h4](plot.html?diagram=kervaire&data=Csigmasq__Q_C2h4)<span class="tab"> 
-[Csigmasq__S0_by_sigmasq](plot.html?diagram=kervaire&data=Csigmasq__S0_by_sigmasq)<span class="tab"> 
-[C2__C2h4](plot.html?diagram=kervaire&data=C2__C2h4)<span class="tab"> 
-[DC2h4__C2](plot.html?diagram=kervaire&data=DC2h4__C2)<span class="tab"> 
-[C2h4__S0](plot.html?diagram=kervaire&data=C2h4__S0)<span class="tab"> 
-[C2__Q_DC2h4](plot.html?diagram=kervaire&data=C2__Q_DC2h4)<span class="tab"> 
-[CW_sigmasq_2_sigmasq__C2h4](plot.html?diagram=kervaire&data=CW_sigmasq_2_sigmasq__C2h4)<span class="tab"> 
-[DC2h4__CW_sigmasq_2_sigmasq](plot.html?diagram=kervaire&data=DC2h4__CW_sigmasq_2_sigmasq)<span class="tab"> 
-[C2h4__S0_by_sigmasq](plot.html?diagram=kervaire&data=C2h4__S0_by_sigmasq)<span class="tab"> 
-[C2__C2h5](plot.html?diagram=kervaire&data=C2__C2h5)<span class="tab"> 
-[C2h5__Ctheta4](plot.html?diagram=kervaire&data=C2h5__Ctheta4)<span class="tab"> 
-[Ctheta4__DC2h5](plot.html?diagram=kervaire&data=Ctheta4__DC2h5)<span class="tab"> 
-[DC2h5__C2](plot.html?diagram=kervaire&data=DC2h5__C2)<span class="tab"> 
-[C2h5__S0](plot.html?diagram=kervaire&data=C2h5__S0)<span class="tab"> 
-[C2__Q_DC2h5](plot.html?diagram=kervaire&data=C2__Q_DC2h5)<span class="tab"> 
-[CW_theta4_2_theta4__C2h5](plot.html?diagram=kervaire&data=CW_theta4_2_theta4__C2h5)<span class="tab"> 
-[DC2h5__CW_theta4_2_theta4](plot.html?diagram=kervaire&data=DC2h5__CW_theta4_2_theta4)<span class="tab"> 
-[C2h5__S0_by_theta4](plot.html?diagram=kervaire&data=C2h5__S0_by_theta4)<span class="tab"> 
-[Ctheta4__Q_C2h5](plot.html?diagram=kervaire&data=Ctheta4__Q_C2h5)<span class="tab"> 
-[Ctheta4__S0](plot.html?diagram=kervaire&data=Ctheta4__S0)<span class="tab"> 
-[Ctheta4__C2_by_theta4](plot.html?diagram=kervaire&data=Ctheta4__C2_by_theta4)<span class="tab"> 
-[Ctheta4__S0_by_theta4](plot.html?diagram=kervaire&data=Ctheta4__S0_by_theta4)<span class="tab"> 
-[C2__C2h6](plot.html?diagram=kervaire&data=C2__C2h6)<span class="tab"> 
-[C2h6__Ctheta5](plot.html?diagram=kervaire&data=C2h6__Ctheta5)<span class="tab"> 
-[Ctheta5__DC2h6](plot.html?diagram=kervaire&data=Ctheta5__DC2h6)<span class="tab"> 
-[DC2h6__C2](plot.html?diagram=kervaire&data=DC2h6__C2)<span class="tab"> 
-[C2h6__S0](plot.html?diagram=kervaire&data=C2h6__S0)<span class="tab"> 
-[C2__Q_DC2h6](plot.html?diagram=kervaire&data=C2__Q_DC2h6)<span class="tab"> 
-[CW_theta5_2_theta5__C2h6](plot.html?diagram=kervaire&data=CW_theta5_2_theta5__C2h6)<span class="tab"> 
-[DC2h6__CW_theta5_2_theta5](plot.html?diagram=kervaire&data=DC2h6__CW_theta5_2_theta5)<span class="tab"> 
-[C2h6__S0_by_theta5](plot.html?diagram=kervaire&data=C2h6__S0_by_theta5)<span class="tab"> 
-[Ctheta5__Q_C2h6](plot.html?diagram=kervaire&data=Ctheta5__Q_C2h6)<span class="tab"> 
-[Ctheta5__S0](plot.html?diagram=kervaire&data=Ctheta5__S0)<span class="tab"> 
-[CW_2_V_eta__CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=CW_2_V_eta__CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
-[CW_2_theta5_2_Eq_eta_theta5__Ctheta5](plot.html?diagram=kervaire&data=CW_2_theta5_2_Eq_eta_theta5__Ctheta5)<span class="tab"> 
-[Ceta__CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=Ceta__CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
-[C2__Q_CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=C2__Q_CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
-[CW_2_theta5_2_Eq_eta_theta5__DC2h6](plot.html?diagram=kervaire&data=CW_2_theta5_2_Eq_eta_theta5__DC2h6)<span class="tab"> 
-[C2h6__CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=C2h6__CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
-[Ctheta5__Q_CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=Ctheta5__Q_CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
-[DC2h6__Q_CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=DC2h6__Q_CW_2_theta5_2_Eq_eta_theta5)<span class="tab"> 
-[Ctheta5sq__CW_theta5sq_eta_2](plot.html?diagram=kervaire&data=Ctheta5sq__CW_theta5sq_eta_2)<span class="tab"> 
+[Csigma__Csigmasq](plot.html?diagram=kervaire&data=Csigma__Csigmasq)&nbsp;&nbsp;&nbsp;
+[Csigmasq__S0](plot.html?diagram=kervaire&data=Csigmasq__S0)&nbsp;&nbsp;&nbsp;
+[C2h4__Csigmasq](plot.html?diagram=kervaire&data=C2h4__Csigmasq)&nbsp;&nbsp;&nbsp;
+[Csigmasq__DC2h4](plot.html?diagram=kervaire&data=Csigmasq__DC2h4)&nbsp;&nbsp;&nbsp;
+[Csigmasq__Csigma](plot.html?diagram=kervaire&data=Csigmasq__Csigma)&nbsp;&nbsp;&nbsp;
+[Csigmasq__C2_by_sigmasq](plot.html?diagram=kervaire&data=Csigmasq__C2_by_sigmasq)&nbsp;&nbsp;&nbsp;
+[Csigmasq__Q_C2h4](plot.html?diagram=kervaire&data=Csigmasq__Q_C2h4)&nbsp;&nbsp;&nbsp;
+[Csigmasq__S0_by_sigmasq](plot.html?diagram=kervaire&data=Csigmasq__S0_by_sigmasq)&nbsp;&nbsp;&nbsp;
+[C2__C2h4](plot.html?diagram=kervaire&data=C2__C2h4)&nbsp;&nbsp;&nbsp;
+[DC2h4__C2](plot.html?diagram=kervaire&data=DC2h4__C2)&nbsp;&nbsp;&nbsp;
+[C2h4__S0](plot.html?diagram=kervaire&data=C2h4__S0)&nbsp;&nbsp;&nbsp;
+[C2__Q_DC2h4](plot.html?diagram=kervaire&data=C2__Q_DC2h4)&nbsp;&nbsp;&nbsp;
+[CW_sigmasq_2_sigmasq__C2h4](plot.html?diagram=kervaire&data=CW_sigmasq_2_sigmasq__C2h4)&nbsp;&nbsp;&nbsp;
+[DC2h4__CW_sigmasq_2_sigmasq](plot.html?diagram=kervaire&data=DC2h4__CW_sigmasq_2_sigmasq)&nbsp;&nbsp;&nbsp;
+[C2h4__S0_by_sigmasq](plot.html?diagram=kervaire&data=C2h4__S0_by_sigmasq)&nbsp;&nbsp;&nbsp;
+[C2__C2h5](plot.html?diagram=kervaire&data=C2__C2h5)&nbsp;&nbsp;&nbsp;
+[C2h5__Ctheta4](plot.html?diagram=kervaire&data=C2h5__Ctheta4)&nbsp;&nbsp;&nbsp;
+[Ctheta4__DC2h5](plot.html?diagram=kervaire&data=Ctheta4__DC2h5)&nbsp;&nbsp;&nbsp;
+[DC2h5__C2](plot.html?diagram=kervaire&data=DC2h5__C2)&nbsp;&nbsp;&nbsp;
+[C2h5__S0](plot.html?diagram=kervaire&data=C2h5__S0)&nbsp;&nbsp;&nbsp;
+[C2__Q_DC2h5](plot.html?diagram=kervaire&data=C2__Q_DC2h5)&nbsp;&nbsp;&nbsp;
+[CW_theta4_2_theta4__C2h5](plot.html?diagram=kervaire&data=CW_theta4_2_theta4__C2h5)&nbsp;&nbsp;&nbsp;
+[DC2h5__CW_theta4_2_theta4](plot.html?diagram=kervaire&data=DC2h5__CW_theta4_2_theta4)&nbsp;&nbsp;&nbsp;
+[C2h5__S0_by_theta4](plot.html?diagram=kervaire&data=C2h5__S0_by_theta4)&nbsp;&nbsp;&nbsp;
+[Ctheta4__Q_C2h5](plot.html?diagram=kervaire&data=Ctheta4__Q_C2h5)&nbsp;&nbsp;&nbsp;
+[Ctheta4__S0](plot.html?diagram=kervaire&data=Ctheta4__S0)&nbsp;&nbsp;&nbsp;
+[Ctheta4__C2_by_theta4](plot.html?diagram=kervaire&data=Ctheta4__C2_by_theta4)&nbsp;&nbsp;&nbsp;
+[Ctheta4__S0_by_theta4](plot.html?diagram=kervaire&data=Ctheta4__S0_by_theta4)&nbsp;&nbsp;&nbsp;
+[C2__C2h6](plot.html?diagram=kervaire&data=C2__C2h6)&nbsp;&nbsp;&nbsp;
+[C2h6__Ctheta5](plot.html?diagram=kervaire&data=C2h6__Ctheta5)&nbsp;&nbsp;&nbsp;
+[Ctheta5__DC2h6](plot.html?diagram=kervaire&data=Ctheta5__DC2h6)&nbsp;&nbsp;&nbsp;
+[DC2h6__C2](plot.html?diagram=kervaire&data=DC2h6__C2)&nbsp;&nbsp;&nbsp;
+[C2h6__S0](plot.html?diagram=kervaire&data=C2h6__S0)&nbsp;&nbsp;&nbsp;
+[C2__Q_DC2h6](plot.html?diagram=kervaire&data=C2__Q_DC2h6)&nbsp;&nbsp;&nbsp;
+[CW_theta5_2_theta5__C2h6](plot.html?diagram=kervaire&data=CW_theta5_2_theta5__C2h6)&nbsp;&nbsp;&nbsp;
+[DC2h6__CW_theta5_2_theta5](plot.html?diagram=kervaire&data=DC2h6__CW_theta5_2_theta5)&nbsp;&nbsp;&nbsp;
+[C2h6__S0_by_theta5](plot.html?diagram=kervaire&data=C2h6__S0_by_theta5)&nbsp;&nbsp;&nbsp;
+[Ctheta5__Q_C2h6](plot.html?diagram=kervaire&data=Ctheta5__Q_C2h6)&nbsp;&nbsp;&nbsp;
+[Ctheta5__S0](plot.html?diagram=kervaire&data=Ctheta5__S0)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=CW_2_V_eta__CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
+[CW_2_theta5_2_Eq_eta_theta5__Ctheta5](plot.html?diagram=kervaire&data=CW_2_theta5_2_Eq_eta_theta5__Ctheta5)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=Ceta__CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
+[C2__Q_CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=C2__Q_CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
+[CW_2_theta5_2_Eq_eta_theta5__DC2h6](plot.html?diagram=kervaire&data=CW_2_theta5_2_Eq_eta_theta5__DC2h6)&nbsp;&nbsp;&nbsp;
+[C2h6__CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=C2h6__CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
+[Ctheta5__Q_CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=Ctheta5__Q_CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
+[DC2h6__Q_CW_2_theta5_2_Eq_eta_theta5](plot.html?diagram=kervaire&data=DC2h6__Q_CW_2_theta5_2_Eq_eta_theta5)&nbsp;&nbsp;&nbsp;
+[Ctheta5sq__CW_theta5sq_eta_2](plot.html?diagram=kervaire&data=Ctheta5sq__CW_theta5sq_eta_2)&nbsp;&nbsp;&nbsp;
 
-[C2_C2__C2](plot.html?diagram=kervaire&data=C2_C2__C2)<span class="tab"> 
-[C2_Ceta_Cnu__C2_Ceta](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__C2_Ceta)<span class="tab"> 
-[C2_Ceta_Cnu__C2_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__C2_Cnu)<span class="tab"> 
-[C2_Ceta_Cnu__Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__Ceta_Cnu)<span class="tab"> 
-[C2_Ceta_Cnu__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__tmf_C2_Ceta_Cnu)<span class="tab"> 
-[C2_Ceta__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta__C2_Ceta_Cnu)<span class="tab"> 
-[C2_Ceta__tmf_C2_Ceta](plot.html?diagram=kervaire&data=C2_Ceta__tmf_C2_Ceta)<span class="tab"> 
-[C2_Cnu__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Cnu__C2_Ceta_Cnu)<span class="tab"> 
-[C2_Cnu__tmf_C2_Cnu](plot.html?diagram=kervaire&data=C2_Cnu__tmf_C2_Cnu)<span class="tab"> 
-[C2__C2_C2](plot.html?diagram=kervaire&data=C2__C2_C2)<span class="tab"> 
-[CW_2_eta__CW_2_eta_theta5sq](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_theta5sq)<span class="tab"> 
-[CW_2_eta__Q_RP1_6](plot.html?diagram=kervaire&data=CW_2_eta__Q_RP1_6)<span class="tab"> 
-[CW_sigma_nu_eta_2_etasigma__CW_nu_eta_2_etasigma](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2_etasigma__CW_nu_eta_2_etasigma)<span class="tab"> 
-[CW_theta5sq_eta_2__CW_eta_2](plot.html?diagram=kervaire&data=CW_theta5sq_eta_2__CW_eta_2)<span class="tab"> 
-[Ceta_Ceta__Ceta](plot.html?diagram=kervaire&data=Ceta_Ceta__Ceta)<span class="tab"> 
-[Ceta_Cnu__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu__C2_Ceta_Cnu)<span class="tab"> 
-[Ceta_Cnu__tmf_Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu__tmf_Ceta_Cnu)<span class="tab"> 
-[Ceta__Ceta_Ceta](plot.html?diagram=kervaire&data=Ceta__Ceta_Ceta)<span class="tab"> 
-[Cnu_Cnu__Cnu](plot.html?diagram=kervaire&data=Cnu_Cnu__Cnu)<span class="tab"> 
-[Cnu__Cnu_Cnu](plot.html?diagram=kervaire&data=Cnu__Cnu_Cnu)<span class="tab"> 
-[Csigma_Csigma__CW_sigma_2sigma](plot.html?diagram=kervaire&data=Csigma_Csigma__CW_sigma_2sigma)<span class="tab"> 
-[Csigma_Csigma__Csigma](plot.html?diagram=kervaire&data=Csigma_Csigma__Csigma)<span class="tab"> 
-[Csigma__CW_sigma_2sigma](plot.html?diagram=kervaire&data=Csigma__CW_sigma_2sigma)<span class="tab"> 
-[Csigma__Csigma_Csigma](plot.html?diagram=kervaire&data=Csigma__Csigma_Csigma)<span class="tab"> 
+[C2_C2__C2](plot.html?diagram=kervaire&data=C2_C2__C2)&nbsp;&nbsp;&nbsp;
+[C2_Ceta_Cnu__C2_Ceta](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__C2_Ceta)&nbsp;&nbsp;&nbsp;
+[C2_Ceta_Cnu__C2_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__C2_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Ceta_Cnu__Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Ceta_Cnu__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta_Cnu__tmf_C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Ceta__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Ceta__C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Ceta__tmf_C2_Ceta](plot.html?diagram=kervaire&data=C2_Ceta__tmf_C2_Ceta)&nbsp;&nbsp;&nbsp;
+[C2_Cnu__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Cnu__C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[C2_Cnu__tmf_C2_Cnu](plot.html?diagram=kervaire&data=C2_Cnu__tmf_C2_Cnu)&nbsp;&nbsp;&nbsp;
+[C2__C2_C2](plot.html?diagram=kervaire&data=C2__C2_C2)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__CW_2_eta_theta5sq](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_theta5sq)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__Q_RP1_6](plot.html?diagram=kervaire&data=CW_2_eta__Q_RP1_6)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_eta_2_etasigma__CW_nu_eta_2_etasigma](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2_etasigma__CW_nu_eta_2_etasigma)&nbsp;&nbsp;&nbsp;
+[CW_theta5sq_eta_2__CW_eta_2](plot.html?diagram=kervaire&data=CW_theta5sq_eta_2__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[Ceta_Ceta__Ceta](plot.html?diagram=kervaire&data=Ceta_Ceta__Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta_Cnu__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu__C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[Ceta_Cnu__tmf_Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu__tmf_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[Ceta__Ceta_Ceta](plot.html?diagram=kervaire&data=Ceta__Ceta_Ceta)&nbsp;&nbsp;&nbsp;
+[Cnu_Cnu__Cnu](plot.html?diagram=kervaire&data=Cnu_Cnu__Cnu)&nbsp;&nbsp;&nbsp;
+[Cnu__Cnu_Cnu](plot.html?diagram=kervaire&data=Cnu__Cnu_Cnu)&nbsp;&nbsp;&nbsp;
+[Csigma_Csigma__CW_sigma_2sigma](plot.html?diagram=kervaire&data=Csigma_Csigma__CW_sigma_2sigma)&nbsp;&nbsp;&nbsp;
+[Csigma_Csigma__Csigma](plot.html?diagram=kervaire&data=Csigma_Csigma__Csigma)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_sigma_2sigma](plot.html?diagram=kervaire&data=Csigma__CW_sigma_2sigma)&nbsp;&nbsp;&nbsp;
+[Csigma__Csigma_Csigma](plot.html?diagram=kervaire&data=Csigma__Csigma_Csigma)&nbsp;&nbsp;&nbsp;
 
-[tmf_C2_Ceta_Cnu__tmf_C2_Ceta](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu__tmf_C2_Ceta)<span class="tab"> 
-[tmf_C2_Ceta_Cnu__tmf_C2_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu__tmf_C2_Cnu)<span class="tab"> 
-[tmf_C2_Ceta_Cnu__tmf_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu__tmf_Ceta_Cnu)<span class="tab"> 
-[tmf_C2_Ceta__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta__tmf_C2_Ceta_Cnu)<span class="tab"> 
-[tmf_C2_Cnu__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Cnu__tmf_C2_Ceta_Cnu)<span class="tab"> 
-[tmf_Ceta_Cnu__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_Ceta_Cnu__tmf_C2_Ceta_Cnu)<span class="tab"> 
+[tmf_C2_Ceta_Cnu__tmf_C2_Ceta](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu__tmf_C2_Ceta)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Ceta_Cnu__tmf_C2_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu__tmf_C2_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Ceta_Cnu__tmf_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta_Cnu__tmf_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Ceta__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Ceta__tmf_C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_C2_Cnu__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_C2_Cnu__tmf_C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_Ceta_Cnu__tmf_C2_Ceta_Cnu](plot.html?diagram=kervaire&data=tmf_Ceta_Cnu__tmf_C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
 
-[Ctheta5sq__C2_by_eta](plot.html?diagram=kervaire&data=Ctheta5sq__C2_by_eta)<span class="tab"> 
-[C2nu__S0](plot.html?diagram=kervaire&data=C2nu__S0)<span class="tab"> 
-[C2sigma__S0](plot.html?diagram=kervaire&data=C2sigma__S0)<span class="tab"> 
-[Cetasigma__S0](plot.html?diagram=kervaire&data=Cetasigma__S0)<span class="tab"> 
-[Ctheta5sq__S0](plot.html?diagram=kervaire&data=Ctheta5sq__S0)<span class="tab"> 
-[C4__S0](plot.html?diagram=kervaire&data=C4__S0)<span class="tab"> 
-[C8__S0](plot.html?diagram=kervaire&data=C8__S0)<span class="tab"> 
-[Cetacube__S0](plot.html?diagram=kervaire&data=Cetacube__S0)<span class="tab"> 
-[Cetasq__S0](plot.html?diagram=kervaire&data=Cetasq__S0)<span class="tab"> 
-[Ceta4__S0](plot.html?diagram=kervaire&data=Ceta4__S0)<span class="tab"> 
-[Ceta5__S0](plot.html?diagram=kervaire&data=Ceta5__S0)<span class="tab"> 
-[Cg__S0](plot.html?diagram=kervaire&data=Cg__S0)<span class="tab"> 
-[Ckappa__S0](plot.html?diagram=kervaire&data=Ckappa__S0)<span class="tab"> 
-[C2nu__CP1_4](plot.html?diagram=kervaire&data=C2nu__CP1_4)<span class="tab"> 
-[C2sigma__CW_2sigma_sigma](plot.html?diagram=kervaire&data=C2sigma__CW_2sigma_sigma)<span class="tab"> 
-[CW_2_eta_theta5sq__Ctheta5sq](plot.html?diagram=kervaire&data=CW_2_eta_theta5sq__Ctheta5sq)<span class="tab"> 
-[CW_nu_eta_2_etasigma__Cetasigma](plot.html?diagram=kervaire&data=CW_nu_eta_2_etasigma__Cetasigma)<span class="tab"> 
-[CW_sigma_2sigma__C2sigma](plot.html?diagram=kervaire&data=CW_sigma_2sigma__C2sigma)<span class="tab"> 
-[Cetasigma__CW_etasigma_2_eta_nu](plot.html?diagram=kervaire&data=Cetasigma__CW_etasigma_2_eta_nu)<span class="tab"> 
+[Ctheta5sq__C2_by_eta](plot.html?diagram=kervaire&data=Ctheta5sq__C2_by_eta)&nbsp;&nbsp;&nbsp;
+[C2nu__S0](plot.html?diagram=kervaire&data=C2nu__S0)&nbsp;&nbsp;&nbsp;
+[C2sigma__S0](plot.html?diagram=kervaire&data=C2sigma__S0)&nbsp;&nbsp;&nbsp;
+[Cetasigma__S0](plot.html?diagram=kervaire&data=Cetasigma__S0)&nbsp;&nbsp;&nbsp;
+[Ctheta5sq__S0](plot.html?diagram=kervaire&data=Ctheta5sq__S0)&nbsp;&nbsp;&nbsp;
+[C4__S0](plot.html?diagram=kervaire&data=C4__S0)&nbsp;&nbsp;&nbsp;
+[C8__S0](plot.html?diagram=kervaire&data=C8__S0)&nbsp;&nbsp;&nbsp;
+[Cetacube__S0](plot.html?diagram=kervaire&data=Cetacube__S0)&nbsp;&nbsp;&nbsp;
+[Cetasq__S0](plot.html?diagram=kervaire&data=Cetasq__S0)&nbsp;&nbsp;&nbsp;
+[Ceta4__S0](plot.html?diagram=kervaire&data=Ceta4__S0)&nbsp;&nbsp;&nbsp;
+[Ceta5__S0](plot.html?diagram=kervaire&data=Ceta5__S0)&nbsp;&nbsp;&nbsp;
+[Cg__S0](plot.html?diagram=kervaire&data=Cg__S0)&nbsp;&nbsp;&nbsp;
+[Ckappa__S0](plot.html?diagram=kervaire&data=Ckappa__S0)&nbsp;&nbsp;&nbsp;
+[C2nu__CP1_4](plot.html?diagram=kervaire&data=C2nu__CP1_4)&nbsp;&nbsp;&nbsp;
+[C2sigma__CW_2sigma_sigma](plot.html?diagram=kervaire&data=C2sigma__CW_2sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_theta5sq__Ctheta5sq](plot.html?diagram=kervaire&data=CW_2_eta_theta5sq__Ctheta5sq)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_2_etasigma__Cetasigma](plot.html?diagram=kervaire&data=CW_nu_eta_2_etasigma__Cetasigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_2sigma__C2sigma](plot.html?diagram=kervaire&data=CW_sigma_2sigma__C2sigma)&nbsp;&nbsp;&nbsp;
+[Cetasigma__CW_etasigma_2_eta_nu](plot.html?diagram=kervaire&data=Cetasigma__CW_etasigma_2_eta_nu)&nbsp;&nbsp;&nbsp;
 
-[C2_C2__CW_2_V_eta](plot.html?diagram=kervaire&data=C2_C2__CW_2_V_eta)<span class="tab"> 
-[C2_Cnu__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Cnu__C2_Ceta_Cnu)<span class="tab"> 
-[C2__Q_CW_2_A_eta](plot.html?diagram=kervaire&data=C2__Q_CW_2_A_eta)<span class="tab"> 
-[CW_2_A_eta__C2_C2](plot.html?diagram=kervaire&data=CW_2_A_eta__C2_C2)<span class="tab"> 
-[CW_eta_A_nu__Ceta_Ceta](plot.html?diagram=kervaire&data=CW_eta_A_nu__Ceta_Ceta)<span class="tab"> 
-[CW_nu_A_sigma__Cnu_Cnu](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Cnu_Cnu)<span class="tab"> 
-[Ceta_Ceta__CW_eta_V_nu](plot.html?diagram=kervaire&data=Ceta_Ceta__CW_eta_V_nu)<span class="tab"> 
-[Ceta__Q_CW_2_A_eta](plot.html?diagram=kervaire&data=Ceta__Q_CW_2_A_eta)<span class="tab"> 
-[Ceta__Q_CW_eta_A_nu](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_A_nu)<span class="tab"> 
-[Cnu_Cnu__CW_nu_V_sigma](plot.html?diagram=kervaire&data=Cnu_Cnu__CW_nu_V_sigma)<span class="tab"> 
-[Cnu__Q_CW_eta_A_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_A_nu)<span class="tab"> 
-[Cnu__Q_CW_nu_A_sigma](plot.html?diagram=kervaire&data=Cnu__Q_CW_nu_A_sigma)<span class="tab"> 
-[Csigma__Q_CW_nu_A_sigma](plot.html?diagram=kervaire&data=Csigma__Q_CW_nu_A_sigma)<span class="tab"> 
-[CW_2_V_eta__S1](plot.html?diagram=kervaire&data=CW_2_V_eta__S1)<span class="tab"> 
-[CW_2_V_eta__S2](plot.html?diagram=kervaire&data=CW_2_V_eta__S2)<span class="tab"> 
-[CW_eta_V_nu__S2](plot.html?diagram=kervaire&data=CW_eta_V_nu__S2)<span class="tab"> 
-[CW_eta_V_nu__S4](plot.html?diagram=kervaire&data=CW_eta_V_nu__S4)<span class="tab"> 
-[CW_nu_V_sigma__S4](plot.html?diagram=kervaire&data=CW_nu_V_sigma__S4)<span class="tab"> 
-[CW_nu_V_sigma__S8](plot.html?diagram=kervaire&data=CW_nu_V_sigma__S8)<span class="tab"> 
+[C2_C2__CW_2_V_eta](plot.html?diagram=kervaire&data=C2_C2__CW_2_V_eta)&nbsp;&nbsp;&nbsp;
+[C2_Cnu__C2_Ceta_Cnu](plot.html?diagram=kervaire&data=C2_Cnu__C2_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[C2__Q_CW_2_A_eta](plot.html?diagram=kervaire&data=C2__Q_CW_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta__C2_C2](plot.html?diagram=kervaire&data=CW_2_A_eta__C2_C2)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu__Ceta_Ceta](plot.html?diagram=kervaire&data=CW_eta_A_nu__Ceta_Ceta)&nbsp;&nbsp;&nbsp;
+[CW_nu_A_sigma__Cnu_Cnu](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Cnu_Cnu)&nbsp;&nbsp;&nbsp;
+[Ceta_Ceta__CW_eta_V_nu](plot.html?diagram=kervaire&data=Ceta_Ceta__CW_eta_V_nu)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_CW_2_A_eta](plot.html?diagram=kervaire&data=Ceta__Q_CW_2_A_eta)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_CW_eta_A_nu](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[Cnu_Cnu__CW_nu_V_sigma](plot.html?diagram=kervaire&data=Cnu_Cnu__CW_nu_V_sigma)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_eta_A_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_nu_A_sigma](plot.html?diagram=kervaire&data=Cnu__Q_CW_nu_A_sigma)&nbsp;&nbsp;&nbsp;
+[Csigma__Q_CW_nu_A_sigma](plot.html?diagram=kervaire&data=Csigma__Q_CW_nu_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__S1](plot.html?diagram=kervaire&data=CW_2_V_eta__S1)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__S2](plot.html?diagram=kervaire&data=CW_2_V_eta__S2)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu__S2](plot.html?diagram=kervaire&data=CW_eta_V_nu__S2)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu__S4](plot.html?diagram=kervaire&data=CW_eta_V_nu__S4)&nbsp;&nbsp;&nbsp;
+[CW_nu_V_sigma__S4](plot.html?diagram=kervaire&data=CW_nu_V_sigma__S4)&nbsp;&nbsp;&nbsp;
+[CW_nu_V_sigma__S8](plot.html?diagram=kervaire&data=CW_nu_V_sigma__S8)&nbsp;&nbsp;&nbsp;
 
-[Ceta__Joker](plot.html?diagram=kervaire&data=Ceta__Joker)<span class="tab"> 
-[Ceta__Q_Joker](plot.html?diagram=kervaire&data=Ceta__Q_Joker)<span class="tab"> 
-[CW_2_eta__Joker](plot.html?diagram=kervaire&data=CW_2_eta__Joker)<span class="tab"> 
-[CW_eta_2__Q_Joker](plot.html?diagram=kervaire&data=CW_eta_2__Q_Joker)<span class="tab"> 
-[Joker__Ceta](plot.html?diagram=kervaire&data=Joker__Ceta)<span class="tab"> 
-[Joker__CW_eta_2](plot.html?diagram=kervaire&data=Joker__CW_eta_2)<span class="tab"> 
-[C2__Q_Joker](plot.html?diagram=kervaire&data=C2__Q_Joker)<span class="tab"> 
-[CW_2_eta_V_eta__Joker](plot.html?diagram=kervaire&data=CW_2_eta_V_eta__Joker)<span class="tab"> 
-[CW_eta_2_A_eta__Q_Joker](plot.html?diagram=kervaire&data=CW_eta_2_A_eta__Q_Joker)<span class="tab"> 
-[Joker__CW_eta_2_A_eta](plot.html?diagram=kervaire&data=Joker__CW_eta_2_A_eta)<span class="tab"> 
-[CW_2_V_eta__Joker](plot.html?diagram=kervaire&data=CW_2_V_eta__Joker)<span class="tab"> 
-[Joker__CW_2_A_eta](plot.html?diagram=kervaire&data=Joker__CW_2_A_eta)<span class="tab"> 
-[CW_2_A_eta__Q_Joker](plot.html?diagram=kervaire&data=CW_2_A_eta__Q_Joker)<span class="tab"> 
+[Ceta__Joker](plot.html?diagram=kervaire&data=Ceta__Joker)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_Joker](plot.html?diagram=kervaire&data=Ceta__Q_Joker)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__Joker](plot.html?diagram=kervaire&data=CW_2_eta__Joker)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__Q_Joker](plot.html?diagram=kervaire&data=CW_eta_2__Q_Joker)&nbsp;&nbsp;&nbsp;
+[Joker__Ceta](plot.html?diagram=kervaire&data=Joker__Ceta)&nbsp;&nbsp;&nbsp;
+[Joker__CW_eta_2](plot.html?diagram=kervaire&data=Joker__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[C2__Q_Joker](plot.html?diagram=kervaire&data=C2__Q_Joker)&nbsp;&nbsp;&nbsp;
+[CW_2_eta_V_eta__Joker](plot.html?diagram=kervaire&data=CW_2_eta_V_eta__Joker)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_A_eta__Q_Joker](plot.html?diagram=kervaire&data=CW_eta_2_A_eta__Q_Joker)&nbsp;&nbsp;&nbsp;
+[Joker__CW_eta_2_A_eta](plot.html?diagram=kervaire&data=Joker__CW_eta_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__Joker](plot.html?diagram=kervaire&data=CW_2_V_eta__Joker)&nbsp;&nbsp;&nbsp;
+[Joker__CW_2_A_eta](plot.html?diagram=kervaire&data=Joker__CW_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta__Q_Joker](plot.html?diagram=kervaire&data=CW_2_A_eta__Q_Joker)&nbsp;&nbsp;&nbsp;
 
-[CW_sigma_nu_eta_2__tmf](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2__tmf)<span class="tab"> 
-[C2__tmf_C2](plot.html?diagram=kervaire&data=C2__tmf_C2)<span class="tab"> 
-[Ceta__tmf_Ceta](plot.html?diagram=kervaire&data=Ceta__tmf_Ceta)<span class="tab"> 
-[Cnu__tmf_Cnu](plot.html?diagram=kervaire&data=Cnu__tmf_Cnu)<span class="tab"> 
-[tmf_C2__tmf](plot.html?diagram=kervaire&data=tmf_C2__tmf)<span class="tab"> 
-[tmf_Ceta__tmf](plot.html?diagram=kervaire&data=tmf_Ceta__tmf)<span class="tab"> 
-[tmf_Cnu__tmf](plot.html?diagram=kervaire&data=tmf_Cnu__tmf)<span class="tab"> 
-[RP1_256__tmf_RP1_256](plot.html?diagram=kervaire&data=RP1_256__tmf_RP1_256)<span class="tab"> 
+[CW_sigma_nu_eta_2__tmf](plot.html?diagram=kervaire&data=CW_sigma_nu_eta_2__tmf)&nbsp;&nbsp;&nbsp;
+[C2__tmf_C2](plot.html?diagram=kervaire&data=C2__tmf_C2)&nbsp;&nbsp;&nbsp;
+[Ceta__tmf_Ceta](plot.html?diagram=kervaire&data=Ceta__tmf_Ceta)&nbsp;&nbsp;&nbsp;
+[Cnu__tmf_Cnu](plot.html?diagram=kervaire&data=Cnu__tmf_Cnu)&nbsp;&nbsp;&nbsp;
+[tmf_C2__tmf](plot.html?diagram=kervaire&data=tmf_C2__tmf)&nbsp;&nbsp;&nbsp;
+[tmf_Ceta__tmf](plot.html?diagram=kervaire&data=tmf_Ceta__tmf)&nbsp;&nbsp;&nbsp;
+[tmf_Cnu__tmf](plot.html?diagram=kervaire&data=tmf_Cnu__tmf)&nbsp;&nbsp;&nbsp;
+[RP1_256__tmf_RP1_256](plot.html?diagram=kervaire&data=RP1_256__tmf_RP1_256)&nbsp;&nbsp;&nbsp;
 
-[CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu)<span class="tab"> 
-[C2_Ceta__C2](plot.html?diagram=kervaire&data=C2_Ceta__C2)<span class="tab"> 
-[C2_Ceta__Ceta](plot.html?diagram=kervaire&data=C2_Ceta__Ceta)<span class="tab"> 
-[Ceta_Cnu__Ceta](plot.html?diagram=kervaire&data=Ceta_Cnu__Ceta)<span class="tab"> 
-[Ceta_Cnu__Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu__Cnu)<span class="tab"> 
-[Cnu_Csigma__Cnu](plot.html?diagram=kervaire&data=Cnu_Csigma__Cnu)<span class="tab"> 
-[Cnu_Csigma__Csigma](plot.html?diagram=kervaire&data=Cnu_Csigma__Csigma)<span class="tab"> 
-[Cnu__Cnu_Csigma](plot.html?diagram=kervaire&data=Cnu__Cnu_Csigma)<span class="tab"> 
-[Csigma__Cnu_Csigma](plot.html?diagram=kervaire&data=Csigma__Cnu_Csigma)<span class="tab"> 
-[C2__C2_Ceta](plot.html?diagram=kervaire&data=C2__C2_Ceta)<span class="tab"> 
-[Ceta__C2_Ceta](plot.html?diagram=kervaire&data=Ceta__C2_Ceta)<span class="tab"> 
-[Ceta__Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta__Ceta_Cnu)<span class="tab"> 
-[Cnu__Ceta_Cnu](plot.html?diagram=kervaire&data=Cnu__Ceta_Cnu)<span class="tab"> 
+[CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu)&nbsp;&nbsp;&nbsp;
+[C2_Ceta__C2](plot.html?diagram=kervaire&data=C2_Ceta__C2)&nbsp;&nbsp;&nbsp;
+[C2_Ceta__Ceta](plot.html?diagram=kervaire&data=C2_Ceta__Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta_Cnu__Ceta](plot.html?diagram=kervaire&data=Ceta_Cnu__Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta_Cnu__Cnu](plot.html?diagram=kervaire&data=Ceta_Cnu__Cnu)&nbsp;&nbsp;&nbsp;
+[Cnu_Csigma__Cnu](plot.html?diagram=kervaire&data=Cnu_Csigma__Cnu)&nbsp;&nbsp;&nbsp;
+[Cnu_Csigma__Csigma](plot.html?diagram=kervaire&data=Cnu_Csigma__Csigma)&nbsp;&nbsp;&nbsp;
+[Cnu__Cnu_Csigma](plot.html?diagram=kervaire&data=Cnu__Cnu_Csigma)&nbsp;&nbsp;&nbsp;
+[Csigma__Cnu_Csigma](plot.html?diagram=kervaire&data=Csigma__Cnu_Csigma)&nbsp;&nbsp;&nbsp;
+[C2__C2_Ceta](plot.html?diagram=kervaire&data=C2__C2_Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta__C2_Ceta](plot.html?diagram=kervaire&data=Ceta__C2_Ceta)&nbsp;&nbsp;&nbsp;
+[Ceta__Ceta_Cnu](plot.html?diagram=kervaire&data=Ceta__Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[Cnu__Ceta_Cnu](plot.html?diagram=kervaire&data=Cnu__Ceta_Cnu)&nbsp;&nbsp;&nbsp;
 
-[Ceta__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[Ceta__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[Ceta__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[Cnu__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=Cnu__Q_CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[Cnu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=Cnu__CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[Cnu__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[Csigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=Csigma__CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[Csigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=Csigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[CW_eta_nu_eta_Eq_nu_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__Cnu)<span class="tab"> 
-[CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta)<span class="tab"> 
-[CW_eta_nu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_nu_sigma_nu_Eq_sigma_sigma__Csigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__Csigma)<span class="tab"> 
-[CW_nu_eta__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_nu_eta__Q_CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_nu_sigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma__CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[CW_sigma_nu__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu__Q_CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[C2__CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=C2__CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[C2__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=C2__Q_CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[Cnu__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[CW_2_eta__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_2_eta__Q_CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[CW_2_eta__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_2_eta__Q_CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[CW_eta_2_eta_Eq_2_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu__Cnu)<span class="tab"> 
-[CW_eta_2_eta_Eq_2_nu__CW_2_eta](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu__CW_2_eta)<span class="tab"> 
-[CW_eta_2_eta_Eq_nu_2__C2](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2__C2)<span class="tab"> 
-[CW_eta_2_eta_Eq_nu_2__CW_2_eta](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2__CW_2_eta)<span class="tab"> 
-[CW_eta_2__CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_eta_2__CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[CW_eta_2__CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_eta_2__CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[Cnu__CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=Cnu__CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[C2__CW_2_V_eta](plot.html?diagram=kervaire&data=C2__CW_2_V_eta)<span class="tab"> 
-[CW_2_V_eta__C2_Ceta](plot.html?diagram=kervaire&data=CW_2_V_eta__C2_Ceta)<span class="tab"> 
-[CW_2_V_eta__CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_2_V_eta__CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[CW_eta_V_nu__CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_eta_V_nu__CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[CW_eta_V_nu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_V_nu__CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_eta_V_nu__Ceta_Cnu](plot.html?diagram=kervaire&data=CW_eta_V_nu__Ceta_Cnu)<span class="tab"> 
-[CW_nu_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[CW_nu_V_sigma__Cnu_Csigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma__Cnu_Csigma)<span class="tab"> 
-[Ceta__CW_2_V_eta](plot.html?diagram=kervaire&data=Ceta__CW_2_V_eta)<span class="tab"> 
-[Ceta__CW_eta_V_nu](plot.html?diagram=kervaire&data=Ceta__CW_eta_V_nu)<span class="tab"> 
-[Cnu__CW_eta_V_nu](plot.html?diagram=kervaire&data=Cnu__CW_eta_V_nu)<span class="tab"> 
-[Cnu__CW_nu_V_sigma](plot.html?diagram=kervaire&data=Cnu__CW_nu_V_sigma)<span class="tab"> 
-[Csigma__CW_nu_V_sigma](plot.html?diagram=kervaire&data=Csigma__CW_nu_V_sigma)<span class="tab"> 
-[C2__CW_2_V_nu](plot.html?diagram=kervaire&data=C2__CW_2_V_nu)<span class="tab"> 
-[C2__CW_2_V_sigma](plot.html?diagram=kervaire&data=C2__CW_2_V_sigma)<span class="tab"> 
-[Ceta__CW_eta_V_sigma](plot.html?diagram=kervaire&data=Ceta__CW_eta_V_sigma)<span class="tab"> 
-[Cnu__CW_2_V_nu](plot.html?diagram=kervaire&data=Cnu__CW_2_V_nu)<span class="tab"> 
-[Csigma__CW_2_V_sigma](plot.html?diagram=kervaire&data=Csigma__CW_2_V_sigma)<span class="tab"> 
-[Csigma__CW_eta_V_sigma](plot.html?diagram=kervaire&data=Csigma__CW_eta_V_sigma)<span class="tab"> 
-[C2_Cnu__CW_2_A_nu](plot.html?diagram=kervaire&data=C2_Cnu__CW_2_A_nu)<span class="tab"> 
-[C2_Csigma__CW_2_A_sigma](plot.html?diagram=kervaire&data=C2_Csigma__CW_2_A_sigma)<span class="tab"> 
-[CW_2_A_nu__C2](plot.html?diagram=kervaire&data=CW_2_A_nu__C2)<span class="tab"> 
-[CW_2_A_nu__Cnu](plot.html?diagram=kervaire&data=CW_2_A_nu__Cnu)<span class="tab"> 
-[CW_2_A_nu__Q_C2_Cnu](plot.html?diagram=kervaire&data=CW_2_A_nu__Q_C2_Cnu)<span class="tab"> 
-[CW_2_A_sigma__C2](plot.html?diagram=kervaire&data=CW_2_A_sigma__C2)<span class="tab"> 
-[CW_2_A_sigma__Csigma](plot.html?diagram=kervaire&data=CW_2_A_sigma__Csigma)<span class="tab"> 
-[CW_2_V_eta__CW_2_eta_V_eta](plot.html?diagram=kervaire&data=CW_2_V_eta__CW_2_eta_V_eta)<span class="tab"> 
-[CW_2_eta__CW_2_eta_V_eta](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_V_eta)<span class="tab"> 
-[CW_eta_2_A_eta__CW_2_A_eta](plot.html?diagram=kervaire&data=CW_eta_2_A_eta__CW_2_A_eta)<span class="tab"> 
-[CW_eta_2_A_eta__CW_eta_2](plot.html?diagram=kervaire&data=CW_eta_2_A_eta__CW_eta_2)<span class="tab"> 
-[CW_eta_V_nu__CW_eta_nu_V_nu](plot.html?diagram=kervaire&data=CW_eta_V_nu__CW_eta_nu_V_nu)<span class="tab"> 
-[CW_eta_nu_V_nu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_nu_V_nu__CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_eta_nu__CW_eta_nu_V_nu](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_V_nu)<span class="tab"> 
-[CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta_A_nu)<span class="tab"> 
-[CW_nu_V_sigma__CW_nu_sigma_V_sigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma__CW_nu_sigma_V_sigma)<span class="tab"> 
-[CW_nu_eta_A_nu__CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu__CW_eta_A_nu)<span class="tab"> 
-[CW_nu_eta_A_nu__CW_nu_eta](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu__CW_nu_eta)<span class="tab"> 
-[CW_nu_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_nu_sigma_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[CW_nu_sigma__CW_nu_sigma_V_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma__CW_nu_sigma_V_sigma)<span class="tab"> 
-[CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu_A_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu_A_sigma)<span class="tab"> 
-[CW_sigma_nu_A_sigma__CW_nu_A_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma__CW_nu_A_sigma)<span class="tab"> 
-[CW_sigma_nu_A_sigma__CW_sigma_nu](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma__CW_sigma_nu)<span class="tab"> 
-[CW_sigma_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[Ceta_Cnu__CW_eta_A_nu](plot.html?diagram=kervaire&data=Ceta_Cnu__CW_eta_A_nu)<span class="tab"> 
-[Ceta_Csigma__CW_eta_A_sigma](plot.html?diagram=kervaire&data=Ceta_Csigma__CW_eta_A_sigma)<span class="tab"> 
-[Cnu_Csigma__CW_nu_A_sigma](plot.html?diagram=kervaire&data=Cnu_Csigma__CW_nu_A_sigma)<span class="tab"> 
-[CW_2_A_sigma__Q_C2_Csigma](plot.html?diagram=kervaire&data=CW_2_A_sigma__Q_C2_Csigma)<span class="tab"> 
-[CW_2_V_nu__C2_Cnu](plot.html?diagram=kervaire&data=CW_2_V_nu__C2_Cnu)<span class="tab"> 
-[CW_2_V_sigma__C2_Csigma](plot.html?diagram=kervaire&data=CW_2_V_sigma__C2_Csigma)<span class="tab"> 
-[CW_eta_A_sigma__Ceta](plot.html?diagram=kervaire&data=CW_eta_A_sigma__Ceta)<span class="tab"> 
-[CW_eta_A_sigma__Csigma](plot.html?diagram=kervaire&data=CW_eta_A_sigma__Csigma)<span class="tab"> 
-[CW_eta_A_sigma__Q_Ceta_Csigma](plot.html?diagram=kervaire&data=CW_eta_A_sigma__Q_Ceta_Csigma)<span class="tab"> 
-[CW_eta_V_sigma__Ceta_Csigma](plot.html?diagram=kervaire&data=CW_eta_V_sigma__Ceta_Csigma)<span class="tab"> 
-[C2_Ceta__CW_2_A_eta](plot.html?diagram=kervaire&data=C2_Ceta__CW_2_A_eta)<span class="tab"> 
-[CW_2_A_eta__C2](plot.html?diagram=kervaire&data=CW_2_A_eta__C2)<span class="tab"> 
-[CW_2_A_eta__Ceta](plot.html?diagram=kervaire&data=CW_2_A_eta__Ceta)<span class="tab"> 
-[CW_2_A_eta__Q_C2_Ceta](plot.html?diagram=kervaire&data=CW_2_A_eta__Q_C2_Ceta)<span class="tab"> 
-[CW_2_A_eta__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_2_A_eta__Q_CW_eta_2_eta_Eq_nu_2)<span class="tab"> 
-[CW_eta_2_eta_Eq_nu_2__CW_2_A_eta](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2__CW_2_A_eta)<span class="tab"> 
+[Ceta__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[Ceta__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=Ceta__Q_CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=Cnu__Q_CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=Cnu__CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=Csigma__CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[Csigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=Csigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_eta_Eq_nu_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma_nu_Eq_sigma_sigma__Csigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_nu_eta__Q_CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma__CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu__Q_CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[C2__CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=C2__CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[C2__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=C2__Q_CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[Cnu__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=Cnu__Q_CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_2_eta__Q_CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_2_eta__Q_CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_2_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_2_nu__CW_2_eta](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu__CW_2_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_nu_2__C2](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2__C2)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_nu_2__CW_2_eta](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2__CW_2_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_eta_2__CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_eta_2__CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=Cnu__CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_V_eta](plot.html?diagram=kervaire&data=C2__CW_2_V_eta)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__C2_Ceta](plot.html?diagram=kervaire&data=CW_2_V_eta__C2_Ceta)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_2_V_eta__CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu__CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_eta_V_nu__CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_V_nu__CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu__Ceta_Cnu](plot.html?diagram=kervaire&data=CW_eta_V_nu__Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[CW_nu_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_V_sigma__Cnu_Csigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma__Cnu_Csigma)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_2_V_eta](plot.html?diagram=kervaire&data=Ceta__CW_2_V_eta)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_V_nu](plot.html?diagram=kervaire&data=Ceta__CW_eta_V_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_eta_V_nu](plot.html?diagram=kervaire&data=Cnu__CW_eta_V_nu)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_nu_V_sigma](plot.html?diagram=kervaire&data=Cnu__CW_nu_V_sigma)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_nu_V_sigma](plot.html?diagram=kervaire&data=Csigma__CW_nu_V_sigma)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_V_nu](plot.html?diagram=kervaire&data=C2__CW_2_V_nu)&nbsp;&nbsp;&nbsp;
+[C2__CW_2_V_sigma](plot.html?diagram=kervaire&data=C2__CW_2_V_sigma)&nbsp;&nbsp;&nbsp;
+[Ceta__CW_eta_V_sigma](plot.html?diagram=kervaire&data=Ceta__CW_eta_V_sigma)&nbsp;&nbsp;&nbsp;
+[Cnu__CW_2_V_nu](plot.html?diagram=kervaire&data=Cnu__CW_2_V_nu)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_2_V_sigma](plot.html?diagram=kervaire&data=Csigma__CW_2_V_sigma)&nbsp;&nbsp;&nbsp;
+[Csigma__CW_eta_V_sigma](plot.html?diagram=kervaire&data=Csigma__CW_eta_V_sigma)&nbsp;&nbsp;&nbsp;
+[C2_Cnu__CW_2_A_nu](plot.html?diagram=kervaire&data=C2_Cnu__CW_2_A_nu)&nbsp;&nbsp;&nbsp;
+[C2_Csigma__CW_2_A_sigma](plot.html?diagram=kervaire&data=C2_Csigma__CW_2_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_A_nu__C2](plot.html?diagram=kervaire&data=CW_2_A_nu__C2)&nbsp;&nbsp;&nbsp;
+[CW_2_A_nu__Cnu](plot.html?diagram=kervaire&data=CW_2_A_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_2_A_nu__Q_C2_Cnu](plot.html?diagram=kervaire&data=CW_2_A_nu__Q_C2_Cnu)&nbsp;&nbsp;&nbsp;
+[CW_2_A_sigma__C2](plot.html?diagram=kervaire&data=CW_2_A_sigma__C2)&nbsp;&nbsp;&nbsp;
+[CW_2_A_sigma__Csigma](plot.html?diagram=kervaire&data=CW_2_A_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_2_V_eta__CW_2_eta_V_eta](plot.html?diagram=kervaire&data=CW_2_V_eta__CW_2_eta_V_eta)&nbsp;&nbsp;&nbsp;
+[CW_2_eta__CW_2_eta_V_eta](plot.html?diagram=kervaire&data=CW_2_eta__CW_2_eta_V_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_A_eta__CW_2_A_eta](plot.html?diagram=kervaire&data=CW_eta_2_A_eta__CW_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_A_eta__CW_eta_2](plot.html?diagram=kervaire&data=CW_eta_2_A_eta__CW_eta_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_nu__CW_eta_nu_V_nu](plot.html?diagram=kervaire&data=CW_eta_V_nu__CW_eta_nu_V_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_V_nu__CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_nu_V_nu__CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu__CW_eta_nu_V_nu](plot.html?diagram=kervaire&data=CW_eta_nu__CW_eta_nu_V_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__CW_nu_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_V_sigma__CW_nu_sigma_V_sigma](plot.html?diagram=kervaire&data=CW_nu_V_sigma__CW_nu_sigma_V_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_A_nu__CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu__CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_A_nu__CW_nu_eta](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu__CW_nu_eta)&nbsp;&nbsp;&nbsp;
+[CW_nu_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_nu_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_V_sigma__CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma__CW_nu_sigma_V_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma__CW_nu_sigma_V_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu_A_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__CW_sigma_nu_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_A_sigma__CW_nu_A_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma__CW_nu_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_A_sigma__CW_sigma_nu](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma__CW_sigma_nu)&nbsp;&nbsp;&nbsp;
+[CW_sigma_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_sigma_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[Ceta_Cnu__CW_eta_A_nu](plot.html?diagram=kervaire&data=Ceta_Cnu__CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[Ceta_Csigma__CW_eta_A_sigma](plot.html?diagram=kervaire&data=Ceta_Csigma__CW_eta_A_sigma)&nbsp;&nbsp;&nbsp;
+[Cnu_Csigma__CW_nu_A_sigma](plot.html?diagram=kervaire&data=Cnu_Csigma__CW_nu_A_sigma)&nbsp;&nbsp;&nbsp;
+[CW_2_A_sigma__Q_C2_Csigma](plot.html?diagram=kervaire&data=CW_2_A_sigma__Q_C2_Csigma)&nbsp;&nbsp;&nbsp;
+[CW_2_V_nu__C2_Cnu](plot.html?diagram=kervaire&data=CW_2_V_nu__C2_Cnu)&nbsp;&nbsp;&nbsp;
+[CW_2_V_sigma__C2_Csigma](plot.html?diagram=kervaire&data=CW_2_V_sigma__C2_Csigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_sigma__Ceta](plot.html?diagram=kervaire&data=CW_eta_A_sigma__Ceta)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_sigma__Csigma](plot.html?diagram=kervaire&data=CW_eta_A_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_sigma__Q_Ceta_Csigma](plot.html?diagram=kervaire&data=CW_eta_A_sigma__Q_Ceta_Csigma)&nbsp;&nbsp;&nbsp;
+[CW_eta_V_sigma__Ceta_Csigma](plot.html?diagram=kervaire&data=CW_eta_V_sigma__Ceta_Csigma)&nbsp;&nbsp;&nbsp;
+[C2_Ceta__CW_2_A_eta](plot.html?diagram=kervaire&data=C2_Ceta__CW_2_A_eta)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta__C2](plot.html?diagram=kervaire&data=CW_2_A_eta__C2)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta__Ceta](plot.html?diagram=kervaire&data=CW_2_A_eta__Ceta)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta__Q_C2_Ceta](plot.html?diagram=kervaire&data=CW_2_A_eta__Q_C2_Ceta)&nbsp;&nbsp;&nbsp;
+[CW_2_A_eta__Q_CW_eta_2_eta_Eq_nu_2](plot.html?diagram=kervaire&data=CW_2_A_eta__Q_CW_eta_2_eta_Eq_nu_2)&nbsp;&nbsp;&nbsp;
+[CW_eta_2_eta_Eq_nu_2__CW_2_A_eta](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_nu_2__CW_2_A_eta)&nbsp;&nbsp;&nbsp;
 
-[CW_eta_2_eta_Eq_2_nu__CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu__CW_eta_A_nu)<span class="tab"> 
-[CW_eta_A_nu__Ceta](plot.html?diagram=kervaire&data=CW_eta_A_nu__Ceta)<span class="tab"> 
-[CW_eta_A_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Cnu)<span class="tab"> 
-[CW_eta_A_nu__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Q_CW_eta_2_eta_Eq_2_nu)<span class="tab"> 
-[CW_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu)<span class="tab"> 
-[CW_eta_A_nu__Q_Ceta_Cnu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Q_Ceta_Cnu)<span class="tab"> 
-[CW_eta_nu_eta_Eq_nu_nu__CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__CW_eta_A_nu)<span class="tab"> 
-[CW_nu_A_sigma__Cnu](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Cnu)<span class="tab"> 
-[CW_nu_A_sigma__Csigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Csigma)<span class="tab"> 
-[CW_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma)<span class="tab"> 
-[CW_nu_A_sigma__Q_Cnu_Csigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Q_Cnu_Csigma)<span class="tab"> 
-[CW_nu_sigma_nu_Eq_sigma_sigma__CW_nu_A_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__CW_nu_A_sigma)<span class="tab"> 
+[CW_eta_2_eta_Eq_2_nu__CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_2_eta_Eq_2_nu__CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu__Ceta](plot.html?diagram=kervaire&data=CW_eta_A_nu__Ceta)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu__Cnu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu__Q_CW_eta_2_eta_Eq_2_nu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Q_CW_eta_2_eta_Eq_2_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Q_CW_eta_nu_eta_Eq_nu_nu)&nbsp;&nbsp;&nbsp;
+[CW_eta_A_nu__Q_Ceta_Cnu](plot.html?diagram=kervaire&data=CW_eta_A_nu__Q_Ceta_Cnu)&nbsp;&nbsp;&nbsp;
+[CW_eta_nu_eta_Eq_nu_nu__CW_eta_A_nu](plot.html?diagram=kervaire&data=CW_eta_nu_eta_Eq_nu_nu__CW_eta_A_nu)&nbsp;&nbsp;&nbsp;
+[CW_nu_A_sigma__Cnu](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Cnu)&nbsp;&nbsp;&nbsp;
+[CW_nu_A_sigma__Csigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Csigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Q_CW_nu_sigma_nu_Eq_sigma_sigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_A_sigma__Q_Cnu_Csigma](plot.html?diagram=kervaire&data=CW_nu_A_sigma__Q_Cnu_Csigma)&nbsp;&nbsp;&nbsp;
+[CW_nu_sigma_nu_Eq_sigma_sigma__CW_nu_A_sigma](plot.html?diagram=kervaire&data=CW_nu_sigma_nu_Eq_sigma_sigma__CW_nu_A_sigma)&nbsp;&nbsp;&nbsp;
 
-[CW_eta_2__Fphi](plot.html?diagram=kervaire&data=CW_eta_2__Fphi)<span class="tab"> 
-[CW_eta_2__Fphi4](plot.html?diagram=kervaire&data=CW_eta_2__Fphi4)<span class="tab"> 
-[Fphi4__Fphi6](plot.html?diagram=kervaire&data=Fphi4__Fphi6)<span class="tab"> 
-[Fphi6__Fphi8](plot.html?diagram=kervaire&data=Fphi6__Fphi8)<span class="tab"> 
-[Fphi8__Fphi10](plot.html?diagram=kervaire&data=Fphi8__Fphi10)<span class="tab"> 
-[Fphi10__Fphi12](plot.html?diagram=kervaire&data=Fphi10__Fphi12)<span class="tab"> 
-[Fphi12__Fphi14](plot.html?diagram=kervaire&data=Fphi12__Fphi14)<span class="tab"> 
-[Fphi14__Fphi16](plot.html?diagram=kervaire&data=Fphi14__Fphi16)<span class="tab"> 
-[Fphi4__RP1_4](plot.html?diagram=kervaire&data=Fphi4__RP1_4)<span class="tab"> 
-[Fphi6__RP1_6](plot.html?diagram=kervaire&data=Fphi6__RP1_6)<span class="tab"> 
-[Fphi8__RP1_8](plot.html?diagram=kervaire&data=Fphi8__RP1_8)<span class="tab"> 
-[Fphi10__RP1_10](plot.html?diagram=kervaire&data=Fphi10__RP1_10)<span class="tab"> 
-[Fphi12__RP1_12](plot.html?diagram=kervaire&data=Fphi12__RP1_12)<span class="tab"> 
-[Fphi14__RP1_14](plot.html?diagram=kervaire&data=Fphi14__RP1_14)<span class="tab"> 
-[Fphi16__RP1_16](plot.html?diagram=kervaire&data=Fphi16__RP1_16)<span class="tab"> 
-[RP5_8__RP3_4](plot.html?diagram=kervaire&data=RP5_8__RP3_4)<span class="tab"> 
-[CW_eta_2__RP1_6](plot.html?diagram=kervaire&data=CW_eta_2__RP1_6)<span class="tab"> 
-[RP1_6__CW_2_eta](plot.html?diagram=kervaire&data=RP1_6__CW_2_eta)<span class="tab"> 
-[Fphi__RP1_256](plot.html?diagram=kervaire&data=Fphi__RP1_256)<span class="tab"> 
-[RP1_256__S0](plot.html?diagram=kervaire&data=RP1_256__S0)<span class="tab"> 
-[RP1_256__S0C](plot.html?diagram=kervaire&data=RP1_256__S0C)<span class="tab"> 
-[RP1_256__CP1_128](plot.html?diagram=kervaire&data=RP1_256__CP1_128)<span class="tab"> 
-[CP1_2__CP1_4](plot.html?diagram=kervaire&data=CP1_2__CP1_4)<span class="tab"> 
-[CP1_4__CP3_4](plot.html?diagram=kervaire&data=CP1_4__CP3_4)<span class="tab"> 
-[CP1_4__CP1_128](plot.html?diagram=kervaire&data=CP1_4__CP1_128)<span class="tab"> 
-[RP1_4__CP1_2](plot.html?diagram=kervaire&data=RP1_4__CP1_2)<span class="tab"> 
-[RP1_8__CP1_4](plot.html?diagram=kervaire&data=RP1_8__CP1_4)<span class="tab"> 
-[RP1_256__RPm7_0](plot.html?diagram=kervaire&data=RP1_256__RPm7_0)<span class="tab"> 
-[RP1_10__RP7_10](plot.html?diagram=kervaire&data=RP1_10__RP7_10)<span class="tab"> 
-[RP1_16__RP9_16](plot.html?diagram=kervaire&data=RP1_16__RP9_16)<span class="tab"> 
-[RP9_16__RP1_8](plot.html?diagram=kervaire&data=RP9_16__RP1_8)<span class="tab"> 
-[RP3_4__RP1_2](plot.html?diagram=kervaire&data=RP3_4__RP1_2)<span class="tab"> 
-[RP5_6__RP3_4](plot.html?diagram=kervaire&data=RP5_6__RP3_4)<span class="tab"> 
-[RP1_4__RP2_4](plot.html?diagram=kervaire&data=RP1_4__RP2_4)<span class="tab"> 
-[RP3_5__RP3_6](plot.html?diagram=kervaire&data=RP3_5__RP3_6)<span class="tab"> 
-[RP3_4__RP3_6](plot.html?diagram=kervaire&data=RP3_4__RP3_6)<span class="tab"> 
-[RP1_2__RP1_4](plot.html?diagram=kervaire&data=RP1_2__RP1_4)<span class="tab"> 
-[RP1_4__RP1_6](plot.html?diagram=kervaire&data=RP1_4__RP1_6)<span class="tab"> 
-[RP1_6__RP1_8](plot.html?diagram=kervaire&data=RP1_6__RP1_8)<span class="tab"> 
-[RP1_8__RP1_10](plot.html?diagram=kervaire&data=RP1_8__RP1_10)<span class="tab"> 
-[RP1_10__RP1_12](plot.html?diagram=kervaire&data=RP1_10__RP1_12)<span class="tab"> 
-[RP1_12__RP1_256](plot.html?diagram=kervaire&data=RP1_12__RP1_256)<span class="tab"> 
-[RP1_12__RP1_14](plot.html?diagram=kervaire&data=RP1_12__RP1_14)<span class="tab"> 
-[RP1_14__RP1_16](plot.html?diagram=kervaire&data=RP1_14__RP1_16)<span class="tab"> 
-[RP1_16__RP1_18](plot.html?diagram=kervaire&data=RP1_16__RP1_18)<span class="tab"> 
-[RP1_18__RP1_20](plot.html?diagram=kervaire&data=RP1_18__RP1_20)<span class="tab"> 
-[RP1_20__RP1_22](plot.html?diagram=kervaire&data=RP1_20__RP1_22)<span class="tab"> 
-[RP1_22__RP1_24](plot.html?diagram=kervaire&data=RP1_22__RP1_24)<span class="tab"> 
-[RP1_24__RP1_26](plot.html?diagram=kervaire&data=RP1_24__RP1_26)<span class="tab"> 
-[RP1_26__RP1_28](plot.html?diagram=kervaire&data=RP1_26__RP1_28)<span class="tab"> 
-[RP1_28__RP1_30](plot.html?diagram=kervaire&data=RP1_28__RP1_30)<span class="tab"> 
-[RP1_30__RP1_32](plot.html?diagram=kervaire&data=RP1_30__RP1_32)<span class="tab"> 
-[RP1_32__RP1_34](plot.html?diagram=kervaire&data=RP1_32__RP1_34)<span class="tab"> 
-[RP1_34__RP1_36](plot.html?diagram=kervaire&data=RP1_34__RP1_36)<span class="tab"> 
-[RP1_36__RP1_38](plot.html?diagram=kervaire&data=RP1_36__RP1_38)<span class="tab"> 
-[RP1_38__RP1_40](plot.html?diagram=kervaire&data=RP1_38__RP1_40)<span class="tab"> 
-[RP1_40__RP1_42](plot.html?diagram=kervaire&data=RP1_40__RP1_42)<span class="tab"> 
-[RP1_42__RP1_44](plot.html?diagram=kervaire&data=RP1_42__RP1_44)<span class="tab"> 
-[RP1_44__RP1_46](plot.html?diagram=kervaire&data=RP1_44__RP1_46)<span class="tab"> 
-[RP1_46__RP1_48](plot.html?diagram=kervaire&data=RP1_46__RP1_48)<span class="tab"> 
-[RP1_48__RP1_50](plot.html?diagram=kervaire&data=RP1_48__RP1_50)<span class="tab"> 
-[RP1_50__RP1_52](plot.html?diagram=kervaire&data=RP1_50__RP1_52)<span class="tab"> 
-[RP1_52__RP1_54](plot.html?diagram=kervaire&data=RP1_52__RP1_54)<span class="tab"> 
-[RP1_54__RP1_56](plot.html?diagram=kervaire&data=RP1_54__RP1_56)<span class="tab"> 
-[RP1_56__RP1_58](plot.html?diagram=kervaire&data=RP1_56__RP1_58)<span class="tab"> 
-[RP1_58__RP1_60](plot.html?diagram=kervaire&data=RP1_58__RP1_60)<span class="tab"> 
-[RP1_60__RP1_62](plot.html?diagram=kervaire&data=RP1_60__RP1_62)<span class="tab"> 
-[RP1_62__RP1_64](plot.html?diagram=kervaire&data=RP1_62__RP1_64)<span class="tab"> 
-[RP1_64__RP1_66](plot.html?diagram=kervaire&data=RP1_64__RP1_66)<span class="tab"> 
-[RP1_66__RP1_68](plot.html?diagram=kervaire&data=RP1_66__RP1_68)<span class="tab"> 
-[RP1_68__RP1_70](plot.html?diagram=kervaire&data=RP1_68__RP1_70)<span class="tab"> 
-[RP1_70__RP1_72](plot.html?diagram=kervaire&data=RP1_70__RP1_72)<span class="tab"> 
-[RP1_72__RP1_74](plot.html?diagram=kervaire&data=RP1_72__RP1_74)<span class="tab"> 
-[RP1_74__RP1_76](plot.html?diagram=kervaire&data=RP1_74__RP1_76)<span class="tab"> 
-[RP1_76__RP1_78](plot.html?diagram=kervaire&data=RP1_76__RP1_78)<span class="tab"> 
-[RP1_78__RP1_80](plot.html?diagram=kervaire&data=RP1_78__RP1_80)<span class="tab"> 
-[RP1_80__RP1_82](plot.html?diagram=kervaire&data=RP1_80__RP1_82)<span class="tab"> 
-[RP1_82__RP1_84](plot.html?diagram=kervaire&data=RP1_82__RP1_84)<span class="tab"> 
-[RP1_84__RP1_86](plot.html?diagram=kervaire&data=RP1_84__RP1_86)<span class="tab"> 
-[RP1_86__RP1_88](plot.html?diagram=kervaire&data=RP1_86__RP1_88)<span class="tab"> 
-[RP1_88__RP1_90](plot.html?diagram=kervaire&data=RP1_88__RP1_90)<span class="tab"> 
-[RP1_90__RP1_92](plot.html?diagram=kervaire&data=RP1_90__RP1_92)<span class="tab"> 
-[RP1_92__RP1_94](plot.html?diagram=kervaire&data=RP1_92__RP1_94)<span class="tab"> 
-[RP1_94__RP1_96](plot.html?diagram=kervaire&data=RP1_94__RP1_96)<span class="tab"> 
-[RP1_96__RP1_98](plot.html?diagram=kervaire&data=RP1_96__RP1_98)<span class="tab"> 
-[RP1_98__RP1_100](plot.html?diagram=kervaire&data=RP1_98__RP1_100)<span class="tab"> 
-[RP1_100__RP1_102](plot.html?diagram=kervaire&data=RP1_100__RP1_102)<span class="tab"> 
-[RP1_102__RP1_104](plot.html?diagram=kervaire&data=RP1_102__RP1_104)<span class="tab"> 
-[RP1_104__RP1_106](plot.html?diagram=kervaire&data=RP1_104__RP1_106)<span class="tab"> 
-[RP1_106__RP1_108](plot.html?diagram=kervaire&data=RP1_106__RP1_108)<span class="tab"> 
-[RP1_108__RP1_110](plot.html?diagram=kervaire&data=RP1_108__RP1_110)<span class="tab"> 
-[RP1_110__RP1_112](plot.html?diagram=kervaire&data=RP1_110__RP1_112)<span class="tab"> 
-[RP1_112__RP1_114](plot.html?diagram=kervaire&data=RP1_112__RP1_114)<span class="tab"> 
-[RP1_114__RP1_116](plot.html?diagram=kervaire&data=RP1_114__RP1_116)<span class="tab"> 
-[RP1_116__RP1_256](plot.html?diagram=kervaire&data=RP1_116__RP1_256)<span class="tab"> 
+[CW_eta_2__Fphi](plot.html?diagram=kervaire&data=CW_eta_2__Fphi)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__Fphi4](plot.html?diagram=kervaire&data=CW_eta_2__Fphi4)&nbsp;&nbsp;&nbsp;
+[Fphi4__Fphi6](plot.html?diagram=kervaire&data=Fphi4__Fphi6)&nbsp;&nbsp;&nbsp;
+[Fphi6__Fphi8](plot.html?diagram=kervaire&data=Fphi6__Fphi8)&nbsp;&nbsp;&nbsp;
+[Fphi8__Fphi10](plot.html?diagram=kervaire&data=Fphi8__Fphi10)&nbsp;&nbsp;&nbsp;
+[Fphi10__Fphi12](plot.html?diagram=kervaire&data=Fphi10__Fphi12)&nbsp;&nbsp;&nbsp;
+[Fphi12__Fphi14](plot.html?diagram=kervaire&data=Fphi12__Fphi14)&nbsp;&nbsp;&nbsp;
+[Fphi14__Fphi16](plot.html?diagram=kervaire&data=Fphi14__Fphi16)&nbsp;&nbsp;&nbsp;
+[Fphi4__RP1_4](plot.html?diagram=kervaire&data=Fphi4__RP1_4)&nbsp;&nbsp;&nbsp;
+[Fphi6__RP1_6](plot.html?diagram=kervaire&data=Fphi6__RP1_6)&nbsp;&nbsp;&nbsp;
+[Fphi8__RP1_8](plot.html?diagram=kervaire&data=Fphi8__RP1_8)&nbsp;&nbsp;&nbsp;
+[Fphi10__RP1_10](plot.html?diagram=kervaire&data=Fphi10__RP1_10)&nbsp;&nbsp;&nbsp;
+[Fphi12__RP1_12](plot.html?diagram=kervaire&data=Fphi12__RP1_12)&nbsp;&nbsp;&nbsp;
+[Fphi14__RP1_14](plot.html?diagram=kervaire&data=Fphi14__RP1_14)&nbsp;&nbsp;&nbsp;
+[Fphi16__RP1_16](plot.html?diagram=kervaire&data=Fphi16__RP1_16)&nbsp;&nbsp;&nbsp;
+[RP5_8__RP3_4](plot.html?diagram=kervaire&data=RP5_8__RP3_4)&nbsp;&nbsp;&nbsp;
+[CW_eta_2__RP1_6](plot.html?diagram=kervaire&data=CW_eta_2__RP1_6)&nbsp;&nbsp;&nbsp;
+[RP1_6__CW_2_eta](plot.html?diagram=kervaire&data=RP1_6__CW_2_eta)&nbsp;&nbsp;&nbsp;
+[Fphi__RP1_256](plot.html?diagram=kervaire&data=Fphi__RP1_256)&nbsp;&nbsp;&nbsp;
+[RP1_256__S0](plot.html?diagram=kervaire&data=RP1_256__S0)&nbsp;&nbsp;&nbsp;
+[RP1_256__S0C](plot.html?diagram=kervaire&data=RP1_256__S0C)&nbsp;&nbsp;&nbsp;
+[RP1_256__CP1_128](plot.html?diagram=kervaire&data=RP1_256__CP1_128)&nbsp;&nbsp;&nbsp;
+[CP1_2__CP1_4](plot.html?diagram=kervaire&data=CP1_2__CP1_4)&nbsp;&nbsp;&nbsp;
+[CP1_4__CP3_4](plot.html?diagram=kervaire&data=CP1_4__CP3_4)&nbsp;&nbsp;&nbsp;
+[CP1_4__CP1_128](plot.html?diagram=kervaire&data=CP1_4__CP1_128)&nbsp;&nbsp;&nbsp;
+[RP1_4__CP1_2](plot.html?diagram=kervaire&data=RP1_4__CP1_2)&nbsp;&nbsp;&nbsp;
+[RP1_8__CP1_4](plot.html?diagram=kervaire&data=RP1_8__CP1_4)&nbsp;&nbsp;&nbsp;
+[RP1_256__RPm7_0](plot.html?diagram=kervaire&data=RP1_256__RPm7_0)&nbsp;&nbsp;&nbsp;
+[RP1_10__RP7_10](plot.html?diagram=kervaire&data=RP1_10__RP7_10)&nbsp;&nbsp;&nbsp;
+[RP1_16__RP9_16](plot.html?diagram=kervaire&data=RP1_16__RP9_16)&nbsp;&nbsp;&nbsp;
+[RP9_16__RP1_8](plot.html?diagram=kervaire&data=RP9_16__RP1_8)&nbsp;&nbsp;&nbsp;
+[RP3_4__RP1_2](plot.html?diagram=kervaire&data=RP3_4__RP1_2)&nbsp;&nbsp;&nbsp;
+[RP5_6__RP3_4](plot.html?diagram=kervaire&data=RP5_6__RP3_4)&nbsp;&nbsp;&nbsp;
+[RP1_4__RP2_4](plot.html?diagram=kervaire&data=RP1_4__RP2_4)&nbsp;&nbsp;&nbsp;
+[RP3_5__RP3_6](plot.html?diagram=kervaire&data=RP3_5__RP3_6)&nbsp;&nbsp;&nbsp;
+[RP3_4__RP3_6](plot.html?diagram=kervaire&data=RP3_4__RP3_6)&nbsp;&nbsp;&nbsp;
+[RP1_2__RP1_4](plot.html?diagram=kervaire&data=RP1_2__RP1_4)&nbsp;&nbsp;&nbsp;
+[RP1_4__RP1_6](plot.html?diagram=kervaire&data=RP1_4__RP1_6)&nbsp;&nbsp;&nbsp;
+[RP1_6__RP1_8](plot.html?diagram=kervaire&data=RP1_6__RP1_8)&nbsp;&nbsp;&nbsp;
+[RP1_8__RP1_10](plot.html?diagram=kervaire&data=RP1_8__RP1_10)&nbsp;&nbsp;&nbsp;
+[RP1_10__RP1_12](plot.html?diagram=kervaire&data=RP1_10__RP1_12)&nbsp;&nbsp;&nbsp;
+[RP1_12__RP1_256](plot.html?diagram=kervaire&data=RP1_12__RP1_256)&nbsp;&nbsp;&nbsp;
+[RP1_12__RP1_14](plot.html?diagram=kervaire&data=RP1_12__RP1_14)&nbsp;&nbsp;&nbsp;
+[RP1_14__RP1_16](plot.html?diagram=kervaire&data=RP1_14__RP1_16)&nbsp;&nbsp;&nbsp;
+[RP1_16__RP1_18](plot.html?diagram=kervaire&data=RP1_16__RP1_18)&nbsp;&nbsp;&nbsp;
+[RP1_18__RP1_20](plot.html?diagram=kervaire&data=RP1_18__RP1_20)&nbsp;&nbsp;&nbsp;
+[RP1_20__RP1_22](plot.html?diagram=kervaire&data=RP1_20__RP1_22)&nbsp;&nbsp;&nbsp;
+[RP1_22__RP1_24](plot.html?diagram=kervaire&data=RP1_22__RP1_24)&nbsp;&nbsp;&nbsp;
+[RP1_24__RP1_26](plot.html?diagram=kervaire&data=RP1_24__RP1_26)&nbsp;&nbsp;&nbsp;
+[RP1_26__RP1_28](plot.html?diagram=kervaire&data=RP1_26__RP1_28)&nbsp;&nbsp;&nbsp;
+[RP1_28__RP1_30](plot.html?diagram=kervaire&data=RP1_28__RP1_30)&nbsp;&nbsp;&nbsp;
+[RP1_30__RP1_32](plot.html?diagram=kervaire&data=RP1_30__RP1_32)&nbsp;&nbsp;&nbsp;
+[RP1_32__RP1_34](plot.html?diagram=kervaire&data=RP1_32__RP1_34)&nbsp;&nbsp;&nbsp;
+[RP1_34__RP1_36](plot.html?diagram=kervaire&data=RP1_34__RP1_36)&nbsp;&nbsp;&nbsp;
+[RP1_36__RP1_38](plot.html?diagram=kervaire&data=RP1_36__RP1_38)&nbsp;&nbsp;&nbsp;
+[RP1_38__RP1_40](plot.html?diagram=kervaire&data=RP1_38__RP1_40)&nbsp;&nbsp;&nbsp;
+[RP1_40__RP1_42](plot.html?diagram=kervaire&data=RP1_40__RP1_42)&nbsp;&nbsp;&nbsp;
+[RP1_42__RP1_44](plot.html?diagram=kervaire&data=RP1_42__RP1_44)&nbsp;&nbsp;&nbsp;
+[RP1_44__RP1_46](plot.html?diagram=kervaire&data=RP1_44__RP1_46)&nbsp;&nbsp;&nbsp;
+[RP1_46__RP1_48](plot.html?diagram=kervaire&data=RP1_46__RP1_48)&nbsp;&nbsp;&nbsp;
+[RP1_48__RP1_50](plot.html?diagram=kervaire&data=RP1_48__RP1_50)&nbsp;&nbsp;&nbsp;
+[RP1_50__RP1_52](plot.html?diagram=kervaire&data=RP1_50__RP1_52)&nbsp;&nbsp;&nbsp;
+[RP1_52__RP1_54](plot.html?diagram=kervaire&data=RP1_52__RP1_54)&nbsp;&nbsp;&nbsp;
+[RP1_54__RP1_56](plot.html?diagram=kervaire&data=RP1_54__RP1_56)&nbsp;&nbsp;&nbsp;
+[RP1_56__RP1_58](plot.html?diagram=kervaire&data=RP1_56__RP1_58)&nbsp;&nbsp;&nbsp;
+[RP1_58__RP1_60](plot.html?diagram=kervaire&data=RP1_58__RP1_60)&nbsp;&nbsp;&nbsp;
+[RP1_60__RP1_62](plot.html?diagram=kervaire&data=RP1_60__RP1_62)&nbsp;&nbsp;&nbsp;
+[RP1_62__RP1_64](plot.html?diagram=kervaire&data=RP1_62__RP1_64)&nbsp;&nbsp;&nbsp;
+[RP1_64__RP1_66](plot.html?diagram=kervaire&data=RP1_64__RP1_66)&nbsp;&nbsp;&nbsp;
+[RP1_66__RP1_68](plot.html?diagram=kervaire&data=RP1_66__RP1_68)&nbsp;&nbsp;&nbsp;
+[RP1_68__RP1_70](plot.html?diagram=kervaire&data=RP1_68__RP1_70)&nbsp;&nbsp;&nbsp;
+[RP1_70__RP1_72](plot.html?diagram=kervaire&data=RP1_70__RP1_72)&nbsp;&nbsp;&nbsp;
+[RP1_72__RP1_74](plot.html?diagram=kervaire&data=RP1_72__RP1_74)&nbsp;&nbsp;&nbsp;
+[RP1_74__RP1_76](plot.html?diagram=kervaire&data=RP1_74__RP1_76)&nbsp;&nbsp;&nbsp;
+[RP1_76__RP1_78](plot.html?diagram=kervaire&data=RP1_76__RP1_78)&nbsp;&nbsp;&nbsp;
+[RP1_78__RP1_80](plot.html?diagram=kervaire&data=RP1_78__RP1_80)&nbsp;&nbsp;&nbsp;
+[RP1_80__RP1_82](plot.html?diagram=kervaire&data=RP1_80__RP1_82)&nbsp;&nbsp;&nbsp;
+[RP1_82__RP1_84](plot.html?diagram=kervaire&data=RP1_82__RP1_84)&nbsp;&nbsp;&nbsp;
+[RP1_84__RP1_86](plot.html?diagram=kervaire&data=RP1_84__RP1_86)&nbsp;&nbsp;&nbsp;
+[RP1_86__RP1_88](plot.html?diagram=kervaire&data=RP1_86__RP1_88)&nbsp;&nbsp;&nbsp;
+[RP1_88__RP1_90](plot.html?diagram=kervaire&data=RP1_88__RP1_90)&nbsp;&nbsp;&nbsp;
+[RP1_90__RP1_92](plot.html?diagram=kervaire&data=RP1_90__RP1_92)&nbsp;&nbsp;&nbsp;
+[RP1_92__RP1_94](plot.html?diagram=kervaire&data=RP1_92__RP1_94)&nbsp;&nbsp;&nbsp;
+[RP1_94__RP1_96](plot.html?diagram=kervaire&data=RP1_94__RP1_96)&nbsp;&nbsp;&nbsp;
+[RP1_96__RP1_98](plot.html?diagram=kervaire&data=RP1_96__RP1_98)&nbsp;&nbsp;&nbsp;
+[RP1_98__RP1_100](plot.html?diagram=kervaire&data=RP1_98__RP1_100)&nbsp;&nbsp;&nbsp;
+[RP1_100__RP1_102](plot.html?diagram=kervaire&data=RP1_100__RP1_102)&nbsp;&nbsp;&nbsp;
+[RP1_102__RP1_104](plot.html?diagram=kervaire&data=RP1_102__RP1_104)&nbsp;&nbsp;&nbsp;
+[RP1_104__RP1_106](plot.html?diagram=kervaire&data=RP1_104__RP1_106)&nbsp;&nbsp;&nbsp;
+[RP1_106__RP1_108](plot.html?diagram=kervaire&data=RP1_106__RP1_108)&nbsp;&nbsp;&nbsp;
+[RP1_108__RP1_110](plot.html?diagram=kervaire&data=RP1_108__RP1_110)&nbsp;&nbsp;&nbsp;
+[RP1_110__RP1_112](plot.html?diagram=kervaire&data=RP1_110__RP1_112)&nbsp;&nbsp;&nbsp;
+[RP1_112__RP1_114](plot.html?diagram=kervaire&data=RP1_112__RP1_114)&nbsp;&nbsp;&nbsp;
+[RP1_114__RP1_116](plot.html?diagram=kervaire&data=RP1_114__RP1_116)&nbsp;&nbsp;&nbsp;
+[RP1_116__RP1_256](plot.html?diagram=kervaire&data=RP1_116__RP1_256)&nbsp;&nbsp;&nbsp;
 
-[RP1_6__RP3_6](plot.html?diagram=kervaire&data=RP1_6__RP3_6)<span class="tab"> 
-[RP3_6__RP5_6](plot.html?diagram=kervaire&data=RP3_6__RP5_6)<span class="tab"> 
-[RP1_4__RP3_4](plot.html?diagram=kervaire&data=RP1_4__RP3_4)<span class="tab"> 
-[RP1_6__RP5_6](plot.html?diagram=kervaire&data=RP1_6__RP5_6)<span class="tab"> 
-[RP1_8__RP5_8](plot.html?diagram=kervaire&data=RP1_8__RP5_8)<span class="tab"> 
-[RP1_12__RP9_12](plot.html?diagram=kervaire&data=RP1_12__RP9_12)<span class="tab"> 
-[RP1_14__RP11_14](plot.html?diagram=kervaire&data=RP1_14__RP11_14)<span class="tab"> 
-[RP1_16__RP13_16](plot.html?diagram=kervaire&data=RP1_16__RP13_16)<span class="tab"> 
-[RP1_18__RP15_18](plot.html?diagram=kervaire&data=RP1_18__RP15_18)<span class="tab"> 
-[RP1_20__RP17_20](plot.html?diagram=kervaire&data=RP1_20__RP17_20)<span class="tab"> 
-[RP1_22__RP19_22](plot.html?diagram=kervaire&data=RP1_22__RP19_22)<span class="tab"> 
-[RP1_24__RP21_24](plot.html?diagram=kervaire&data=RP1_24__RP21_24)<span class="tab"> 
-[RP1_26__RP23_26](plot.html?diagram=kervaire&data=RP1_26__RP23_26)<span class="tab"> 
-[RP1_28__RP25_28](plot.html?diagram=kervaire&data=RP1_28__RP25_28)<span class="tab"> 
-[RP1_30__RP27_30](plot.html?diagram=kervaire&data=RP1_30__RP27_30)<span class="tab"> 
-[RP1_32__RP29_32](plot.html?diagram=kervaire&data=RP1_32__RP29_32)<span class="tab"> 
-[RP1_34__RP31_34](plot.html?diagram=kervaire&data=RP1_34__RP31_34)<span class="tab"> 
-[RP1_36__RP33_36](plot.html?diagram=kervaire&data=RP1_36__RP33_36)<span class="tab"> 
-[RP1_38__RP35_38](plot.html?diagram=kervaire&data=RP1_38__RP35_38)<span class="tab"> 
-[RP1_40__RP37_40](plot.html?diagram=kervaire&data=RP1_40__RP37_40)<span class="tab"> 
-[RP1_42__RP39_42](plot.html?diagram=kervaire&data=RP1_42__RP39_42)<span class="tab"> 
-[RP1_44__RP41_44](plot.html?diagram=kervaire&data=RP1_44__RP41_44)<span class="tab"> 
-[RP1_46__RP43_46](plot.html?diagram=kervaire&data=RP1_46__RP43_46)<span class="tab"> 
-[RP1_48__RP45_48](plot.html?diagram=kervaire&data=RP1_48__RP45_48)<span class="tab"> 
-[RP1_50__RP47_50](plot.html?diagram=kervaire&data=RP1_50__RP47_50)<span class="tab"> 
-[RP1_52__RP49_52](plot.html?diagram=kervaire&data=RP1_52__RP49_52)<span class="tab"> 
-[RP1_54__RP51_54](plot.html?diagram=kervaire&data=RP1_54__RP51_54)<span class="tab"> 
-[RP1_56__RP53_56](plot.html?diagram=kervaire&data=RP1_56__RP53_56)<span class="tab"> 
-[RP1_58__RP55_58](plot.html?diagram=kervaire&data=RP1_58__RP55_58)<span class="tab"> 
-[RP1_60__RP57_60](plot.html?diagram=kervaire&data=RP1_60__RP57_60)<span class="tab"> 
-[RP1_62__RP59_62](plot.html?diagram=kervaire&data=RP1_62__RP59_62)<span class="tab"> 
-[RP1_64__RP61_64](plot.html?diagram=kervaire&data=RP1_64__RP61_64)<span class="tab"> 
-[RP1_66__RP63_66](plot.html?diagram=kervaire&data=RP1_66__RP63_66)<span class="tab"> 
-[RP1_68__RP65_68](plot.html?diagram=kervaire&data=RP1_68__RP65_68)<span class="tab"> 
-[RP1_70__RP67_70](plot.html?diagram=kervaire&data=RP1_70__RP67_70)<span class="tab"> 
-[RP1_72__RP69_72](plot.html?diagram=kervaire&data=RP1_72__RP69_72)<span class="tab"> 
-[RP1_74__RP71_74](plot.html?diagram=kervaire&data=RP1_74__RP71_74)<span class="tab"> 
-[RP1_76__RP73_76](plot.html?diagram=kervaire&data=RP1_76__RP73_76)<span class="tab"> 
-[RP1_78__RP75_78](plot.html?diagram=kervaire&data=RP1_78__RP75_78)<span class="tab"> 
-[RP1_80__RP77_80](plot.html?diagram=kervaire&data=RP1_80__RP77_80)<span class="tab"> 
-[RP1_82__RP79_82](plot.html?diagram=kervaire&data=RP1_82__RP79_82)<span class="tab"> 
-[RP1_84__RP81_84](plot.html?diagram=kervaire&data=RP1_84__RP81_84)<span class="tab"> 
-[RP1_86__RP83_86](plot.html?diagram=kervaire&data=RP1_86__RP83_86)<span class="tab"> 
-[RP1_88__RP85_88](plot.html?diagram=kervaire&data=RP1_88__RP85_88)<span class="tab"> 
-[RP1_90__RP87_90](plot.html?diagram=kervaire&data=RP1_90__RP87_90)<span class="tab"> 
-[RP1_92__RP89_92](plot.html?diagram=kervaire&data=RP1_92__RP89_92)<span class="tab"> 
-[RP1_94__RP91_94](plot.html?diagram=kervaire&data=RP1_94__RP91_94)<span class="tab"> 
-[RP1_96__RP93_96](plot.html?diagram=kervaire&data=RP1_96__RP93_96)<span class="tab"> 
-[RP1_98__RP95_98](plot.html?diagram=kervaire&data=RP1_98__RP95_98)<span class="tab"> 
-[RP1_100__RP97_100](plot.html?diagram=kervaire&data=RP1_100__RP97_100)<span class="tab"> 
-[RP1_102__RP99_102](plot.html?diagram=kervaire&data=RP1_102__RP99_102)<span class="tab"> 
-[RP1_104__RP101_104](plot.html?diagram=kervaire&data=RP1_104__RP101_104)<span class="tab"> 
-[RP1_106__RP103_106](plot.html?diagram=kervaire&data=RP1_106__RP103_106)<span class="tab"> 
-[RP1_108__RP105_108](plot.html?diagram=kervaire&data=RP1_108__RP105_108)<span class="tab"> 
-[RP1_110__RP107_110](plot.html?diagram=kervaire&data=RP1_110__RP107_110)<span class="tab"> 
-[RP1_112__RP109_112](plot.html?diagram=kervaire&data=RP1_112__RP109_112)<span class="tab"> 
-[RP1_114__RP111_114](plot.html?diagram=kervaire&data=RP1_114__RP111_114)<span class="tab"> 
-[RP1_116__RP113_116](plot.html?diagram=kervaire&data=RP1_116__RP113_116)<span class="tab"> 
-[RP1_256__RP3_256](plot.html?diagram=kervaire&data=RP1_256__RP3_256)<span class="tab"> 
-[RP3_256__RP5_256](plot.html?diagram=kervaire&data=RP3_256__RP5_256)<span class="tab"> 
-[RP5_256__RP7_256](plot.html?diagram=kervaire&data=RP5_256__RP7_256)<span class="tab"> 
-[RP7_256__RP9_256](plot.html?diagram=kervaire&data=RP7_256__RP9_256)<span class="tab"> 
-[RP9_256__RP11_256](plot.html?diagram=kervaire&data=RP9_256__RP11_256)<span class="tab"> 
-[RP11_256__RP13_256](plot.html?diagram=kervaire&data=RP11_256__RP13_256)<span class="tab"> 
-[RP13_256__RP15_256](plot.html?diagram=kervaire&data=RP13_256__RP15_256)<span class="tab"> 
-[RP15_256__RP17_256](plot.html?diagram=kervaire&data=RP15_256__RP17_256)<span class="tab"> 
-[RP17_256__RP19_256](plot.html?diagram=kervaire&data=RP17_256__RP19_256)<span class="tab"> 
-[RP19_256__RP21_256](plot.html?diagram=kervaire&data=RP19_256__RP21_256)<span class="tab"> 
-[RP21_256__RP23_256](plot.html?diagram=kervaire&data=RP21_256__RP23_256)<span class="tab"> 
-[RP23_256__RP25_256](plot.html?diagram=kervaire&data=RP23_256__RP25_256)<span class="tab"> 
-[RP25_256__RP27_256](plot.html?diagram=kervaire&data=RP25_256__RP27_256)<span class="tab"> 
-[RP27_256__RP29_256](plot.html?diagram=kervaire&data=RP27_256__RP29_256)<span class="tab"> 
-[RP29_256__RP31_256](plot.html?diagram=kervaire&data=RP29_256__RP31_256)<span class="tab"> 
-[RP31_256__RP33_256](plot.html?diagram=kervaire&data=RP31_256__RP33_256)<span class="tab"> 
-[RP33_256__RP35_256](plot.html?diagram=kervaire&data=RP33_256__RP35_256)<span class="tab"> 
-[RP35_256__RP37_256](plot.html?diagram=kervaire&data=RP35_256__RP37_256)<span class="tab"> 
-[RP37_256__RP39_256](plot.html?diagram=kervaire&data=RP37_256__RP39_256)<span class="tab"> 
-[RP39_256__RP41_256](plot.html?diagram=kervaire&data=RP39_256__RP41_256)<span class="tab"> 
-[RP41_256__RP43_256](plot.html?diagram=kervaire&data=RP41_256__RP43_256)<span class="tab"> 
-[RP43_256__RP45_256](plot.html?diagram=kervaire&data=RP43_256__RP45_256)<span class="tab"> 
-[RP45_256__RP47_256](plot.html?diagram=kervaire&data=RP45_256__RP47_256)<span class="tab"> 
-[RP47_256__RP49_256](plot.html?diagram=kervaire&data=RP47_256__RP49_256)<span class="tab"> 
-[RP49_256__RP51_256](plot.html?diagram=kervaire&data=RP49_256__RP51_256)<span class="tab"> 
-[RP51_256__RP53_256](plot.html?diagram=kervaire&data=RP51_256__RP53_256)<span class="tab"> 
-[RP53_256__RP55_256](plot.html?diagram=kervaire&data=RP53_256__RP55_256)<span class="tab"> 
-[RP55_256__RP57_256](plot.html?diagram=kervaire&data=RP55_256__RP57_256)<span class="tab"> 
-[RP57_256__RP59_256](plot.html?diagram=kervaire&data=RP57_256__RP59_256)<span class="tab"> 
-[RP59_256__RP61_256](plot.html?diagram=kervaire&data=RP59_256__RP61_256)<span class="tab"> 
-[RP61_256__RP63_256](plot.html?diagram=kervaire&data=RP61_256__RP63_256)<span class="tab"> 
-[RP63_256__RP65_256](plot.html?diagram=kervaire&data=RP63_256__RP65_256)<span class="tab"> 
-[RP65_256__RP67_256](plot.html?diagram=kervaire&data=RP65_256__RP67_256)<span class="tab"> 
-[RP67_256__RP69_256](plot.html?diagram=kervaire&data=RP67_256__RP69_256)<span class="tab"> 
-[RP69_256__RP71_256](plot.html?diagram=kervaire&data=RP69_256__RP71_256)<span class="tab"> 
-[RP71_256__RP73_256](plot.html?diagram=kervaire&data=RP71_256__RP73_256)<span class="tab"> 
-[RP73_256__RP75_256](plot.html?diagram=kervaire&data=RP73_256__RP75_256)<span class="tab"> 
-[RP75_256__RP77_256](plot.html?diagram=kervaire&data=RP75_256__RP77_256)<span class="tab"> 
-[RP77_256__RP79_256](plot.html?diagram=kervaire&data=RP77_256__RP79_256)<span class="tab"> 
-[RP79_256__RP81_256](plot.html?diagram=kervaire&data=RP79_256__RP81_256)<span class="tab"> 
-[RP81_256__RP83_256](plot.html?diagram=kervaire&data=RP81_256__RP83_256)<span class="tab"> 
-[RP83_256__RP85_256](plot.html?diagram=kervaire&data=RP83_256__RP85_256)<span class="tab"> 
-[RP85_256__RP87_256](plot.html?diagram=kervaire&data=RP85_256__RP87_256)<span class="tab"> 
-[RP87_256__RP89_256](plot.html?diagram=kervaire&data=RP87_256__RP89_256)<span class="tab"> 
-[RP89_256__RP91_256](plot.html?diagram=kervaire&data=RP89_256__RP91_256)<span class="tab"> 
-[RP91_256__RP93_256](plot.html?diagram=kervaire&data=RP91_256__RP93_256)<span class="tab"> 
-[RP93_256__RP95_256](plot.html?diagram=kervaire&data=RP93_256__RP95_256)<span class="tab"> 
-[RP95_256__RP97_256](plot.html?diagram=kervaire&data=RP95_256__RP97_256)<span class="tab"> 
-[RP97_256__RP99_256](plot.html?diagram=kervaire&data=RP97_256__RP99_256)<span class="tab"> 
-[RP99_256__RP101_256](plot.html?diagram=kervaire&data=RP99_256__RP101_256)<span class="tab"> 
-[RP101_256__RP103_256](plot.html?diagram=kervaire&data=RP101_256__RP103_256)<span class="tab"> 
-[RP103_256__RP105_256](plot.html?diagram=kervaire&data=RP103_256__RP105_256)<span class="tab"> 
-[RP105_256__RP107_256](plot.html?diagram=kervaire&data=RP105_256__RP107_256)<span class="tab"> 
-[RP107_256__RP109_256](plot.html?diagram=kervaire&data=RP107_256__RP109_256)<span class="tab"> 
-[RP109_256__RP111_256](plot.html?diagram=kervaire&data=RP109_256__RP111_256)<span class="tab"> 
-[RP111_256__RP113_256](plot.html?diagram=kervaire&data=RP111_256__RP113_256)<span class="tab"> 
-[RP113_256__RP115_256](plot.html?diagram=kervaire&data=RP113_256__RP115_256)<span class="tab"> 
-[RP115_256__RP117_256](plot.html?diagram=kervaire&data=RP115_256__RP117_256)<span class="tab"> 
-[RP101_104__RP101_256](plot.html?diagram=kervaire&data=RP101_104__RP101_256)<span class="tab"> 
-[RP103_106__RP103_256](plot.html?diagram=kervaire&data=RP103_106__RP103_256)<span class="tab"> 
-[RP105_108__RP105_256](plot.html?diagram=kervaire&data=RP105_108__RP105_256)<span class="tab"> 
-[RP107_110__RP107_256](plot.html?diagram=kervaire&data=RP107_110__RP107_256)<span class="tab"> 
-[RP109_112__RP109_256](plot.html?diagram=kervaire&data=RP109_112__RP109_256)<span class="tab"> 
-[RP111_114__RP111_256](plot.html?diagram=kervaire&data=RP111_114__RP111_256)<span class="tab"> 
-[RP113_116__RP113_256](plot.html?diagram=kervaire&data=RP113_116__RP113_256)<span class="tab"> 
-[RP115_118__RP115_256](plot.html?diagram=kervaire&data=RP115_118__RP115_256)<span class="tab"> 
-[RP117_120__RP117_256](plot.html?diagram=kervaire&data=RP117_120__RP117_256)<span class="tab"> 
+[RP1_6__RP3_6](plot.html?diagram=kervaire&data=RP1_6__RP3_6)&nbsp;&nbsp;&nbsp;
+[RP3_6__RP5_6](plot.html?diagram=kervaire&data=RP3_6__RP5_6)&nbsp;&nbsp;&nbsp;
+[RP1_4__RP3_4](plot.html?diagram=kervaire&data=RP1_4__RP3_4)&nbsp;&nbsp;&nbsp;
+[RP1_6__RP5_6](plot.html?diagram=kervaire&data=RP1_6__RP5_6)&nbsp;&nbsp;&nbsp;
+[RP1_8__RP5_8](plot.html?diagram=kervaire&data=RP1_8__RP5_8)&nbsp;&nbsp;&nbsp;
+[RP1_12__RP9_12](plot.html?diagram=kervaire&data=RP1_12__RP9_12)&nbsp;&nbsp;&nbsp;
+[RP1_14__RP11_14](plot.html?diagram=kervaire&data=RP1_14__RP11_14)&nbsp;&nbsp;&nbsp;
+[RP1_16__RP13_16](plot.html?diagram=kervaire&data=RP1_16__RP13_16)&nbsp;&nbsp;&nbsp;
+[RP1_18__RP15_18](plot.html?diagram=kervaire&data=RP1_18__RP15_18)&nbsp;&nbsp;&nbsp;
+[RP1_20__RP17_20](plot.html?diagram=kervaire&data=RP1_20__RP17_20)&nbsp;&nbsp;&nbsp;
+[RP1_22__RP19_22](plot.html?diagram=kervaire&data=RP1_22__RP19_22)&nbsp;&nbsp;&nbsp;
+[RP1_24__RP21_24](plot.html?diagram=kervaire&data=RP1_24__RP21_24)&nbsp;&nbsp;&nbsp;
+[RP1_26__RP23_26](plot.html?diagram=kervaire&data=RP1_26__RP23_26)&nbsp;&nbsp;&nbsp;
+[RP1_28__RP25_28](plot.html?diagram=kervaire&data=RP1_28__RP25_28)&nbsp;&nbsp;&nbsp;
+[RP1_30__RP27_30](plot.html?diagram=kervaire&data=RP1_30__RP27_30)&nbsp;&nbsp;&nbsp;
+[RP1_32__RP29_32](plot.html?diagram=kervaire&data=RP1_32__RP29_32)&nbsp;&nbsp;&nbsp;
+[RP1_34__RP31_34](plot.html?diagram=kervaire&data=RP1_34__RP31_34)&nbsp;&nbsp;&nbsp;
+[RP1_36__RP33_36](plot.html?diagram=kervaire&data=RP1_36__RP33_36)&nbsp;&nbsp;&nbsp;
+[RP1_38__RP35_38](plot.html?diagram=kervaire&data=RP1_38__RP35_38)&nbsp;&nbsp;&nbsp;
+[RP1_40__RP37_40](plot.html?diagram=kervaire&data=RP1_40__RP37_40)&nbsp;&nbsp;&nbsp;
+[RP1_42__RP39_42](plot.html?diagram=kervaire&data=RP1_42__RP39_42)&nbsp;&nbsp;&nbsp;
+[RP1_44__RP41_44](plot.html?diagram=kervaire&data=RP1_44__RP41_44)&nbsp;&nbsp;&nbsp;
+[RP1_46__RP43_46](plot.html?diagram=kervaire&data=RP1_46__RP43_46)&nbsp;&nbsp;&nbsp;
+[RP1_48__RP45_48](plot.html?diagram=kervaire&data=RP1_48__RP45_48)&nbsp;&nbsp;&nbsp;
+[RP1_50__RP47_50](plot.html?diagram=kervaire&data=RP1_50__RP47_50)&nbsp;&nbsp;&nbsp;
+[RP1_52__RP49_52](plot.html?diagram=kervaire&data=RP1_52__RP49_52)&nbsp;&nbsp;&nbsp;
+[RP1_54__RP51_54](plot.html?diagram=kervaire&data=RP1_54__RP51_54)&nbsp;&nbsp;&nbsp;
+[RP1_56__RP53_56](plot.html?diagram=kervaire&data=RP1_56__RP53_56)&nbsp;&nbsp;&nbsp;
+[RP1_58__RP55_58](plot.html?diagram=kervaire&data=RP1_58__RP55_58)&nbsp;&nbsp;&nbsp;
+[RP1_60__RP57_60](plot.html?diagram=kervaire&data=RP1_60__RP57_60)&nbsp;&nbsp;&nbsp;
+[RP1_62__RP59_62](plot.html?diagram=kervaire&data=RP1_62__RP59_62)&nbsp;&nbsp;&nbsp;
+[RP1_64__RP61_64](plot.html?diagram=kervaire&data=RP1_64__RP61_64)&nbsp;&nbsp;&nbsp;
+[RP1_66__RP63_66](plot.html?diagram=kervaire&data=RP1_66__RP63_66)&nbsp;&nbsp;&nbsp;
+[RP1_68__RP65_68](plot.html?diagram=kervaire&data=RP1_68__RP65_68)&nbsp;&nbsp;&nbsp;
+[RP1_70__RP67_70](plot.html?diagram=kervaire&data=RP1_70__RP67_70)&nbsp;&nbsp;&nbsp;
+[RP1_72__RP69_72](plot.html?diagram=kervaire&data=RP1_72__RP69_72)&nbsp;&nbsp;&nbsp;
+[RP1_74__RP71_74](plot.html?diagram=kervaire&data=RP1_74__RP71_74)&nbsp;&nbsp;&nbsp;
+[RP1_76__RP73_76](plot.html?diagram=kervaire&data=RP1_76__RP73_76)&nbsp;&nbsp;&nbsp;
+[RP1_78__RP75_78](plot.html?diagram=kervaire&data=RP1_78__RP75_78)&nbsp;&nbsp;&nbsp;
+[RP1_80__RP77_80](plot.html?diagram=kervaire&data=RP1_80__RP77_80)&nbsp;&nbsp;&nbsp;
+[RP1_82__RP79_82](plot.html?diagram=kervaire&data=RP1_82__RP79_82)&nbsp;&nbsp;&nbsp;
+[RP1_84__RP81_84](plot.html?diagram=kervaire&data=RP1_84__RP81_84)&nbsp;&nbsp;&nbsp;
+[RP1_86__RP83_86](plot.html?diagram=kervaire&data=RP1_86__RP83_86)&nbsp;&nbsp;&nbsp;
+[RP1_88__RP85_88](plot.html?diagram=kervaire&data=RP1_88__RP85_88)&nbsp;&nbsp;&nbsp;
+[RP1_90__RP87_90](plot.html?diagram=kervaire&data=RP1_90__RP87_90)&nbsp;&nbsp;&nbsp;
+[RP1_92__RP89_92](plot.html?diagram=kervaire&data=RP1_92__RP89_92)&nbsp;&nbsp;&nbsp;
+[RP1_94__RP91_94](plot.html?diagram=kervaire&data=RP1_94__RP91_94)&nbsp;&nbsp;&nbsp;
+[RP1_96__RP93_96](plot.html?diagram=kervaire&data=RP1_96__RP93_96)&nbsp;&nbsp;&nbsp;
+[RP1_98__RP95_98](plot.html?diagram=kervaire&data=RP1_98__RP95_98)&nbsp;&nbsp;&nbsp;
+[RP1_100__RP97_100](plot.html?diagram=kervaire&data=RP1_100__RP97_100)&nbsp;&nbsp;&nbsp;
+[RP1_102__RP99_102](plot.html?diagram=kervaire&data=RP1_102__RP99_102)&nbsp;&nbsp;&nbsp;
+[RP1_104__RP101_104](plot.html?diagram=kervaire&data=RP1_104__RP101_104)&nbsp;&nbsp;&nbsp;
+[RP1_106__RP103_106](plot.html?diagram=kervaire&data=RP1_106__RP103_106)&nbsp;&nbsp;&nbsp;
+[RP1_108__RP105_108](plot.html?diagram=kervaire&data=RP1_108__RP105_108)&nbsp;&nbsp;&nbsp;
+[RP1_110__RP107_110](plot.html?diagram=kervaire&data=RP1_110__RP107_110)&nbsp;&nbsp;&nbsp;
+[RP1_112__RP109_112](plot.html?diagram=kervaire&data=RP1_112__RP109_112)&nbsp;&nbsp;&nbsp;
+[RP1_114__RP111_114](plot.html?diagram=kervaire&data=RP1_114__RP111_114)&nbsp;&nbsp;&nbsp;
+[RP1_116__RP113_116](plot.html?diagram=kervaire&data=RP1_116__RP113_116)&nbsp;&nbsp;&nbsp;
+[RP1_256__RP3_256](plot.html?diagram=kervaire&data=RP1_256__RP3_256)&nbsp;&nbsp;&nbsp;
+[RP3_256__RP5_256](plot.html?diagram=kervaire&data=RP3_256__RP5_256)&nbsp;&nbsp;&nbsp;
+[RP5_256__RP7_256](plot.html?diagram=kervaire&data=RP5_256__RP7_256)&nbsp;&nbsp;&nbsp;
+[RP7_256__RP9_256](plot.html?diagram=kervaire&data=RP7_256__RP9_256)&nbsp;&nbsp;&nbsp;
+[RP9_256__RP11_256](plot.html?diagram=kervaire&data=RP9_256__RP11_256)&nbsp;&nbsp;&nbsp;
+[RP11_256__RP13_256](plot.html?diagram=kervaire&data=RP11_256__RP13_256)&nbsp;&nbsp;&nbsp;
+[RP13_256__RP15_256](plot.html?diagram=kervaire&data=RP13_256__RP15_256)&nbsp;&nbsp;&nbsp;
+[RP15_256__RP17_256](plot.html?diagram=kervaire&data=RP15_256__RP17_256)&nbsp;&nbsp;&nbsp;
+[RP17_256__RP19_256](plot.html?diagram=kervaire&data=RP17_256__RP19_256)&nbsp;&nbsp;&nbsp;
+[RP19_256__RP21_256](plot.html?diagram=kervaire&data=RP19_256__RP21_256)&nbsp;&nbsp;&nbsp;
+[RP21_256__RP23_256](plot.html?diagram=kervaire&data=RP21_256__RP23_256)&nbsp;&nbsp;&nbsp;
+[RP23_256__RP25_256](plot.html?diagram=kervaire&data=RP23_256__RP25_256)&nbsp;&nbsp;&nbsp;
+[RP25_256__RP27_256](plot.html?diagram=kervaire&data=RP25_256__RP27_256)&nbsp;&nbsp;&nbsp;
+[RP27_256__RP29_256](plot.html?diagram=kervaire&data=RP27_256__RP29_256)&nbsp;&nbsp;&nbsp;
+[RP29_256__RP31_256](plot.html?diagram=kervaire&data=RP29_256__RP31_256)&nbsp;&nbsp;&nbsp;
+[RP31_256__RP33_256](plot.html?diagram=kervaire&data=RP31_256__RP33_256)&nbsp;&nbsp;&nbsp;
+[RP33_256__RP35_256](plot.html?diagram=kervaire&data=RP33_256__RP35_256)&nbsp;&nbsp;&nbsp;
+[RP35_256__RP37_256](plot.html?diagram=kervaire&data=RP35_256__RP37_256)&nbsp;&nbsp;&nbsp;
+[RP37_256__RP39_256](plot.html?diagram=kervaire&data=RP37_256__RP39_256)&nbsp;&nbsp;&nbsp;
+[RP39_256__RP41_256](plot.html?diagram=kervaire&data=RP39_256__RP41_256)&nbsp;&nbsp;&nbsp;
+[RP41_256__RP43_256](plot.html?diagram=kervaire&data=RP41_256__RP43_256)&nbsp;&nbsp;&nbsp;
+[RP43_256__RP45_256](plot.html?diagram=kervaire&data=RP43_256__RP45_256)&nbsp;&nbsp;&nbsp;
+[RP45_256__RP47_256](plot.html?diagram=kervaire&data=RP45_256__RP47_256)&nbsp;&nbsp;&nbsp;
+[RP47_256__RP49_256](plot.html?diagram=kervaire&data=RP47_256__RP49_256)&nbsp;&nbsp;&nbsp;
+[RP49_256__RP51_256](plot.html?diagram=kervaire&data=RP49_256__RP51_256)&nbsp;&nbsp;&nbsp;
+[RP51_256__RP53_256](plot.html?diagram=kervaire&data=RP51_256__RP53_256)&nbsp;&nbsp;&nbsp;
+[RP53_256__RP55_256](plot.html?diagram=kervaire&data=RP53_256__RP55_256)&nbsp;&nbsp;&nbsp;
+[RP55_256__RP57_256](plot.html?diagram=kervaire&data=RP55_256__RP57_256)&nbsp;&nbsp;&nbsp;
+[RP57_256__RP59_256](plot.html?diagram=kervaire&data=RP57_256__RP59_256)&nbsp;&nbsp;&nbsp;
+[RP59_256__RP61_256](plot.html?diagram=kervaire&data=RP59_256__RP61_256)&nbsp;&nbsp;&nbsp;
+[RP61_256__RP63_256](plot.html?diagram=kervaire&data=RP61_256__RP63_256)&nbsp;&nbsp;&nbsp;
+[RP63_256__RP65_256](plot.html?diagram=kervaire&data=RP63_256__RP65_256)&nbsp;&nbsp;&nbsp;
+[RP65_256__RP67_256](plot.html?diagram=kervaire&data=RP65_256__RP67_256)&nbsp;&nbsp;&nbsp;
+[RP67_256__RP69_256](plot.html?diagram=kervaire&data=RP67_256__RP69_256)&nbsp;&nbsp;&nbsp;
+[RP69_256__RP71_256](plot.html?diagram=kervaire&data=RP69_256__RP71_256)&nbsp;&nbsp;&nbsp;
+[RP71_256__RP73_256](plot.html?diagram=kervaire&data=RP71_256__RP73_256)&nbsp;&nbsp;&nbsp;
+[RP73_256__RP75_256](plot.html?diagram=kervaire&data=RP73_256__RP75_256)&nbsp;&nbsp;&nbsp;
+[RP75_256__RP77_256](plot.html?diagram=kervaire&data=RP75_256__RP77_256)&nbsp;&nbsp;&nbsp;
+[RP77_256__RP79_256](plot.html?diagram=kervaire&data=RP77_256__RP79_256)&nbsp;&nbsp;&nbsp;
+[RP79_256__RP81_256](plot.html?diagram=kervaire&data=RP79_256__RP81_256)&nbsp;&nbsp;&nbsp;
+[RP81_256__RP83_256](plot.html?diagram=kervaire&data=RP81_256__RP83_256)&nbsp;&nbsp;&nbsp;
+[RP83_256__RP85_256](plot.html?diagram=kervaire&data=RP83_256__RP85_256)&nbsp;&nbsp;&nbsp;
+[RP85_256__RP87_256](plot.html?diagram=kervaire&data=RP85_256__RP87_256)&nbsp;&nbsp;&nbsp;
+[RP87_256__RP89_256](plot.html?diagram=kervaire&data=RP87_256__RP89_256)&nbsp;&nbsp;&nbsp;
+[RP89_256__RP91_256](plot.html?diagram=kervaire&data=RP89_256__RP91_256)&nbsp;&nbsp;&nbsp;
+[RP91_256__RP93_256](plot.html?diagram=kervaire&data=RP91_256__RP93_256)&nbsp;&nbsp;&nbsp;
+[RP93_256__RP95_256](plot.html?diagram=kervaire&data=RP93_256__RP95_256)&nbsp;&nbsp;&nbsp;
+[RP95_256__RP97_256](plot.html?diagram=kervaire&data=RP95_256__RP97_256)&nbsp;&nbsp;&nbsp;
+[RP97_256__RP99_256](plot.html?diagram=kervaire&data=RP97_256__RP99_256)&nbsp;&nbsp;&nbsp;
+[RP99_256__RP101_256](plot.html?diagram=kervaire&data=RP99_256__RP101_256)&nbsp;&nbsp;&nbsp;
+[RP101_256__RP103_256](plot.html?diagram=kervaire&data=RP101_256__RP103_256)&nbsp;&nbsp;&nbsp;
+[RP103_256__RP105_256](plot.html?diagram=kervaire&data=RP103_256__RP105_256)&nbsp;&nbsp;&nbsp;
+[RP105_256__RP107_256](plot.html?diagram=kervaire&data=RP105_256__RP107_256)&nbsp;&nbsp;&nbsp;
+[RP107_256__RP109_256](plot.html?diagram=kervaire&data=RP107_256__RP109_256)&nbsp;&nbsp;&nbsp;
+[RP109_256__RP111_256](plot.html?diagram=kervaire&data=RP109_256__RP111_256)&nbsp;&nbsp;&nbsp;
+[RP111_256__RP113_256](plot.html?diagram=kervaire&data=RP111_256__RP113_256)&nbsp;&nbsp;&nbsp;
+[RP113_256__RP115_256](plot.html?diagram=kervaire&data=RP113_256__RP115_256)&nbsp;&nbsp;&nbsp;
+[RP115_256__RP117_256](plot.html?diagram=kervaire&data=RP115_256__RP117_256)&nbsp;&nbsp;&nbsp;
+[RP101_104__RP101_256](plot.html?diagram=kervaire&data=RP101_104__RP101_256)&nbsp;&nbsp;&nbsp;
+[RP103_106__RP103_256](plot.html?diagram=kervaire&data=RP103_106__RP103_256)&nbsp;&nbsp;&nbsp;
+[RP105_108__RP105_256](plot.html?diagram=kervaire&data=RP105_108__RP105_256)&nbsp;&nbsp;&nbsp;
+[RP107_110__RP107_256](plot.html?diagram=kervaire&data=RP107_110__RP107_256)&nbsp;&nbsp;&nbsp;
+[RP109_112__RP109_256](plot.html?diagram=kervaire&data=RP109_112__RP109_256)&nbsp;&nbsp;&nbsp;
+[RP111_114__RP111_256](plot.html?diagram=kervaire&data=RP111_114__RP111_256)&nbsp;&nbsp;&nbsp;
+[RP113_116__RP113_256](plot.html?diagram=kervaire&data=RP113_116__RP113_256)&nbsp;&nbsp;&nbsp;
+[RP115_118__RP115_256](plot.html?diagram=kervaire&data=RP115_118__RP115_256)&nbsp;&nbsp;&nbsp;
+[RP117_120__RP117_256](plot.html?diagram=kervaire&data=RP117_120__RP117_256)&nbsp;&nbsp;&nbsp;
 
-[RP11_14__RP11_256](plot.html?diagram=kervaire&data=RP11_14__RP11_256)<span class="tab"> 
-[RP13_16__RP13_256](plot.html?diagram=kervaire&data=RP13_16__RP13_256)<span class="tab"> 
-[RP15_18__RP15_256](plot.html?diagram=kervaire&data=RP15_18__RP15_256)<span class="tab"> 
-[RP17_20__RP17_256](plot.html?diagram=kervaire&data=RP17_20__RP17_256)<span class="tab"> 
-[RP19_22__RP19_256](plot.html?diagram=kervaire&data=RP19_22__RP19_256)<span class="tab"> 
-[RP21_24__RP21_256](plot.html?diagram=kervaire&data=RP21_24__RP21_256)<span class="tab"> 
-[RP23_26__RP23_256](plot.html?diagram=kervaire&data=RP23_26__RP23_256)<span class="tab"> 
-[RP25_28__RP25_256](plot.html?diagram=kervaire&data=RP25_28__RP25_256)<span class="tab"> 
-[RP27_30__RP27_256](plot.html?diagram=kervaire&data=RP27_30__RP27_256)<span class="tab"> 
-[RP29_32__RP29_256](plot.html?diagram=kervaire&data=RP29_32__RP29_256)<span class="tab"> 
-[RP31_34__RP31_256](plot.html?diagram=kervaire&data=RP31_34__RP31_256)<span class="tab"> 
-[RP33_36__RP33_256](plot.html?diagram=kervaire&data=RP33_36__RP33_256)<span class="tab"> 
-[RP35_38__RP35_256](plot.html?diagram=kervaire&data=RP35_38__RP35_256)<span class="tab"> 
-[RP37_40__RP37_256](plot.html?diagram=kervaire&data=RP37_40__RP37_256)<span class="tab"> 
-[RP39_42__RP39_256](plot.html?diagram=kervaire&data=RP39_42__RP39_256)<span class="tab"> 
-[RP41_44__RP41_256](plot.html?diagram=kervaire&data=RP41_44__RP41_256)<span class="tab"> 
-[RP43_46__RP43_256](plot.html?diagram=kervaire&data=RP43_46__RP43_256)<span class="tab"> 
-[RP45_48__RP45_256](plot.html?diagram=kervaire&data=RP45_48__RP45_256)<span class="tab"> 
-[RP47_50__RP47_256](plot.html?diagram=kervaire&data=RP47_50__RP47_256)<span class="tab"> 
-[RP49_52__RP49_256](plot.html?diagram=kervaire&data=RP49_52__RP49_256)<span class="tab"> 
-[RP51_54__RP51_256](plot.html?diagram=kervaire&data=RP51_54__RP51_256)<span class="tab"> 
-[RP53_56__RP53_256](plot.html?diagram=kervaire&data=RP53_56__RP53_256)<span class="tab"> 
-[RP55_58__RP55_256](plot.html?diagram=kervaire&data=RP55_58__RP55_256)<span class="tab"> 
-[RP57_60__RP57_256](plot.html?diagram=kervaire&data=RP57_60__RP57_256)<span class="tab"> 
-[RP59_62__RP59_256](plot.html?diagram=kervaire&data=RP59_62__RP59_256)<span class="tab"> 
-[RP5_8__RP5_256](plot.html?diagram=kervaire&data=RP5_8__RP5_256)<span class="tab"> 
-[RP61_64__RP61_256](plot.html?diagram=kervaire&data=RP61_64__RP61_256)<span class="tab"> 
-[RP63_66__RP63_256](plot.html?diagram=kervaire&data=RP63_66__RP63_256)<span class="tab"> 
-[RP65_68__RP65_256](plot.html?diagram=kervaire&data=RP65_68__RP65_256)<span class="tab"> 
-[RP67_70__RP67_256](plot.html?diagram=kervaire&data=RP67_70__RP67_256)<span class="tab"> 
-[RP69_72__RP69_256](plot.html?diagram=kervaire&data=RP69_72__RP69_256)<span class="tab"> 
-[RP71_74__RP71_256](plot.html?diagram=kervaire&data=RP71_74__RP71_256)<span class="tab"> 
-[RP73_76__RP73_256](plot.html?diagram=kervaire&data=RP73_76__RP73_256)<span class="tab"> 
-[RP75_78__RP75_256](plot.html?diagram=kervaire&data=RP75_78__RP75_256)<span class="tab"> 
-[RP77_80__RP77_256](plot.html?diagram=kervaire&data=RP77_80__RP77_256)<span class="tab"> 
-[RP79_82__RP79_256](plot.html?diagram=kervaire&data=RP79_82__RP79_256)<span class="tab"> 
-[RP7_10__RP7_256](plot.html?diagram=kervaire&data=RP7_10__RP7_256)<span class="tab"> 
-[RP81_84__RP81_256](plot.html?diagram=kervaire&data=RP81_84__RP81_256)<span class="tab"> 
-[RP83_86__RP83_256](plot.html?diagram=kervaire&data=RP83_86__RP83_256)<span class="tab"> 
-[RP85_88__RP85_256](plot.html?diagram=kervaire&data=RP85_88__RP85_256)<span class="tab"> 
-[RP87_90__RP87_256](plot.html?diagram=kervaire&data=RP87_90__RP87_256)<span class="tab"> 
-[RP89_92__RP89_256](plot.html?diagram=kervaire&data=RP89_92__RP89_256)<span class="tab"> 
-[RP91_94__RP91_256](plot.html?diagram=kervaire&data=RP91_94__RP91_256)<span class="tab"> 
-[RP93_96__RP93_256](plot.html?diagram=kervaire&data=RP93_96__RP93_256)<span class="tab"> 
-[RP95_98__RP95_256](plot.html?diagram=kervaire&data=RP95_98__RP95_256)<span class="tab"> 
-[RP97_100__RP97_256](plot.html?diagram=kervaire&data=RP97_100__RP97_256)<span class="tab"> 
-[RP99_102__RP99_256](plot.html?diagram=kervaire&data=RP99_102__RP99_256)<span class="tab"> 
-[RP9_12__RP9_256](plot.html?diagram=kervaire&data=RP9_12__RP9_256)<span class="tab"> 
-[RP3_6__RP3_256](plot.html?diagram=kervaire&data=RP3_6__RP3_256)<span class="tab"> 
-[RP3_256__RP1_2](plot.html?diagram=kervaire&data=RP3_256__RP1_2)<span class="tab"> 
-[RP5_256__RP1_4](plot.html?diagram=kervaire&data=RP5_256__RP1_4)<span class="tab"> 
-[RP7_256__RP1_6](plot.html?diagram=kervaire&data=RP7_256__RP1_6)<span class="tab"> 
-[RP9_256__RP1_8](plot.html?diagram=kervaire&data=RP9_256__RP1_8)<span class="tab"> 
-[RP11_256__RP1_10](plot.html?diagram=kervaire&data=RP11_256__RP1_10)<span class="tab"> 
-[RP13_256__RP1_12](plot.html?diagram=kervaire&data=RP13_256__RP1_12)<span class="tab"> 
-[RP15_256__RP1_14](plot.html?diagram=kervaire&data=RP15_256__RP1_14)<span class="tab"> 
-[RP17_256__RP1_16](plot.html?diagram=kervaire&data=RP17_256__RP1_16)<span class="tab"> 
-[RP19_256__RP1_18](plot.html?diagram=kervaire&data=RP19_256__RP1_18)<span class="tab"> 
-[RP21_256__RP1_20](plot.html?diagram=kervaire&data=RP21_256__RP1_20)<span class="tab"> 
-[RP23_256__RP1_22](plot.html?diagram=kervaire&data=RP23_256__RP1_22)<span class="tab"> 
-[RP25_256__RP1_24](plot.html?diagram=kervaire&data=RP25_256__RP1_24)<span class="tab"> 
-[RP27_256__RP1_26](plot.html?diagram=kervaire&data=RP27_256__RP1_26)<span class="tab"> 
-[RP29_256__RP1_28](plot.html?diagram=kervaire&data=RP29_256__RP1_28)<span class="tab"> 
-[RP31_256__RP1_30](plot.html?diagram=kervaire&data=RP31_256__RP1_30)<span class="tab"> 
-[RP33_256__RP1_32](plot.html?diagram=kervaire&data=RP33_256__RP1_32)<span class="tab"> 
-[RP35_256__RP1_34](plot.html?diagram=kervaire&data=RP35_256__RP1_34)<span class="tab"> 
-[RP37_256__RP1_36](plot.html?diagram=kervaire&data=RP37_256__RP1_36)<span class="tab"> 
-[RP39_256__RP1_38](plot.html?diagram=kervaire&data=RP39_256__RP1_38)<span class="tab"> 
-[RP41_256__RP1_40](plot.html?diagram=kervaire&data=RP41_256__RP1_40)<span class="tab"> 
-[RP43_256__RP1_42](plot.html?diagram=kervaire&data=RP43_256__RP1_42)<span class="tab"> 
-[RP45_256__RP1_44](plot.html?diagram=kervaire&data=RP45_256__RP1_44)<span class="tab"> 
-[RP47_256__RP1_46](plot.html?diagram=kervaire&data=RP47_256__RP1_46)<span class="tab"> 
-[RP49_256__RP1_48](plot.html?diagram=kervaire&data=RP49_256__RP1_48)<span class="tab"> 
-[RP51_256__RP1_50](plot.html?diagram=kervaire&data=RP51_256__RP1_50)<span class="tab"> 
-[RP53_256__RP1_52](plot.html?diagram=kervaire&data=RP53_256__RP1_52)<span class="tab"> 
-[RP55_256__RP1_54](plot.html?diagram=kervaire&data=RP55_256__RP1_54)<span class="tab"> 
-[RP57_256__RP1_56](plot.html?diagram=kervaire&data=RP57_256__RP1_56)<span class="tab"> 
-[RP59_256__RP1_58](plot.html?diagram=kervaire&data=RP59_256__RP1_58)<span class="tab"> 
-[RP61_256__RP1_60](plot.html?diagram=kervaire&data=RP61_256__RP1_60)<span class="tab"> 
-[RP63_256__RP1_62](plot.html?diagram=kervaire&data=RP63_256__RP1_62)<span class="tab"> 
-[RP65_256__RP1_64](plot.html?diagram=kervaire&data=RP65_256__RP1_64)<span class="tab"> 
-[RP67_256__RP1_66](plot.html?diagram=kervaire&data=RP67_256__RP1_66)<span class="tab"> 
-[RP69_256__RP1_68](plot.html?diagram=kervaire&data=RP69_256__RP1_68)<span class="tab"> 
-[RP71_256__RP1_70](plot.html?diagram=kervaire&data=RP71_256__RP1_70)<span class="tab"> 
-[RP73_256__RP1_72](plot.html?diagram=kervaire&data=RP73_256__RP1_72)<span class="tab"> 
-[RP75_256__RP1_74](plot.html?diagram=kervaire&data=RP75_256__RP1_74)<span class="tab"> 
-[RP77_256__RP1_76](plot.html?diagram=kervaire&data=RP77_256__RP1_76)<span class="tab"> 
-[RP79_256__RP1_78](plot.html?diagram=kervaire&data=RP79_256__RP1_78)<span class="tab"> 
-[RP81_256__RP1_80](plot.html?diagram=kervaire&data=RP81_256__RP1_80)<span class="tab"> 
-[RP83_256__RP1_82](plot.html?diagram=kervaire&data=RP83_256__RP1_82)<span class="tab"> 
-[RP85_256__RP1_84](plot.html?diagram=kervaire&data=RP85_256__RP1_84)<span class="tab"> 
-[RP87_256__RP1_86](plot.html?diagram=kervaire&data=RP87_256__RP1_86)<span class="tab"> 
-[RP89_256__RP1_88](plot.html?diagram=kervaire&data=RP89_256__RP1_88)<span class="tab"> 
-[RP91_256__RP1_90](plot.html?diagram=kervaire&data=RP91_256__RP1_90)<span class="tab"> 
-[RP93_256__RP1_92](plot.html?diagram=kervaire&data=RP93_256__RP1_92)<span class="tab"> 
-[RP95_256__RP1_94](plot.html?diagram=kervaire&data=RP95_256__RP1_94)<span class="tab"> 
-[RP97_256__RP1_96](plot.html?diagram=kervaire&data=RP97_256__RP1_96)<span class="tab"> 
-[RP99_256__RP1_98](plot.html?diagram=kervaire&data=RP99_256__RP1_98)<span class="tab"> 
-[RP101_256__RP1_100](plot.html?diagram=kervaire&data=RP101_256__RP1_100)<span class="tab"> 
-[RP103_256__RP1_102](plot.html?diagram=kervaire&data=RP103_256__RP1_102)<span class="tab"> 
-[RP105_256__RP1_104](plot.html?diagram=kervaire&data=RP105_256__RP1_104)<span class="tab"> 
-[RP107_256__RP1_106](plot.html?diagram=kervaire&data=RP107_256__RP1_106)<span class="tab"> 
-[RP109_256__RP1_108](plot.html?diagram=kervaire&data=RP109_256__RP1_108)<span class="tab"> 
-[RP111_256__RP1_110](plot.html?diagram=kervaire&data=RP111_256__RP1_110)<span class="tab"> 
-[RP113_256__RP1_112](plot.html?diagram=kervaire&data=RP113_256__RP1_112)<span class="tab"> 
-[RP115_256__RP1_114](plot.html?diagram=kervaire&data=RP115_256__RP1_114)<span class="tab"> 
+[RP11_14__RP11_256](plot.html?diagram=kervaire&data=RP11_14__RP11_256)&nbsp;&nbsp;&nbsp;
+[RP13_16__RP13_256](plot.html?diagram=kervaire&data=RP13_16__RP13_256)&nbsp;&nbsp;&nbsp;
+[RP15_18__RP15_256](plot.html?diagram=kervaire&data=RP15_18__RP15_256)&nbsp;&nbsp;&nbsp;
+[RP17_20__RP17_256](plot.html?diagram=kervaire&data=RP17_20__RP17_256)&nbsp;&nbsp;&nbsp;
+[RP19_22__RP19_256](plot.html?diagram=kervaire&data=RP19_22__RP19_256)&nbsp;&nbsp;&nbsp;
+[RP21_24__RP21_256](plot.html?diagram=kervaire&data=RP21_24__RP21_256)&nbsp;&nbsp;&nbsp;
+[RP23_26__RP23_256](plot.html?diagram=kervaire&data=RP23_26__RP23_256)&nbsp;&nbsp;&nbsp;
+[RP25_28__RP25_256](plot.html?diagram=kervaire&data=RP25_28__RP25_256)&nbsp;&nbsp;&nbsp;
+[RP27_30__RP27_256](plot.html?diagram=kervaire&data=RP27_30__RP27_256)&nbsp;&nbsp;&nbsp;
+[RP29_32__RP29_256](plot.html?diagram=kervaire&data=RP29_32__RP29_256)&nbsp;&nbsp;&nbsp;
+[RP31_34__RP31_256](plot.html?diagram=kervaire&data=RP31_34__RP31_256)&nbsp;&nbsp;&nbsp;
+[RP33_36__RP33_256](plot.html?diagram=kervaire&data=RP33_36__RP33_256)&nbsp;&nbsp;&nbsp;
+[RP35_38__RP35_256](plot.html?diagram=kervaire&data=RP35_38__RP35_256)&nbsp;&nbsp;&nbsp;
+[RP37_40__RP37_256](plot.html?diagram=kervaire&data=RP37_40__RP37_256)&nbsp;&nbsp;&nbsp;
+[RP39_42__RP39_256](plot.html?diagram=kervaire&data=RP39_42__RP39_256)&nbsp;&nbsp;&nbsp;
+[RP41_44__RP41_256](plot.html?diagram=kervaire&data=RP41_44__RP41_256)&nbsp;&nbsp;&nbsp;
+[RP43_46__RP43_256](plot.html?diagram=kervaire&data=RP43_46__RP43_256)&nbsp;&nbsp;&nbsp;
+[RP45_48__RP45_256](plot.html?diagram=kervaire&data=RP45_48__RP45_256)&nbsp;&nbsp;&nbsp;
+[RP47_50__RP47_256](plot.html?diagram=kervaire&data=RP47_50__RP47_256)&nbsp;&nbsp;&nbsp;
+[RP49_52__RP49_256](plot.html?diagram=kervaire&data=RP49_52__RP49_256)&nbsp;&nbsp;&nbsp;
+[RP51_54__RP51_256](plot.html?diagram=kervaire&data=RP51_54__RP51_256)&nbsp;&nbsp;&nbsp;
+[RP53_56__RP53_256](plot.html?diagram=kervaire&data=RP53_56__RP53_256)&nbsp;&nbsp;&nbsp;
+[RP55_58__RP55_256](plot.html?diagram=kervaire&data=RP55_58__RP55_256)&nbsp;&nbsp;&nbsp;
+[RP57_60__RP57_256](plot.html?diagram=kervaire&data=RP57_60__RP57_256)&nbsp;&nbsp;&nbsp;
+[RP59_62__RP59_256](plot.html?diagram=kervaire&data=RP59_62__RP59_256)&nbsp;&nbsp;&nbsp;
+[RP5_8__RP5_256](plot.html?diagram=kervaire&data=RP5_8__RP5_256)&nbsp;&nbsp;&nbsp;
+[RP61_64__RP61_256](plot.html?diagram=kervaire&data=RP61_64__RP61_256)&nbsp;&nbsp;&nbsp;
+[RP63_66__RP63_256](plot.html?diagram=kervaire&data=RP63_66__RP63_256)&nbsp;&nbsp;&nbsp;
+[RP65_68__RP65_256](plot.html?diagram=kervaire&data=RP65_68__RP65_256)&nbsp;&nbsp;&nbsp;
+[RP67_70__RP67_256](plot.html?diagram=kervaire&data=RP67_70__RP67_256)&nbsp;&nbsp;&nbsp;
+[RP69_72__RP69_256](plot.html?diagram=kervaire&data=RP69_72__RP69_256)&nbsp;&nbsp;&nbsp;
+[RP71_74__RP71_256](plot.html?diagram=kervaire&data=RP71_74__RP71_256)&nbsp;&nbsp;&nbsp;
+[RP73_76__RP73_256](plot.html?diagram=kervaire&data=RP73_76__RP73_256)&nbsp;&nbsp;&nbsp;
+[RP75_78__RP75_256](plot.html?diagram=kervaire&data=RP75_78__RP75_256)&nbsp;&nbsp;&nbsp;
+[RP77_80__RP77_256](plot.html?diagram=kervaire&data=RP77_80__RP77_256)&nbsp;&nbsp;&nbsp;
+[RP79_82__RP79_256](plot.html?diagram=kervaire&data=RP79_82__RP79_256)&nbsp;&nbsp;&nbsp;
+[RP7_10__RP7_256](plot.html?diagram=kervaire&data=RP7_10__RP7_256)&nbsp;&nbsp;&nbsp;
+[RP81_84__RP81_256](plot.html?diagram=kervaire&data=RP81_84__RP81_256)&nbsp;&nbsp;&nbsp;
+[RP83_86__RP83_256](plot.html?diagram=kervaire&data=RP83_86__RP83_256)&nbsp;&nbsp;&nbsp;
+[RP85_88__RP85_256](plot.html?diagram=kervaire&data=RP85_88__RP85_256)&nbsp;&nbsp;&nbsp;
+[RP87_90__RP87_256](plot.html?diagram=kervaire&data=RP87_90__RP87_256)&nbsp;&nbsp;&nbsp;
+[RP89_92__RP89_256](plot.html?diagram=kervaire&data=RP89_92__RP89_256)&nbsp;&nbsp;&nbsp;
+[RP91_94__RP91_256](plot.html?diagram=kervaire&data=RP91_94__RP91_256)&nbsp;&nbsp;&nbsp;
+[RP93_96__RP93_256](plot.html?diagram=kervaire&data=RP93_96__RP93_256)&nbsp;&nbsp;&nbsp;
+[RP95_98__RP95_256](plot.html?diagram=kervaire&data=RP95_98__RP95_256)&nbsp;&nbsp;&nbsp;
+[RP97_100__RP97_256](plot.html?diagram=kervaire&data=RP97_100__RP97_256)&nbsp;&nbsp;&nbsp;
+[RP99_102__RP99_256](plot.html?diagram=kervaire&data=RP99_102__RP99_256)&nbsp;&nbsp;&nbsp;
+[RP9_12__RP9_256](plot.html?diagram=kervaire&data=RP9_12__RP9_256)&nbsp;&nbsp;&nbsp;
+[RP3_6__RP3_256](plot.html?diagram=kervaire&data=RP3_6__RP3_256)&nbsp;&nbsp;&nbsp;
+[RP3_256__RP1_2](plot.html?diagram=kervaire&data=RP3_256__RP1_2)&nbsp;&nbsp;&nbsp;
+[RP5_256__RP1_4](plot.html?diagram=kervaire&data=RP5_256__RP1_4)&nbsp;&nbsp;&nbsp;
+[RP7_256__RP1_6](plot.html?diagram=kervaire&data=RP7_256__RP1_6)&nbsp;&nbsp;&nbsp;
+[RP9_256__RP1_8](plot.html?diagram=kervaire&data=RP9_256__RP1_8)&nbsp;&nbsp;&nbsp;
+[RP11_256__RP1_10](plot.html?diagram=kervaire&data=RP11_256__RP1_10)&nbsp;&nbsp;&nbsp;
+[RP13_256__RP1_12](plot.html?diagram=kervaire&data=RP13_256__RP1_12)&nbsp;&nbsp;&nbsp;
+[RP15_256__RP1_14](plot.html?diagram=kervaire&data=RP15_256__RP1_14)&nbsp;&nbsp;&nbsp;
+[RP17_256__RP1_16](plot.html?diagram=kervaire&data=RP17_256__RP1_16)&nbsp;&nbsp;&nbsp;
+[RP19_256__RP1_18](plot.html?diagram=kervaire&data=RP19_256__RP1_18)&nbsp;&nbsp;&nbsp;
+[RP21_256__RP1_20](plot.html?diagram=kervaire&data=RP21_256__RP1_20)&nbsp;&nbsp;&nbsp;
+[RP23_256__RP1_22](plot.html?diagram=kervaire&data=RP23_256__RP1_22)&nbsp;&nbsp;&nbsp;
+[RP25_256__RP1_24](plot.html?diagram=kervaire&data=RP25_256__RP1_24)&nbsp;&nbsp;&nbsp;
+[RP27_256__RP1_26](plot.html?diagram=kervaire&data=RP27_256__RP1_26)&nbsp;&nbsp;&nbsp;
+[RP29_256__RP1_28](plot.html?diagram=kervaire&data=RP29_256__RP1_28)&nbsp;&nbsp;&nbsp;
+[RP31_256__RP1_30](plot.html?diagram=kervaire&data=RP31_256__RP1_30)&nbsp;&nbsp;&nbsp;
+[RP33_256__RP1_32](plot.html?diagram=kervaire&data=RP33_256__RP1_32)&nbsp;&nbsp;&nbsp;
+[RP35_256__RP1_34](plot.html?diagram=kervaire&data=RP35_256__RP1_34)&nbsp;&nbsp;&nbsp;
+[RP37_256__RP1_36](plot.html?diagram=kervaire&data=RP37_256__RP1_36)&nbsp;&nbsp;&nbsp;
+[RP39_256__RP1_38](plot.html?diagram=kervaire&data=RP39_256__RP1_38)&nbsp;&nbsp;&nbsp;
+[RP41_256__RP1_40](plot.html?diagram=kervaire&data=RP41_256__RP1_40)&nbsp;&nbsp;&nbsp;
+[RP43_256__RP1_42](plot.html?diagram=kervaire&data=RP43_256__RP1_42)&nbsp;&nbsp;&nbsp;
+[RP45_256__RP1_44](plot.html?diagram=kervaire&data=RP45_256__RP1_44)&nbsp;&nbsp;&nbsp;
+[RP47_256__RP1_46](plot.html?diagram=kervaire&data=RP47_256__RP1_46)&nbsp;&nbsp;&nbsp;
+[RP49_256__RP1_48](plot.html?diagram=kervaire&data=RP49_256__RP1_48)&nbsp;&nbsp;&nbsp;
+[RP51_256__RP1_50](plot.html?diagram=kervaire&data=RP51_256__RP1_50)&nbsp;&nbsp;&nbsp;
+[RP53_256__RP1_52](plot.html?diagram=kervaire&data=RP53_256__RP1_52)&nbsp;&nbsp;&nbsp;
+[RP55_256__RP1_54](plot.html?diagram=kervaire&data=RP55_256__RP1_54)&nbsp;&nbsp;&nbsp;
+[RP57_256__RP1_56](plot.html?diagram=kervaire&data=RP57_256__RP1_56)&nbsp;&nbsp;&nbsp;
+[RP59_256__RP1_58](plot.html?diagram=kervaire&data=RP59_256__RP1_58)&nbsp;&nbsp;&nbsp;
+[RP61_256__RP1_60](plot.html?diagram=kervaire&data=RP61_256__RP1_60)&nbsp;&nbsp;&nbsp;
+[RP63_256__RP1_62](plot.html?diagram=kervaire&data=RP63_256__RP1_62)&nbsp;&nbsp;&nbsp;
+[RP65_256__RP1_64](plot.html?diagram=kervaire&data=RP65_256__RP1_64)&nbsp;&nbsp;&nbsp;
+[RP67_256__RP1_66](plot.html?diagram=kervaire&data=RP67_256__RP1_66)&nbsp;&nbsp;&nbsp;
+[RP69_256__RP1_68](plot.html?diagram=kervaire&data=RP69_256__RP1_68)&nbsp;&nbsp;&nbsp;
+[RP71_256__RP1_70](plot.html?diagram=kervaire&data=RP71_256__RP1_70)&nbsp;&nbsp;&nbsp;
+[RP73_256__RP1_72](plot.html?diagram=kervaire&data=RP73_256__RP1_72)&nbsp;&nbsp;&nbsp;
+[RP75_256__RP1_74](plot.html?diagram=kervaire&data=RP75_256__RP1_74)&nbsp;&nbsp;&nbsp;
+[RP77_256__RP1_76](plot.html?diagram=kervaire&data=RP77_256__RP1_76)&nbsp;&nbsp;&nbsp;
+[RP79_256__RP1_78](plot.html?diagram=kervaire&data=RP79_256__RP1_78)&nbsp;&nbsp;&nbsp;
+[RP81_256__RP1_80](plot.html?diagram=kervaire&data=RP81_256__RP1_80)&nbsp;&nbsp;&nbsp;
+[RP83_256__RP1_82](plot.html?diagram=kervaire&data=RP83_256__RP1_82)&nbsp;&nbsp;&nbsp;
+[RP85_256__RP1_84](plot.html?diagram=kervaire&data=RP85_256__RP1_84)&nbsp;&nbsp;&nbsp;
+[RP87_256__RP1_86](plot.html?diagram=kervaire&data=RP87_256__RP1_86)&nbsp;&nbsp;&nbsp;
+[RP89_256__RP1_88](plot.html?diagram=kervaire&data=RP89_256__RP1_88)&nbsp;&nbsp;&nbsp;
+[RP91_256__RP1_90](plot.html?diagram=kervaire&data=RP91_256__RP1_90)&nbsp;&nbsp;&nbsp;
+[RP93_256__RP1_92](plot.html?diagram=kervaire&data=RP93_256__RP1_92)&nbsp;&nbsp;&nbsp;
+[RP95_256__RP1_94](plot.html?diagram=kervaire&data=RP95_256__RP1_94)&nbsp;&nbsp;&nbsp;
+[RP97_256__RP1_96](plot.html?diagram=kervaire&data=RP97_256__RP1_96)&nbsp;&nbsp;&nbsp;
+[RP99_256__RP1_98](plot.html?diagram=kervaire&data=RP99_256__RP1_98)&nbsp;&nbsp;&nbsp;
+[RP101_256__RP1_100](plot.html?diagram=kervaire&data=RP101_256__RP1_100)&nbsp;&nbsp;&nbsp;
+[RP103_256__RP1_102](plot.html?diagram=kervaire&data=RP103_256__RP1_102)&nbsp;&nbsp;&nbsp;
+[RP105_256__RP1_104](plot.html?diagram=kervaire&data=RP105_256__RP1_104)&nbsp;&nbsp;&nbsp;
+[RP107_256__RP1_106](plot.html?diagram=kervaire&data=RP107_256__RP1_106)&nbsp;&nbsp;&nbsp;
+[RP109_256__RP1_108](plot.html?diagram=kervaire&data=RP109_256__RP1_108)&nbsp;&nbsp;&nbsp;
+[RP111_256__RP1_110](plot.html?diagram=kervaire&data=RP111_256__RP1_110)&nbsp;&nbsp;&nbsp;
+[RP113_256__RP1_112](plot.html?diagram=kervaire&data=RP113_256__RP1_112)&nbsp;&nbsp;&nbsp;
+[RP115_256__RP1_114](plot.html?diagram=kervaire&data=RP115_256__RP1_114)&nbsp;&nbsp;&nbsp;
 [RP117_256__RP1_116](plot.html?diagram=kervaire&data=RP117_256__RP1_116)<span class="tab">

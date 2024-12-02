@@ -724,7 +724,7 @@ function Convert2TikzColor(color) {
         return "cyan";
     }
     else if (color === "green") {
-        return "Green";
+        return "green";
     }
     return color;
 }
