@@ -979,4 +979,4 @@
 [RP111_256__RP1_110](plot.html?diagram=kervaire&data=RP111_256__RP1_110)&nbsp;&nbsp;&nbsp;
 [RP113_256__RP1_112](plot.html?diagram=kervaire&data=RP113_256__RP1_112)&nbsp;&nbsp;&nbsp;
 [RP115_256__RP1_114](plot.html?diagram=kervaire&data=RP115_256__RP1_114)&nbsp;&nbsp;&nbsp;
-[RP117_256__RP1_116](plot.html?diagram=kervaire&data=RP117_256__RP1_116)<span class="tab">
+[RP117_256__RP1_116](plot.html?diagram=kervaire&data=RP117_256__RP1_116)&nbsp;&nbsp;&nbsp;
