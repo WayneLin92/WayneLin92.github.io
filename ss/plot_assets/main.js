@@ -1315,6 +1315,7 @@ function init() {
     if (MODE === "cofseq") {
         const options = "<option>E0</option>\n<option>E1</option>\n";
         select_page.insertAdjacentHTML("afterbegin", options);
+        CONFIG_DYNAMIC.page = select_page_map["E0"];
     }
 
     addGridLines();
