@@ -42,7 +42,7 @@ Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 
 ## Programming
 [Spectral sequences](./ss/index.html)<br>
-<!-- [Spectral sequences (Kervaire invariant)](./ss/kervaire.html)<br> -->
+[Spectral sequences (Kervaire invariant)](./ss/kervaire.html)<br>
 [My Github homepage](https://github.com/WayneLin92)<br>
 [LaTeX diagram generator](./programs/tex_diagrams/index.html)
 
