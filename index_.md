@@ -2,15 +2,18 @@
 ## About Me
 I am currently a Tenure-track Young Investigator in [Shanghai Center for Mathematics Science](https://scms.fudan.edu.cn/index.htm), Fudan University.
 
-My research interests include stable homotopy theory and computational algebra for algebraic topology.
+My current research interests include stable homotopy theory and computational algebra for algebraic topology.
 
 My PhD advisor is Prof. [J. Peter May](http://www.math.uchicago.edu/~may/).
 
 Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 
 ## Publications and preprints
-* On the May spectral sequence at the prime 2. Advances in Mathematics (2022). [arXiv:2010.14754](https://arxiv.org/abs/2010.14754)
-* Noncommutative Gröbner Bases and Ext groups. Peking Mathematical Journal (2023). [arXiv:2304.00506](https://arxiv.org/abs/2304.00506)
+* On the May spectral sequence at the prime 2. **Advances in Mathematics** (2022). [arXiv:2010.14754](https://arxiv.org/abs/2010.14754)
+* Noncommutative Gröbner Bases and Ext groups. **Peking Mathematical Journal** (2023). [arXiv:2304.00506](https://arxiv.org/abs/2304.00506)
+* Product formulas for motivic Milnor basis. *Joint with Hana Jia Kong.* (2024). [arXiv:2411.12890](https://arxiv.org/abs/2411.12890)
+* Machine Proofs for Adams Differentials and Extension Problems among CW Spectra. *Joint with Guozhen Wang and Zhouli Xu.* (2024). [arXiv:2412.10876](https://arxiv.org/abs/2412.10876)
+* On the Last Kervaire Invariant Problem. *Joint with Guozhen Wang and Zhouli Xu.* (2024). [arXiv:2412.10879](https://arxiv.org/abs/2412.10879)
   
 ## Teaching
 ### Peking University.

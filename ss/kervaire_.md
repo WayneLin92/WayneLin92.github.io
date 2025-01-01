@@ -1,6 +1,12 @@
 # Spectral sequences
 ## Adams Spectral sequence
-
+Instructions: 
+* On the plots, you can click a dot twice to see its information. 
+* You can use your mouse to drag the plot to move it. You can use your mouse wheel to zoom in/out.
+* The plots works smoothly on ipad or other touch devices.
+* You can also use arrow keys to move the plots. You can press +/- to zoom in/out.
+* On plots of maps, you can press `Shift+Arrows` to move the ribbon around. You can also click your mouse while pressing `Shift` to quickly move the ribbon.
+* You can right click to make screenshots of the plots in the form of latex tikz code.
 ### Ring spectra
 [S0](plot.html?diagram=kervaire&data=S0)&nbsp;&nbsp;&nbsp;
 [tmf](plot.html?diagram=kervaire&data=tmf)&nbsp;&nbsp;&nbsp;
