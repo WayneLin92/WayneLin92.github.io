@@ -16,7 +16,7 @@ Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 * On the Last Kervaire Invariant Problem. *Joint with Guozhen Wang and Zhouli Xu.* (2024). [arXiv:2412.10879](https://arxiv.org/abs/2412.10879)
   
 ## Teaching
-### Peking University.
+### Peking University
 
 | Semester | Course Name |
 |---|---|
@@ -24,7 +24,7 @@ Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 | Fall 2023 | [Selected Topics in Algebraic Topology](./assets/2023Fall/index.html) |
 | Spring 2022 | [Selected Topics in Algebraic Topology](./assets/2022Spring/index.html) |
 
-### University of Chicago.
+### University of Chicago
 
 | Quarter | Course No. | Course Name |
 |---|---|---|

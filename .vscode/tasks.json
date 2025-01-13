@@ -23,9 +23,15 @@
             "problemMatcher": []
         },
         {
-            "label": "Compile /ss/kervaire_.md",
+            "label": "Compile /ss/kervaire.md",
             "type": "shell",
-            "command": "python task.py -f ./ss/kervaire_.md -o ./ss/kervaire.html -t 'Spectral sequences (Kervaire invariant)'",
+            "command": "python task.py -f ./ss/kervaire.md -o ./ss/kervaire.html -t 'Spectral sequences (Kervaire invariant)'",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile /ss/kervaire-49.md",
+            "type": "shell",
+            "command": "python task.py -f ./ss/kervaire-49.md -o ./ss/kervaire-49.html -t 'Spectral sequences (Kervaire invariant - 49cw)'",
             "problemMatcher": []
         },
         {
