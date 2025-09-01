@@ -16,6 +16,13 @@ Here is my [CV](./assets/pdf/CV_Weinan_Lin.pdf).
 * On the Last Kervaire Invariant Problem. *Joint with Guozhen Wang and Zhouli Xu.* (2024). [arXiv:2412.10879](https://arxiv.org/abs/2412.10879)
   
 ## Teaching
+### Fudan University
+
+| Semester | Course Name |
+|---|---|
+| Autumn 2025 | 几何与拓扑选讲 |
+| Spring 2025 | 经典数学思想II |
+
 ### Peking University
 
 | Semester | Course Name |
@@ -57,4 +64,4 @@ Office: Room 345, Shanghai Ceter for Mathematical Sciences, Fudan University
 
 
 ---
-The webpage was updated on 2024-12-03.
+The webpage was updated on 2025-9-1.
